@@ -69,37 +69,6 @@ function HeroParticles() {
 
 export default function HomePage() {
   const [heroReady, setHeroReady] = useState(false);
-  const [activeHeroTab, setActiveHeroTab] = useState(0);
-
-  const heroShowcases = [
-    {
-      img: '/assets/squad_formation_ground.jpg',
-      tag: 'On-Ground Squad',
-      title: 'The Legend Security Squad',
-      subtitle: 'Director Mr. Mosin Azam Shaikh • Est. 2018',
-      license: 'PSA/L/50/MH/2026',
-      badge: 'Squad Formation',
-      focus: 'object-[center_35%]',
-    },
-    {
-      img: '/assets/bouncers_event_lineup.jpg',
-      tag: 'Guard & Bouncer Lineup',
-      title: 'Uniformed Security Force',
-      subtitle: 'Trained Manned Guarding & Escort Squad',
-      license: 'Pune • Mumbai • All MH',
-      badge: 'Guard Lineup',
-      focus: 'object-[center_35%]',
-    },
-    {
-      img: '/assets/real/page8_img4_326x326.jpeg',
-      tag: 'Police Verified Force',
-      title: 'Law Enforcement Coordination',
-      subtitle: 'Police Verified Officers & VIP Bouncers',
-      license: 'Govt. PSARA Licensed',
-      badge: 'Police Ops',
-      focus: 'object-center',
-    },
-  ];
 
   useEffect(() => {
     const t = setTimeout(() => setHeroReady(true), 100);
@@ -277,98 +246,41 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* ── Right Visual Column — Executive Real Deployment Showcase ── */}
-            <div className="lg:col-span-5 relative flex justify-center lg:justify-end w-full">
-              {/* Ambient radial glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-[480px] sm:h-[480px] bg-brand-red/15 rounded-full blur-[120px] pointer-events-none" />
+            {/* ── Right Visual Column — Ultra-Clean Minimalist Photography (No Ugly Cards/Widgets) ── */}
+            <div className="lg:col-span-5 relative flex flex-col items-center lg:items-end w-full">
+              {/* Soft Crimson Ambient Backlight Glow */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-[420px] sm:h-[420px] bg-brand-red/12 rounded-full blur-[110px] pointer-events-none" />
 
-              {/* Main Showcase Frame */}
+              {/* Frameless Photo Container */}
               <div
                 className={`relative z-10 w-full max-w-md sm:max-w-lg lg:max-w-xl transition-all duration-1000 ${
-                  heroReady ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
+                  heroReady ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-95'
                 }`}
                 style={{ transitionDelay: '300ms' }}
               >
-                {/* Executive Showcase Card */}
-                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 bg-[#0e0f14] shadow-[0_25px_60px_rgba(0,0,0,0.85)]">
-                  {/* Photo Container */}
-                  <div className="relative h-[250px] xs:h-[280px] sm:h-[320px] lg:h-[350px] w-full overflow-hidden bg-black">
-                    <img
-                      key={activeHeroTab}
-                      src={heroShowcases[activeHeroTab].img}
-                      alt={heroShowcases[activeHeroTab].title}
-                      className={`w-full h-full object-cover ${heroShowcases[activeHeroTab].focus} filter brightness-100 contrast-[1.04] transition-all duration-700 animate-fadeIn`}
-                    />
+                {/* Pure Frameless Photography Showcase */}
+                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] border border-white/10 group">
+                  <img
+                    src="/assets/squad_formation_ground.jpg"
+                    alt="Director Mr. Mosin Azam Shaikh with The Legend Security Squad"
+                    className="w-full aspect-[16/10] sm:aspect-[16/9.5] object-cover object-[center_35%] filter brightness-[1.02] contrast-[1.03] transition-transform duration-700 group-hover:scale-[1.02]"
+                  />
+                  {/* Subtle edge fade into dark background */}
+                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0a0a0c]/85 to-transparent pointer-events-none" />
+                </div>
 
-                    {/* Subtle top/bottom image gradient for contrast, no heavy murky fog */}
-                    <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/60 to-transparent pointer-events-none" />
-                    <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0e0f14] via-[#0e0f14]/60 to-transparent pointer-events-none" />
-
-                    {/* Floating Status Pill — Top Left */}
-                    <div className="absolute top-3 left-3 sm:top-4 sm:left-4 px-3 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/15 flex items-center gap-2 shadow-lg">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                      <span className="text-[11px] font-semibold text-slate-200">
-                        {heroShowcases[activeHeroTab].tag}
-                      </span>
-                    </div>
-
-                    {/* Floating Verified Pill — Top Right */}
-                    <div className="absolute top-3 right-3 sm:top-4 sm:right-4 px-3 py-1.5 rounded-full bg-brand-red/90 backdrop-blur-md border border-red-500/30 flex items-center gap-1.5 shadow-lg shadow-red-950/60">
-                      <i className="fa-solid fa-stamp text-[10px] text-white" />
-                      <span className="text-[10px] font-heading font-black tracking-wider uppercase text-white">
-                        PSARA Verified
-                      </span>
-                    </div>
+                {/* Minimalist Editorial Caption — Pure Typography, Zero Box, Zero Clutter */}
+                <div className="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-1.5 px-1.5 text-xs text-slate-400 font-medium">
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="text-slate-200 font-semibold">Director Mr. Mosin Azam Shaikh</span>
+                    <span className="text-slate-600">•</span>
+                    <span>Field Guard Force</span>
                   </div>
-
-                  {/* Clean Identity Panel — NO TEXT TRUNCATION */}
-                  <div className="p-4 sm:p-5 bg-[#0e0f14] border-t border-white/10">
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-3 min-w-0">
-                        <div className="w-11 h-11 rounded-xl overflow-hidden border border-brand-red/60 bg-black p-0.5 shrink-0 shadow-md">
-                          <img src="/assets/real_logo.jpg" alt="Logo" className="w-full h-full object-cover rounded-lg" />
-                        </div>
-                        <div className="min-w-0">
-                          <h3 className="font-heading font-black text-xs sm:text-sm uppercase text-white tracking-wider leading-tight">
-                            {heroShowcases[activeHeroTab].title}
-                          </h3>
-                          <p className="text-[11px] text-slate-300 font-medium mt-0.5">
-                            {heroShowcases[activeHeroTab].subtitle}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="shrink-0 text-right">
-                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-brand-red/15 border border-brand-red/30 text-[9px] sm:text-[10px] font-heading font-bold text-brand-red uppercase tracking-wider">
-                          Govt. Licensed
-                        </span>
-                        <div className="text-[10px] font-mono text-slate-400 mt-0.5">
-                          {heroShowcases[activeHeroTab].license}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Interactive Real Deployments Switcher */}
-                    <div className="mt-3.5 pt-3 border-t border-white/5 flex flex-wrap items-center justify-between gap-2">
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">
-                        Real Deployments:
-                      </span>
-                      <div className="flex items-center gap-1.5">
-                        {heroShowcases.map((s, idx) => (
-                          <button
-                            key={idx}
-                            onClick={() => setActiveHeroTab(idx)}
-                            className={`px-2.5 py-1 rounded-lg text-[10px] font-heading font-bold uppercase tracking-wider transition-all duration-300 ${
-                              activeHeroTab === idx
-                                ? 'bg-brand-red text-white shadow-md shadow-red-700/40'
-                                : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10'
-                            }`}
-                          >
-                            {s.badge}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
+                  <div className="flex items-center gap-2 text-[11px] font-mono text-slate-400">
+                    <span className="text-brand-red font-semibold">PSARA Licensed</span>
+                    <span className="text-slate-600">•</span>
+                    <span>PSA/L/50/MH/2026</span>
                   </div>
                 </div>
               </div>
