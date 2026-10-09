@@ -114,16 +114,42 @@ export default function HomePage() {
         className="relative min-h-screen flex items-center pt-[72px] overflow-hidden bg-[#0a0a0c] tactical-grid"
         id="home"
       >
+        {/* ── Real Squad Event Atmosphere (Peak Blur & Left Blend into Original BG) ── */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+          {/* Panoramic Squad Event Image with Peak Blur — Zero Faces Recognizable, Rich Ambient Design */}
+          <img
+            src="/assets/hero_squad_panorama.png"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover object-[center_35%] filter blur-[32px] sm:blur-[38px] lg:blur-[42px] brightness-[0.72] contrast-110 opacity-35 sm:opacity-45"
+            style={{ transform: 'scale(1.2)' }}
+          />
+
+          {/* Left Side Blend into Original #0a0a0c Background (Protects Text Column with Pure Background) */}
+          <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-[#0a0a0c] via-[#0a0a0c]/95 via-[48%] to-transparent z-[1]" />
+          <div className="hidden lg:block absolute inset-y-0 left-0 w-[55%] bg-gradient-to-r from-[#0a0a0c] to-[#0a0a0c]/60 z-[1]" />
+
+          {/* Mobile Blend into Original #0a0a0c Background (Protects Top Mobile Text) */}
+          <div className="lg:hidden absolute inset-0 bg-gradient-to-b from-[#0a0a0c] via-[#0a0a0c]/90 via-[52%] to-[#0a0a0c]/40 z-[1]" />
+
+          {/* Top & Bottom Seamless Edge Bleed into Page Background */}
+          <div className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[#0a0a0c] to-transparent z-[1]" />
+          <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#0a0a0c] via-[#0a0a0c]/90 to-transparent z-[1]" />
+
+          {/* Subtle Multiply Tint to Maintain Tactical Dark Aesthetic */}
+          <div className="absolute inset-0 bg-[#0a0a0c]/30 mix-blend-multiply z-[1]" />
+        </div>
+
         {/* Animated ambient blobs */}
-        <div className="absolute -top-40 left-1/3 w-[500px] h-[500px] bg-brand-red/8 rounded-full blur-[120px] pointer-events-none animate-hero-float" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-red-900/10 rounded-full blur-[100px] pointer-events-none" style={{ animation: 'heroFloat 8s ease-in-out 2s infinite' }} />
-        <div className="absolute top-1/2 -left-20 w-[300px] h-[300px] bg-red-800/5 rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute -top-40 left-1/3 w-[500px] h-[500px] bg-brand-red/8 rounded-full blur-[120px] pointer-events-none animate-hero-float z-[2]" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-red-900/10 rounded-full blur-[100px] pointer-events-none z-[2]" style={{ animation: 'heroFloat 8s ease-in-out 2s infinite' }} />
+        <div className="absolute top-1/2 -left-20 w-[300px] h-[300px] bg-red-800/5 rounded-full blur-[80px] pointer-events-none z-[2]" />
 
         {/* Floating particles */}
         <HeroParticles />
 
         {/* Scan line accent */}
-        <div className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-brand-red/50 to-transparent pointer-events-none"
+        <div className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-brand-red/50 to-transparent pointer-events-none z-[2]"
           style={{ top: '60%', animation: 'scanLine 6s ease-in-out 1s infinite' }}
         />
 
