@@ -128,165 +128,121 @@ export default function HomePage() {
         />
 
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-20 lg:py-24 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        {/* Central spotlight aura behind hero */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] sm:w-[750px] sm:h-[750px] bg-brand-red/10 rounded-full blur-[140px] pointer-events-none" />
 
-            {/* ── Left Content Column ── */}
-            <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 z-10">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 sm:py-24 lg:py-28 w-full flex flex-col items-center text-center space-y-7 sm:space-y-8">
 
-              {/* Minimalist Editorial Eyebrow */}
-              <div
-                className={`flex items-center justify-center lg:justify-start gap-2.5 text-xs transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-                style={{ transitionDelay: '100ms' }}
-              >
-                <div className="flex items-center gap-2">
-                  <span className="w-5 h-[2px] bg-brand-red inline-block" />
-                  <span className="font-heading font-black tracking-[0.2em] uppercase text-brand-red text-[11px] sm:text-xs">
-                    Govt. PSARA Licensed
-                  </span>
-                </div>
-                <span className="text-slate-600 font-bold">•</span>
-                <span className="font-heading font-semibold tracking-wider text-slate-400 text-[11px] sm:text-xs uppercase">
-                  <span className="sm:hidden">Pune • Mumbai • All MH</span>
-                  <span className="hidden sm:inline">Pune • Mumbai • All Maharashtra</span>
-                </span>
-              </div>
-
-              {/* Main Headline — Massive, High-Impact & Dominant on Mobile */}
-              <h1
-                className={`font-heading font-black text-[2.85rem] xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tight leading-[0.94] uppercase transition-all duration-800 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-                style={{ transitionDelay: '300ms' }}
-              >
-                The Legend
-                <br />
-                <span className="text-gradient-red">Security</span>
-                <br />
-                And Bouncer
-              </h1>
-
-              {/* Description — Refined, Readable & Distinctly Secondary */}
-              <p
-                className={`text-slate-400 text-xs sm:text-sm md:text-base max-w-lg font-normal leading-relaxed transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-                style={{ transitionDelay: '450ms' }}
-              >
-                Incorporated in <span className="text-slate-200 font-medium">2018</span> under Director{' '}
-                <span className="text-slate-200 font-medium">Mr. Mosin Azam Shaikh</span> — delivering licensed manned guarding,
-                executive bouncers, facility management, and manpower solutions across{' '}
-                <span className="text-slate-200 font-medium">Pune, Mumbai, and All Over Maharashtra</span>.
-              </p>
-
-              {/* Trust & Credibility Strip — Minimalist, Unboxed & Sleek Replacement */}
-              <div
-                className={`flex flex-wrap items-center justify-center lg:justify-start gap-x-3.5 sm:gap-x-4 gap-y-2 text-xs sm:text-[13px] text-slate-300 font-medium py-1 transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-                style={{ transitionDelay: '550ms' }}
-              >
-                <div className="inline-flex items-center gap-1.5 text-slate-200">
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
-                  <span className="tracking-wide">PSARA Licensed</span>
-                </div>
-                <span className="text-slate-700 select-none">•</span>
-                <div className="inline-flex items-center gap-1.5 text-slate-200">
-                  <i className="fa-solid fa-shield-halved text-emerald-400 text-xs" />
-                  <span className="tracking-wide">Police Verified</span>
-                </div>
-                <span className="text-slate-700 select-none">•</span>
-                <div className="inline-flex items-center gap-1.5 text-slate-200">
-                  <i className="fa-solid fa-clock text-brand-red text-xs" />
-                  <span className="tracking-wide">24/7 Field Supervision</span>
-                </div>
-                <span className="text-slate-700 hidden sm:inline select-none">•</span>
-                <div className="inline-flex items-center gap-1.5 text-slate-200">
-                  <i className="fa-solid fa-location-dot text-brand-red text-xs" />
-                  <span className="tracking-wide">Pune • Mumbai • All MH</span>
-                </div>
-              </div>
-
-              {/* CTA Buttons */}
-              <div
-                className={`flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 w-full sm:w-auto transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-                style={{ transitionDelay: '650ms' }}
-              >
-                <Link
-                  to="/services"
-                  className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider px-7 py-3.5 rounded-xl shadow-lg shadow-red-700/30 btn-glow-red transition-all duration-300 group"
-                >
-                  <span>Explore Services</span>
-                  <i className="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform duration-300" />
-                </Link>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center gap-2.5 bg-white/5 border border-slate-600/80 hover:border-brand-red text-white font-heading font-bold text-xs uppercase tracking-wider px-7 py-3.5 rounded-xl transition-all duration-300 hover:bg-white/10 group"
-                >
-                  <i className="fa-solid fa-file-invoice text-brand-red" />
-                  <span>Request A Quote</span>
-                </Link>
-              </div>
-
-              {/* Stats Row */}
-              <div
-                ref={statsRef}
-                className={`pt-6 border-t border-white/10 grid grid-cols-3 gap-4 sm:gap-8 w-full max-w-md mx-auto lg:mx-0 transition-all duration-700 ${statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-              >
-                {[
-                  { val: '2018', label: 'Established', suffix: '' },
-                  { val: '500', label: 'Trained Staff', suffix: '+', color: 'text-brand-red' },
-                  { val: '20', label: 'Major Clients', suffix: '+' },
-                ].map((s, i) => (
-                  <div key={i} className={`text-center lg:text-left ${i > 0 ? 'border-l border-white/10 pl-4 sm:pl-8' : ''}`}>
-                    <div className={`font-heading font-black text-2xl sm:text-3xl text-white ${s.color || ''}`}>
-                      {i === 0 ? s.val : (
-                        <><AnimatedCounter target={s.val} suffix={s.suffix} /></>
-                      )}
-                    </div>
-                    <div className="text-[10px] sm:text-xs text-slate-400 font-semibold uppercase tracking-wider mt-0.5">
-                      {s.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* ── Right Visual Column — Ultra-Clean Minimalist Photography (No Ugly Cards/Widgets) ── */}
-            <div className="lg:col-span-5 relative flex flex-col items-center lg:items-end w-full">
-              {/* Soft Crimson Ambient Backlight Glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-[420px] sm:h-[420px] bg-brand-red/12 rounded-full blur-[110px] pointer-events-none" />
-
-              {/* Frameless Photo Container */}
-              <div
-                className={`relative z-10 w-full max-w-md sm:max-w-lg lg:max-w-xl transition-all duration-1000 ${
-                  heroReady ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-95'
-                }`}
-                style={{ transitionDelay: '300ms' }}
-              >
-                {/* Pure Frameless Photography Showcase */}
-                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] border border-white/10 group">
-                  <img
-                    src="/assets/squad_formation_ground.jpg"
-                    alt="Director Mr. Mosin Azam Shaikh with The Legend Security Squad"
-                    className="w-full aspect-[16/10] sm:aspect-[16/9.5] object-cover object-[center_35%] filter brightness-[1.02] contrast-[1.03] transition-transform duration-700 group-hover:scale-[1.02]"
-                  />
-                  {/* Subtle edge fade into dark background */}
-                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0a0a0c]/85 to-transparent pointer-events-none" />
-                </div>
-
-                {/* Minimalist Editorial Caption — Pure Typography, Zero Box, Zero Clutter */}
-                <div className="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-1.5 px-1.5 text-xs text-slate-400 font-medium">
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="text-slate-200 font-semibold">Director Mr. Mosin Azam Shaikh</span>
-                    <span className="text-slate-600">•</span>
-                    <span>Field Guard Force</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-[11px] font-mono text-slate-400">
-                    <span className="text-brand-red font-semibold">PSARA Licensed</span>
-                    <span className="text-slate-600">•</span>
-                    <span>PSA/L/50/MH/2026</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+          {/* Minimalist Editorial Eyebrow */}
+          <div
+            className={`flex items-center justify-center gap-2.5 text-xs transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            style={{ transitionDelay: '100ms' }}
+          >
+            <span className="w-5 h-[2px] bg-brand-red inline-block" />
+            <span className="font-heading font-black tracking-[0.2em] uppercase text-brand-red text-[11px] sm:text-xs">
+              Govt. PSARA Licensed
+            </span>
+            <span className="text-slate-600 font-bold">•</span>
+            <span className="font-heading font-semibold tracking-wider text-slate-400 text-[11px] sm:text-xs uppercase">
+              Pune • Mumbai • All Maharashtra
+            </span>
+            <span className="w-5 h-[2px] bg-brand-red inline-block" />
           </div>
+
+          {/* Monumental Centered Headline */}
+          <h1
+            className={`font-heading font-black text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] text-white tracking-tight leading-[0.94] uppercase transition-all duration-800 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+            style={{ transitionDelay: '250ms' }}
+          >
+            The Legend
+            <br />
+            <span className="text-gradient-red">Security</span>
+            <br />
+            And Bouncer
+          </h1>
+
+          {/* Refined Description */}
+          <p
+            className={`text-slate-400 text-xs sm:text-base md:text-lg max-w-2xl mx-auto font-normal leading-relaxed transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            style={{ transitionDelay: '400ms' }}
+          >
+            Incorporated in <span className="text-slate-200 font-medium">2018</span> under Director{' '}
+            <span className="text-slate-200 font-medium">Mr. Mosin Azam Shaikh</span> — delivering licensed manned guarding,
+            executive bouncers, facility management, and turnkey manpower solutions across{' '}
+            <span className="text-slate-200 font-medium">Pune, Mumbai, and All Over Maharashtra</span>.
+          </p>
+
+          {/* Trust & Credibility Strip — Minimalist, Unboxed & Sleek */}
+          <div
+            className={`flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-2 text-xs sm:text-[13px] text-slate-300 font-medium py-1 transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            style={{ transitionDelay: '500ms' }}
+          >
+            <div className="inline-flex items-center gap-2 text-slate-200">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
+              <span className="tracking-wide">PSARA Licensed</span>
+            </div>
+            <span className="text-slate-700 select-none">•</span>
+            <div className="inline-flex items-center gap-2 text-slate-200">
+              <i className="fa-solid fa-shield-halved text-emerald-400 text-xs" />
+              <span className="tracking-wide">Police Verified</span>
+            </div>
+            <span className="text-slate-700 select-none">•</span>
+            <div className="inline-flex items-center gap-2 text-slate-200">
+              <i className="fa-solid fa-clock text-brand-red text-xs" />
+              <span className="tracking-wide">24/7 Field Supervision</span>
+            </div>
+            <span className="text-slate-700 hidden sm:inline select-none">•</span>
+            <div className="inline-flex items-center gap-2 text-slate-200">
+              <i className="fa-solid fa-location-dot text-brand-red text-xs" />
+              <span className="tracking-wide">Pune • Mumbai • All MH</span>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div
+            className={`flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            style={{ transitionDelay: '600ms' }}
+          >
+            <Link
+              to="/services"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-lg shadow-red-700/35 btn-glow-red transition-all duration-300 group"
+            >
+              <span>Explore Services</span>
+              <i className="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform duration-300" />
+            </Link>
+            <Link
+              to="/contact"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/5 border border-slate-600/80 hover:border-brand-red text-white font-heading font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all duration-300 hover:bg-white/10 group"
+            >
+              <i className="fa-solid fa-file-invoice text-brand-red" />
+              <span>Request A Quote</span>
+            </Link>
+          </div>
+
+          {/* Stats Row */}
+          <div
+            ref={statsRef}
+            className={`pt-8 sm:pt-10 border-t border-white/10 grid grid-cols-3 gap-6 sm:gap-12 w-full max-w-xl mx-auto transition-all duration-700 ${statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            style={{ transitionDelay: '700ms' }}
+          >
+            {[
+              { val: '2018', label: 'Established', suffix: '' },
+              { val: '500', label: 'Trained Staff', suffix: '+', color: 'text-brand-red' },
+              { val: '20', label: 'Major Clients', suffix: '+' },
+            ].map((s, i) => (
+              <div key={i} className={`text-center ${i > 0 ? 'border-l border-white/10 pl-6 sm:pl-12' : ''}`}>
+                <div className={`font-heading font-black text-2xl sm:text-4xl text-white ${s.color || ''}`}>
+                  {i === 0 ? s.val : (
+                    <><AnimatedCounter target={s.val} suffix={s.suffix} /></>
+                  )}
+                </div>
+                <div className="text-[10px] sm:text-xs text-slate-400 font-semibold uppercase tracking-wider mt-1">
+                  {s.label}
+                </div>
+              </div>
+            ))}
+          </div>
+
         </div>
 
         {/* Bottom wave separator */}
