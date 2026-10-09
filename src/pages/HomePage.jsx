@@ -69,6 +69,37 @@ function HeroParticles() {
 
 export default function HomePage() {
   const [heroReady, setHeroReady] = useState(false);
+  const [activeHeroTab, setActiveHeroTab] = useState(0);
+
+  const heroShowcases = [
+    {
+      img: '/assets/squad_formation_ground.jpg',
+      tag: 'On-Ground Squad',
+      title: 'The Legend Security Squad',
+      subtitle: 'Director Mr. Mosin Azam Shaikh • Est. 2018',
+      license: 'PSA/L/50/MH/2026',
+      badge: 'Squad Formation',
+      focus: 'object-[center_35%]',
+    },
+    {
+      img: '/assets/bouncers_event_lineup.jpg',
+      tag: 'Guard & Bouncer Lineup',
+      title: 'Uniformed Security Force',
+      subtitle: 'Trained Manned Guarding & Escort Squad',
+      license: 'Pune • Mumbai • All MH',
+      badge: 'Guard Lineup',
+      focus: 'object-[center_35%]',
+    },
+    {
+      img: '/assets/real/page8_img4_326x326.jpeg',
+      tag: 'Police Verified Force',
+      title: 'Law Enforcement Coordination',
+      subtitle: 'Police Verified Officers & VIP Bouncers',
+      license: 'Govt. PSARA Licensed',
+      badge: 'Police Ops',
+      focus: 'object-center',
+    },
+  ];
 
   useEffect(() => {
     const t = setTimeout(() => setHeroReady(true), 100);
@@ -114,32 +145,6 @@ export default function HomePage() {
         className="relative min-h-screen flex items-center pt-[72px] overflow-hidden bg-[#0a0a0c] tactical-grid"
         id="home"
       >
-        {/* ── Real Squad Event Atmosphere (Peak Blur & Left Blend into Original BG) ── */}
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
-          {/* Panoramic Squad Event Image with Peak Blur — Zero Faces Recognizable, Rich Ambient Design */}
-          <img
-            src="/assets/hero_squad_panorama.png"
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover object-[center_35%] filter blur-[32px] sm:blur-[38px] lg:blur-[42px] brightness-[0.72] contrast-110 opacity-35 sm:opacity-45"
-            style={{ transform: 'scale(1.2)' }}
-          />
-
-          {/* Left Side Blend into Original #0a0a0c Background (Protects Text Column with Pure Background) */}
-          <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-[#0a0a0c] via-[#0a0a0c]/95 via-[48%] to-transparent z-[1]" />
-          <div className="hidden lg:block absolute inset-y-0 left-0 w-[55%] bg-gradient-to-r from-[#0a0a0c] to-[#0a0a0c]/60 z-[1]" />
-
-          {/* Mobile Blend into Original #0a0a0c Background (Protects Top Mobile Text) */}
-          <div className="lg:hidden absolute inset-0 bg-gradient-to-b from-[#0a0a0c] via-[#0a0a0c]/90 via-[52%] to-[#0a0a0c]/40 z-[1]" />
-
-          {/* Top & Bottom Seamless Edge Bleed into Page Background */}
-          <div className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[#0a0a0c] to-transparent z-[1]" />
-          <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#0a0a0c] via-[#0a0a0c]/90 to-transparent z-[1]" />
-
-          {/* Subtle Multiply Tint to Maintain Tactical Dark Aesthetic */}
-          <div className="absolute inset-0 bg-[#0a0a0c]/30 mix-blend-multiply z-[1]" />
-        </div>
-
         {/* Animated ambient blobs */}
         <div className="absolute -top-40 left-1/3 w-[500px] h-[500px] bg-brand-red/8 rounded-full blur-[120px] pointer-events-none animate-hero-float z-[2]" />
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-red-900/10 rounded-full blur-[100px] pointer-events-none z-[2]" style={{ animation: 'heroFloat 8s ease-in-out 2s infinite' }} />
@@ -152,6 +157,7 @@ export default function HomePage() {
         <div className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-brand-red/50 to-transparent pointer-events-none z-[2]"
           style={{ top: '60%', animation: 'scanLine 6s ease-in-out 1s infinite' }}
         />
+
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-20 lg:py-24 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
@@ -271,55 +277,97 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* ── Right Visual Column — Cinematic & Seamlessly Blended ── */}
+            {/* ── Right Visual Column — Executive Real Deployment Showcase ── */}
             <div className="lg:col-span-5 relative flex justify-center lg:justify-end w-full">
               {/* Ambient radial glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-[460px] sm:h-[460px] bg-brand-red/10 rounded-full blur-[120px] pointer-events-none" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-[480px] sm:h-[480px] bg-brand-red/15 rounded-full blur-[120px] pointer-events-none" />
 
-              {/* Seamless Hero Squad Showcase */}
+              {/* Main Showcase Frame */}
               <div
                 className={`relative z-10 w-full max-w-md sm:max-w-lg lg:max-w-xl transition-all duration-1000 ${
                   heroReady ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
                 }`}
                 style={{ transitionDelay: '300ms' }}
               >
-                {/* Blended Image Container */}
-                <div className="relative rounded-3xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.85)]">
-                  <img
-                    src="/assets/squad_formation_ground.jpg"
-                    alt="The Legend Security & Bouncer Squad Formation"
-                    className="w-full h-[420px] sm:h-[500px] lg:h-[540px] object-cover object-center filter brightness-95 contrast-105 transition-transform duration-700 hover:scale-102"
-                  />
+                {/* Executive Showcase Card */}
+                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 bg-[#0e0f14] shadow-[0_25px_60px_rgba(0,0,0,0.85)]">
+                  {/* Photo Container */}
+                  <div className="relative h-[250px] xs:h-[280px] sm:h-[320px] lg:h-[350px] w-full overflow-hidden bg-black">
+                    <img
+                      key={activeHeroTab}
+                      src={heroShowcases[activeHeroTab].img}
+                      alt={heroShowcases[activeHeroTab].title}
+                      className={`w-full h-full object-cover ${heroShowcases[activeHeroTab].focus} filter brightness-100 contrast-[1.04] transition-all duration-700 animate-fadeIn`}
+                    />
 
-                  {/* Seamless edge blend into deep dark background (#0a0a0c) */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-transparent to-[#0a0a0c]/20 pointer-events-none" />
-                  <div className="absolute inset-y-0 left-0 w-14 bg-gradient-to-r from-[#0a0a0c]/60 to-transparent pointer-events-none" />
-                  <div className="absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-[#0a0a0c]/60 to-transparent pointer-events-none" />
-                  <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-[#0a0a0c] via-[#0a0a0c]/85 to-transparent pointer-events-none" />
+                    {/* Subtle top/bottom image gradient for contrast, no heavy murky fog */}
+                    <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/60 to-transparent pointer-events-none" />
+                    <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0e0f14] via-[#0e0f14]/60 to-transparent pointer-events-none" />
 
-                  {/* Clean, Non-AI Floating Identity Plate */}
-                  <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 p-4 rounded-2xl bg-[#0e0f14]/85 backdrop-blur-xl border border-white/10 shadow-2xl flex items-center justify-between gap-3">
-                    <div className="flex items-center gap-3.5 min-w-0">
-                      <div className="w-12 h-12 rounded-xl overflow-hidden border border-brand-red/60 bg-black p-0.5 shrink-0 shadow-md">
-                        <img src="/assets/real_logo.jpg" alt="Logo" className="w-full h-full object-cover rounded-lg" />
+                    {/* Floating Status Pill — Top Left */}
+                    <div className="absolute top-3 left-3 sm:top-4 sm:left-4 px-3 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/15 flex items-center gap-2 shadow-lg">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      <span className="text-[11px] font-semibold text-slate-200">
+                        {heroShowcases[activeHeroTab].tag}
+                      </span>
+                    </div>
+
+                    {/* Floating Verified Pill — Top Right */}
+                    <div className="absolute top-3 right-3 sm:top-4 sm:right-4 px-3 py-1.5 rounded-full bg-brand-red/90 backdrop-blur-md border border-red-500/30 flex items-center gap-1.5 shadow-lg shadow-red-950/60">
+                      <i className="fa-solid fa-stamp text-[10px] text-white" />
+                      <span className="text-[10px] font-heading font-black tracking-wider uppercase text-white">
+                        PSARA Verified
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Clean Identity Panel — NO TEXT TRUNCATION */}
+                  <div className="p-4 sm:p-5 bg-[#0e0f14] border-t border-white/10">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-3 min-w-0">
+                        <div className="w-11 h-11 rounded-xl overflow-hidden border border-brand-red/60 bg-black p-0.5 shrink-0 shadow-md">
+                          <img src="/assets/real_logo.jpg" alt="Logo" className="w-full h-full object-cover rounded-lg" />
+                        </div>
+                        <div className="min-w-0">
+                          <h3 className="font-heading font-black text-xs sm:text-sm uppercase text-white tracking-wider leading-tight">
+                            {heroShowcases[activeHeroTab].title}
+                          </h3>
+                          <p className="text-[11px] text-slate-300 font-medium mt-0.5">
+                            {heroShowcases[activeHeroTab].subtitle}
+                          </p>
+                        </div>
                       </div>
-                      <div className="min-w-0">
-                        <h3 className="font-heading font-black text-sm uppercase text-white tracking-wider leading-tight truncate">
-                          The Legend Security Squad
-                        </h3>
-                        <p className="text-[11px] text-slate-300 font-medium truncate mt-0.5">
-                          Director Mr. Mosin Azam Shaikh • Est. 2018
-                        </p>
+
+                      <div className="shrink-0 text-right">
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-brand-red/15 border border-brand-red/30 text-[9px] sm:text-[10px] font-heading font-bold text-brand-red uppercase tracking-wider">
+                          Govt. Licensed
+                        </span>
+                        <div className="text-[10px] font-mono text-slate-400 mt-0.5">
+                          {heroShowcases[activeHeroTab].license}
+                        </div>
                       </div>
                     </div>
 
-                    <div className="hidden sm:flex flex-col items-end shrink-0 pl-3 border-l border-white/10">
-                      <span className="text-[10px] font-heading font-black uppercase text-brand-red tracking-wider">
-                        Govt. Licensed
+                    {/* Interactive Real Deployments Switcher */}
+                    <div className="mt-3.5 pt-3 border-t border-white/5 flex flex-wrap items-center justify-between gap-2">
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+                        Real Deployments:
                       </span>
-                      <span className="text-[10px] font-mono text-slate-300">
-                        PSA/L/50/MH/2026
-                      </span>
+                      <div className="flex items-center gap-1.5">
+                        {heroShowcases.map((s, idx) => (
+                          <button
+                            key={idx}
+                            onClick={() => setActiveHeroTab(idx)}
+                            className={`px-2.5 py-1 rounded-lg text-[10px] font-heading font-bold uppercase tracking-wider transition-all duration-300 ${
+                              activeHeroTab === idx
+                                ? 'bg-brand-red text-white shadow-md shadow-red-700/40'
+                                : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10'
+                            }`}
+                          >
+                            {s.badge}
+                          </button>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
