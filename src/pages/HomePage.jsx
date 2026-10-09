@@ -111,7 +111,7 @@ export default function HomePage() {
           HERO SECTION — Ultra Premium
       ══════════════════════════════════════════ */}
       <section
-        className="relative min-h-screen flex items-center pt-[72px] overflow-hidden bg-[#0a0a0c] tactical-grid"
+        className="relative min-h-screen flex items-center pt-[78px] sm:pt-[84px] overflow-hidden bg-[#0a0a0c] tactical-grid"
         id="home"
       >
         {/* Animated ambient blobs */}

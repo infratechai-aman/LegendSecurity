@@ -43,39 +43,39 @@ export default function Header() {
         {/* Red accent top line */}
         <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-brand-red to-transparent opacity-80" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[72px] flex items-center justify-between">
-          {/* Brand Logo */}
-          <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[76px] sm:h-[82px] flex items-center justify-between">
+          {/* Brand Logo — Bigger & Prominent */}
+          <Link to="/" className="flex items-center gap-3 sm:gap-3.5 group shrink-0 mr-4 lg:mr-8 xl:mr-10">
             <div className="relative">
               {/* Animated ring */}
-              <div className="absolute inset-0 rounded-xl border border-brand-red/40 scale-110 group-hover:scale-125 transition-transform duration-500 opacity-0 group-hover:opacity-100" />
-              <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden border-2 border-brand-red bg-black flex items-center justify-center p-0.5 shadow-[0_0_20px_rgba(229,9,20,0.4)] transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(229,9,20,0.6)]">
+              <div className="absolute inset-0 rounded-2xl border border-brand-red/40 scale-110 group-hover:scale-125 transition-transform duration-500 opacity-0 group-hover:opacity-100" />
+              <div className="relative w-12 h-12 sm:w-14 sm:h-14 lg:w-[58px] lg:h-[58px] rounded-xl sm:rounded-2xl overflow-hidden border-2 border-brand-red bg-black flex items-center justify-center p-0.5 shadow-[0_0_22px_rgba(229,9,20,0.45)] transition-all duration-300 group-hover:shadow-[0_0_35px_rgba(229,9,20,0.65)]">
                 <img
                   src="/assets/real_logo.jpg"
                   alt="The Legend Security and Bouncer Logo"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-contain p-0.5 group-hover:scale-105 transition-transform duration-300"
                   onError={(e) => { e.target.style.display = 'none'; }}
                 />
               </div>
             </div>
             <div className="flex flex-col leading-none">
-              <span className="font-heading font-black text-sm sm:text-base tracking-wider uppercase text-white group-hover:text-brand-red transition-colors duration-300">
+              <span className="font-heading font-black text-sm sm:text-base lg:text-lg tracking-wider uppercase text-white group-hover:text-brand-red transition-colors duration-300">
                 The Legend
               </span>
-              <span className="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-brand-red leading-none mt-0.5 font-mono">
+              <span className="text-[10px] sm:text-[11px] lg:text-xs font-bold tracking-widest uppercase text-brand-red leading-none mt-1 font-mono">
                 Security & Bouncer
               </span>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6 font-heading text-[11px] font-bold tracking-widest uppercase">
+          {/* Desktop Navigation — Centered & Spaced to Prevent Overlapping */}
+          <nav className="hidden lg:flex items-center justify-center gap-4 xl:gap-7 font-heading text-[11px] xl:text-xs font-bold tracking-wider xl:tracking-widest uppercase flex-1 max-w-xl mx-auto">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `relative py-2 transition-all duration-300 group ${
+                  `relative py-2 whitespace-nowrap transition-all duration-300 group ${
                     isActive
                       ? 'text-brand-red'
                       : 'text-slate-300 hover:text-white'
@@ -102,7 +102,7 @@ export default function Header() {
           </nav>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0 ml-4 lg:ml-8">
             {/* Minimalist Hotlines (xl+ only) */}
             <div className="hidden xl:flex items-center gap-3.5 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md">
               <a
