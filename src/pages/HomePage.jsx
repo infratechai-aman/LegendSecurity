@@ -135,23 +135,24 @@ export default function HomePage() {
 
           {/* Minimalist Editorial Eyebrow */}
           <div
-            className={`flex items-center justify-center gap-2.5 text-xs transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`flex items-center justify-center gap-2 sm:gap-2.5 text-xs transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
             style={{ transitionDelay: '100ms' }}
           >
-            <span className="w-5 h-[2px] bg-brand-red inline-block" />
-            <span className="font-heading font-black tracking-[0.2em] uppercase text-brand-red text-[11px] sm:text-xs">
+            <span className="w-3.5 sm:w-5 h-[2px] bg-brand-red inline-block shrink-0" />
+            <span className="font-heading font-black tracking-[0.16em] sm:tracking-[0.2em] uppercase text-brand-red text-[11px] sm:text-xs shrink-0">
               Govt. PSARA Licensed
             </span>
-            <span className="text-slate-600 font-bold">•</span>
-            <span className="font-heading font-semibold tracking-wider text-slate-400 text-[11px] sm:text-xs uppercase">
-              Pune • Mumbai • All Maharashtra
+            <span className="text-slate-600 font-bold select-none">•</span>
+            <span className="font-heading font-semibold tracking-wider text-slate-400 text-[11px] sm:text-xs uppercase shrink-0">
+              <span className="sm:hidden">Pune • Mumbai • All MH</span>
+              <span className="hidden sm:inline">Pune • Mumbai • All Maharashtra</span>
             </span>
-            <span className="w-5 h-[2px] bg-brand-red inline-block" />
+            <span className="w-3.5 sm:w-5 h-[2px] bg-brand-red inline-block shrink-0" />
           </div>
 
-          {/* Monumental Centered Headline */}
+          {/* Monumental Centered Headline — Extra Large on Android/Mobile, Unchanged on Desktop */}
           <h1
-            className={`font-heading font-black text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] text-white tracking-tight leading-[0.94] uppercase transition-all duration-800 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+            className={`font-heading font-black text-[clamp(2.85rem,12vw,3.75rem)] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] text-white tracking-tight leading-[0.92] uppercase transition-all duration-800 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
             style={{ transitionDelay: '250ms' }}
           >
             The Legend
