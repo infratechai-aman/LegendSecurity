@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Legend Security and Bouncer | Professional Manpower &amp; Security Solutions</title>
+<!-- Font Awesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<!-- Google Fonts: Inter & Montserrat -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Montserrat', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              red: '#e50914',
+              crimson: '#dc2626',
+              dark: '#0a0a0c',
+              darker: '#060607',
+              charcoal: '#121316',
+              surface: '#18191d',
+              border: '#272930',
+              muted: '#9ca3af',
+              cardLight: '#ffffff',
+            }
+          },
+          backgroundImage: {
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-decorations">
+    /* Subtle geometric chevron motif & tactical background styling */
+    .tactical-grid {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+    .clip-slant {
+      clip-path: polygon(0 0, 100% 0, 92% 100%, 0% 100%);
+    }
+    .clip-slant-right {
+      clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    @media (max-width: 1024px) {
+      .clip-slant, .clip-slant-right {
+        clip-path: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#0a0a0c] text-slate-100 font-sans antialiased selection:bg-brand-red selection:text-white">
+<!-- BEGIN: MainHeader -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0c]/90 backdrop-blur-md border-b border-brand-border/60 transition-all duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Logo Branding Container -->
+<a class="flex items-center gap-3.5 group" href="#home">
+<div class="relative w-12 h-12 rounded-full border-2 border-brand-red bg-brand-surface flex items-center justify-center p-1.5 shadow-[0_0_15px_rgba(229,9,20,0.35)] transition-transform duration-300 group-hover:scale-105">
+<!-- Tiger Security Shield Icon SVG -->
+<svg aria-label="The Legend Security Logo" class="w-full h-full text-brand-red fill-current" viewbox="0 0 24 24">
+<path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm0 2.18l6 2.25v4.66c0 3.97-2.61 7.69-6 8.72-3.39-1.03-6-4.75-6-8.72V6.43l6-2.25zM12 6.5a4 4 0 0 0-4 4c0 1.95 1.4 3.58 3.25 3.93v2.07h1.5v-2.07A4.004 4.004 0 0 0 16 10.5a4 4 0 0 0-4-4zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-heading font-black text-sm tracking-wider uppercase text-white leading-tight">The Legend</span>
+<span class="text-[10px] font-semibold tracking-widest uppercase text-brand-red leading-none">Security &amp; Bouncer</span>
+</div>
+</a>
+<!-- Desktop Navigation Menu -->
+<nav class="hidden md:flex items-center gap-8 font-heading text-sm font-semibold tracking-wide">
+<a class="text-white hover:text-brand-red transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-brand-red" href="#home">Home</a>
+<a class="text-slate-300 hover:text-brand-red transition-colors" href="#about">About</a>
+<a class="text-slate-300 hover:text-brand-red transition-colors" href="#services">Services</a>
+<a class="text-slate-300 hover:text-brand-red transition-colors" href="#clients">Our Clients</a>
+<a class="text-slate-300 hover:text-brand-red transition-colors" href="#gallery">Gallery</a>
+<a class="text-slate-300 hover:text-brand-red transition-colors" href="#contact">Contact</a>
+</nav>
+<!-- Header Action Button -->
+<div class="flex items-center gap-4">
+<a class="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider px-5 py-3 rounded shadow-md hover:shadow-red-600/30 transition-all duration-300" href="#quote">
+<span>Request a Quote</span>
+<i class="fa-solid fa-arrow-right text-xs"></i>
+</a>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: HeroSection -->
+<section class="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden bg-gradient-to-b from-[#0a0a0c] via-[#121316] to-[#0a0a0c] tactical-grid" id="home">
+<!-- Red ambient tactical glow effect -->
+<div class="absolute -top-32 right-1/4 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute bottom-10 right-10 w-80 h-80 bg-red-800/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Left Content Column -->
+<div class="lg:col-span-7 space-y-6">
+<!-- Tactical Sub-heading -->
+<div class="flex items-center gap-3">
+<span class="inline-block w-8 h-[2px] bg-brand-red"></span>
+<p class="font-mono text-xs md:text-sm font-semibold tracking-widest text-slate-400 uppercase">
+              SAFETY  |  DISCIPLINE  |  PROFESSIONALISM
+            </p>
+</div>
+<!-- Hero Headline -->
+<h1 class="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.08] uppercase">
+            The Legend<br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-red-500 to-red-400">Security</span><br/>
+            And Bouncer
+          </h1>
+<!-- Value Statement -->
+<p class="text-slate-300 text-base md:text-lg max-w-xl font-normal leading-relaxed">
+            Your trusted partner for complete high-level security, elite protective personnel, facility management &amp; manpower solutions across India.
+          </p>
+<!-- Action Buttons -->
+<div class="pt-2 flex flex-wrap items-center gap-4">
+<a class="inline-flex items-center gap-3 bg-brand-red hover:bg-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider px-6 py-4 rounded shadow-lg shadow-red-700/25 transition duration-300 group" href="#services">
+<span>Request Security Services</span>
+<i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+</a>
+<button class="inline-flex items-center gap-3 bg-brand-surface/80 hover:bg-brand-surface border border-slate-700 hover:border-slate-500 text-white font-heading font-bold text-xs uppercase tracking-wider px-6 py-4 rounded transition duration-300" type="button">
+<span class="w-6 h-6 rounded-full bg-brand-red/20 text-brand-red flex items-center justify-center text-xs">
+<i class="fa-solid fa-play ml-0.5"></i>
+</span>
+<span>Watch Video</span>
+</button>
+</div>
+<!-- Hero Statistics Row -->
+<div class="pt-8 border-t border-brand-border/80 grid grid-cols-3 gap-6 max-w-lg">
+<div>
+<div class="font-heading font-black text-2xl sm:text-3xl text-white">10+</div>
+<div class="text-xs text-slate-400 font-medium uppercase tracking-wider mt-0.5">Years Experience</div>
+</div>
+<div class="border-l border-brand-border/70 pl-6">
+<div class="font-heading font-black text-2xl sm:text-3xl text-white">500+</div>
+<div class="text-xs text-slate-400 font-medium uppercase tracking-wider mt-0.5">Trained Staff</div>
+</div>
+<div class="border-l border-brand-border/70 pl-6">
+<div class="font-heading font-black text-2xl sm:text-3xl text-white">50+</div>
+<div class="text-xs text-slate-400 font-medium uppercase tracking-wider mt-0.5">Client Locations</div>
+</div>
+</div>
+</div>
+<!-- Right Visual Column (Security Specialist Graphic & Badge) -->
+<div class="lg:col-span-5 relative flex justify-center lg:justify-end">
+<!-- Background Geometric Accents -->
+<div class="absolute -right-6 top-1/2 -translate-y-1/2 w-80 h-96 border border-brand-red/30 rounded-2xl rotate-6 pointer-events-none hidden sm:block"></div>
+<div class="absolute -right-2 top-1/2 -translate-y-1/2 w-80 h-96 border border-slate-700/50 rounded-2xl -rotate-3 pointer-events-none hidden sm:block"></div>
+<!-- Main Tactical Officer Badge Card -->
+<div class="relative z-10 w-full max-w-md bg-gradient-to-b from-[#18191d] to-[#0e0f12] rounded-2xl border border-brand-border shadow-2xl overflow-hidden group">
+<!-- Tactical Officer Display Area -->
+<div class="h-96 bg-[#15161b] relative overflow-hidden flex items-end justify-center">
+<!-- Officer Silhouette with Tactical Equipment -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#0e0f12] via-transparent to-transparent z-10"></div>
+<!-- Officer Graphics Representation -->
+<div class="relative z-0 text-center pb-8 flex flex-col items-center">
+<div class="w-32 h-32 rounded-full border-4 border-brand-red bg-slate-900 p-2 shadow-2xl relative mb-4">
+<div class="w-full h-full rounded-full bg-slate-800 flex items-center justify-center text-brand-red">
+<i class="fa-solid fa-shield-halved text-5xl"></i>
+</div>
+<!-- Verified Tactical Badge Icon -->
+<div class="absolute -bottom-2 -right-1 bg-brand-red text-white p-1.5 rounded-full text-xs shadow-md">
+<i class="fa-solid fa-certificate"></i>
+</div>
+</div>
+<div class="font-heading font-black tracking-widest text-3xl uppercase text-slate-200">
+                  SECURITY
+                </div>
+<div class="text-xs font-mono tracking-widest text-brand-red font-semibold uppercase mt-1">
+                  Tactical Command Unit
+                </div>
+</div>
+<!-- High Contrast Tiger Crest Shield Floating Badge -->
+<div class="absolute top-4 right-4 z-20 bg-brand-dark/90 backdrop-blur-md border border-brand-red/40 px-3 py-2 rounded-lg flex items-center gap-2 shadow-lg">
+<i class="fa-solid fa-award text-brand-red text-base"></i>
+<span class="text-[11px] font-heading font-bold uppercase text-white tracking-wider">ISO 9001:2015</span>
+</div>
+</div>
+<!-- Unit Details Footer -->
+<div class="p-6 bg-brand-darker border-t border-brand-border flex items-center justify-between">
+<div>
+<p class="text-xs text-slate-400 font-mono">PERSONNEL BADGE NO.</p>
+<p class="font-heading font-bold text-sm text-white">#TL-BOUNCER-HQ-99</p>
+</div>
+<div class="flex items-center gap-2 bg-emerald-950/40 text-emerald-400 border border-emerald-800/40 px-3 py-1.5 rounded text-xs font-mono font-semibold">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                ACTIVE ON DUTY
+              </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: ServicesSection -->
+<section class="py-24 bg-[#f8fafc] text-slate-900 relative" id="services">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="w-8 h-[3px] bg-brand-red inline-block"></span>
+<span class="font-heading text-xs font-bold uppercase tracking-widest text-brand-red">Our Services</span>
+</div>
+<h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-950 uppercase tracking-tight">
+            Complete Security <span class="text-brand-red">Solutions</span>
+</h2>
+</div>
+<div class="max-w-md">
+<p class="text-slate-600 text-sm leading-relaxed mb-3">
+            From manned guarding to complete facility management, we provide highly disciplined and dependable protection across multiple sectors.
+          </p>
+<a class="inline-flex items-center gap-2 text-brand-red hover:text-brand-crimson font-heading font-bold text-xs uppercase tracking-wider transition-colors" href="#services">
+<span>View All Services</span>
+<i class="fa-solid fa-arrow-right text-xs"></i>
+</a>
+</div>
+</div>
+<!-- Services 8-Card Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Service Card 1: Security Guards -->
+<div class="bg-white rounded-xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand-red/40 transition-all duration-300 group flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-red-50 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+<i class="fa-solid fa-user-shield"></i>
+</div>
+<h3 class="font-heading font-bold text-base text-slate-900 group-hover:text-brand-red transition-colors">
+            Security Guards
+          </h3>
+<p class="text-xs text-slate-500 mt-2 leading-relaxed">
+            Vigilant, thoroughly vetted and physically trained personnel for gate &amp; compound security.
+          </p>
+</div>
+<!-- Service Card 2: Bouncer Services -->
+<div class="bg-white rounded-xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand-red/40 transition-all duration-300 group flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-red-50 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+<i class="fa-solid fa-person-military-pointing"></i>
+</div>
+<h3 class="font-heading font-bold text-base text-slate-900 group-hover:text-brand-red transition-colors">
+            Bouncer Services
+          </h3>
+<p class="text-xs text-slate-500 mt-2 leading-relaxed">
+            Formidable, conflict-defusing specialists for clubs, VIP escorting, concerts and private events.
+          </p>
+</div>
+<!-- Service Card 3: Corporate Services -->
+<div class="bg-white rounded-xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand-red/40 transition-all duration-300 group flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-red-50 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+<i class="fa-solid fa-users-gear"></i>
+</div>
+<h3 class="font-heading font-bold text-base text-slate-900 group-hover:text-brand-red transition-colors">
+            Corporate Services
+          </h3>
+<p class="text-xs text-slate-500 mt-2 leading-relaxed">
+            Executive front-desk security, visitor management systems, and corporate premise vigilance.
+          </p>
+</div>
+<!-- Service Card 4: Society Maintenance -->
+<div class="bg-white rounded-xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand-red/40 transition-all duration-300 group flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-red-50 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+<i class="fa-solid fa-city"></i>
+</div>
+<h3 class="font-heading font-bold text-base text-slate-900 group-hover:text-brand-red transition-colors">
+            Society Maintenance
+          </h3>
+<p class="text-xs text-slate-500 mt-2 leading-relaxed">
+            Full-spectrum residential township protection, parking management, and CCTV monitoring.
+          </p>
+</div>
+<!-- Service Card 5: Facility Management -->
+<div class="bg-white rounded-xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand-red/40 transition-all duration-300 group flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-red-50 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+<i class="fa-solid fa-gear"></i>
+</div>
+<h3 class="font-heading font-bold text-base text-slate-900 group-hover:text-brand-red transition-colors">
+            Facility Management
+          </h3>
+<p class="text-xs text-slate-500 mt-2 leading-relaxed">
+            Housekeeping, technical maintenance, pantry logistics and complete operations staffing.
+          </p>
+</div>
+<!-- Service Card 6: Hotel & Hospitality -->
+<div class="bg-white rounded-xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand-red/40 transition-all duration-300 group flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-red-50 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+<i class="fa-solid fa-hotel"></i>
+</div>
+<h3 class="font-heading font-bold text-base text-slate-900 group-hover:text-brand-red transition-colors">
+            Hotel &amp; Hospitality
+          </h3>
+<p class="text-xs text-slate-500 mt-2 leading-relaxed">
+            Courteous guest escorting, luggage surveillance, valet coordination, and luxury venue safety.
+          </p>
+</div>
+<!-- Service Card 7: Manned Guards & Dog Squad -->
+<div class="bg-white rounded-xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand-red/40 transition-all duration-300 group flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-red-50 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+<i class="fa-solid fa-shield-dog"></i>
+</div>
+<h3 class="font-heading font-bold text-base text-slate-900 group-hover:text-brand-red transition-colors">
+            Manned Guards &amp; Dog Squad
+          </h3>
+<p class="text-xs text-slate-500 mt-2 leading-relaxed">
+            Canine tracking squads paired with expert handlers for explosive detection &amp; perimeter patrol.
+          </p>
+</div>
+<!-- Service Card 8: Training -->
+<div class="bg-white rounded-xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-brand-red/40 transition-all duration-300 group flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-red-50 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+<i class="fa-solid fa-chalkboard-user"></i>
+</div>
+<h3 class="font-heading font-bold text-base text-slate-900 group-hover:text-brand-red transition-colors">
+            Training
+          </h3>
+<p class="text-xs text-slate-500 mt-2 leading-relaxed">
+            Fire safety drills, evacuation protocols, unarmed combat, emergency first responder drills.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ServicesSection -->
+<!-- BEGIN: AboutUsSection -->
+<section class="relative bg-white text-slate-900 overflow-hidden" id="about">
+<div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+<!-- Team Image Visual Column -->
+<div class="lg:col-span-6 relative min-h-[420px] lg:min-h-[580px] bg-slate-900 clip-slant overflow-hidden">
+<!-- Styled Photographic Visual (Professional Tactical Squad Formation) -->
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDqoIBOSyDJFYGXrDHhDvYD-WyyeCZb7RUGlP_YavQFKM50VMY4Mv90AwlqmGLo_y24Ll9Tr-JSdyw1qKYx6AQcoATlp48YcMkGhmITB6web9Eygb7yM4S70D2qsnHWzrbUxJvo0IALESecAC14oc5nPnVDJX6VnCQkUlT0ntz950-qG586rQIde_FxKPLP2Z8g7wZFi8LfZwodWhauWwb_0HnZOuxo33own4QuMAXMixuiC046KYxaew');">
+<div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+</div>
+<!-- In-image Tactical Badge Overlay -->
+<div class="absolute bottom-8 left-8 z-10 bg-[#0a0a0c]/90 border border-brand-red/40 backdrop-blur-md p-4 rounded-xl max-w-xs text-white">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-brand-red flex items-center justify-center font-bold">
+<i class="fa-solid fa-users"></i>
+</div>
+<div>
+<p class="font-heading font-bold text-sm">Discipline &amp; Integrity</p>
+<p class="text-xs text-slate-400">Ex-servicemen led oversight</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Description Column -->
+<div class="lg:col-span-6 p-8 sm:p-12 lg:p-20 flex flex-col justify-center bg-white">
+<div class="flex items-center gap-3 mb-3">
+<span class="w-8 h-[3px] bg-brand-red inline-block"></span>
+<span class="font-heading text-xs font-bold uppercase tracking-widest text-brand-red">About Us</span>
+</div>
+<h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-950 uppercase tracking-tight leading-tight mb-6">
+          Professional People for a <span class="text-brand-red">Safer Tomorrow</span>
+</h2>
+<p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+          The Legend Security and Bouncer is a professional security services provider, offering rigorously trained manpower, tactical bouncers, facility management, and customized security solutions for residential, commercial, and industrial clients.
+        </p>
+<p class="text-slate-600 text-sm leading-relaxed mb-8">
+          With strict compliance checks, verified background investigations, and modern tactical communication equipment, we ensure zero lapses in security across every deployment.
+        </p>
+<!-- Feature Points -->
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="flex items-center gap-3">
+<i class="fa-solid fa-circle-check text-brand-red text-base"></i>
+<span class="text-xs sm:text-sm font-semibold text-slate-800">100% Background Verified</span>
+</div>
+<div class="flex items-center gap-3">
+<i class="fa-solid fa-circle-check text-brand-red text-base"></i>
+<span class="text-xs sm:text-sm font-semibold text-slate-800">24/7 Rapid Response Team</span>
+</div>
+<div class="flex items-center gap-3">
+<i class="fa-solid fa-circle-check text-brand-red text-base"></i>
+<span class="text-xs sm:text-sm font-semibold text-slate-800">PSARA Compliant Operations</span>
+</div>
+<div class="flex items-center gap-3">
+<i class="fa-solid fa-circle-check text-brand-red text-base"></i>
+<span class="text-xs sm:text-sm font-semibold text-slate-800">Periodic Surprise Audits</span>
+</div>
+</div>
+<!-- Action Button -->
+<div>
+<a class="inline-flex items-center gap-3 bg-brand-red hover:bg-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider px-7 py-4 rounded shadow-md shadow-red-600/25 transition-all" href="#contact">
+<span>Know More About Us</span>
+<i class="fa-solid fa-arrow-right text-xs"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- END: AboutUsSection -->
+<!-- BEGIN: OurClientsSection -->
+<section class="py-20 bg-slate-50 border-t border-slate-200" id="clients">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Title & Navigation -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="w-8 h-[3px] bg-brand-red inline-block"></span>
+<span class="font-heading text-xs font-bold uppercase tracking-widest text-brand-red">Our Clients</span>
+</div>
+<h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-950 uppercase tracking-tight">
+            Trusted by Leading <span class="text-brand-red">Industries</span>
+</h2>
+</div>
+<div class="flex items-center gap-4">
+<a class="text-brand-red hover:text-brand-crimson font-heading font-bold text-xs uppercase tracking-wider flex items-center gap-2" href="#clients">
+<span>View All Clients</span>
+<i class="fa-solid fa-arrow-right text-xs"></i>
+</a>
+</div>
+</div>
+<!-- Clients Logos Grid / Showcase -->
+<div class="relative">
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+<!-- Client Card 1: V-Tech Wabag -->
+<div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm flex items-center justify-center hover:border-brand-red/50 hover:shadow-md transition-all group min-h-[90px]">
+<div class="flex items-center gap-2 text-blue-900 group-hover:scale-105 transition-transform">
+<i class="fa-solid fa-water text-xl text-blue-600"></i>
+<div class="text-left leading-tight">
+<span class="block font-heading font-black text-xs uppercase tracking-tight text-blue-950">V-TECH</span>
+<span class="block font-heading font-bold text-[10px] tracking-wider text-blue-700">WABAG</span>
+</div>
+</div>
+</div>
+<!-- Client Card 2: Kunjir Bio Energy -->
+<div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm flex items-center justify-center hover:border-brand-red/50 hover:shadow-md transition-all group min-h-[90px]">
+<div class="flex items-center gap-2 text-slate-800 group-hover:scale-105 transition-transform">
+<i class="fa-solid fa-cube text-xl text-red-600"></i>
+<div class="text-left leading-tight">
+<span class="block font-heading font-extrabold text-xs uppercase text-slate-900">KUNJIR</span>
+<span class="block font-heading font-semibold text-[9px] tracking-widest text-slate-500">BIO ENERGY</span>
+</div>
+</div>
+</div>
+<!-- Client Card 3: ILFS Korduwadi -->
+<div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm flex items-center justify-center hover:border-brand-red/50 hover:shadow-md transition-all group min-h-[90px]">
+<div class="flex items-center gap-2 text-emerald-800 group-hover:scale-105 transition-transform">
+<i class="fa-solid fa-leaf text-xl text-emerald-600"></i>
+<div class="text-left leading-tight">
+<span class="block font-heading font-black text-xs uppercase text-emerald-950">ILFS</span>
+<span class="block font-sans text-[10px] font-bold text-blue-700">Korduwadi</span>
+</div>
+</div>
+</div>
+<!-- Client Card 4: Poshmatrix Hospitality -->
+<div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm flex items-center justify-center hover:border-brand-red/50 hover:shadow-md transition-all group min-h-[90px]">
+<div class="flex items-center gap-2 group-hover:scale-105 transition-transform">
+<i class="fa-regular fa-heart text-xl text-emerald-600"></i>
+<div class="text-left leading-tight">
+<span class="block font-heading font-extrabold text-xs uppercase text-slate-900">POSHMATRIX</span>
+<span class="block font-sans text-[9px] uppercase tracking-wider text-slate-500">HOSPITALITY</span>
+</div>
+</div>
+</div>
+<!-- Client Card 5: SP Design -->
+<div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm flex items-center justify-center hover:border-brand-red/50 hover:shadow-md transition-all group min-h-[90px] col-span-2 md:col-span-1">
+<div class="flex items-center gap-2 group-hover:scale-105 transition-transform">
+<i class="fa-solid fa-compass-drafting text-xl text-blue-600"></i>
+<div class="text-left leading-tight">
+<span class="block font-heading font-extrabold text-xs uppercase text-slate-900">SP DESIGN</span>
+<span class="block font-sans text-[9px] uppercase tracking-widest text-slate-400">STUDIO</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: OurClientsSection -->
+<!-- BEGIN: LeadCtaBanner -->
+<section class="relative py-20 bg-brand-dark overflow-hidden border-t border-brand-border" id="quote">
+<!-- Slanted Red Graphic Background Accent -->
+<div class="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-brand-red/20 via-brand-red/5 to-transparent pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<!-- Left Content -->
+<div class="lg:col-span-8 space-y-6">
+<div class="flex items-center gap-3">
+<span class="w-8 h-[3px] bg-brand-red inline-block"></span>
+<span class="font-heading text-xs font-bold uppercase tracking-widest text-brand-red">Request a Quote</span>
+</div>
+<h2 class="font-heading font-black text-3xl sm:text-5xl text-white uppercase tracking-tight">
+            Need <span class="text-brand-red">Security Services?</span>
+</h2>
+<p class="text-slate-300 text-sm sm:text-base max-w-xl">
+            Get a tailored defense, guarding, and manpower package engineered specifically for your commercial, event, or residential facility.
+          </p>
+<!-- Contact Buttons & Actions -->
+<div class="pt-4 flex flex-wrap items-center gap-6">
+<a class="inline-flex items-center gap-3 bg-brand-red hover:bg-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider px-7 py-4 rounded shadow-lg shadow-red-700/30 transition-all" href="tel:+919876543210">
+<span>Request a Quote</span>
+<i class="fa-solid fa-arrow-right text-xs"></i>
+</a>
+<!-- Call Option -->
+<a class="flex items-center gap-3 group" href="tel:+919876543210">
+<div class="w-11 h-11 rounded-full bg-brand-surface border border-slate-700 group-hover:border-brand-red flex items-center justify-center text-brand-red transition-colors">
+<i class="fa-solid fa-phone"></i>
+</div>
+<div class="text-left">
+<p class="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Call Us</p>
+<p class="font-heading font-bold text-sm text-white group-hover:text-brand-red transition-colors">+91 98765 43210</p>
+</div>
+</a>
+<!-- WhatsApp Option -->
+<a class="flex items-center gap-3 group" href="https://wa.me/919876543210" rel="noopener noreferrer" target="_blank">
+<div class="w-11 h-11 rounded-full bg-emerald-950/60 border border-emerald-800/80 group-hover:border-emerald-500 flex items-center justify-center text-emerald-400 transition-colors">
+<i class="fa-brands fa-whatsapp text-lg"></i>
+</div>
+<div class="text-left">
+<p class="text-[10px] font-mono text-slate-400 uppercase tracking-wider">WhatsApp</p>
+<p class="font-heading font-bold text-sm text-white group-hover:text-emerald-400 transition-colors">Chat with Us</p>
+</div>
+</a>
+</div>
+</div>
+<!-- Right Tactical Emblem Card -->
+<div class="lg:col-span-4 flex justify-center lg:justify-end">
+<div class="relative w-64 h-64 rounded-2xl bg-gradient-to-tr from-[#121316] to-[#1c1d22] border border-brand-red/30 p-6 flex flex-col items-center justify-center text-center shadow-2xl">
+<div class="w-24 h-24 rounded-full border-2 border-brand-red/60 bg-brand-dark p-3 flex items-center justify-center mb-3">
+<i class="fa-solid fa-shield text-4xl text-brand-red"></i>
+</div>
+<span class="font-heading font-black text-sm uppercase text-white tracking-widest">Rapid Guarding</span>
+<span class="text-xs text-slate-400 mt-1">24-Hour Quick Response Deployment</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: LeadCtaBanner -->
+<!-- BEGIN: MainFooter -->
+<footer class="bg-brand-darker border-t border-brand-border/60 py-12 text-slate-400 text-sm" id="contact">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-brand-border/40">
+<!-- Brand & Motto -->
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full border border-brand-red/60 bg-brand-surface flex items-center justify-center p-2 text-brand-red">
+<i class="fa-solid fa-shield-cat text-xl"></i>
+</div>
+<div>
+<h4 class="font-heading font-black text-white text-base tracking-wide uppercase">The Legend Security and Bouncer</h4>
+<p class="text-xs text-slate-400">Your Safety. Our Responsibility.</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-wrap items-center justify-center gap-6 font-heading font-medium text-xs uppercase tracking-wider text-slate-300">
+<a class="hover:text-brand-red transition-colors" href="#home">Home</a>
+<a class="hover:text-brand-red transition-colors" href="#about">About</a>
+<a class="hover:text-brand-red transition-colors" href="#services">Services</a>
+<a class="hover:text-brand-red transition-colors" href="#clients">Clients</a>
+<a class="hover:text-brand-red transition-colors" href="#gallery">Gallery</a>
+<a class="hover:text-brand-red transition-colors" href="#contact">Contact</a>
+</div>
+<!-- Social Channels -->
+<div class="flex items-center gap-4 text-slate-300 text-base">
+<a aria-label="Facebook" class="w-9 h-9 rounded-full bg-brand-surface flex items-center justify-center hover:text-brand-red hover:border hover:border-brand-red transition-all" href="#">
+<i class="fa-brands fa-facebook-f text-xs"></i>
+</a>
+<a aria-label="Instagram" class="w-9 h-9 rounded-full bg-brand-surface flex items-center justify-center hover:text-brand-red hover:border hover:border-brand-red transition-all" href="#">
+<i class="fa-brands fa-instagram text-xs"></i>
+</a>
+<a aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-brand-surface flex items-center justify-center hover:text-brand-red hover:border hover:border-brand-red transition-all" href="#">
+<i class="fa-brands fa-whatsapp text-xs"></i>
+</a>
+</div>
+</div>
+<!-- Copyright Notice -->
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+<p>© 2025 The Legend Security and Bouncer. All Rights Reserved.</p>
+<div class="flex items-center gap-6">
+<a class="hover:underline" href="#">Privacy Policy</a>
+<a class="hover:underline" href="#">Terms of Service</a>
+<a class="hover:underline" href="#">PSARA Compliance</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+</body></html>

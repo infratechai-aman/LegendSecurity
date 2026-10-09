@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary":"#ffb4ab","tertiary-fixed":"#c4e7ff","on-primary-fixed":"#410001","surface-container-low":"#1a1b21","on-surface":"#e3e1e9","on-tertiary":"#00354a","primary":"#ffb4aa","primary-fixed-dim":"#ffb4aa","on-primary":"#690003","surface-tint":"#ffb4aa","on-tertiary-fixed-variant":"#004c69","on-secondary":"#690005","background":"#121318","on-tertiary-fixed":"#001e2c","on-primary-container":"#fff7f6","surface":"#121318","primary-container":"#e50914","error-container":"#93000a","outline-variant":"#5e3f3b","primary-fixed":"#ffdad5","surface-dim":"#121318","on-tertiary-container":"#f4faff","on-secondary-container":"#ffc8c1","tertiary":"#7bd0ff","outline":"#af8782","surface-container":"#1e1f25","surface-container-highest":"#34343a","inverse-primary":"#c0000c","inverse-surface":"#e3e1e9","on-background":"#e3e1e9","surface-container-high":"#292a2f","secondary-fixed":"#ffdad6","tertiary-container":"#007ba6","surface-bright":"#38393f","inverse-on-surface":"#2f3036","on-secondary-fixed-variant":"#93000b","secondary-fixed-dim":"#ffb4ab","on-surface-variant":"#e9bcb6","surface-container-lowest":"#0d0e13","tertiary-fixed-dim":"#7bd0ff","surface-variant":"#34343a","secondary-container":"#bb0112","error":"#ffb4ab","on-primary-fixed-variant":"#930007","on-error-container":"#ffdad6","on-error":"#690005","on-secondary-fixed":"#410002"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-mobile":"1rem","space-lg":"1.5rem","margin":"3rem","space-xl":"2.5rem","margin-mobile":"1rem","space-sm":"0.5rem","gutter":"1.5rem","space-md":"1rem","margin-tablet":"2rem","space-xs":"0.25rem"},"fontFamily":{"body-lg":["Inter"],"display-hero-mobile":["Oswald"],"headline-sm":["Oswald"],"body-sm":["Inter"],"label-tactical":["Space Grotesk"],"headline-lg-mobile":["Oswald"],"display-hero":["Oswald"],"label-md":["Space Grotesk"],"headline-md":["Oswald"],"headline-lg":["Oswald"],"body-md":["Inter"],"label-lg":["Space Grotesk"]},"fontSize":{"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"0.03em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"0.01em","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"20px","fontWeight":"400"}],"label-tactical":["11px",{"lineHeight":"14px","letterSpacing":"0.12em","fontWeight":"700"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"0.02em","fontWeight":"600"}],"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"0.04em","fontWeight":"700"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"500"}],"headline-md":["26px",{"lineHeight":"34px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-lg":["38px",{"lineHeight":"48px","letterSpacing":"0.03em","fontWeight":"600"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.08em","fontWeight":"600"}]}}}};</script></head><body class="bg-background text-on-surface font-body-md text-body-md min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-md"><div class="h-20 w-full px-margin-mobile md:px-margin-tablet lg:px-margin flex items-center justify-between"><a class="flex items-center gap-space-sm group" data-path="home" href="#"><div class="w-11 h-11 rounded-lg bg-surface-container-high flex items-center justify-center"><span class="material-symbols-outlined text-primary-container text-[26px]">shield</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-wide text-on-surface uppercase leading-none group-hover:text-primary transition-colors">THE LEGEND</span><span class="font-label-tactical text-label-tactical tracking-widest text-on-surface-variant uppercase mt-1 leading-none">SECURITY &amp; BOUNCER</span></div></a><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary-container font-semibold"><a class="font-label-lg text-label-lg tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#">Home</a><a class="font-label-lg text-label-lg tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#">About</a><a class="font-label-lg text-label-lg tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#">Services</a><a aria-current="page" class="tracking-wider transition-colors text-primary-container font-semibold" data-path="our-clients" href="#">Our Clients</a><a class="font-label-lg text-label-lg tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="gallery" href="#">Gallery</a><a class="font-label-lg text-label-lg tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-space-md"><a class="inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg uppercase tracking-wider shadow-lg hover:bg-secondary-container transition-all" data-path="contact" href="#"><span>REQUEST A QUOTE</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></div></div></header><main class="w-full pt-20 bg-background flex-1"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO -->
+<section class="relative w-full bg-surface-container-lowest text-on-surface px-margin-mobile md:px-margin-tablet lg:px-margin py-space-xl overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-surface-container-low to-background opacity-90 pointer-events-none"></div>
+<div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center">
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high border-none mb-space-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-tactical text-label-tactical uppercase text-on-surface-variant tracking-widest">CLIENT ROSTER | WESTERN INDIA</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg md:text-[52px] md:leading-[58px] uppercase tracking-wide text-on-surface font-headline-lg max-w-4xl mb-space-md">
+        TRUSTED ACROSS <span class="text-primary-container">INDUSTRIES</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-space-lg leading-relaxed">
+        Safeguarding manufacturing plants, IT parks, luxury hotels, and major public events across Western India with dedicated PSARA-compliant manpower.
+      </p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md w-full max-w-3xl pt-space-xs">
+<div class="flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">50+</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant mt-1">Enterprise Clients</span>
+</div>
+<div class="flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<span class="font-headline-md text-headline-md text-primary font-semibold tracking-tight">100+</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant mt-1">Mega Events Secured</span>
+</div>
+<div class="flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">99.8%</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant mt-1">Client Retention</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: INDUSTRY FILTER BAR -->
+<section class="w-full bg-surface-bright text-inverse-surface px-margin-mobile md:px-margin-tablet lg:px-margin py-space-md shadow-sm">
+<div class="max-w-6xl mx-auto flex items-center justify-between gap-space-md flex-wrap">
+<div class="flex items-center gap-space-xs text-inverse-on-surface">
+<span class="material-symbols-outlined text-primary-container">tune</span>
+<span class="font-label-tactical text-label-tactical uppercase tracking-wider font-semibold text-inverse-surface">FILTER SECTOR:</span>
+</div>
+<div class="flex items-center gap-space-xs overflow-x-auto py-1 scrollbar-none" id="filter-container">
+<button class="filter-btn px-space-md py-space-xs rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md uppercase tracking-wider shadow-sm transition-all" data-filter="all">All Sectors</button>
+<button class="filter-btn px-space-md py-space-xs rounded-full bg-inverse-on-surface/10 text-inverse-surface font-label-md text-label-md uppercase tracking-wider hover:bg-inverse-on-surface/20 transition-all" data-filter="industrial">Industrial</button>
+<button class="filter-btn px-space-md py-space-xs rounded-full bg-inverse-on-surface/10 text-inverse-surface font-label-md text-label-md uppercase tracking-wider hover:bg-inverse-on-surface/20 transition-all" data-filter="automobile">Automobile</button>
+<button class="filter-btn px-space-md py-space-xs rounded-full bg-inverse-on-surface/10 text-inverse-surface font-label-md text-label-md uppercase tracking-wider hover:bg-inverse-on-surface/20 transition-all" data-filter="corporate">Corporate &amp; IT</button>
+<button class="filter-btn px-space-md py-space-xs rounded-full bg-inverse-on-surface/10 text-inverse-surface font-label-md text-label-md uppercase tracking-wider hover:bg-inverse-on-surface/20 transition-all" data-filter="hospitality">Hospitality</button>
+<button class="filter-btn px-space-md py-space-xs rounded-full bg-inverse-on-surface/10 text-inverse-surface font-label-md text-label-md uppercase tracking-wider hover:bg-inverse-on-surface/20 transition-all" data-filter="residential">Residential &amp; Events</button>
+</div>
+</div>
+</section>
+<!-- SECTION 3: CLIENT DIRECTORY GRID -->
+<section class="w-full bg-inverse-surface text-inverse-on-surface px-margin-mobile md:px-margin-tablet lg:px-margin py-space-xl">
+<div class="max-w-6xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg">
+<div>
+<span class="font-label-tactical text-label-tactical uppercase text-primary-container tracking-widest font-semibold">VERIFIED CONTRACTS</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-surface-container-lowest mt-1">OPERATIONAL CLIENT DIRECTORY</h2>
+</div>
+<p class="font-body-sm text-body-sm text-surface-container-highest max-w-sm mt-2 md:mt-0">
+          Showing active on-site static guarding, patrol units, and quick-response contracts across Maharashtra.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md" id="client-grid">
+<!-- Client 1 -->
+<div class="client-card flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest text-on-surface shadow-md hover:-translate-y-1 transition-transform duration-200" data-category="industrial">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container font-headline-md font-bold">
+                VW
+              </div>
+<span class="font-label-tactical text-label-tactical px-space-xs py-0.5 rounded bg-surface-container-high text-primary tracking-widest uppercase">INFRA</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">V-Tech Wabag</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Water Infrastructure Plant</p>
+</div>
+<div class="pt-space-md bg-surface-container-low/40 rounded-lg p-space-sm mt-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary-container">location_on</span>
+<span>Shirur / Pune Facility</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified_user</span>
+<span>24/7 Static Perimeter Guarding</span>
+</div>
+</div>
+</div>
+<!-- Client 2 -->
+<div class="client-card flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest text-on-surface shadow-md hover:-translate-y-1 transition-transform duration-200" data-category="industrial">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container font-headline-md font-bold">
+                KB
+              </div>
+<span class="font-label-tactical text-label-tactical px-space-xs py-0.5 rounded bg-surface-container-high text-primary tracking-widest uppercase">ENERGY</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Kunjir Bio Energy</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Biofuels &amp; Renewable Hub</p>
+</div>
+<div class="pt-space-md bg-surface-container-low/40 rounded-lg p-space-sm mt-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary-container">location_on</span>
+<span>Pune Operational Unit</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified_user</span>
+<span>Access Control &amp; Weighbridge</span>
+</div>
+</div>
+</div>
+<!-- Client 3 -->
+<div class="client-card flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest text-on-surface shadow-md hover:-translate-y-1 transition-transform duration-200" data-category="industrial automobile">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container font-headline-md font-bold">
+                AE
+              </div>
+<span class="font-label-tactical text-label-tactical px-space-xs py-0.5 rounded bg-surface-container-high text-primary tracking-widest uppercase">MFG</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Accord Engineering</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Automotive Component Mfg</p>
+</div>
+<div class="pt-space-md bg-surface-container-low/40 rounded-lg p-space-sm mt-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary-container">location_on</span>
+<span>Chakan MIDC Phase II</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified_user</span>
+<span>Industrial Patrol &amp; Asset Protection</span>
+</div>
+</div>
+</div>
+<!-- Client 4 -->
+<div class="client-card flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest text-on-surface shadow-md hover:-translate-y-1 transition-transform duration-200" data-category="automobile">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container font-headline-md font-bold">
+                RP
+              </div>
+<span class="font-label-tactical text-label-tactical px-space-xs py-0.5 rounded bg-surface-container-high text-primary tracking-widest uppercase">AUTO</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Renault PPS Motors</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Automobile Flagship Dealership</p>
+</div>
+<div class="pt-space-md bg-surface-container-low/40 rounded-lg p-space-sm mt-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary-container">location_on</span>
+<span>Pune Metro Showroom</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified_user</span>
+<span>Concierge &amp; Inventory Surveillance</span>
+</div>
+</div>
+</div>
+<!-- Client 5 -->
+<div class="client-card flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest text-on-surface shadow-md hover:-translate-y-1 transition-transform duration-200" data-category="automobile">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container font-headline-md font-bold">
+                FP
+              </div>
+<span class="font-label-tactical text-label-tactical px-space-xs py-0.5 rounded bg-surface-container-high text-primary tracking-widest uppercase">AUTO</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Ford PPS Motors</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Automotive Mega Workshop</p>
+</div>
+<div class="pt-space-md bg-surface-container-low/40 rounded-lg p-space-sm mt-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary-container">location_on</span>
+<span>Mumbai-Pune Corridor</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified_user</span>
+<span>Night Shift Guarding &amp; Logistics Control</span>
+</div>
+</div>
+</div>
+<!-- Client 6 -->
+<div class="client-card flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest text-on-surface shadow-md hover:-translate-y-1 transition-transform duration-200" data-category="corporate">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container font-headline-md font-bold">
+                SP
+              </div>
+<span class="font-label-tactical text-label-tactical px-space-xs py-0.5 rounded bg-surface-container-high text-primary tracking-widest uppercase">CORP</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">SP Design Studio</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Architecture &amp; Design Hub</p>
+</div>
+<div class="pt-space-md bg-surface-container-low/40 rounded-lg p-space-sm mt-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary-container">location_on</span>
+<span>South Mumbai Corporate Park</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified_user</span>
+<span>Reception Concierge &amp; Badge Screen</span>
+</div>
+</div>
+</div>
+<!-- Client 7 -->
+<div class="client-card flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest text-on-surface shadow-md hover:-translate-y-1 transition-transform duration-200" data-category="residential">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container font-headline-md font-bold">
+                HR
+              </div>
+<span class="font-label-tactical text-label-tactical px-space-xs py-0.5 rounded bg-surface-container-high text-primary tracking-widest uppercase">GATED</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Horizon Residency</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Premium Gated Township</p>
+</div>
+<div class="pt-space-md bg-surface-container-low/40 rounded-lg p-space-sm mt-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary-container">location_on</span>
+<span>Pune East District</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified_user</span>
+<span>Boom Barrier &amp; Resident VMS Unit</span>
+</div>
+</div>
+</div>
+<!-- Client 8 -->
+<div class="client-card flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest text-on-surface shadow-md hover:-translate-y-1 transition-transform duration-200" data-category="hospitality">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container font-headline-md font-bold">
+                RM
+              </div>
+<span class="font-label-tactical text-label-tactical px-space-xs py-0.5 rounded bg-surface-container-high text-primary tracking-widest uppercase">LUXE</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Royal Mirage Club</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Hospitality &amp; Elite Nightlife</p>
+</div>
+<div class="pt-space-md bg-surface-container-low/40 rounded-lg p-space-sm mt-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary-container">location_on</span>
+<span>Bandra West / Mumbai</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified_user</span>
+<span>VIP Executive Bouncers &amp; Crowd Flow</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: SELECTED INDUSTRIES IN FOCUS -->
+<section class="w-full bg-surface-container-low text-on-surface px-margin-mobile md:px-margin-tablet lg:px-margin py-space-xl">
+<div class="max-w-6xl mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<span class="font-label-tactical text-label-tactical uppercase text-primary-container tracking-widest font-semibold">TACTICAL DEPLOYMENT SPECTRUM</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface mt-1">SELECTED INDUSTRIES IN FOCUS</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+          Engineered protocols adapted to complex facility layouts, high-value asset corridors, and executive environments.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Focus Card 1 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container shadow-xl flex flex-col">
+<div class="relative h-64 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional security officer in a sharp black tactical uniform standing guard at a modern industrial heavy manufacturing plant gatehouse at dusk, atmospheric low-angle shot, cinematic lighting with crimson emergency accents, sharp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHKpRxuoGNPu10_vb1FuxlZga4qXMLwqH3oa0_1g__1CQMP_eXZX3bBVHKnURzIzyTjemqV9r81m0Qgw2z6XPq8bHwtCpiDI13qNECEs2TalX07sgDOd9xfOQ8PDa0Xx506L-EYo8qRiwgqiTE1W9ufEUISpmuPB7ItRrRkF71UYZCtIR3XdasQBh7FCIuJV15pRS6Zyn3joRGi6jBBPDxnnkx5FbP520XhLzeCkJz7eqhqgcVbI5N7g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<div class="absolute top-space-sm left-space-sm">
+<span class="px-space-sm py-space-xs rounded bg-surface-container-lowest/90 font-label-tactical text-label-tactical text-on-surface uppercase tracking-wider backdrop-blur-sm">MIDC &amp; INDUSTRIAL</span>
+</div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface mb-space-xs">Manufacturing &amp; Heavy Industrial</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+                Complete gatehouse access control, material inward-outward verification, weighbridge tallying, and raw material theft deterrence.
+              </p>
+</div>
+<ul class="flex flex-col gap-space-xs text-on-surface font-body-sm text-body-sm pt-space-sm border-t border-surface-container-high/60">
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[18px]">check_circle</span>
+<span>Weighbridge &amp; Logbook Digitization</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[18px]">check_circle</span>
+<span>Factory Shift Change Frisking</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Focus Card 2 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container shadow-xl flex flex-col">
+<div class="relative h-64 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Elite security personnel standing at an ultra-modern luxury automobile showroom floor next to premium executive vehicles, pristine showroom floor reflections, warm ambient spotlighting with sleek obsidian architectural lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1bPTNjJytSW3kfolZnaItTTAo-JkzozPb70y_josPHL9fJT-a4Fb1ixUfsRgyrLd_0VR90xJ7SRKnjEWPM7K1l8lpCEChGJEEo7-mDjZvEwBhod_EduO41IuBCj39sVxH1GlBrBVceNMNb5A0QnjqU1XGjT3bCtzcmJCqcTSXCOjnuMOKmkYdbV8rgO8k7hNKEJdh5VCnJ6SrBNxJVtbw82Nm0yd6wuVaSmOeG5WWGAwyakoOSMCE4A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<div class="absolute top-space-sm left-space-sm">
+<span class="px-space-sm py-space-xs rounded bg-surface-container-lowest/90 font-label-tactical text-label-tactical text-on-surface uppercase tracking-wider backdrop-blur-sm">AUTOMOTIVE HUBS</span>
+</div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface mb-space-xs">Automobile Dealerships &amp; Showrooms</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+                Polished concierge officers combined with rigorous overnight perimeter security protecting high-ticket vehicle inventory and parts.
+              </p>
+</div>
+<ul class="flex flex-col gap-space-xs text-on-surface font-body-sm text-body-sm pt-space-sm border-t border-surface-container-high/60">
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[18px]">check_circle</span>
+<span>Customer Concierge &amp; Valet Watch</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[18px]">check_circle</span>
+<span>Yard &amp; Spare Inventory Tagging</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Focus Card 3 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container shadow-xl flex flex-col">
+<div class="relative h-64 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Corporate security desk inside a high-tech glass commercial tower lobby in Pune with turnstile entry gates, smart badge readers, polished granite floors, sleek dark architectural styling, professional security front desk team." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT7Nswrk5knZ_O-82q0cz776nHOy2pHULa6g1SG11Q3Pp-cwXnjAcf9iBcNOfv4akYr3WErkDyWEZfk6JE0pyjKNrj-Aqzvy5sBJiu7XUVdIBXGUTuduYoFsY5Jo8icAJB4CL9RoXLEzEyYlVzJZjBnBmOKa8pc8flVKOvVY505Y3anrOuq3VIGqSdMu06zTRQ8cetme9AeLl5GwU_q7tXBz6FpQ0_qfifNNG6uYzS6AD-INOT1v8wQw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<div class="absolute top-space-sm left-space-sm">
+<span class="px-space-sm py-space-xs rounded bg-surface-container-lowest/90 font-label-tactical text-label-tactical text-on-surface uppercase tracking-wider backdrop-blur-sm">IT &amp; ENTERPRISE</span>
+</div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface mb-space-xs">Corporate Tech Parks &amp; IT Hubs</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+                Streamlined turnstile integration, executive floor escorts, NDA compliance support, and emergency building evacuation drills.
+              </p>
+</div>
+<ul class="flex flex-col gap-space-xs text-on-surface font-body-sm text-body-sm pt-space-sm border-t border-surface-container-high/60">
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[18px]">check_circle</span>
+<span>Turnstile Access &amp; Visitor Badging</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[18px]">check_circle</span>
+<span>CCTV Command Room Supervision</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: OPERATIONAL RELIABILITY GUARANTEE -->
+<section class="w-full bg-surface text-on-surface px-margin-mobile md:px-margin-tablet lg:px-margin py-space-xl">
+<div class="max-w-6xl mx-auto">
+<div class="flex flex-col md:flex-row items-center justify-between mb-space-lg">
+<div>
+<span class="font-label-tactical text-label-tactical uppercase text-primary tracking-widest font-semibold">PEACE OF MIND GUARANTEE</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface mt-1">OPERATIONAL RELIABILITY METRICS</h2>
+</div>
+<div class="mt-4 md:mt-0 flex items-center gap-space-xs text-tertiary font-label-md text-label-md uppercase tracking-wider">
+<span class="material-symbols-outlined">verified</span>
+<span>100% REGULATORY AUDIT SCORE</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-lg relative overflow-hidden group">
+<div class="w-12 h-12 rounded-lg bg-primary-container/20 text-primary-container flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[28px]">speed</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">2-Hour Replacement Guarantee</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Unplanned absenteeism never breaches your gate. In the rare event of operative illness or leave, an equally trained replacement arrives within 120 minutes.
+          </p>
+<div class="mt-space-md pt-space-sm flex items-center gap-space-xs text-primary font-label-tactical text-label-tactical uppercase">
+<span>SLA BACKED COMMITMENT</span>
+</div>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-lg relative overflow-hidden group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high text-tertiary flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[28px]">gavel</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">100% PSARA &amp; Statutory Compliance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Zero legal liability for your management. Full compliance with PSARA licenses, PF, ESIC, minimum wage standards, and verified criminal background screening.
+          </p>
+<div class="mt-space-md pt-space-sm flex items-center gap-space-xs text-tertiary font-label-tactical text-label-tactical uppercase">
+<span>MONTHLY AUDIT CERTIFIED</span>
+</div>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-lg relative overflow-hidden group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[28px]">supervisor_account</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Dedicated Field Supervisor</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Assigned senior area officers conduct unannounced night audits, bi-weekly client satisfaction reviews, and maintain on-demand direct client reporting.
+          </p>
+<div class="mt-space-md pt-space-sm flex items-center gap-space-xs text-on-surface font-label-tactical text-label-tactical uppercase">
+<span>24/7 PATROL SUPERVISION</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: PRE-FOOTER CTA BANNER -->
+<section class="w-full bg-gradient-to-r from-secondary-container via-primary-container to-secondary-container text-on-primary-container px-margin-mobile md:px-margin-tablet lg:px-margin py-space-xl">
+<div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-space-lg text-center md:text-left">
+<div class="max-w-xl">
+<span class="font-label-tactical text-label-tactical tracking-widest text-on-primary-fixed uppercase font-semibold">IMMEDIATE DEPLOYMENT DISPATCH</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-primary-container mt-1 font-bold">
+          LOOKING FOR A RELIABLE SECURITY PARTNER?
+        </h2>
+<p class="font-body-md text-body-md text-on-primary-container/90 mt-space-xs">
+          Elevate your corporate security posture with Western India's most disciplined protection force.
+        </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-md">
+<a class="inline-flex items-center justify-center gap-space-xs px-space-xl py-space-md rounded-full bg-surface-container-lowest text-on-surface font-headline-sm text-headline-sm uppercase tracking-wider hover:bg-surface-container transition-all shadow-xl" data-path="contact" href="#">
+<span>REQUEST DEPLOYMENT</span>
+<span class="material-symbols-outlined text-[20px] text-primary-container">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-space-xs font-label-lg text-label-lg uppercase tracking-wider text-on-primary-container hover:underline" href="tel:+919876543210">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<span>+91 98765 43210</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Simple sector category filtering
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const clientCards = document.querySelectorAll('.client-card');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Toggle button styles
+      filterButtons.forEach(btn => {
+        btn.classList.remove('bg-primary-container', 'text-on-primary-container');
+        btn.classList.add('bg-inverse-on-surface/10', 'text-inverse-surface');
+      });
+      button.classList.remove('bg-inverse-on-surface/10', 'text-inverse-surface');
+      button.classList.add('bg-primary-container', 'text-on-primary-container');
+
+      const filter = button.getAttribute('data-filter');
+
+      clientCards.forEach(card => {
+        const categories = card.getAttribute('data-category');
+        if (filter === 'all' || categories.includes(filter)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script></main><footer class="w-full bg-surface-container-lowest"><div class="w-full px-margin-mobile md:px-margin-tablet lg:px-margin py-space-xl"><div class="flex flex-col lg:flex-row lg:items-start justify-between gap-space-xl pb-space-lg"><div class="max-w-md"><div class="flex items-center gap-space-sm mb-space-sm"><div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center"><span class="material-symbols-outlined text-primary-container text-[24px]">shield</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-wide text-on-surface uppercase leading-none">THE LEGEND</span><span class="font-label-tactical text-label-tactical tracking-widest text-on-surface-variant uppercase mt-1 leading-none">SECURITY &amp; BOUNCER</span></div></div><p class="font-body-md text-body-md text-on-surface-variant">The Legend Security and Bouncer - Your Safety, Our Responsibility.</p></div><div class="flex flex-col sm:flex-row gap-space-xl lg:gap-space-xl"><div class="flex flex-col gap-space-xs"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold mb-space-xs">Quick Navigation</span><nav class="flex flex-col gap-space-xs" data-active-classes="text-primary-container font-semibold"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#">Home</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#">About</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#">Services</a><a aria-current="page" class="transition-colors text-primary-container font-semibold" data-path="our-clients" href="#">Clients</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="gallery" href="#">Gallery</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#">Contact</a></nav></div><div class="flex flex-col gap-space-xs"><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold mb-space-xs">Connect</span><div class="flex items-center gap-space-sm"><a aria-label="Public Channel" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">public</span></a><a aria-label="Corporate Headquarters" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">domain</span></a><a aria-label="Share" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">share</span></a></div></div></div></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-sm"><p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 The Legend Security &amp; Bouncer. All rights reserved.</p><div class="flex items-center gap-space-md"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></div></div></div></footer></body></html>
