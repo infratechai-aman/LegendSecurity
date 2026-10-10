@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useScrollAnimation, useStaggerAnimation } from '../hooks/useScrollAnimation';
+import { PsaraShieldIcon, PoliceVerifiedIcon } from '../components/TrustIcons';
 
 export default function AboutPage() {
   const leadership = [
@@ -57,9 +58,9 @@ export default function AboutPage() {
   const [ctaRef, ctaVisible] = useScrollAnimation({ threshold: 0.2 });
 
   const psaraPoints = [
-    { icon: 'fa-stamp', title: 'PSARA 2005 State License', sub: 'Serial No.: PSA/L/50/MH/2026/JULI/6495', desc: 'Granted by the Controlling Authority of the Government of Maharashtra to engage in Private Security across the entire State.' },
+    { customIcon: <PsaraShieldIcon className="w-6 h-6" />, title: 'PSARA 2005 State License', sub: 'Serial No.: PSA/L/50/MH/2026/JULI/6495', desc: 'Granted by the Controlling Authority of the Government of Maharashtra to engage in Private Security across the entire State.' },
     { icon: 'fa-file-shield', title: 'Shop & Establishment Registration', sub: 'Receipt No.: 2731000318422972', desc: 'Registered under the Maharashtra Shops and Commercial Establishments Act for full business transparency and labor compliance.' },
-    { icon: 'fa-scale-balanced', title: '100% Labor Law Compliance', sub: 'Zero Liability for Clients', desc: 'Complete PF, ESIC, Minimum Wages compliance and verified criminal background screening for every deployed personnel.' },
+    { customIcon: <PoliceVerifiedIcon className="w-6 h-6" />, title: '100% Labor Law Compliance', sub: 'Zero Liability for Clients', desc: 'Complete PF, ESIC, Minimum Wages compliance and verified criminal background screening for every deployed personnel.' },
   ];
 
   return (
@@ -202,7 +203,7 @@ export default function AboutPage() {
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-11 h-11 rounded-xl bg-brand-red/15 text-brand-red flex items-center justify-center text-lg shrink-0">
-                      <i className={`fa-solid ${pt.icon}`} />
+                      {pt.customIcon ? pt.customIcon : <i className={`fa-solid ${pt.icon}`} />}
                     </div>
                     <div>
                       <h3 className="font-heading font-black text-base uppercase text-white">{pt.title}</h3>

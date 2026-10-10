@@ -38,8 +38,8 @@ export default function Footer() {
           {/* Brand Column */}
           <div className={`lg:col-span-4 space-y-5 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-12 h-12 rounded-xl overflow-hidden border-2 border-brand-red bg-black p-0.5 shrink-0 shadow-[0_0_15px_rgba(229,9,20,0.3)] group-hover:shadow-[0_0_25px_rgba(229,9,20,0.5)] transition-all duration-300">
-                <img src="/assets/real_logo.jpg" alt="Logo" className="w-full h-full object-cover rounded-lg" />
+              <div className="w-12 h-12 flex items-center justify-center shrink-0 filter drop-shadow-[0_0_12px_rgba(229,9,20,0.45)] group-hover:drop-shadow-[0_0_20px_rgba(229,9,20,0.75)] group-hover:scale-105 transition-all duration-300">
+                <img src="/assets/shield_logo.png" alt="Logo" className="w-full h-full object-contain" onError={(e) => { e.target.src = '/assets/real_logo.jpg'; }} />
               </div>
               <div>
                 <h4 className="font-heading font-black text-white text-base tracking-wider uppercase leading-tight group-hover:text-brand-red transition-colors">

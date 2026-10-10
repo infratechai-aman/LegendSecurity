@@ -44,19 +44,15 @@ export default function Header() {
         <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-brand-red to-transparent opacity-80" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[76px] sm:h-[82px] flex items-center justify-between">
-          {/* Brand Logo — Bigger & Prominent */}
+          {/* Brand Logo — Custom Shield Badge Outline */}
           <Link to="/" className="flex items-center gap-3 sm:gap-3.5 group shrink-0 mr-4 lg:mr-8 xl:mr-10">
-            <div className="relative">
-              {/* Animated ring */}
-              <div className="absolute inset-0 rounded-2xl border border-brand-red/40 scale-110 group-hover:scale-125 transition-transform duration-500 opacity-0 group-hover:opacity-100" />
-              <div className="relative w-12 h-12 sm:w-14 sm:h-14 lg:w-[58px] lg:h-[58px] rounded-xl sm:rounded-2xl overflow-hidden border-2 border-brand-red bg-black flex items-center justify-center p-0.5 shadow-[0_0_22px_rgba(229,9,20,0.45)] transition-all duration-300 group-hover:shadow-[0_0_35px_rgba(229,9,20,0.65)]">
-                <img
-                  src="/assets/real_logo.jpg"
-                  alt="The Legend Security and Bouncer Logo"
-                  className="w-full h-full object-contain p-0.5 group-hover:scale-105 transition-transform duration-300"
-                  onError={(e) => { e.target.style.display = 'none'; }}
-                />
-              </div>
+            <div className="relative w-12 h-12 sm:w-14 sm:h-14 lg:w-[58px] lg:h-[58px] flex items-center justify-center filter drop-shadow-[0_0_12px_rgba(229,9,20,0.55)] group-hover:drop-shadow-[0_0_24px_rgba(229,9,20,0.85)] transition-all duration-300 group-hover:scale-105 shrink-0">
+              <img
+                src="/assets/shield_logo.png"
+                alt="The Legend Security and Bouncer Logo"
+                className="w-full h-full object-contain"
+                onError={(e) => { e.target.src = '/assets/real_logo.jpg'; }}
+              />
             </div>
             <div className="flex flex-col leading-none">
               <span className="font-heading font-black text-sm sm:text-base lg:text-lg tracking-wider uppercase text-white group-hover:text-brand-red transition-colors duration-300">
@@ -176,8 +172,8 @@ export default function Header() {
             {/* Panel Header */}
             <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-slate-800/60">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl overflow-hidden border border-brand-red p-0.5 bg-black">
-                  <img src="/assets/real_logo.jpg" alt="Logo" className="w-full h-full object-cover rounded-lg" />
+                <div className="w-10 h-10 flex items-center justify-center filter drop-shadow-[0_0_10px_rgba(229,9,20,0.5)] shrink-0">
+                  <img src="/assets/shield_logo.png" alt="Logo" className="w-full h-full object-contain" onError={(e) => { e.target.src = '/assets/real_logo.jpg'; }} />
                 </div>
                 <div>
                   <p className="font-heading font-black text-xs uppercase text-white tracking-wide">The Legend Security</p>

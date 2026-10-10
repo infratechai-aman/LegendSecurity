@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useScrollAnimation, useStaggerAnimation } from '../hooks/useScrollAnimation';
+import HeroTrustStrip, { PsaraShieldIcon, PoliceVerifiedIcon, Supervision247Icon, LocationPinIcon } from '../components/TrustIcons';
 
 /* ───────────────────────────────────────────────────────
    Animated Counter Component
@@ -114,6 +115,31 @@ export default function HomePage() {
         className="relative min-h-screen flex items-center pt-[78px] sm:pt-[84px] overflow-hidden bg-[#0a0a0c] tactical-grid"
         id="home"
       >
+        {/* ─── Mobile Hero Background (Portrait, slightly blurred as requested) ─── */}
+        <div className="lg:hidden absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <img
+            src="/assets/hero_bg_mobile.jpg"
+            alt=""
+            className="w-full h-full object-cover object-top filter blur-[5px] brightness-[0.38] contrast-[1.08] scale-105"
+          />
+          {/* Dark gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0c]/85 via-[#0a0a0c]/65 to-[#0a0a0c]" />
+          <div className="absolute inset-0 bg-[#0a0a0c]/30" />
+        </div>
+
+        {/* ─── Desktop Hero Background (16:9 Landscape Executive Security Guard) ─── */}
+        <div className="hidden lg:block absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <img
+            src="/assets/hero_bg_desktop.jpg"
+            alt=""
+            className="w-full h-full object-cover object-right-top filter brightness-[0.45] contrast-[1.1]"
+          />
+          {/* Horizontal gradient: deep black on text left, revealing guard on right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0c] via-[#0a0a0c]/70 to-transparent" />
+          {/* Vertical smooth blends */}
+          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0a0a0c] to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0a0a0c]/90 to-transparent" />
+        </div>
         {/* Animated ambient blobs */}
         <div className="absolute -top-40 left-1/3 w-[500px] h-[500px] bg-brand-red/8 rounded-full blur-[120px] pointer-events-none animate-hero-float z-[2]" />
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-red-900/10 rounded-full blur-[100px] pointer-events-none z-[2]" style={{ animation: 'heroFloat 8s ease-in-out 2s infinite' }} />
@@ -173,30 +199,12 @@ export default function HomePage() {
             <span className="text-slate-200 font-medium">Pune, Mumbai, and All Over Maharashtra</span>.
           </p>
 
-          {/* Trust & Credibility Strip — Minimalist, Unboxed & Sleek */}
+          {/* Trust & Credibility Strip — Matches reference image 3 */}
           <div
-            className={`flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-2 text-xs sm:text-[13px] text-slate-300 font-medium py-1 transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`w-full flex justify-center transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
             style={{ transitionDelay: '500ms' }}
           >
-            <div className="inline-flex items-center gap-2 text-slate-200">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
-              <span className="tracking-wide">PSARA Licensed</span>
-            </div>
-            <span className="text-slate-700 select-none">•</span>
-            <div className="inline-flex items-center gap-2 text-slate-200">
-              <i className="fa-solid fa-shield-halved text-emerald-400 text-xs" />
-              <span className="tracking-wide">Police Verified</span>
-            </div>
-            <span className="text-slate-700 select-none">•</span>
-            <div className="inline-flex items-center gap-2 text-slate-200">
-              <i className="fa-solid fa-clock text-brand-red text-xs" />
-              <span className="tracking-wide">24/7 Field Supervision</span>
-            </div>
-            <span className="text-slate-700 hidden sm:inline select-none">•</span>
-            <div className="inline-flex items-center gap-2 text-slate-200">
-              <i className="fa-solid fa-location-dot text-brand-red text-xs" />
-              <span className="tracking-wide">Pune • Mumbai • All MH</span>
-            </div>
+            <HeroTrustStrip />
           </div>
 
           {/* CTA Buttons */}
@@ -398,19 +406,17 @@ export default function HomePage() {
                 8-hour and 12-hour shift schedules.
               </p>
 
-              {/* Checklist */}
+              {/* Checklist with Trust Icons */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 {[
-                  'Govt. PSARA Licensed Agency',
-                  '100% Background Verified Guards',
-                  '24/7 Field Supervisory Audits',
-                  '3 Regional Branches in MH',
+                  { text: 'Govt. PSARA Licensed Agency', icon: <PsaraShieldIcon className="w-5 h-5" /> },
+                  { text: '100% Background Verified Guards', icon: <PoliceVerifiedIcon className="w-5 h-5" /> },
+                  { text: '24/7 Field Supervisory Audits', icon: <Supervision247Icon className="w-5 h-5" /> },
+                  { text: 'Pune, Mumbai & All MH Network', icon: <LocationPinIcon className="w-5 h-5" /> },
                 ].map((feat, i) => (
                   <div key={i} className="flex items-center gap-2.5 text-sm text-slate-800 font-semibold">
-                    <div className="w-5 h-5 rounded-full bg-brand-red/15 flex items-center justify-center shrink-0">
-                      <i className="fa-solid fa-check text-brand-red text-[10px]" />
-                    </div>
-                    {feat}
+                    {feat.icon}
+                    <span>{feat.text}</span>
                   </div>
                 ))}
               </div>
@@ -564,8 +570,8 @@ export default function HomePage() {
                 <div className="absolute top-0 right-0 w-24 h-24 bg-brand-red/10 rounded-full blur-2xl" />
 
                 <div className="flex items-center gap-3 pb-3 border-b border-slate-800">
-                  <div className="w-10 h-10 rounded-xl overflow-hidden bg-black border border-brand-red p-0.5 shrink-0">
-                    <img src="/assets/real_logo.jpg" alt="Logo" className="w-full h-full object-cover rounded-lg" />
+                  <div className="w-10 h-10 flex items-center justify-center filter drop-shadow-[0_0_10px_rgba(229,9,20,0.45)] shrink-0">
+                    <img src="/assets/shield_logo.png" alt="Logo" className="w-full h-full object-contain" onError={(e) => { e.target.src = '/assets/real_logo.jpg'; }} />
                   </div>
                   <div>
                     <h4 className="font-heading font-bold text-white uppercase text-xs">The Legend Security</h4>
