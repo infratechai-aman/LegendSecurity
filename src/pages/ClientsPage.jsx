@@ -218,10 +218,16 @@ export default function ClientsPage() {
             <h3 className="font-heading font-black text-2xl sm:text-3xl uppercase text-white">Deploy Security For Your Facility</h3>
             <p className="text-sm text-white/85 mt-1">Join the leading industrial and automotive hubs safeguarded by The Legend Security.</p>
           </div>
-          <Link to="/contact" className="px-8 py-4 rounded-xl bg-white text-brand-red font-heading font-black text-xs uppercase tracking-wider hover:bg-slate-100 transition-all shadow-2xl whitespace-nowrap flex items-center gap-2">
-            <i className="fa-solid fa-file-invoice" />
-            Request Quotation
-          </Link>
+          <div className="flex flex-wrap items-center gap-3">
+            <Link to="/book-appointment" className="px-7 py-4 rounded-xl bg-white text-brand-red font-heading font-black text-xs uppercase tracking-wider hover:bg-slate-100 transition-all shadow-2xl whitespace-nowrap flex items-center gap-2">
+              <i className="fa-solid fa-calendar-check" />
+              <span>Book On-Site Survey</span>
+            </Link>
+            <Link to="/contact" className="px-6 py-4 rounded-xl bg-black/40 border border-white/30 text-white font-heading font-black text-xs uppercase tracking-wider hover:bg-black/60 transition-all shadow-2xl whitespace-nowrap flex items-center gap-2">
+              <i className="fa-solid fa-file-invoice" />
+              <span>Request Quotation</span>
+            </Link>
+          </div>
         </div>
       </section>
     </div>

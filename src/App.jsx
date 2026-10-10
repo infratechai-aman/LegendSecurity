@@ -11,6 +11,8 @@ import ServicesPage from './pages/ServicesPage';
 import ClientsPage from './pages/ClientsPage';
 import GalleryPage from './pages/GalleryPage';
 import ContactPage from './pages/ContactPage';
+import BookAppointmentPage from './pages/BookAppointmentPage';
+import AdminPage from './pages/AdminPage';
 
 export default function App() {
   return (
@@ -29,6 +31,14 @@ export default function App() {
             <Route path="/clients" element={<ClientsPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            
+            {/* Appointment Booking & Enterprise Operations */}
+            <Route path="/book-appointment" element={<BookAppointmentPage />} />
+            <Route path="/book-consultation" element={<BookAppointmentPage />} />
+            
+            {/* Restricted Operational Command Center */}
+            <Route path="/admin" element={<AdminPage />} />
+
             {/* Fallback to home */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

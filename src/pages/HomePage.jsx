@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useScrollAnimation, useStaggerAnimation } from '../hooks/useScrollAnimation';
 import HeroTrustStrip, { PsaraShieldIcon, PoliceVerifiedIcon, Supervision247Icon, LocationPinIcon } from '../components/TrustIcons';
+import BookingModal from '../components/BookingModal';
+import SecurityCostCalculator from '../components/SecurityCostCalculator';
 
 /* ───────────────────────────────────────────────────────
    Animated Counter Component
@@ -70,6 +72,8 @@ function HeroParticles() {
 
 export default function HomePage() {
   const [heroReady, setHeroReady] = useState(false);
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+  const [selectedAuditType, setSelectedAuditType] = useState('');
 
   useEffect(() => {
     const t = setTimeout(() => setHeroReady(true), 100);
@@ -207,25 +211,73 @@ export default function HomePage() {
             <HeroTrustStrip />
           </div>
 
-          {/* CTA Buttons */}
+          {/* Bespoke Luxury CTA Actions & Fast Dispatch Strip */}
           <div
-            className={`flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`flex flex-col items-center justify-center gap-4 w-full max-w-2xl mx-auto transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
             style={{ transitionDelay: '600ms' }}
           >
-            <Link
-              to="/services"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-lg shadow-red-700/35 btn-glow-red transition-all duration-300 group"
-            >
-              <span>Explore Services</span>
-              <i className="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform duration-300" />
-            </Link>
-            <Link
-              to="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/5 border border-slate-600/80 hover:border-brand-red text-white font-heading font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all duration-300 hover:bg-white/10 group"
-            >
-              <i className="fa-solid fa-file-invoice text-brand-red" />
-              <span>Request A Quote</span>
-            </Link>
+            {/* Primary Action Cluster */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full">
+              {/* Primary Action 1: Book Consultation & Site Audit */}
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedAuditType('On-Site Vulnerability & Security Audit');
+                  setIsBookingModalOpen(true);
+                }}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#e50914] via-[#dc1c25] to-[#b80a12] hover:brightness-110 text-white font-heading font-bold text-xs uppercase tracking-wider px-7 py-4 rounded-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.4),0_12px_28px_rgba(229,9,20,0.45)] transition-all duration-300 group cursor-pointer relative overflow-hidden"
+              >
+                <div className="w-6 h-6 rounded-lg bg-black/20 flex items-center justify-center text-white text-xs">
+                  <i className="fa-solid fa-calendar-check" />
+                </div>
+                <div className="text-left flex flex-col leading-tight">
+                  <span className="text-[11px] sm:text-xs">Schedule Security Audit</span>
+                  <span className="text-[9px] font-mono text-white/80 font-normal">100% Free On-Site Survey</span>
+                </div>
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse ml-1 shrink-0" title="Slots Available Today" />
+              </button>
+
+              {/* Primary Action 2: Request Instant Quote */}
+              <Link
+                to="/contact"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white/[0.05] hover:bg-white/[0.09] backdrop-blur-xl border border-white/15 hover:border-brand-red/60 text-white font-heading font-bold text-xs uppercase tracking-wider px-6 py-4 rounded-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_8px_20px_rgba(0,0,0,0.35)] transition-all duration-300 group"
+              >
+                <i className="fa-solid fa-file-invoice text-brand-red text-sm group-hover:scale-110 transition-transform" />
+                <div className="text-left flex flex-col leading-tight">
+                  <span className="text-[11px] sm:text-xs">Get Official Quote</span>
+                  <span className="text-[9px] font-mono text-slate-400 font-normal">Fast 15-Min Response</span>
+                </div>
+              </Link>
+
+              {/* Tertiary Link: Explore Services */}
+              <Link
+                to="/services"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-4 text-slate-300 hover:text-white font-heading font-bold text-xs uppercase tracking-wider hover:bg-white/5 rounded-xl transition-all group"
+              >
+                <span>Services</span>
+                <i className="fa-solid fa-arrow-right text-[11px] text-slate-400 group-hover:text-brand-red group-hover:translate-x-1 transition-all" />
+              </Link>
+            </div>
+
+            {/* Quick Tactical Dispatch Micro-Strip */}
+            <div className="w-full p-2.5 px-4 rounded-xl bg-white/[0.03] border border-white/10 flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-300 backdrop-blur-md">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="font-mono text-slate-400">RAPID SURVEY:</span>
+                <span className="text-white font-medium">Pune • Mumbai • Chakan MIDC • BKC</span>
+              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedAuditType('Direct Strategy Consultation (Phone/Video)');
+                  setIsBookingModalOpen(true);
+                }}
+                className="font-mono text-brand-red hover:underline font-bold text-[10px] uppercase flex items-center gap-1 cursor-pointer"
+              >
+                <span>Book 30-Min Call with Director Mosin Shaikh</span>
+                <i className="fa-solid fa-chevron-right text-[8px]" />
+              </button>
+            </div>
           </div>
 
           {/* Stats Row */}
@@ -499,6 +551,20 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════
+          MANPOWER & COST ESTIMATOR (ENTERPRISE TOOL)
+      ══════════════════════════════════════════ */}
+      <section className="py-20 sm:py-28 bg-[#08090c] text-white relative border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SecurityCostCalculator
+            onBookAudit={(type) => {
+              setSelectedAuditType(type);
+              setIsBookingModalOpen(true);
+            }}
+          />
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
           CTA SECTION
       ══════════════════════════════════════════ */}
       <section className="relative py-20 sm:py-28 bg-[#0a0a0c] overflow-hidden border-t border-[#272930]" id="quote">
@@ -596,6 +662,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      {/* Global Interactive Booking Modal */}
+      <BookingModal
+        isOpen={isBookingModalOpen}
+        onClose={() => setIsBookingModalOpen(false)}
+        initialType={selectedAuditType}
+      />
     </div>
   );
 }

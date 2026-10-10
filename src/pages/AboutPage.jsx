@@ -334,9 +334,16 @@ export default function AboutPage() {
             <p className="text-sm text-white/85 mt-1">Contact Director Mosin Shaikh directly for site inspection and guard deployment.</p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
+            <Link
+              to="/book-appointment"
+              className="px-6 py-3.5 rounded-xl bg-white text-brand-red font-heading font-black text-xs uppercase tracking-wider hover:bg-slate-100 transition-all shadow-2xl whitespace-nowrap flex items-center gap-2"
+            >
+              <i className="fa-solid fa-calendar-check" />
+              <span>Schedule Site Survey</span>
+            </Link>
             <a
               href="tel:+918806078777"
-              className="px-6 py-3.5 rounded-xl bg-white text-brand-red font-heading font-black text-xs uppercase tracking-wider hover:bg-slate-100 transition-all shadow-2xl whitespace-nowrap flex items-center gap-2"
+              className="px-6 py-3.5 rounded-xl bg-black/40 border border-white/30 text-white font-heading font-black text-xs uppercase tracking-wider hover:bg-black/60 transition-all shadow-2xl whitespace-nowrap flex items-center gap-2"
               title="Director Mosin Shaikh"
             >
               <i className="fa-solid fa-phone" />

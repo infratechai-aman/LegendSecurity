@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useScrollAnimation, useStaggerAnimation } from '../hooks/useScrollAnimation';
+import BookingModal from '../components/BookingModal';
 
 export default function ServicesPage() {
   const serviceCategories = [
@@ -34,6 +35,9 @@ export default function ServicesPage() {
   const [tableRef, tableVisible] = useScrollAnimation({ threshold: 0.1 });
   const [ctaRef, ctaVisible] = useScrollAnimation({ threshold: 0.2 });
 
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+  const [selectedAuditType, setSelectedAuditType] = useState('');
+
   return (
     <div className="flex flex-col w-full">
 
@@ -62,16 +66,31 @@ export default function ServicesPage() {
           </p>
 
           <div className={`flex flex-wrap items-center justify-center gap-3 sm:gap-4 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '400ms' }}>
-            <Link to="/contact" className="px-6 py-3.5 rounded-xl bg-brand-red hover:bg-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg btn-glow-red transition-all">
-              Request Service Quotation
+            <button
+              type="button"
+              onClick={() => {
+                setSelectedAuditType('On-Site Vulnerability & Security Audit');
+                setIsBookingModalOpen(true);
+              }}
+              className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-brand-red via-red-600 to-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider shadow-[inset_0_1px_1px_rgba(255,255,255,0.4),0_10px_25px_rgba(229,9,20,0.4)] hover:brightness-110 transition-all flex items-center gap-2.5 cursor-pointer"
+            >
+              <i className="fa-solid fa-calendar-check text-xs" />
+              <span>Schedule Security Audit</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            </button>
+            <Link
+              to="/contact"
+              className="px-6 py-3.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.09] backdrop-blur-md border border-white/15 hover:border-brand-red/60 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2"
+            >
+              <i className="fa-solid fa-file-invoice text-brand-red text-xs" />
+              <span>Request Quote</span>
             </Link>
-            <a href="tel:+918806078777" className="px-5 py-3.5 rounded-xl bg-white/5 border border-slate-600 hover:border-brand-red text-white font-heading font-semibold text-xs uppercase tracking-wider transition-all flex items-center gap-2">
-              <i className="fa-solid fa-phone text-brand-red" />
-              <span>88060 78777</span>
-            </a>
-            <a href="tel:+917860313601" className="px-5 py-3.5 rounded-xl bg-white/5 border border-slate-600 hover:border-brand-red text-white font-heading font-semibold text-xs uppercase tracking-wider transition-all flex items-center gap-2">
-              <i className="fa-solid fa-headset text-brand-red" />
-              <span>78603 13601</span>
+            <a
+              href="tel:+918806078777"
+              className="px-4 py-3.5 rounded-xl bg-white/[0.03] border border-white/10 hover:border-brand-red text-slate-300 hover:text-white font-mono text-xs uppercase transition-all flex items-center gap-2"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-red" />
+              <span>+91 88060 78777</span>
             </a>
           </div>
         </div>
@@ -114,12 +133,24 @@ export default function ServicesPage() {
                 <div className="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs">
                   <span className="font-medium text-slate-600 flex items-center gap-1.5">
                     <i className="fa-solid fa-clock text-brand-red text-[10px]" />
-                    8 & 12 Hr Shifts
+                    8 &amp; 12 Hr Shifts
                   </span>
-                  <Link to="/contact" className="inline-flex items-center gap-1.5 font-heading font-bold text-xs uppercase text-brand-red group-hover:translate-x-1 transition-transform duration-200">
-                    <span>Inquire</span>
-                    <i className="fa-solid fa-arrow-right text-[10px]" />
-                  </Link>
+                  <div className="flex items-center gap-2.5">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSelectedAuditType(card.title);
+                        setIsBookingModalOpen(true);
+                      }}
+                      className="px-2.5 py-1 rounded-lg bg-brand-red/10 hover:bg-brand-red hover:text-white text-brand-red font-heading font-bold text-[10px] uppercase tracking-wider transition-all"
+                    >
+                      Audit
+                    </button>
+                    <Link to="/contact" className="inline-flex items-center gap-1 font-heading font-bold text-xs uppercase text-slate-700 hover:text-brand-red transition-colors">
+                      <span>Quote</span>
+                      <i className="fa-solid fa-arrow-right text-[9px]" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
@@ -198,19 +229,40 @@ export default function ServicesPage() {
       </section>
 
       {/* ══════════════ CTA ══════════════ */}
-      <section ref={ctaRef} className="w-full bg-gradient-to-r from-brand-red via-red-700 to-brand-red py-16 sm:py-20 px-4 sm:px-6 lg:px-12 relative overflow-hidden animate-gradient-shift">
-        <div className="absolute inset-0 diagonal-stripes opacity-20 pointer-events-none" />
+      <section ref={ctaRef} className="w-full bg-gradient-to-r from-[#111218] via-[#161720] to-[#111218] border-t border-white/10 py-16 sm:py-20 px-4 sm:px-6 lg:px-12 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-brand-red/10 rounded-full blur-[100px] pointer-events-none" />
         <div className={`max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left relative z-10 transition-all duration-700 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <div>
-            <h3 className="font-heading font-black text-2xl sm:text-3xl uppercase text-white">Get Official Price Quote</h3>
-            <p className="text-sm text-white/85 mt-1">Speak directly with Director Mosin Azam Shaikh for your site survey and estimate.</p>
+            <span className="font-mono text-[10px] uppercase tracking-widest text-brand-red font-bold">ZERO OBLIGATION CONSULTATION</span>
+            <h3 className="font-heading font-black text-2xl sm:text-3xl uppercase text-white mt-1">Get Official Price Quote &amp; Site Survey</h3>
+            <p className="text-xs sm:text-sm text-slate-300 mt-1">Speak directly with Director Mosin Azam Shaikh for your site survey and estimate across Maharashtra.</p>
           </div>
-          <Link to="/contact" className="px-8 py-4 rounded-xl bg-white text-brand-red font-heading font-black text-xs uppercase tracking-wider hover:bg-slate-100 transition-all shadow-2xl whitespace-nowrap flex items-center gap-2">
-            <i className="fa-solid fa-file-invoice" />
-            Submit Requisition
-          </Link>
+          <div className="flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              onClick={() => {
+                setSelectedAuditType('On-Site Vulnerability & Security Audit');
+                setIsBookingModalOpen(true);
+              }}
+              className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-red to-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg shadow-red-900/40 hover:brightness-110 transition-all flex items-center gap-2 cursor-pointer"
+            >
+              <i className="fa-solid fa-calendar-check text-xs" />
+              <span>Schedule Audit</span>
+            </button>
+            <Link to="/contact" className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all whitespace-nowrap flex items-center gap-2">
+              <i className="fa-solid fa-file-invoice text-xs" />
+              <span>Submit Requisition</span>
+            </Link>
+          </div>
         </div>
       </section>
+
+      {/* Booking Modal */}
+      <BookingModal
+        isOpen={isBookingModalOpen}
+        onClose={() => setIsBookingModalOpen(false)}
+        initialType={selectedAuditType}
+      />
     </div>
   );
 }

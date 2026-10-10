@@ -9,9 +9,11 @@ export default function Footer() {
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
     { name: 'All Services', path: '/services' },
+    { name: 'Book Site Audit', path: '/book-appointment' },
     { name: 'Client Sites (20)', path: '/clients' },
     { name: 'Squad Gallery', path: '/gallery' },
     { name: 'Contact & Quote', path: '/contact' },
+    { name: 'Admin Command Deck', path: '/admin' },
   ];
 
   const services = [

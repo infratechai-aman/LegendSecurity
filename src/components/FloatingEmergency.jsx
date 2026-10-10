@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function FloatingEmergency() {
   const [expanded, setExpanded] = useState(false);
@@ -62,6 +63,28 @@ export default function FloatingEmergency() {
               LIVE
             </span>
           </div>
+
+          {/* Direct Online Booking Action */}
+          <Link
+            to="/book-appointment"
+            onClick={() => setExpanded(false)}
+            className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-gradient-to-r from-brand-red to-brand-crimson text-white transition-all duration-200 group shadow-md hover:brightness-110"
+          >
+            <div className="w-9 h-9 rounded-xl bg-black/20 text-white flex items-center justify-center shrink-0">
+              <i className="fa-solid fa-calendar-check text-sm" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center justify-between gap-1">
+                <p className="font-heading font-bold text-xs uppercase leading-tight truncate">
+                  Book Security Audit
+                </p>
+                <span className="text-[9px] font-mono font-bold bg-white/20 text-white px-1.5 py-0.5 rounded uppercase">
+                  FREE
+                </span>
+              </div>
+              <p className="text-[11px] text-white/80 font-mono mt-0.5">On-Site Inspection Slot</p>
+            </div>
+          </Link>
 
           {contacts.map((c, i) => (
             <a

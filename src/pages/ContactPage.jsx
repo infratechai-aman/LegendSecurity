@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import confetti from 'canvas-confetti';
 import { useScrollAnimation, useStaggerAnimation } from '../hooks/useScrollAnimation';
+import { storageService } from '../services/storageService';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -31,8 +32,19 @@ export default function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const reqId = `#TL-REQ-${Math.floor(100000 + Math.random() * 900000)}`;
-    setInquiryId(reqId);
+    const created = storageService.addQuote({
+      fullName: formData.fullName,
+      orgName: formData.orgName,
+      phoneNum: formData.phoneNum,
+      emailAddr: formData.emailAddr,
+      serviceType: formData.serviceType || 'Complete Security Solution',
+      siteLocation: formData.siteLocation || 'Maharashtra',
+      personnelCount: formData.personnelCount ? `${formData.personnelCount} Personnel` : 'Turnkey Roster',
+      shiftDuration: formData.shiftDuration,
+      requirements: formData.requirements || 'Official contact form requisition',
+      estValue: '₹ Pending Assessment',
+    });
+    setInquiryId(created.id);
     setSubmitted(true);
 
     try {
@@ -116,6 +128,30 @@ export default function ContactPage() {
           <p className={`text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '300ms' }}>
             Connect directly with Director <strong>Mr. Mosin Azam Shaikh</strong> and operations desk for site surveys, guard deployment, and official service quotations across <strong>Pune, Mumbai, and All Over Maharashtra</strong>.
           </p>
+
+          {/* Quick Schedule Survey Callout Banner */}
+          <div className="w-full max-w-5xl mt-6 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-brand-red/15 via-[#181920] to-[#181920] border border-brand-red/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3.5">
+              <div className="w-10 h-10 rounded-xl bg-brand-red text-white flex items-center justify-center shrink-0">
+                <i className="fa-solid fa-calendar-check text-base" />
+              </div>
+              <div>
+                <h4 className="font-heading font-black text-xs sm:text-sm text-white uppercase tracking-wider">
+                  Prefer An In-Person On-Site Security Survey?
+                </h4>
+                <p className="text-[11px] sm:text-xs text-slate-300">
+                  Pick an inspection date &amp; time slot with Director Mosin Azam Shaikh across Maharashtra.
+                </p>
+              </div>
+            </div>
+            <Link
+              to="/book-appointment"
+              className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-brand-red hover:bg-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider shrink-0 shadow-lg shadow-red-900/40 transition-all flex items-center justify-center gap-2"
+            >
+              <span>Schedule Audit</span>
+              <i className="fa-solid fa-arrow-right text-[10px]" />
+            </Link>
+          </div>
 
           <div className={`grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 w-full pt-8 mt-6 border-t border-slate-800/80 max-w-5xl transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '400ms' }}>
             <div className="flex flex-col p-4 rounded-xl bg-[#121318] border border-slate-800">
