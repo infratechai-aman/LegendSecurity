@@ -535,7 +535,7 @@ export default function HomePage() {
           MANPOWER & COST ESTIMATOR (ENTERPRISE TOOL)
       ══════════════════════════════════════════ */}
       <section className="py-20 sm:py-28 bg-[#08090c] text-white relative border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <SecurityCostCalculator
             onBookAudit={(type) => {
               setSelectedAuditType(type);

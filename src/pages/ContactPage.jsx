@@ -1,8 +1,67 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import confetti from 'canvas-confetti';
-import { useScrollAnimation, useStaggerAnimation } from '../hooks/useScrollAnimation';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { storageService } from '../services/storageService';
+
+// =====================================================================
+// PREMIUM iOS / SF SYMBOLS-STYLE SVG ICONS (Fine 1.5px Stroke)
+// =====================================================================
+
+function IconPhone({ className = 'w-4 h-4' }) {
+  return (
+    <svg className={`shrink-0 ${className}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
+
+function IconWhatsApp({ className = 'w-4 h-4' }) {
+  return (
+    <svg className={`shrink-0 ${className}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+    </svg>
+  );
+}
+
+function IconMail({ className = 'w-4 h-4' }) {
+  return (
+    <svg className={`shrink-0 ${className}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+    </svg>
+  );
+}
+
+function IconBuilding({ className = 'w-4 h-4' }) {
+  return (
+    <svg className={`shrink-0 ${className}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
+      <line x1="9" y1="22" x2="9" y2="2" />
+      <path d="M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01M8 18h.01M16 18h.01" />
+    </svg>
+  );
+}
+
+function IconCalendar({ className = 'w-4 h-4' }) {
+  return (
+    <svg className={`shrink-0 ${className}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+      <line x1="16" y1="2" x2="16" y2="6" />
+      <line x1="8" y1="2" x2="8" y2="6" />
+      <line x1="3" y1="10" x2="21" y2="10" />
+    </svg>
+  );
+}
+
+function IconArrowRight({ className = 'w-3.5 h-3.5' }) {
+  return (
+    <svg className={`shrink-0 ${className}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="5" y1="12" x2="19" y2="12" />
+      <polyline points="12 5 19 12 12 19" />
+    </svg>
+  );
+}
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -23,7 +82,6 @@ export default function ContactPage() {
 
   const [heroRef, heroVisible] = useScrollAnimation({ threshold: 0.1 });
   const [deskRef, deskVisible] = useScrollAnimation({ threshold: 0.1 });
-  const [branchesRef, branchesVisible] = useStaggerAnimation(3, { staggerMs: 120 });
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -76,560 +134,521 @@ export default function ContactPage() {
 
   const branches = [
     {
-      code: 'HEADQUARTERS // PUNE',
+      region: 'Pune Headquarters',
       title: 'Katraj Head Office',
-      address: 'Sr. No. 1/74, Gujarwadi Road, Bharat Nagar, Near Mahadev Mandir, Katraj, Pune, Maharashtra 411046',
-      contact: '+91 88060 78777 / 70582 67585',
-      jurisdiction: 'Katraj, Hinjawadi, Chakan MIDC, Bhosari, Hadapsar, Aundh & Pune PCMC',
+      address: 'Sr. No. 1/74, Gujarwadi Road, Bharat Nagar, Katraj, Pune, MH 411046',
+      contact: '+91 88060 78777',
+      jurisdiction: 'Katraj, Hinjawadi, Chakan MIDC, Bhosari, Hadapsar, Kharadi & PCMC Belt',
     },
     {
-      code: 'BRANCH 02 // MUMBAI',
-      title: 'Malad East Branch',
-      address: 'Patel Society, Indira Nagar, Pathanwadi, Rani Sati Marg, Malad East, Mumbai, Maharashtra 400097',
-      contact: '+91 88302 65954 / 78603 13601',
+      region: 'Mumbai Region',
+      title: 'Malad East Branch Desk',
+      address: 'Patel Society, Pathanwadi, Rani Sati Marg, Malad East, Mumbai, MH 400097',
+      contact: '+91 88302 65954',
       jurisdiction: 'Malad, Andheri, BKC, Bandra West, Powai, Thane & Greater Mumbai Corridor',
     },
     {
-      code: 'BRANCH 03 // PALGHAR',
+      region: 'Palghar & Industrial Zone',
       title: 'Nalasopara East Branch',
       address: 'Commercial Zone, Nalasopara East, Palghar District, Maharashtra',
       contact: '+91 88060 78777',
-      jurisdiction: 'Nalasopara, Vasai-Virar, Boisar MIDC, Palghar & Industrial Belt',
+      jurisdiction: 'Nalasopara, Vasai-Virar, Boisar MIDC, Palghar & Western Industrial Hub',
     },
   ];
 
   return (
-    <div className="flex flex-col w-full">
-      {/* SECTION 1: HERO */}
-      <section className="relative w-full bg-[#0a0a0c] text-on-surface py-20 lg:py-28 px-4 sm:px-6 lg:px-12 overflow-hidden pt-28 tactical-grid">
-        {/* Ambient background glows */}
-        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[550px] h-[350px] bg-brand-red/6 rounded-full blur-[110px] pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-red-900/10 rounded-full blur-[90px] pointer-events-none" />
-
-        <div ref={heroRef} className="relative w-full flex flex-col items-center lg:items-start text-center lg:text-left max-w-7xl mx-auto">
+    <div className="flex flex-col w-full bg-[#08090d] text-slate-200 min-h-screen">
+      
+      {/* SECTION 1: CLEAN HERO */}
+      <section className="relative w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-12 pt-28">
+        <div ref={heroRef} className="max-w-6xl mx-auto">
           
-          <nav className={`flex items-center gap-2 text-on-surface-variant font-mono text-xs uppercase tracking-wider mb-6 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-            <Link to="/" className="text-slate-400 hover:text-brand-red transition-colors">Home</Link>
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-2 text-slate-400 text-xs mb-4">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <span className="text-slate-600">/</span>
-            <span className="text-brand-red font-semibold">Contact &amp; Quotation</span>
+            <span className="text-slate-200 font-medium">Contact &amp; Quotations</span>
           </nav>
 
-          <div className={`inline-flex items-center gap-2 px-4 py-1.5 bg-[#181920] rounded-full shadow-sm mb-6 border border-brand-red/30 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '100ms' }}>
-            <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse"></span>
-            <span className="font-mono text-xs text-slate-200 uppercase tracking-widest font-bold">
-              PUNE • MUMBAI • ALL OVER MAHARASHTRA
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+            <span className="text-xs text-slate-300 font-medium">
+              Direct Management Desk • Pune • Mumbai • Maharashtra
             </span>
           </div>
 
-          <h1 className={`font-heading font-black text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-white mb-4 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '200ms' }}>
-            LET'S <span className="text-gradient-red">SECURE WHAT MATTERS.</span>
+          <h1 className="text-2xl sm:text-5xl font-semibold tracking-tight text-white mb-3">
+            Contact &amp; Official Quotation
           </h1>
 
-          <p className={`text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '300ms' }}>
-            Connect directly with Director <strong>Mr. Mosin Azam Shaikh</strong> and operations desk for site surveys, guard deployment, and official service quotations across <strong>Pune, Mumbai, and All Over Maharashtra</strong>.
+          <p className="text-xs sm:text-base text-slate-400 max-w-2xl leading-relaxed">
+            Connect directly with Director <strong>Mr. Mosin Azam Shaikh</strong> and the operations desk for site surveys, manpower deployment, and formal contract pricing across Maharashtra.
           </p>
 
-          {/* Quick Schedule Survey Callout Banner */}
-          <div className="w-full max-w-5xl mt-6 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-brand-red/15 via-[#181920] to-[#181920] border border-brand-red/30 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3.5">
-              <div className="w-10 h-10 rounded-xl bg-brand-red text-white flex items-center justify-center shrink-0">
-                <i className="fa-solid fa-calendar-check text-base" />
+          {/* Quick Schedule Callout Banner */}
+          <div className="w-full mt-6 p-4 rounded-2xl bg-[#0f1016] border border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-white/[0.04] text-brand-red flex items-center justify-center shrink-0">
+                <IconCalendar className="w-4 h-4 text-brand-red" />
               </div>
               <div>
-                <h4 className="font-heading font-black text-xs sm:text-sm text-white uppercase tracking-wider">
-                  Prefer An In-Person On-Site Security Survey?
+                <h4 className="text-xs sm:text-sm font-semibold text-white">
+                  Need an In-Person On-Site Security Survey?
                 </h4>
-                <p className="text-[11px] sm:text-xs text-slate-300">
-                  Pick an inspection date &amp; time slot with Director Mosin Azam Shaikh across Maharashtra.
+                <p className="text-[11px] sm:text-xs text-slate-400">
+                  Pick an inspection date &amp; slot with Director Mosin Shaikh for your facility in Maharashtra.
                 </p>
               </div>
             </div>
             <Link
               to="/book-appointment"
-              className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-brand-red hover:bg-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider shrink-0 shadow-lg shadow-red-900/40 transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-5 py-2 rounded-xl bg-brand-red hover:bg-red-600 text-white font-medium text-xs tracking-wide transition-colors flex items-center justify-center gap-2 shrink-0 shadow-sm"
             >
-              <span>Schedule Audit</span>
-              <i className="fa-solid fa-arrow-right text-[10px]" />
+              <span>Schedule Site Survey</span>
+              <IconArrowRight />
             </Link>
           </div>
 
-          <div className={`grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 w-full pt-8 mt-6 border-t border-slate-800/80 max-w-5xl transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '400ms' }}>
-            <div className="flex flex-col p-4 rounded-xl bg-[#121318] border border-slate-800">
-              <span className="font-heading font-black text-xs sm:text-sm uppercase text-white tracking-wide">PSARA GOVT. LICENSED</span>
-              <span className="text-[11px] text-brand-red font-mono mt-1 font-bold">PSA/L/50/MH/2026</span>
+          {/* Accreditation Badges */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full pt-6 mt-6 border-t border-white/[0.06]">
+            <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+              <span className="text-xs font-semibold text-white block">PSARA Govt. Licensed</span>
+              <span className="text-[11px] text-brand-red font-medium mt-0.5 block">PSA/L/50/MH/2026</span>
             </div>
-            <div className="flex flex-col p-4 rounded-xl bg-[#121318] border border-slate-800">
-              <span className="font-heading font-black text-xs sm:text-sm uppercase text-white tracking-wide">SHOP &amp; EST. REG.</span>
-              <span className="text-[11px] text-slate-400 font-mono mt-1">2731000318422972</span>
+            <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+              <span className="text-xs font-semibold text-white block">Shop &amp; Est. Registered</span>
+              <span className="text-[11px] text-slate-400 font-medium mt-0.5 block">Reg. 2731000318422972</span>
             </div>
-            <div className="flex flex-col p-4 rounded-xl bg-[#121318] border border-slate-800">
-              <span className="font-heading font-black text-xs sm:text-sm uppercase text-white tracking-wide">FAST DISPATCH</span>
-              <span className="text-[11px] text-emerald-400 font-bold mt-1">Pune, Mumbai &amp; All MH</span>
+            <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+              <span className="text-xs font-semibold text-white block">Rapid 24-Hr Dispatch</span>
+              <span className="text-[11px] text-emerald-400 font-medium mt-0.5 block">Pune, Mumbai &amp; All MH</span>
             </div>
-            <div className="flex flex-col p-4 rounded-xl bg-[#121318] border border-slate-800">
-              <span className="font-heading font-black text-xs sm:text-sm uppercase text-white tracking-wide">ZERO LIABILITY</span>
-              <span className="text-[11px] text-slate-400 mt-1">100% PF &amp; ESIC Lawful</span>
+            <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+              <span className="text-xs font-semibold text-white block">Statutory Compliance</span>
+              <span className="text-[11px] text-slate-400 font-medium mt-0.5 block">100% PF &amp; ESIC Lawful</span>
             </div>
           </div>
+
         </div>
       </section>
 
-      {/* SECTION 2: CONTACT INFORMATION & QUOTATION FORM */}
-      <section ref={deskRef} className={`w-full bg-[#121318] py-20 text-on-surface px-4 sm:px-6 lg:px-12 border-t border-brand-border transition-all duration-700 ${deskVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-        <div className="w-full max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+      {/* SECTION 2: DIRECT DESK & QUOTATION FORM */}
+      <section ref={deskRef} className="w-full py-12 px-4 sm:px-6 lg:px-12 border-t border-white/[0.06]">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             
-            {/* LEFT COLUMN: REAL PROMOTERS & DIRECT HOTLINES */}
-            <div className="lg:col-span-5 flex flex-col gap-6">
+            {/* LEFT COLUMN: DIRECT CONTACTS & MANAGEMENT */}
+            <div className="lg:col-span-5 space-y-4">
               <div>
-                <div className="inline-flex items-center gap-2 mb-2">
-                  <i className="fa-solid fa-address-book text-brand-red"></i>
-                  <span className="font-mono text-xs uppercase tracking-wider text-brand-red font-bold">
-                    MANAGEMENT CONTACT
-                  </span>
-                </div>
-                <h2 className="font-heading font-black text-2xl sm:text-3xl uppercase text-white tracking-tight">
+                <span className="text-[11px] uppercase tracking-wider text-brand-red font-semibold block">
+                  Management Channels
+                </span>
+                <h2 className="text-xl font-semibold text-white tracking-tight mt-0.5">
                   Direct Operations Desk
                 </h2>
                 <p className="text-xs text-slate-400 mt-1">
-                  Connect directly with management for immediate requirement quotes across Maharashtra.
+                  Connect directly with leadership for immediate security deployments across Maharashtra.
                 </p>
               </div>
 
               {/* Direct Hotlines */}
-              <div className="flex flex-col gap-3">
+              <div className="space-y-2.5">
                 {/* Director Mosin Shaikh */}
-                <div className="p-4 rounded-xl bg-[#181920] border border-brand-red/30 shadow-md hover:border-brand-red/60 transition-all flex items-center justify-between group">
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-11 h-11 rounded-xl bg-brand-red text-white flex items-center justify-center text-sm font-bold shadow-md shadow-red-900/40 group-hover:scale-105 transition-transform">
-                      <i className="fa-solid fa-phone"></i>
+                <div className="p-3.5 rounded-xl bg-[#0f1016] border border-white/[0.08] flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-brand-red/15 text-brand-red flex items-center justify-center text-xs shrink-0">
+                      <IconPhone className="text-brand-red" />
                     </div>
                     <div>
-                      <span className="text-[10px] uppercase font-bold text-slate-400 block font-mono">Mr. Mosin Azam Shaikh (Director)</span>
-                      <a className="font-heading font-black text-sm sm:text-base text-white hover:text-brand-red transition-colors tracking-wide" href="tel:+918806078777">
+                      <span className="text-[11px] text-slate-400 block">Mr. Mosin Azam Shaikh (Director)</span>
+                      <a href="tel:+918806078777" className="text-sm font-semibold text-white hover:text-brand-red transition-colors">
                         +91 88060 78777
                       </a>
                     </div>
                   </div>
-                  <span className="px-2.5 py-1 rounded bg-brand-red/20 text-brand-red font-mono text-[10px] uppercase font-bold">
-                    DIRECTOR
+                  <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-brand-red/10 text-brand-red border border-brand-red/20">
+                    Director
                   </span>
                 </div>
 
-                {/* Operations Helpline: 78603 13601 */}
-                <div className="p-4 rounded-xl bg-[#181920] border border-red-900/40 shadow-md hover:border-brand-red/60 transition-all flex items-center justify-between group">
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-11 h-11 rounded-xl bg-red-800 text-white flex items-center justify-center text-sm group-hover:scale-105 transition-transform">
-                      <i className="fa-solid fa-headset"></i>
+                {/* Operations Helpline */}
+                <div className="p-3.5 rounded-xl bg-[#0f1016] border border-white/[0.08] flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-white/[0.04] text-slate-300 flex items-center justify-center text-xs shrink-0">
+                      <IconPhone className="text-slate-300" />
                     </div>
                     <div>
-                      <span className="text-[10px] uppercase font-bold text-slate-400 block font-mono">Operations &amp; Deployment Desk</span>
-                      <a className="font-heading font-black text-sm sm:text-base text-white hover:text-brand-red transition-colors tracking-wide" href="tel:+917860313601">
+                      <span className="text-[11px] text-slate-400 block">Operations &amp; Control Desk</span>
+                      <a href="tel:+917860313601" className="text-sm font-semibold text-white hover:text-brand-red transition-colors">
                         +91 78603 13601
                       </a>
                     </div>
                   </div>
-                  <span className="px-2.5 py-1 rounded bg-red-950 text-emerald-400 font-mono text-[10px] uppercase font-bold">
-                    24/7 HELPLINE
+                  <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    24/7 Desk
                   </span>
                 </div>
 
                 {/* Mr. Nazim Shaikh */}
-                <div className="p-4 rounded-xl bg-[#181920] border border-slate-800 shadow-md hover:border-slate-700 transition-all flex items-center justify-between group">
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-11 h-11 rounded-xl bg-slate-800 text-white flex items-center justify-center text-sm group-hover:scale-105 transition-transform">
-                      <i className="fa-solid fa-phone"></i>
+                <div className="p-3.5 rounded-xl bg-[#0f1016] border border-white/[0.08] flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-white/[0.04] text-slate-300 flex items-center justify-center text-xs shrink-0">
+                      <IconPhone className="text-slate-300" />
                     </div>
                     <div>
-                      <span className="text-[10px] uppercase font-bold text-slate-400 block font-mono">Mr. Nazim Azam Shaikh</span>
-                      <a className="font-heading font-black text-sm sm:text-base text-white hover:text-brand-red transition-colors tracking-wide" href="tel:+917058267585">
+                      <span className="text-[11px] text-slate-400 block">Mr. Nazim Azam Shaikh</span>
+                      <a href="tel:+917058267585" className="text-sm font-semibold text-white hover:text-brand-red transition-colors">
                         +91 70582 67585
                       </a>
                     </div>
                   </div>
-                  <span className="px-2.5 py-1 rounded bg-[#202128] text-slate-300 font-mono text-[10px] uppercase font-bold">
-                    MANAGER
+                  <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-white/[0.04] text-slate-400 border border-white/[0.06]">
+                    Operations
                   </span>
                 </div>
 
-                {/* Support Line */}
-                <div className="p-4 rounded-xl bg-[#181920] border border-slate-800 shadow-md flex items-center justify-between">
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-11 h-11 rounded-xl bg-slate-800 text-white flex items-center justify-center text-sm">
-                      <i className="fa-solid fa-phone-volume"></i>
+                {/* WhatsApp Desk */}
+                <a
+                  href="https://wa.me/918806078777?text=Hello%20The%20Legend%20Security,%20I%20need%20security%20quotation%20information."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3.5 rounded-xl bg-[#0f1016] border border-white/[0.08] hover:border-emerald-500/40 transition-colors flex items-center justify-between group"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-xs shrink-0">
+                      <IconWhatsApp className="text-emerald-400" />
                     </div>
                     <div>
-                      <span className="text-[10px] uppercase font-bold text-slate-400 block font-mono">Additional Support</span>
-                      <a href="tel:+918830265954" className="font-mono text-xs sm:text-sm text-slate-200 hover:text-brand-red">
-                        +91 88302 65954
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* WhatsApp */}
-                <div className="p-4 rounded-xl bg-[#181920] border border-emerald-900/50 shadow-md hover:border-emerald-600/60 transition-all flex items-center justify-between group">
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-11 h-11 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-lg shadow-md shadow-emerald-950 group-hover:scale-105 transition-transform">
-                      <i className="fa-brands fa-whatsapp"></i>
-                    </div>
-                    <div>
-                      <span className="text-[10px] uppercase font-bold text-slate-400 block font-mono">Official WhatsApp</span>
-                      <a className="font-heading font-black text-sm text-emerald-400 hover:underline tracking-wide" href="https://wa.me/918806078777" target="_blank" rel="noopener noreferrer">
+                      <span className="text-[11px] text-slate-400 block">Official WhatsApp Desk</span>
+                      <span className="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">
                         +91 88060 78777
-                      </a>
+                      </span>
                     </div>
                   </div>
-                  <span className="px-2.5 py-1 rounded bg-emerald-950 text-emerald-400 font-mono text-[10px] uppercase font-bold flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> ONLINE
+                  <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    Instant Chat
                   </span>
-                </div>
-              </div>
+                </a>
 
-              {/* Official Email */}
-              <div className="p-5 rounded-xl bg-[#181920] border border-slate-800 flex items-center gap-3.5">
-                <div className="w-11 h-11 rounded-xl bg-[#202128] flex items-center justify-center text-brand-red text-lg shrink-0">
-                  <i className="fa-solid fa-envelope"></i>
-                </div>
-                <div>
-                  <span className="font-mono text-[10px] uppercase text-slate-400 block font-bold">Official Email Inbox</span>
-                  <a href="mailto:thelegendscrt16@gmail.com" className="text-xs sm:text-sm font-mono text-white hover:text-brand-red transition-colors underline">
-                    thelegendscrt16@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              {/* Head Office Address Box */}
-              <div className="p-5 rounded-xl bg-[#181920] border border-brand-red/30 space-y-2 text-xs">
-                <div className="flex items-center gap-2 text-brand-red font-heading font-bold uppercase">
-                  <i className="fa-solid fa-location-dot"></i>
-                  <span>Registered Head Office</span>
-                </div>
-                <p className="text-slate-300 leading-relaxed">
-                  Sr. No. 1/74, Gujarwadi Road, Bharat Nagar, Near Mahadev Mandir, Katraj, Pune, Maharashtra 411046
-                </p>
+                {/* Email Inbox */}
+                <a
+                  href="mailto:thelegendscrt16@gmail.com"
+                  className="p-3.5 rounded-xl bg-[#0f1016] border border-white/[0.08] hover:border-white/20 transition-colors flex items-center justify-between group"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-white/[0.04] text-slate-300 flex items-center justify-center text-xs shrink-0">
+                      <IconMail className="text-slate-300" />
+                    </div>
+                    <div>
+                      <span className="text-[11px] text-slate-400 block">Official Email</span>
+                      <span className="text-xs font-semibold text-white group-hover:text-brand-red transition-colors">
+                        thelegendscrt16@gmail.com
+                      </span>
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
 
-            {/* RIGHT COLUMN: REQUISITION / QUOTE FORM (Matching PDF Page 7) */}
-            <div className="lg:col-span-7">
-              <div className="p-6 sm:p-10 rounded-2xl bg-surface-container-lowest text-on-surface shadow-2xl border border-surface-container-highest">
-                <div className="flex flex-col gap-1 mb-8">
-                  <div className="flex items-center justify-between">
-                    <span className="font-label-tactical text-xs uppercase tracking-wider text-primary font-bold">
-                      QUOTATION REQUEST
-                    </span>
-                    <span className="font-label-tactical text-[11px] text-emerald-400 uppercase font-bold flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> DIRECT MANAGEMENT CHANNEL
-                    </span>
-                  </div>
-                  <h2 className="font-heading font-black text-2xl sm:text-3xl text-white uppercase tracking-tight mt-1">
-                    Request Quotation for Services
-                  </h2>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    Specify your personnel requirement below. Our management will formulate an official proposal as per the prescribed tariff standards.
-                  </p>
+            {/* RIGHT COLUMN: REQUEST QUOTATION FOR SERVICES FORM */}
+            <div className="lg:col-span-7 bg-[#0f1016] border border-white/[0.08] rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl">
+              <div>
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-[11px] uppercase tracking-wider text-brand-red font-semibold">
+                    Official Quotation Desk
+                  </span>
+                  <span className="text-xs text-emerald-400 font-medium flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    Direct Management Review
+                  </span>
                 </div>
+                <h2 className="text-xl font-semibold text-white tracking-tight">
+                  Request Quotation for Services
+                </h2>
+                <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                  Specify your personnel requirement below. Our management will formulate an official proposal as per the prescribed tariff standards.
+                </p>
+              </div>
 
-                {submitted ? (
-                  <div className="p-8 rounded-2xl bg-surface-container border border-brand-red/40 text-on-surface flex flex-col items-center text-center gap-4 shadow-xl">
-                    <div className="w-16 h-16 rounded-full bg-brand-red/20 text-brand-red flex items-center justify-center text-3xl">
-                      <i className="fa-solid fa-circle-check"></i>
-                    </div>
+              {submitted ? (
+                <div className="py-8 text-center space-y-4">
+                  <div className="w-12 h-12 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 mx-auto flex items-center justify-center">
+                    ✓
+                  </div>
+                  <div>
+                    <span className="inline-block px-2.5 py-0.5 rounded-full bg-white/[0.04] text-brand-red text-xs font-medium border border-white/[0.08]">
+                      Ref: {inquiryId}
+                    </span>
+                    <h3 className="text-lg font-semibold text-white mt-2">
+                      Quotation Request Received
+                    </h3>
+                    <p className="text-xs text-slate-400 max-w-md mx-auto mt-1 leading-relaxed">
+                      Thank you, <strong className="text-white">{formData.fullName || 'Sir/Madam'}</strong>. Management will review your particulars for <strong className="text-white">{formData.orgName || 'your facility'}</strong> and contact you at <strong className="text-white">+91 {formData.phoneNum}</strong> shortly.
+                    </p>
+                  </div>
 
+                  <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+                    <button
+                      type="button"
+                      onClick={resetForm}
+                      className="px-4 py-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-xs font-medium text-white transition-colors"
+                    >
+                      Submit Another Requirement
+                    </button>
+                    <a
+                      href="tel:+918806078777"
+                      className="px-4 py-2 rounded-xl bg-brand-red hover:bg-red-600 text-xs font-medium text-white transition-colors"
+                    >
+                      Call Director Directly
+                    </a>
+                  </div>
+                </div>
+              ) : (
+                <form className="mt-5 space-y-3.5" onSubmit={handleSubmit}>
+                  {/* Name & Org */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <div>
-                      <span className="font-mono text-xs px-3 py-1 rounded bg-brand-red/20 text-brand-red border border-brand-red/40 font-bold">
-                        {inquiryId}
-                      </span>
-                      <h3 className="font-heading font-black text-xl text-white uppercase mt-3">
-                        Quotation Requisition Transmitted!
-                      </h3>
-                      <p className="text-xs text-slate-300 max-w-md mt-2 leading-relaxed">
-                        Thank you, <strong className="text-white">{formData.fullName || 'Sir/Madam'}</strong>. Management will review your particulars for <strong className="text-white">{formData.orgName || 'your facility'}</strong> and contact you at <strong className="text-white">+91 {formData.phoneNum}</strong> shortly.
-                      </p>
+                      <label className="block text-xs font-medium text-slate-300 mb-1.5" htmlFor="fullName">
+                        Contact Person Name *
+                      </label>
+                      <input
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] text-white border border-white/[0.08] focus:border-white/20 focus:outline-none text-xs transition-colors"
+                        id="fullName"
+                        placeholder="e.g. Mr. Sharma / Manager"
+                        required
+                        type="text"
+                        value={formData.fullName}
+                        onChange={handleChange}
+                      />
                     </div>
-
-                    <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
-                      <button
-                        onClick={resetForm}
-                        className="px-6 py-2.5 rounded-xl bg-surface-container-high hover:bg-surface-bright text-xs font-heading font-bold uppercase text-white transition-colors"
-                      >
-                        Submit Another Requirement
-                      </button>
-                      <a
-                        href="tel:+918806078777"
-                        className="px-6 py-2.5 rounded-xl bg-brand-red hover:bg-brand-crimson text-xs font-heading font-bold uppercase text-white transition-colors flex items-center gap-1.5"
-                      >
-                        <i className="fa-solid fa-phone text-xs"></i>
-                        <span>Call Director Now</span>
-                      </a>
+                    <div>
+                      <label className="block text-xs font-medium text-slate-300 mb-1.5" htmlFor="orgName">
+                        Company / Factory / Society Name *
+                      </label>
+                      <input
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] text-white border border-white/[0.08] focus:border-white/20 focus:outline-none text-xs transition-colors"
+                        id="orgName"
+                        placeholder="e.g. Acme Industries Ltd."
+                        required
+                        type="text"
+                        value={formData.orgName}
+                        onChange={handleChange}
+                      />
                     </div>
                   </div>
-                ) : (
-                  <form className="flex flex-col gap-5" id="contactForm" onSubmit={handleSubmit}>
-                    
-                    {/* Name & Org */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                      <div className="flex flex-col gap-1.5">
-                        <label className="font-heading text-xs text-white uppercase font-bold" htmlFor="fullName">
-                          Contact Person Name *
-                        </label>
-                        <input
-                          className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-white border border-surface-container-highest focus:border-brand-red focus:outline-none text-xs transition-all"
-                          id="fullName"
-                          placeholder="e.g. Mr. Sharma / Manager"
-                          required
-                          type="text"
-                          value={formData.fullName}
-                          onChange={handleChange}
-                        />
-                      </div>
 
-                      <div className="flex flex-col gap-1.5">
-                        <label className="font-heading text-xs text-white uppercase font-bold" htmlFor="orgName">
-                          Company / Factory / Society Name *
-                        </label>
-                        <input
-                          className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-white border border-surface-container-highest focus:border-brand-red focus:outline-none text-xs transition-all"
-                          id="orgName"
-                          placeholder="e.g. Acme Industries Ltd."
-                          required
-                          type="text"
-                          value={formData.orgName}
-                          onChange={handleChange}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Phone & Email */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                      <div className="flex flex-col gap-1.5">
-                        <label className="font-heading text-xs text-white uppercase font-bold" htmlFor="phoneNum">
-                          Phone Number (+91) *
-                        </label>
-                        <div className="relative flex items-center">
-                          <span className="absolute left-4 text-slate-400 font-mono text-xs">+91</span>
-                          <input
-                            className="w-full pl-14 pr-4 py-3 rounded-xl bg-surface-container-low text-white border border-surface-container-highest focus:border-brand-red focus:outline-none text-xs font-mono transition-all"
-                            id="phoneNum"
-                            placeholder="98200 12345"
-                            required
-                            type="tel"
-                            value={formData.phoneNum}
-                            onChange={handleChange}
-                          />
-                        </div>
-                      </div>
-
-                      <div className="flex flex-col gap-1.5">
-                        <label className="font-heading text-xs text-white uppercase font-bold" htmlFor="emailAddr">
-                          Email Address *
-                        </label>
-                        <input
-                          className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-white border border-surface-container-highest focus:border-brand-red focus:outline-none text-xs transition-all"
-                          id="emailAddr"
-                          placeholder="manager@company.com"
-                          required
-                          type="email"
-                          value={formData.emailAddr}
-                          onChange={handleChange}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Service Type & Site Location */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                      <div className="flex flex-col gap-1.5">
-                        <label className="font-heading text-xs text-white uppercase font-bold" htmlFor="serviceType">
-                          Particular Service Required *
-                        </label>
-                        <div className="relative">
-                          <select
-                            className="w-full appearance-none px-4 py-3 pr-10 rounded-xl bg-surface-container-low text-white border border-surface-container-highest focus:border-brand-red focus:outline-none text-xs transition-all cursor-pointer"
-                            id="serviceType"
-                            required
-                            value={formData.serviceType}
-                            onChange={handleChange}
-                          >
-                            <option value="" disabled>Select Particular</option>
-                            <option value="security-guard">Security Guard (Industrial / Commercial)</option>
-                            <option value="security-supervisor">Security Supervisor</option>
-                            <option value="bouncer">Bouncer (Event / Club / VIP / Wedding)</option>
-                            <option value="pso">Personal Body Guard (PSO) Service</option>
-                            <option value="housekeeping">Housekeeping &amp; Facility Staff</option>
-                            <option value="office-boy">Office Boy / Corporate Support</option>
-                            <option value="cit-service">CIT Services (Cash-In-Transit)</option>
-                            <option value="labour-supply">Labour Supply &amp; Manpower</option>
-                          </select>
-                          <i className="fa-solid fa-chevron-down absolute right-4 top-3.5 pointer-events-none text-slate-400 text-xs"></i>
-                        </div>
-                      </div>
-
-                      <div className="flex flex-col gap-1.5">
-                        <label className="font-heading text-xs text-white uppercase font-bold" htmlFor="siteLocation">
-                          Deployment Site / City Location *
-                        </label>
-                        <input
-                          className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-white border border-surface-container-highest focus:border-brand-red focus:outline-none text-xs transition-all"
-                          id="siteLocation"
-                          placeholder="e.g. Hadapsar / Hinjawadi / Mumbai"
-                          required
-                          type="text"
-                          value={formData.siteLocation}
-                          onChange={handleChange}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Personnel Count, Shift, & Mobilization */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                      <div className="flex flex-col gap-1.5">
-                        <label className="font-heading text-xs text-white uppercase font-bold" htmlFor="personnelCount">
-                          Staff Needed (Count)
-                        </label>
-                        <input
-                          className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-white border border-surface-container-highest focus:border-brand-red focus:outline-none text-xs font-mono transition-all"
-                          id="personnelCount"
-                          min="1"
-                          placeholder="e.g. 4"
-                          type="number"
-                          value={formData.personnelCount}
-                          onChange={handleChange}
-                        />
-                      </div>
-
-                      <div className="flex flex-col gap-1.5">
-                        <label className="font-heading text-xs text-white uppercase font-bold" htmlFor="shiftDuration">
-                          Shift Routine
-                        </label>
-                        <div className="relative">
-                          <select
-                            className="w-full appearance-none px-4 py-3 pr-10 rounded-xl bg-surface-container-low text-white border border-surface-container-highest focus:border-brand-red focus:outline-none text-xs transition-all cursor-pointer"
-                            id="shiftDuration"
-                            value={formData.shiftDuration}
-                            onChange={handleChange}
-                          >
-                            <option value="12hrs">Rates for 12 Hours Duty</option>
-                            <option value="8hrs">Rates for 08 Hours Duty</option>
-                            <option value="temporary">Temporary / Event Basis</option>
-                          </select>
-                          <i className="fa-solid fa-chevron-down absolute right-4 top-3.5 pointer-events-none text-slate-400 text-xs"></i>
-                        </div>
-                      </div>
-
-                      <div className="flex flex-col gap-1.5">
-                        <label className="font-heading text-xs text-white uppercase font-bold" htmlFor="startDate">
-                          Required From Date
-                        </label>
-                        <input
-                          className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-white border border-surface-container-highest focus:border-brand-red focus:outline-none text-xs transition-all"
-                          id="startDate"
-                          type="date"
-                          value={formData.startDate}
-                          onChange={handleChange}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Additional Brief */}
-                    <div className="flex flex-col gap-1.5">
-                      <label className="font-heading text-xs text-white uppercase font-bold" htmlFor="requirements">
-                        Specific Scope / Notes
+                  {/* Phone & Email */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                    <div>
+                      <label className="block text-xs font-medium text-slate-300 mb-1.5" htmlFor="phoneNum">
+                        Phone Number (+91) *
                       </label>
-                      <textarea
-                        className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-white border border-surface-container-highest focus:border-brand-red focus:outline-none text-xs transition-all resize-y"
-                        id="requirements"
-                        placeholder="Mention any gatekeeper requirements, night-patrol routines, specific uniform standards, or temporary event hours..."
-                        rows="3"
-                        value={formData.requirements}
+                      <input
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] text-white border border-white/[0.08] focus:border-white/20 focus:outline-none text-xs transition-colors"
+                        id="phoneNum"
+                        placeholder="+91 98200 12345"
+                        required
+                        type="tel"
+                        value={formData.phoneNum}
                         onChange={handleChange}
-                      ></textarea>
+                      />
                     </div>
+                    <div>
+                      <label className="block text-xs font-medium text-slate-300 mb-1.5" htmlFor="emailAddr">
+                        Email Address *
+                      </label>
+                      <input
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] text-white border border-white/[0.08] focus:border-white/20 focus:outline-none text-xs transition-colors"
+                        id="emailAddr"
+                        placeholder="manager@company.com"
+                        required
+                        type="email"
+                        value={formData.emailAddr}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
 
-                    {/* Submit Button */}
-                    <div className="pt-2">
-                      <button
-                        className="w-full py-4 px-6 rounded-xl bg-brand-red text-white font-heading font-black text-xs uppercase tracking-wider shadow-lg shadow-red-900/40 hover:bg-brand-crimson transition-all flex items-center justify-center gap-3 cursor-pointer hover:scale-[1.01]"
-                        type="submit"
+                  {/* Service & Location */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                    <div>
+                      <label className="block text-xs font-medium text-slate-300 mb-1.5" htmlFor="serviceType">
+                        Particular Service Required *
+                      </label>
+                      <select
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-[#121318] text-white border border-white/[0.08] focus:border-white/20 focus:outline-none text-xs transition-colors cursor-pointer"
+                        id="serviceType"
+                        required
+                        value={formData.serviceType}
+                        onChange={handleChange}
                       >
-                        <span>TRANSMIT QUOTATION REQUISITION</span>
-                        <i className="fa-solid fa-arrow-right text-xs"></i>
-                      </button>
+                        <option value="" disabled>Select Particular</option>
+                        <option value="Security Guard (Industrial/Commercial)">Security Guard (Industrial / Commercial)</option>
+                        <option value="Security Supervisor">Security Supervisor</option>
+                        <option value="Bouncer (Event/Club/VIP)">Bouncer (Event / Club / VIP / Wedding)</option>
+                        <option value="Personal Armed Escort (PSO)">Personal Body Guard (PSO) Service</option>
+                        <option value="Housekeeping & Facility Staff">Housekeeping &amp; Facility Staff</option>
+                        <option value="Office Boy / Corporate Support">Office Boy / Corporate Support</option>
+                      </select>
                     </div>
+                    <div>
+                      <label className="block text-xs font-medium text-slate-300 mb-1.5" htmlFor="siteLocation">
+                        Deployment Site / City Location *
+                      </label>
+                      <input
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] text-white border border-white/[0.08] focus:border-white/20 focus:outline-none text-xs transition-colors"
+                        id="siteLocation"
+                        placeholder="e.g. Hadapsar / Hinjawadi / BKC Mumbai"
+                        required
+                        type="text"
+                        value={formData.siteLocation}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
 
-                    <div className="text-center pt-2 text-[11px] text-slate-400 font-mono">
-                      * GST will be extra on rates • Rate different for temporary services • Valid for one year.
+                  {/* Staff count, Shift, Date */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                    <div>
+                      <label className="block text-xs font-medium text-slate-300 mb-1.5" htmlFor="personnelCount">
+                        Staff Needed (Count)
+                      </label>
+                      <input
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] text-white border border-white/[0.08] focus:border-white/20 focus:outline-none text-xs transition-colors"
+                        id="personnelCount"
+                        placeholder="e.g. 4"
+                        type="number"
+                        min="1"
+                        value={formData.personnelCount}
+                        onChange={handleChange}
+                      />
                     </div>
-                  </form>
-                )}
-              </div>
+                    <div>
+                      <label className="block text-xs font-medium text-slate-300 mb-1.5" htmlFor="shiftDuration">
+                        Shift Routine
+                      </label>
+                      <select
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-[#121318] text-white border border-white/[0.08] focus:border-white/20 focus:outline-none text-xs transition-colors cursor-pointer"
+                        id="shiftDuration"
+                        value={formData.shiftDuration}
+                        onChange={handleChange}
+                      >
+                        <option value="8hrs">8-Hour Shift Standard</option>
+                        <option value="12hrs">12-Hour Factory Duty</option>
+                        <option value="24hrs">24-Hour Continuous Post</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-xs font-medium text-slate-300 mb-1.5" htmlFor="startDate">
+                        Required From Date
+                      </label>
+                      <input
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] text-white border border-white/[0.08] focus:border-white/20 focus:outline-none text-xs transition-colors"
+                        id="startDate"
+                        type="date"
+                        value={formData.startDate}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Requirements / Notes */}
+                  <div>
+                    <label className="block text-xs font-medium text-slate-300 mb-1.5" htmlFor="requirements">
+                      Specific Scope / Notes
+                    </label>
+                    <textarea
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] text-white border border-white/[0.08] focus:border-white/20 focus:outline-none text-xs transition-colors resize-y"
+                      id="requirements"
+                      placeholder="Mention any gatekeeper requirements, night-patrol routines, specific uniform standards, or temporary event hours..."
+                      rows="3"
+                      value={formData.requirements}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  {/* Submit Button */}
+                  <div className="pt-2">
+                    <button
+                      className="w-full py-3 rounded-xl bg-brand-red hover:bg-red-600 text-white font-medium text-xs tracking-wide transition-colors flex items-center justify-center gap-2 shadow-sm cursor-pointer"
+                      type="submit"
+                    >
+                      <span>Submit Quotation Request</span>
+                      <IconArrowRight />
+                    </button>
+                  </div>
+
+                  <p className="text-center pt-1 text-[11px] text-slate-500">
+                    * GST extra as applicable • Standard rate contract valid for 12 months • Full PSARA &amp; PF compliance.
+                  </p>
+                </form>
+              )}
             </div>
 
           </div>
         </div>
       </section>
 
-      {/* SECTION 3: REAL BRANCH COORDINATES (From Page 8 of PDF) */}
-      <section className="w-full bg-[#0a0a0c] py-20 text-on-surface px-4 sm:px-6 lg:px-12 border-t border-brand-border tactical-grid">
-        <div className="w-full max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+      {/* SECTION 3: REGIONAL BRANCHES & HUBS */}
+      <section className="w-full py-16 px-4 sm:px-6 lg:px-12 border-t border-white/[0.06]">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
             <div>
-              <span className="font-mono text-xs uppercase tracking-wider text-brand-red font-bold">
-                BRANCH NETWORK
+              <span className="text-[11px] uppercase tracking-wider text-brand-red font-semibold block">
+                Regional Hubs
               </span>
-              <h2 className="font-heading font-black text-2xl sm:text-4xl text-white uppercase tracking-tight mt-1">
-                Regional Branches &amp; Hubs
+              <h2 className="text-xl sm:text-2xl font-semibold text-white tracking-tight mt-0.5">
+                Regional Branches &amp; Operational Bases
               </h2>
             </div>
             <p className="text-xs text-slate-400 max-w-md">
-              Permanent offices and operational bases ensuring continuous physical oversight across Maharashtra.
+              Permanent offices and operational bases ensuring continuous physical supervision across Maharashtra.
             </p>
           </div>
 
-          <div ref={branchesRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {branches.map((hub, idx) => (
               <div
                 key={idx}
-                className={`p-7 rounded-2xl bg-[#14151a] shadow-xl border border-slate-800 flex flex-col justify-between hover:border-brand-red/50 hover:shadow-brand-red/10 hover:shadow-2xl transition-all duration-700 group ${
-                  branchesVisible.has(idx) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
+                className="p-5 rounded-2xl bg-[#0f1016] border border-white/[0.08] flex flex-col justify-between hover:border-white/20 transition-colors shadow-lg"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="font-mono text-[11px] px-2.5 py-1 rounded bg-[#1e1f26] text-brand-red border border-slate-800 uppercase font-bold">
-                      {hub.code}
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-[11px] font-medium text-slate-400">
+                      {hub.region}
                     </span>
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                   </div>
 
-                  <h3 className="font-heading font-black text-lg text-white uppercase mb-2 group-hover:text-brand-red transition-colors">
+                  <h3 className="font-semibold text-sm text-white mb-1.5">
                     {hub.title}
                   </h3>
-                  <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                  <p className="text-xs text-slate-300 leading-relaxed mb-3">
                     {hub.address}
                   </p>
 
-                  <div className="pt-3 border-t border-slate-800/80 text-xs text-slate-400">
-                    <p className="font-semibold text-slate-200">Coverage Jurisdiction:</p>
-                    <p className="mt-1 leading-relaxed text-slate-400">{hub.jurisdiction}</p>
+                  <div className="pt-2.5 border-t border-white/[0.06] text-xs text-slate-400 space-y-1">
+                    <span className="text-[11px] font-medium text-slate-300 block">Coverage Area:</span>
+                    <p className="leading-relaxed text-[11px] text-slate-400">{hub.jurisdiction}</p>
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+                <div className="mt-5 pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs">
                   <a
-                    className="font-heading font-bold text-xs uppercase text-brand-red hover:underline flex items-center gap-1.5"
-                    href="tel:+918806078777"
+                    className="font-medium text-brand-red hover:underline flex items-center gap-1.5"
+                    href={`tel:${hub.contact.replace(/[^0-9+]/g, '')}`}
                   >
-                    <i className="fa-solid fa-phone text-xs"></i>
-                    <span>Call Base</span>
+                    <IconPhone className="w-3.5 h-3.5 text-brand-red" />
+                    <span>Call Branch Desk</span>
                   </a>
-                  <span className="font-mono text-[11px] text-slate-400">{hub.contact.split('/')[0]}</span>
+                  <span className="text-[11px] text-slate-400">{hub.contact}</span>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
     </div>
   );
 }
