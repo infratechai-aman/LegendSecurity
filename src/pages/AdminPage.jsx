@@ -82,6 +82,17 @@ function IconClose({ className = '' }) {
   );
 }
 
+function IconCalendar({ className = '' }) {
+  return (
+    <svg className={`w-4 h-4 shrink-0 ${className}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+      <line x1="16" y1="2" x2="16" y2="6" />
+      <line x1="8" y1="2" x2="8" y2="6" />
+      <line x1="3" y1="10" x2="21" y2="10" />
+    </svg>
+  );
+}
+
 
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(() => storageService.isAdminAuthenticated());
@@ -282,12 +293,28 @@ export default function AdminPage() {
             </div>
 
             <button
-              onClick={() => storageService.exportToCSV('appointments')}
+              onClick={() => storageService.exportToCSV(viewMode === 'bookings' ? 'appointments' : 'quotes')}
               className="p-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-slate-300 hover:text-white transition-colors"
-              title="Export Bookings to CSV"
+              title="Export to CSV"
             >
               <IconExport className="w-4 h-4" />
             </button>
+
+            {(appointments.length > 0 || quotes.length > 0) && (
+              <button
+                type="button"
+                onClick={() => {
+                  if (window.confirm('Delete all client bookings & quotation records from database?')) {
+                    storageService.clearAllData();
+                    refreshData();
+                  }
+                }}
+                className="p-2 rounded-lg bg-white/[0.04] hover:bg-rose-500/20 border border-white/[0.08] text-slate-400 hover:text-rose-400 transition-colors"
+                title="Wipe All Records"
+              >
+                <IconTrash className="w-4 h-4" />
+              </button>
+            )}
 
             <button
               onClick={handleLogout}
@@ -362,8 +389,16 @@ export default function AdminPage() {
                   <tbody className="divide-y divide-white/[0.05] text-xs">
                     {filteredAppointments.length === 0 ? (
                       <tr>
-                        <td colSpan={6} className="py-12 text-center text-slate-500">
-                          No bookings found matching your filter.
+                        <td colSpan={6} className="py-16 text-center">
+                          <div className="flex flex-col items-center justify-center text-slate-500 max-w-sm mx-auto">
+                            <div className="w-10 h-10 rounded-full bg-white/[0.04] border border-white/[0.06] flex items-center justify-center text-slate-400 mb-2.5">
+                              <IconCalendar className="w-5 h-5 text-slate-400" />
+                            </div>
+                            <p className="text-xs font-semibold text-white">No Site Audit Bookings Yet</p>
+                            <p className="text-[11px] text-slate-400 mt-1 leading-relaxed">
+                              Real client bookings submitted from the consultation form will appear here in real time.
+                            </p>
+                          </div>
                         </td>
                       </tr>
                     ) : (
@@ -511,8 +546,16 @@ export default function AdminPage() {
                   <tbody className="divide-y divide-white/[0.05] text-xs">
                     {quotes.length === 0 ? (
                       <tr>
-                        <td colSpan={6} className="py-10 text-center text-slate-500">
-                          No quotation inquiries received yet.
+                        <td colSpan={6} className="py-16 text-center">
+                          <div className="flex flex-col items-center justify-center text-slate-500 max-w-sm mx-auto">
+                            <div className="w-10 h-10 rounded-full bg-white/[0.04] border border-white/[0.06] flex items-center justify-center text-slate-400 mb-2.5">
+                              <IconExport className="w-5 h-5 text-slate-400" />
+                            </div>
+                            <p className="text-xs font-semibold text-white">No Quotation Inquiries Yet</p>
+                            <p className="text-[11px] text-slate-400 mt-1 leading-relaxed">
+                              Inbound price quotation requisitions from the contact form will appear here.
+                            </p>
+                          </div>
                         </td>
                       </tr>
                     ) : (

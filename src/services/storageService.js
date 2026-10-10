@@ -4,144 +4,17 @@
 // =====================================================================
 
 const STORAGE_KEYS = {
-  APPOINTMENTS: 'legend_appointments_v1',
-  QUOTES: 'legend_quotes_v1',
+  APPOINTMENTS: 'legend_appointments_v2',
+  QUOTES: 'legend_quotes_v2',
   GUARDS: 'legend_guards_v1',
   AUTH: 'legend_admin_auth_v1',
 };
 
 const DEFAULT_ADMIN_PIN = '2026';
 
-// Realistic Enterprise Demo Data for Western Maharashtra Security Operations
-const INITIAL_APPOINTMENTS = [
-  {
-    id: 'TL-AUDIT-9821',
-    createdAt: '2026-10-10T14:30:00.000Z',
-    fullName: 'Rajesh K. Singhania',
-    orgName: 'Apex Industrial Hub, Chakan MIDC',
-    phoneNum: '+91 98220 44119',
-    emailAddr: 'r.singhania@apexindustries.in',
-    auditType: 'On-Site Vulnerability & Security Audit',
-    location: 'Chakan Phase-II MIDC, Pune',
-    date: '2026-10-13',
-    timeSlot: '11:00 AM - 12:30 PM',
-    riskLevel: 'Urgent Dispatch (<24 Hours)',
-    notes: 'Need 12 security guards + 2 supervisors for multi-acre manufacturing unit gate & perimeter control.',
-    status: 'Confirmed',
-    assignedOfficer: 'Supervisor Vikram Patil',
-  },
-  {
-    id: 'TL-AUDIT-9822',
-    createdAt: '2026-10-09T10:15:00.000Z',
-    fullName: 'Aditya Deshmukh',
-    orgName: 'Emerald Grand Bay Banquets',
-    phoneNum: '+91 98901 33452',
-    emailAddr: 'events@emeraldgrandbay.com',
-    auditType: 'Event Security Command & Bouncer Squad',
-    location: 'Bandra-Kurla Complex (BKC), Mumbai',
-    date: '2026-10-14',
-    timeSlot: '02:30 PM - 04:00 PM',
-    riskLevel: 'Standard Facility Audit',
-    notes: 'High-profile wedding with 1,200 VIP guests. Requirement: 8 executive bouncers in tactical suits + 4 female guards.',
-    status: 'Pending',
-    assignedOfficer: 'Director Mosin Shaikh',
-  },
-  {
-    id: 'TL-AUDIT-9823',
-    createdAt: '2026-10-08T18:00:00.000Z',
-    fullName: 'Sameer Merchant',
-    orgName: 'Skyline Pinnacle Towers CHS',
-    phoneNum: '+91 91672 55901',
-    emailAddr: 'secretary@skylinepinnacle.org',
-    auditType: 'Residential & Commercial Society Guarding',
-    location: 'Katraj - Kondhwa Corridor, Pune',
-    date: '2026-10-12',
-    timeSlot: '09:30 AM - 11:00 AM',
-    riskLevel: 'Standard Facility Audit',
-    notes: '24/7 security transition for 4 towers (350 flats). Requesting quote and background verification review.',
-    status: 'Confirmed',
-    assignedOfficer: 'Senior Field Officer Shinde',
-  },
-  {
-    id: 'TL-AUDIT-9824',
-    createdAt: '2026-10-07T11:45:00.000Z',
-    fullName: 'Vikram Malhotra',
-    orgName: 'Malhotra Logistics & Warehousing',
-    phoneNum: '+91 98205 11874',
-    emailAddr: 'v.malhotra@malhotralogistics.com',
-    auditType: 'Direct Strategy Consultation (Phone/Video)',
-    location: 'Nalasopara East, Palghar District',
-    date: '2026-10-15',
-    timeSlot: '04:00 PM - 05:00 PM',
-    riskLevel: 'High Threat Assessment',
-    notes: 'Perimeter intrusion threats reported on warehouse rear zone. Immediate armed escort assessment needed.',
-    status: 'Completed',
-    assignedOfficer: 'Director Mosin Shaikh',
-  },
-];
-
-const INITIAL_QUOTES = [
-  {
-    id: 'TL-QUOTE-4011',
-    createdAt: '2026-10-10T16:00:00.000Z',
-    fullName: 'Pooja Agarwal',
-    orgName: 'NexGen Infotech Park',
-    phoneNum: '+91 98811 77340',
-    emailAddr: 'procurement@nexgenpark.com',
-    serviceType: 'Corporate & Tech Park Security',
-    siteLocation: 'Hinjawadi Phase 1, Pune',
-    personnelCount: '16 Guards',
-    shiftDuration: '24hrs (Dual 12h Shifts)',
-    requirements: 'Boom barrier operations, visitor biometric logging, CCTV monitoring desk team.',
-    status: 'New Lead',
-    estValue: '₹ 4,80,000 / mo',
-  },
-  {
-    id: 'TL-QUOTE-4012',
-    createdAt: '2026-10-09T13:20:00.000Z',
-    fullName: 'Harshvardhan Shinde',
-    orgName: 'Shinde Auto Components',
-    phoneNum: '+91 97654 22091',
-    emailAddr: 'h.shinde@shindeauto.co.in',
-    serviceType: 'Industrial & MIDC Manned Guarding',
-    siteLocation: 'Bhosari MIDC, Pune',
-    personnelCount: '8 Guards',
-    shiftDuration: '12hrs',
-    requirements: 'Raw material gate check, weighbridge security, anti-pilferage patrols.',
-    status: 'Proposal Dispatched',
-    estValue: '₹ 2,20,000 / mo',
-  },
-  {
-    id: 'TL-QUOTE-4013',
-    createdAt: '2026-10-08T09:40:00.000Z',
-    fullName: 'Farhan Qureshi',
-    orgName: 'Club Velvet Lounge',
-    phoneNum: '+91 98210 99881',
-    emailAddr: 'farhan@velvetlounge.in',
-    serviceType: 'Executive VIP Bouncers',
-    siteLocation: 'Malad West & Andheri Link Road, Mumbai',
-    personnelCount: '6 Bouncers',
-    shiftDuration: '8hrs Night Shift',
-    requirements: 'Crowd management, dress code compliance, VIP escort for celebrity guests on weekends.',
-    status: 'Contract Signed',
-    estValue: '₹ 2,70,000 / mo',
-  },
-  {
-    id: 'TL-QUOTE-4014',
-    createdAt: '2026-10-06T15:10:00.000Z',
-    fullName: 'Nilesh Tambe',
-    orgName: 'Surya Multispeciality Hospital',
-    phoneNum: '+91 98600 33419',
-    emailAddr: 'admin@suryahospitalpune.com',
-    serviceType: 'Hospital & Healthcare Security',
-    siteLocation: 'Swargate / Bibvewadi, Pune',
-    personnelCount: '10 Guards + 2 Wardens',
-    shiftDuration: '24hrs',
-    requirements: 'ER dispute escalation handling, ambulance bay clearance, round-the-clock ward security.',
-    status: 'Audit Scheduled',
-    estValue: '₹ 3,40,000 / mo',
-  },
-];
+// Fresh production database (Zero mock entries)
+const INITIAL_APPOINTMENTS = [];
+const INITIAL_QUOTES = [];
 
 const INITIAL_GUARDS = [
   {
@@ -212,15 +85,53 @@ export const storageService = {
   // --- INITIALIZATION ---
   init() {
     if (typeof window === 'undefined') return;
+
+    // Purge legacy v1 demo mock data keys
+    localStorage.removeItem('legend_appointments_v1');
+    localStorage.removeItem('legend_quotes_v1');
+
+    const mockAuditIds = ['TL-AUDIT-9821', 'TL-AUDIT-9822', 'TL-AUDIT-9823', 'TL-AUDIT-9824'];
+    const mockQuoteIds = ['TL-QUOTE-4011', 'TL-QUOTE-4012', 'TL-QUOTE-4013', 'TL-QUOTE-4014'];
+
     if (!localStorage.getItem(STORAGE_KEYS.APPOINTMENTS)) {
-      localStorage.setItem(STORAGE_KEYS.APPOINTMENTS, JSON.stringify(INITIAL_APPOINTMENTS));
+      localStorage.setItem(STORAGE_KEYS.APPOINTMENTS, JSON.stringify([]));
+    } else {
+      try {
+        const existing = JSON.parse(localStorage.getItem(STORAGE_KEYS.APPOINTMENTS) || '[]');
+        const cleaned = existing.filter((a) => !mockAuditIds.includes(a.id));
+        if (cleaned.length !== existing.length) {
+          localStorage.setItem(STORAGE_KEYS.APPOINTMENTS, JSON.stringify(cleaned));
+        }
+      } catch {
+        localStorage.setItem(STORAGE_KEYS.APPOINTMENTS, JSON.stringify([]));
+      }
     }
+
     if (!localStorage.getItem(STORAGE_KEYS.QUOTES)) {
-      localStorage.setItem(STORAGE_KEYS.QUOTES, JSON.stringify(INITIAL_QUOTES));
+      localStorage.setItem(STORAGE_KEYS.QUOTES, JSON.stringify([]));
+    } else {
+      try {
+        const existing = JSON.parse(localStorage.getItem(STORAGE_KEYS.QUOTES) || '[]');
+        const cleaned = existing.filter((q) => !mockQuoteIds.includes(q.id));
+        if (cleaned.length !== existing.length) {
+          localStorage.setItem(STORAGE_KEYS.QUOTES, JSON.stringify(cleaned));
+        }
+      } catch {
+        localStorage.setItem(STORAGE_KEYS.QUOTES, JSON.stringify([]));
+      }
     }
+
     if (!localStorage.getItem(STORAGE_KEYS.GUARDS)) {
       localStorage.setItem(STORAGE_KEYS.GUARDS, JSON.stringify(INITIAL_GUARDS));
     }
+  },
+
+  clearAllData() {
+    if (typeof window === 'undefined') return;
+    localStorage.setItem(STORAGE_KEYS.APPOINTMENTS, JSON.stringify([]));
+    localStorage.setItem(STORAGE_KEYS.QUOTES, JSON.stringify([]));
+    dispatchStorageEvent(STORAGE_KEYS.APPOINTMENTS, []);
+    dispatchStorageEvent(STORAGE_KEYS.QUOTES, []);
   },
 
   // --- APPOINTMENTS ---
