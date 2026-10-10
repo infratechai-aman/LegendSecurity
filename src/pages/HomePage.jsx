@@ -120,7 +120,7 @@ export default function HomePage() {
           <img
             src="/assets/hero_bg_mobile.jpg"
             alt=""
-            className="w-full h-full object-cover object-top filter blur-[2px] brightness-[0.42] contrast-[1.05] scale-102"
+            className="w-full h-full object-cover object-top filter blur-[0.5px] brightness-[0.45] contrast-[1.05]"
           />
           {/* Dark gradient overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0c]/80 via-[#0a0a0c]/55 to-[#0a0a0c]" />
