@@ -4,7 +4,7 @@ import confetti from 'canvas-confetti';
 import { storageService } from '../services/storageService';
 
 // =====================================================================
-// PREMIUM iOS / SF SYMBOLS-STYLE SVG ICONS (Fine 1.5px Stroke)
+// PREMIUM iOS / SF SYMBOLS-STYLE SVG ICONS (Fine 1.5px Stroke, Hardcoded Sizing)
 // =====================================================================
 
 function IconShield({ className = '' }) {
@@ -192,7 +192,7 @@ export default function BookAppointmentPage() {
           particleCount: 90,
           spread: 70,
           origin: { y: 0.5 },
-          colors: ['#e50914', '#ffffff', '#ffd700'],
+          colors: ['#e50914', '#1e293b', '#10b981'],
         });
       } catch {
         // ignore
@@ -246,45 +246,65 @@ export default function BookAppointmentPage() {
   };
 
   return (
-    <div className="flex flex-col w-full bg-[#08090d] min-h-screen pt-24 sm:pt-28 pb-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
-        
-        {/* Breadcrumb Navigation */}
-        <nav className="flex items-center gap-2 text-slate-400 text-xs mb-5">
-          <Link to="/" className="hover:text-white transition-colors">Home</Link>
-          <span className="text-slate-600">/</span>
-          <span className="text-slate-200 font-medium">Book Consultation</span>
-        </nav>
+    <div className="flex flex-col w-full min-h-screen">
 
-        {/* Page Headline */}
-        <div className="max-w-2xl mb-8 sm:mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-3.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            <span className="text-xs text-slate-300 font-medium">
-              Free On-Site Surveys Across Maharashtra
-            </span>
+      {/* ══════════════════════════════════════════
+          HERO SECTION (DARK ACCENT CANVAS)
+      ══════════════════════════════════════════ */}
+      <section className="w-full bg-[#0a0a0c] text-white pt-28 pb-14 px-4 sm:px-6 lg:px-8 border-b border-[#1d1e24] relative overflow-hidden">
+        {/* Ambient accent */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-red/5 rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          {/* Breadcrumb Navigation */}
+          <nav className="flex items-center gap-2 text-slate-400 text-xs mb-4">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="text-slate-600">/</span>
+            <span className="text-slate-300 font-medium">Book Consultation</span>
+          </nav>
+
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/10 border border-brand-red/25 mb-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <span className="text-[11px] font-semibold text-slate-300 uppercase tracking-wider">
+                  Free On-Site Surveys Across Maharashtra
+                </span>
+              </div>
+
+              <h1 className="text-3xl sm:text-5xl font-semibold tracking-tight text-white">
+                Schedule a Security Consultation
+              </h1>
+
+              <p className="text-sm sm:text-base text-slate-300 mt-2 max-w-2xl leading-relaxed">
+                Certified vulnerability inspections and private security briefings across{' '}
+                <strong className="text-white">Pune, Mumbai, Thane, and Palghar</strong>. Coordinated directly by Director{' '}
+                <strong>Mr. Mosin Azam Shaikh</strong> and operations field supervisors.
+              </p>
+            </div>
+
+            <div className="shrink-0">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-slate-300 text-xs font-medium">
+                <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                Director Coordinated • Free Survey
+              </span>
+            </div>
           </div>
-
-          <h1 className="text-2xl sm:text-4xl font-semibold tracking-tight text-white mb-2.5">
-            Schedule a Security Consultation
-          </h1>
-
-          <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
-            Certified vulnerability inspections and private security briefings across{' '}
-            <strong className="text-white">Pune, Mumbai, Thane, and Palghar</strong>. Coordinated directly by Director{' '}
-            <strong>Mr. Mosin Azam Shaikh</strong> and operations field supervisors.
-          </p>
         </div>
+      </section>
 
-        {/* Main 2-Column Interface */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      {/* ══════════════════════════════════════════
+          MAIN CONTENT (CRISP LIGHT CANVAS)
+      ══════════════════════════════════════════ */}
+      <section className="w-full bg-[#f8fafc] text-slate-900 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           
           {/* LEFT COLUMN: INTERACTIVE BOOKING ENGINE (7 cols) */}
-          <div className="lg:col-span-7 bg-[#0f1016] border border-white/[0.08] rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl">
+          <div className="lg:col-span-7 bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm">
             
-            {/* Step Progress Indicator (Apple/Linear Style) */}
+            {/* Step Progress Indicator (Clean Light Style) */}
             {step < 4 && (
-              <div className="flex items-center gap-2 pb-6 mb-6 border-b border-white/[0.06]">
+              <div className="flex items-center gap-2 pb-6 mb-6 border-b border-slate-100">
                 {[
                   { num: 1, label: 'Scope' },
                   { num: 2, label: 'Schedule' },
@@ -294,21 +314,21 @@ export default function BookAppointmentPage() {
                     <button
                       type="button"
                       onClick={() => (step > s.num ? setStep(s.num) : null)}
-                      className={`flex items-center gap-2 text-xs font-medium transition-colors ${
+                      className={`flex items-center gap-2 text-xs font-semibold transition-colors ${
                         step === s.num
-                          ? 'text-white'
+                          ? 'text-slate-900'
                           : step > s.num
-                          ? 'text-slate-300 cursor-pointer hover:text-white'
-                          : 'text-slate-500'
+                          ? 'text-slate-700 cursor-pointer hover:text-brand-red'
+                          : 'text-slate-400'
                       }`}
                     >
                       <span
-                        className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-semibold transition-all ${
+                        className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
                           step === s.num
-                            ? 'bg-brand-red text-white'
+                            ? 'bg-brand-red text-white shadow-sm'
                             : step > s.num
-                            ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                            : 'bg-white/[0.04] text-slate-500 border border-white/[0.06]'
+                            ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                            : 'bg-slate-100 text-slate-400 border border-slate-200'
                         }`}
                       >
                         {step > s.num ? '✓' : s.num}
@@ -316,7 +336,7 @@ export default function BookAppointmentPage() {
                       <span className="hidden sm:inline">{s.label}</span>
                     </button>
                     {idx < 2 && (
-                      <div className={`flex-1 h-[1px] transition-colors ${step > idx + 1 ? 'bg-emerald-500/40' : 'bg-white/[0.06]'}`} />
+                      <div className={`flex-1 h-[1px] transition-colors ${step > idx + 1 ? 'bg-emerald-400' : 'bg-slate-200'}`} />
                     )}
                   </div>
                 ))}
@@ -327,11 +347,11 @@ export default function BookAppointmentPage() {
             {step === 1 && (
               <div className="space-y-5">
                 <div>
-                  <h2 className="text-base font-semibold text-white tracking-tight">Select Security Scope</h2>
-                  <p className="text-xs text-slate-400 mt-1">Choose the primary requirement for your facility or event:</p>
+                  <h2 className="text-lg font-semibold text-slate-900 tracking-tight">Select Security Scope</h2>
+                  <p className="text-xs text-slate-500 mt-0.5">Choose the primary requirement for your facility or event:</p>
                 </div>
 
-                <div className="space-y-2.5">
+                <div className="space-y-3">
                   {AUDIT_TYPES.map((type) => {
                     const isSelected = formData.auditType === type.id;
                     return (
@@ -340,26 +360,26 @@ export default function BookAppointmentPage() {
                         onClick={() => setFormData((p) => ({ ...p, auditType: type.id }))}
                         className={`p-4 rounded-xl border transition-all cursor-pointer flex items-start gap-3.5 ${
                           isSelected
-                            ? 'bg-brand-red/[0.05] border-brand-red/60 shadow-md ring-1 ring-brand-red/30'
-                            : 'bg-white/[0.02] border-white/[0.06] hover:border-white/20 hover:bg-white/[0.04]'
+                            ? 'bg-red-50/40 border-2 border-brand-red shadow-sm ring-1 ring-brand-red/10'
+                            : 'bg-slate-50/70 border-slate-200/90 hover:border-slate-300 hover:bg-slate-50'
                         }`}
                       >
                         <div
                           className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
-                            isSelected ? 'bg-brand-red text-white' : 'bg-white/[0.04] text-slate-400'
+                            isSelected ? 'bg-brand-red text-white' : 'bg-slate-200/80 text-slate-700'
                           }`}
                         >
                           {type.icon}
                         </div>
 
                         <div className="flex-1 min-w-0">
-                          <h3 className="font-semibold text-sm text-white mb-0.5">
+                          <h3 className="font-semibold text-sm text-slate-900 mb-0.5">
                             {type.title}
                           </h3>
-                          <p className="text-xs text-slate-400 leading-relaxed mb-2">
+                          <p className="text-xs text-slate-600 leading-relaxed mb-2">
                             {type.desc}
                           </p>
-                          <span className="inline-block text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-white/[0.03] text-slate-300 border border-white/[0.06]">
+                          <span className="inline-block text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-white text-slate-600 border border-slate-200 shadow-2xs">
                             Best for: {type.badge}
                           </span>
                         </div>
@@ -367,7 +387,7 @@ export default function BookAppointmentPage() {
                         <div className="shrink-0 mt-1">
                           <div
                             className={`w-4 h-4 rounded-full border flex items-center justify-center transition-colors ${
-                              isSelected ? 'border-brand-red bg-brand-red' : 'border-slate-600'
+                              isSelected ? 'border-brand-red bg-brand-red' : 'border-slate-300 bg-white'
                             }`}
                           >
                             {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
@@ -382,7 +402,7 @@ export default function BookAppointmentPage() {
                   <button
                     type="button"
                     onClick={() => setStep(2)}
-                    className="px-6 py-2.5 rounded-xl bg-brand-red hover:bg-red-600 text-white font-medium text-xs tracking-wide transition-colors flex items-center gap-2 shadow-sm"
+                    className="px-6 py-2.5 rounded-xl bg-brand-red hover:bg-red-600 text-white font-semibold text-xs tracking-wide transition-colors flex items-center gap-2 shadow-md shadow-red-700/20 cursor-pointer"
                   >
                     <span>Continue to Schedule</span>
                     <IconArrowRight />
@@ -395,12 +415,12 @@ export default function BookAppointmentPage() {
             {step === 2 && (
               <div className="space-y-5">
                 <div>
-                  <h2 className="text-base font-semibold text-white tracking-tight">Select Date &amp; Time Window</h2>
-                  <p className="text-xs text-slate-400 mt-1">Our certified supervisor team arrives with full facility inspection checklists.</p>
+                  <h2 className="text-lg font-semibold text-slate-900 tracking-tight">Select Date &amp; Time Window</h2>
+                  <p className="text-xs text-slate-500 mt-0.5">Our certified supervisor team arrives with full facility inspection checklists.</p>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-2">
+                  <label className="block text-xs font-semibold text-slate-700 mb-2">
                     Inspection Date
                   </label>
                   <input
@@ -409,12 +429,12 @@ export default function BookAppointmentPage() {
                     value={formData.date}
                     min={new Date().toISOString().slice(0, 10)}
                     onChange={handleInputChange}
-                    className="w-full bg-white/[0.03] border border-white/[0.08] focus:border-white/20 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none transition-colors"
+                    className="w-full bg-slate-50/70 border border-slate-200 text-slate-900 focus:bg-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 rounded-xl px-4 py-2.5 text-xs focus:outline-none transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-2">
+                  <label className="block text-xs font-semibold text-slate-700 mb-2">
                     Preferred Time Window
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -424,39 +444,39 @@ export default function BookAppointmentPage() {
                         <div
                           key={t.slot}
                           onClick={() => setFormData((p) => ({ ...p, timeSlot: t.slot }))}
-                          className={`p-3 rounded-xl border cursor-pointer transition-all ${
+                          className={`p-3.5 rounded-xl border cursor-pointer transition-all ${
                             isSelected
-                              ? 'bg-brand-red/[0.06] border-brand-red/60 text-white shadow-sm ring-1 ring-brand-red/30'
-                              : 'bg-white/[0.02] border-white/[0.06] text-slate-300 hover:border-white/20 hover:bg-white/[0.04]'
+                              ? 'bg-red-50/50 border-2 border-brand-red text-slate-900 shadow-sm'
+                              : 'bg-slate-50/70 border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-100'
                           }`}
                         >
                           <div className="flex items-center justify-between mb-1">
-                            <span className="font-semibold text-xs text-white">
+                            <span className="font-semibold text-xs text-slate-900">
                               {t.label}
                             </span>
-                            <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-white/[0.04] text-slate-300 border border-white/[0.06]">
+                            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-white text-slate-600 border border-slate-200">
                               {t.tag}
                             </span>
                           </div>
-                          <div className="text-xs text-brand-red font-medium">{t.slot}</div>
+                          <div className="text-xs text-brand-red font-semibold">{t.slot}</div>
                         </div>
                       );
                     })}
                   </div>
                 </div>
 
-                <div className="pt-3 flex items-center justify-between border-t border-white/[0.06]">
+                <div className="pt-3 flex items-center justify-between border-t border-slate-100">
                   <button
                     type="button"
                     onClick={() => setStep(1)}
-                    className="px-4 py-2 rounded-xl text-slate-400 hover:text-white text-xs font-medium transition-colors"
+                    className="px-4 py-2 rounded-xl text-slate-600 hover:text-slate-900 text-xs font-semibold transition-colors cursor-pointer"
                   >
                     ← Back to Scope
                   </button>
                   <button
                     type="button"
                     onClick={() => setStep(3)}
-                    className="px-6 py-2.5 rounded-xl bg-brand-red hover:bg-red-600 text-white font-medium text-xs tracking-wide transition-colors flex items-center gap-2 shadow-sm"
+                    className="px-6 py-2.5 rounded-xl bg-brand-red hover:bg-red-600 text-white font-semibold text-xs tracking-wide transition-colors flex items-center gap-2 shadow-md shadow-red-700/20 cursor-pointer"
                   >
                     <span>Continue to Contact</span>
                     <IconArrowRight />
@@ -469,13 +489,13 @@ export default function BookAppointmentPage() {
             {step === 3 && (
               <form onSubmit={handleBookingSubmit} className="space-y-4">
                 <div>
-                  <h2 className="text-base font-semibold text-white tracking-tight">Facility Details &amp; Contact</h2>
-                  <p className="text-xs text-slate-400 mt-1">Authorized contact details for supervisor entry clearance:</p>
+                  <h2 className="text-lg font-semibold text-slate-900 tracking-tight">Facility Details &amp; Contact</h2>
+                  <p className="text-xs text-slate-500 mt-0.5">Authorized contact details for supervisor entry clearance:</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-medium text-slate-300 mb-1.5">
+                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                       Client Full Name *
                     </label>
                     <input
@@ -485,11 +505,11 @@ export default function BookAppointmentPage() {
                       placeholder="e.g. Rajesh Singhania"
                       value={formData.fullName}
                       onChange={handleInputChange}
-                      className="w-full bg-white/[0.03] border border-white/[0.08] focus:border-white/20 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder:text-slate-500 focus:outline-none transition-colors"
+                      className="w-full bg-slate-50/70 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:bg-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-slate-300 mb-1.5">
+                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                       Company / Property Title
                     </label>
                     <input
@@ -498,14 +518,14 @@ export default function BookAppointmentPage() {
                       placeholder="e.g. Apex Industrial Hub / Oberoi Splendor"
                       value={formData.orgName}
                       onChange={handleInputChange}
-                      className="w-full bg-white/[0.03] border border-white/[0.08] focus:border-white/20 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder:text-slate-500 focus:outline-none transition-colors"
+                      className="w-full bg-slate-50/70 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:bg-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-medium text-slate-300 mb-1.5">
+                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                       Mobile Phone Number (+91) *
                     </label>
                     <input
@@ -515,11 +535,11 @@ export default function BookAppointmentPage() {
                       placeholder="+91 98220 XXXXX"
                       value={formData.phoneNum}
                       onChange={handleInputChange}
-                      className="w-full bg-white/[0.03] border border-white/[0.08] focus:border-white/20 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder:text-slate-500 focus:outline-none transition-colors"
+                      className="w-full bg-slate-50/70 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:bg-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-slate-300 mb-1.5">
+                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                       Email Address
                     </label>
                     <input
@@ -528,39 +548,39 @@ export default function BookAppointmentPage() {
                       placeholder="name@company.com"
                       value={formData.emailAddr}
                       onChange={handleInputChange}
-                      className="w-full bg-white/[0.03] border border-white/[0.08] focus:border-white/20 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder:text-slate-500 focus:outline-none transition-colors"
+                      className="w-full bg-slate-50/70 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:bg-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">
+                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                     Facility Region in Maharashtra *
                   </label>
                   <select
                     name="location"
                     value={formData.location}
                     onChange={handleInputChange}
-                    className="w-full bg-[#121318] border border-white/[0.08] focus:border-white/20 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none transition-colors"
+                    className="w-full bg-slate-50/70 border border-slate-200 text-slate-900 focus:bg-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none transition-colors cursor-pointer"
                   >
                     {LOCATIONS.map((loc) => (
-                      <option key={loc} value={loc} className="bg-[#121318] text-white">
+                      <option key={loc} value={loc}>
                         {loc}
                       </option>
                     ))}
                   </select>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-medium text-slate-300 mb-1.5">
+                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                       Priority Level
                     </label>
                     <select
                       name="riskLevel"
                       value={formData.riskLevel}
                       onChange={handleInputChange}
-                      className="w-full bg-[#121318] border border-white/[0.08] focus:border-white/20 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none transition-colors"
+                      className="w-full bg-slate-50/70 border border-slate-200 text-slate-900 focus:bg-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none transition-colors cursor-pointer"
                     >
                       <option value="Standard Facility Audit">Standard Facility Survey</option>
                       <option value="Urgent Dispatch (<24 Hours)">Urgent Dispatch (&lt;24 Hours)</option>
@@ -568,7 +588,7 @@ export default function BookAppointmentPage() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-slate-300 mb-1.5">
+                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                       Facility Scope Notes
                     </label>
                     <input
@@ -577,34 +597,34 @@ export default function BookAppointmentPage() {
                       placeholder="e.g. 3 Entry Gates, Night Patrol"
                       value={formData.notes}
                       onChange={handleInputChange}
-                      className="w-full bg-white/[0.03] border border-white/[0.08] focus:border-white/20 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder:text-slate-500 focus:outline-none transition-colors"
+                      className="w-full bg-slate-50/70 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:bg-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
 
                 {/* Summary Strip */}
-                <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06] flex items-center justify-between text-xs">
+                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
                   <div className="flex items-center gap-2">
-                    <span className="text-slate-400">Scheduled:</span>
-                    <span className="text-white font-medium">{formData.date}</span>
-                    <span className="text-slate-600">•</span>
-                    <span className="text-brand-red font-medium">{formData.timeSlot}</span>
+                    <span className="text-slate-500">Scheduled:</span>
+                    <span className="text-slate-900 font-semibold">{formData.date}</span>
+                    <span className="text-slate-300">•</span>
+                    <span className="text-brand-red font-semibold">{formData.timeSlot}</span>
                   </div>
-                  <span className="text-[11px] text-emerald-400 font-medium">100% Free On-Site Survey</span>
+                  <span className="text-[11px] text-emerald-700 font-semibold px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-100">100% Free On-Site Survey</span>
                 </div>
 
-                <div className="pt-3 flex items-center justify-between border-t border-white/[0.06]">
+                <div className="pt-3 flex items-center justify-between border-t border-slate-100">
                   <button
                     type="button"
                     onClick={() => setStep(2)}
-                    className="px-4 py-2 rounded-xl text-slate-400 hover:text-white text-xs font-medium transition-colors"
+                    className="px-4 py-2 rounded-xl text-slate-600 hover:text-slate-900 text-xs font-semibold transition-colors cursor-pointer"
                   >
                     ← Back to Schedule
                   </button>
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="px-6 py-2.5 rounded-xl bg-brand-red hover:bg-red-600 text-white font-medium text-xs tracking-wide transition-colors flex items-center gap-2 shadow-sm disabled:opacity-50"
+                    className="px-6 py-2.5 rounded-xl bg-brand-red hover:bg-red-600 text-white font-semibold text-xs tracking-wide transition-colors flex items-center gap-2 shadow-md shadow-red-700/20 disabled:opacity-50 cursor-pointer"
                   >
                     {isSubmitting ? 'Confirming...' : 'Confirm & Book Consultation'}
                   </button>
@@ -615,39 +635,39 @@ export default function BookAppointmentPage() {
             {/* STEP 4: SUCCESS CONFIRMATION RECEIPT */}
             {step === 4 && confirmedBooking && (
               <div className="py-4 text-center space-y-5">
-                <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 mx-auto flex items-center justify-center">
-                  <IconShield className="w-6 h-6" />
+                <div className="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 mx-auto flex items-center justify-center">
+                  <IconShield className="w-6 h-6 text-emerald-600" />
                 </div>
 
                 <div>
-                  <span className="inline-block px-3 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium mb-1.5">
+                  <span className="inline-block px-3 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold mb-1.5">
                     Appointment Confirmed
                   </span>
-                  <h3 className="text-xl font-semibold text-white tracking-tight">
+                  <h3 className="text-xl font-semibold text-slate-900 tracking-tight">
                     Security Survey Scheduled
                   </h3>
-                  <p className="text-slate-400 text-xs max-w-md mx-auto mt-1 leading-relaxed">
+                  <p className="text-slate-600 text-xs max-w-md mx-auto mt-1 leading-relaxed">
                     Your appointment has been registered in the operations queue. Director <strong>Mr. Mosin Shaikh</strong> and field supervisors have received your booking.
                   </p>
                 </div>
 
                 {/* Reference Receipt */}
-                <div className="bg-[#121318] border border-white/[0.08] rounded-xl p-4 text-left max-w-md mx-auto space-y-2 text-xs">
-                  <div className="flex justify-between items-center pb-2 border-b border-white/[0.06]">
-                    <span className="text-slate-400">Reference:</span>
-                    <span className="text-white font-medium">{confirmedBooking.id}</span>
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-left max-w-md mx-auto space-y-2 text-xs">
+                  <div className="flex justify-between items-center pb-2 border-b border-slate-200/80">
+                    <span className="text-slate-500">Reference:</span>
+                    <span className="text-slate-900 font-semibold">{confirmedBooking.id}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-slate-400">Client:</span>
-                    <span className="text-white font-medium">{confirmedBooking.fullName}</span>
+                    <span className="text-slate-500">Client:</span>
+                    <span className="text-slate-900 font-medium">{confirmedBooking.fullName}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-slate-400">Date &amp; Slot:</span>
-                    <span className="text-slate-300">{confirmedBooking.date} • {confirmedBooking.timeSlot}</span>
+                    <span className="text-slate-500">Date &amp; Slot:</span>
+                    <span className="text-slate-800 font-medium">{confirmedBooking.date} • {confirmedBooking.timeSlot}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-slate-400">Location:</span>
-                    <span className="text-slate-300">{confirmedBooking.location}</span>
+                    <span className="text-slate-500">Location:</span>
+                    <span className="text-slate-800">{confirmedBooking.location}</span>
                   </div>
                 </div>
 
@@ -655,7 +675,7 @@ export default function BookAppointmentPage() {
                   <button
                     type="button"
                     onClick={handleWhatsAppNotify}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-black font-medium text-xs px-5 py-2.5 rounded-xl transition-colors"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs px-5 py-2.5 rounded-xl transition-colors cursor-pointer shadow-sm"
                   >
                     <span>Send Ticket to WhatsApp</span>
                   </button>
@@ -664,20 +684,20 @@ export default function BookAppointmentPage() {
                     href={generateGoogleCalendarUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-xs px-5 py-2.5 rounded-xl transition-colors"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 font-semibold text-xs px-5 py-2.5 rounded-xl transition-colors"
                   >
                     <span>Add to Google Calendar</span>
                   </a>
                 </div>
 
-                <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs text-slate-400 max-w-md mx-auto">
-                  <Link to="/admin" className="text-brand-red hover:underline font-medium">
+                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 max-w-md mx-auto">
+                  <Link to="/admin" className="text-brand-red hover:underline font-semibold">
                     → Admin Command Center
                   </Link>
                   <button
                     type="button"
                     onClick={resetForm}
-                    className="text-slate-400 hover:text-white underline"
+                    className="text-slate-600 hover:text-slate-900 underline cursor-pointer"
                   >
                     Book Another Slot
                   </button>
@@ -690,55 +710,55 @@ export default function BookAppointmentPage() {
           <div className="lg:col-span-5 space-y-5">
             
             {/* Director's Personal Signature Card */}
-            <div className="bg-[#0f1016] border border-white/[0.08] rounded-2xl sm:rounded-3xl p-6 shadow-xl">
-              <div className="flex items-center gap-3.5 mb-4">
-                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-red/20 to-red-950/40 border border-brand-red/30 flex items-center justify-center text-white font-bold text-sm tracking-wider shrink-0">
+            <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm space-y-4">
+              <div className="flex items-center gap-3.5 pb-3 border-b border-slate-100">
+                <div className="w-11 h-11 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-brand-red font-bold text-sm tracking-wider shrink-0">
                   MS
                 </div>
                 <div>
                   <span className="text-[11px] uppercase tracking-wider text-brand-red font-semibold">
                     Director's Direct Desk
                   </span>
-                  <h3 className="font-semibold text-base text-white">
+                  <h3 className="font-semibold text-base text-slate-900">
                     Mr. Mosin Azam Shaikh
                   </h3>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs text-slate-500">
                     Managing Director • Founded 2018
                   </p>
                 </div>
               </div>
 
-              <p className="text-xs text-slate-300 leading-relaxed italic border-l-2 border-brand-red/60 pl-3.5 my-3.5">
+              <p className="text-xs text-slate-600 leading-relaxed italic border-l-2 border-brand-red pl-3.5 my-3.5">
                 "Every facility survey is handled with strict confidentiality and tactical precision. Whether a 50-acre MIDC manufacturing hub or executive VIP escort, our certified supervisors ensure zero vulnerability."
               </p>
 
               <div className="space-y-2 pt-1">
                 <a
                   href="tel:+918806078777"
-                  className="flex items-center justify-between p-3 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-white/20 transition-colors group"
+                  className="flex items-center justify-between p-3 rounded-xl bg-slate-50/70 border border-slate-100 hover:border-red-200 transition-colors group"
                 >
                   <div className="flex items-center gap-2.5">
-                    <div className="w-7 h-7 rounded-lg bg-brand-red/10 text-brand-red flex items-center justify-center shrink-0">
-                      <IconPhone className="w-3.5 h-3.5 text-brand-red" />
+                    <div className="w-7 h-7 rounded-lg bg-red-50 text-brand-red flex items-center justify-center shrink-0">
+                      <IconPhone className="text-brand-red" />
                     </div>
-                    <span className="text-xs text-slate-300 group-hover:text-white">Director Direct Line:</span>
+                    <span className="text-xs text-slate-600 group-hover:text-slate-900">Director Direct Line:</span>
                   </div>
-                  <span className="text-xs font-medium text-white group-hover:text-brand-red">
+                  <span className="text-xs font-semibold text-brand-red">
                     +91 88060 78777
                   </span>
                 </a>
 
                 <a
                   href="tel:+917860313601"
-                  className="flex items-center justify-between p-3 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-white/20 transition-colors group"
+                  className="flex items-center justify-between p-3 rounded-xl bg-slate-50/70 border border-slate-100 hover:border-slate-200 transition-colors group"
                 >
                   <div className="flex items-center gap-2.5">
-                    <div className="w-7 h-7 rounded-lg bg-white/[0.05] text-slate-300 flex items-center justify-center shrink-0">
-                      <IconPhone className="w-3.5 h-3.5 text-slate-300" />
+                    <div className="w-7 h-7 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center shrink-0">
+                      <IconPhone className="text-slate-700" />
                     </div>
-                    <span className="text-xs text-slate-300 group-hover:text-white">24/7 Operations Desk:</span>
+                    <span className="text-xs text-slate-600 group-hover:text-slate-900">24/7 Operations Desk:</span>
                   </div>
-                  <span className="text-xs font-medium text-white group-hover:text-brand-red">
+                  <span className="text-xs font-semibold text-slate-900 group-hover:text-brand-red">
                     +91 78603 13601
                   </span>
                 </a>
@@ -746,8 +766,8 @@ export default function BookAppointmentPage() {
             </div>
 
             {/* 4 Pillars of the Legend Audit Guarantee */}
-            <div className="bg-[#0f1016] border border-white/[0.08] rounded-2xl sm:rounded-3xl p-6 shadow-xl space-y-4">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+            <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm space-y-4">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                 The Legend Security Standards
               </h4>
 
@@ -755,33 +775,33 @@ export default function BookAppointmentPage() {
                 {
                   title: 'Govt. PSARA Licensed & Verified',
                   desc: 'Every guard and bouncer is 100% background checked with local Maharashtra police verification.',
-                  icon: <IconBadgeCheck className="w-4 h-4 text-brand-red" />,
+                  icon: <IconBadgeCheck className="text-brand-red" />,
                 },
                 {
                   title: 'Turnkey 24-Hour Dispatch',
                   desc: 'Emergency standby units stationed across Katraj, Chakan MIDC, Malad & BKC for rapid deployment.',
-                  icon: <IconBolt className="w-4 h-4 text-brand-red" />,
+                  icon: <IconBolt className="text-brand-red" />,
                 },
                 {
                   title: 'Comprehensive Threat Report',
                   desc: 'Following our site audit, receive a detailed entry/exit vulnerability assessment free of charge.',
-                  icon: <IconFileText className="w-4 h-4 text-brand-red" />,
+                  icon: <IconFileText className="text-brand-red" />,
                 },
                 {
                   title: 'Strict Regulatory Compliance',
                   desc: 'Full ESIC, PF, minimum wage compliance, and certified fire & safety evacuation trained staff.',
-                  icon: <IconScale className="w-4 h-4 text-brand-red" />,
+                  icon: <IconScale className="text-brand-red" />,
                 },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3 pt-1">
-                  <div className="w-8 h-8 rounded-lg bg-white/[0.03] border border-white/[0.06] flex items-center justify-center shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-red-50 text-brand-red border border-red-100 flex items-center justify-center shrink-0">
                     {item.icon}
                   </div>
                   <div>
-                    <h5 className="font-semibold text-xs text-white mb-0.5">
+                    <h5 className="font-semibold text-xs text-slate-900 mb-0.5">
                       {item.title}
                     </h5>
-                    <p className="text-[11px] text-slate-400 leading-relaxed">
+                    <p className="text-[11px] text-slate-600 leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
@@ -790,18 +810,19 @@ export default function BookAppointmentPage() {
             </div>
 
             {/* Quick Branch Access Strip */}
-            <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06] text-xs text-slate-400 space-y-1.5">
-              <div className="text-[11px] font-semibold text-white tracking-wide">
+            <div className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-sm text-xs text-slate-600 space-y-1.5">
+              <div className="text-[11px] font-semibold text-slate-900 tracking-wide">
                 Regional Command Hubs
               </div>
-              <p className="text-slate-300">📍 <strong>Pune HQ:</strong> Katraj, Gujarwadi Road, Pune 411046</p>
-              <p className="text-slate-300">📍 <strong>Mumbai:</strong> Rani Sati Marg, Malad East, Mumbai 400097</p>
-              <p className="text-slate-300">📍 <strong>Palghar:</strong> Commercial Zone, Nalasopara East, Palghar</p>
+              <p className="text-slate-600">📍 <strong className="text-slate-900">Pune HQ:</strong> Katraj, Gujarwadi Road, Pune 411046</p>
+              <p className="text-slate-600">📍 <strong className="text-slate-900">Mumbai:</strong> Rani Sati Marg, Malad East, Mumbai 400097</p>
+              <p className="text-slate-600">📍 <strong className="text-slate-900">Palghar:</strong> Commercial Zone, Nalasopara East, Palghar</p>
             </div>
           </div>
 
         </div>
-      </div>
+      </section>
+
     </div>
   );
 }
