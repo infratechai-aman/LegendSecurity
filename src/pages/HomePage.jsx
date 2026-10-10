@@ -115,16 +115,16 @@ export default function HomePage() {
         className="relative min-h-screen flex items-center pt-[78px] sm:pt-[84px] overflow-hidden bg-[#0a0a0c] tactical-grid"
         id="home"
       >
-        {/* ─── Mobile Hero Background (Portrait, slightly blurred as requested) ─── */}
+        {/* ─── Mobile Hero Background (Portrait, subtly softened) ─── */}
         <div className="lg:hidden absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
             src="/assets/hero_bg_mobile.jpg"
             alt=""
-            className="w-full h-full object-cover object-top filter blur-[5px] brightness-[0.38] contrast-[1.08] scale-105"
+            className="w-full h-full object-cover object-top filter blur-[2px] brightness-[0.42] contrast-[1.05] scale-102"
           />
           {/* Dark gradient overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0c]/85 via-[#0a0a0c]/65 to-[#0a0a0c]" />
-          <div className="absolute inset-0 bg-[#0a0a0c]/30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0c]/80 via-[#0a0a0c]/55 to-[#0a0a0c]" />
+          <div className="absolute inset-0 bg-[#0a0a0c]/20" />
         </div>
 
         {/* ─── Desktop Hero Background (16:9 Landscape Executive Security Guard) ─── */}
