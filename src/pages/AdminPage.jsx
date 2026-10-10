@@ -2,41 +2,133 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { storageService } from '../services/storageService';
 
+// =====================================================================
+// PREMIUM iOS / SF SYMBOLS-STYLE MINIMALIST SVG ICONS (Fine 1.5px Stroke)
+// =====================================================================
+
+function IconLock({ className = 'w-5 h-5' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="11" width="18" height="11" rx="3" ry="3" />
+      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+    </svg>
+  );
+}
+
+function IconPhone({ className = 'w-4 h-4' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
+
+function IconWhatsApp({ className = 'w-4 h-4' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+    </svg>
+  );
+}
+
+function IconEye({ className = 'w-4 h-4' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  );
+}
+
+function IconTrash({ className = 'w-4 h-4' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+    </svg>
+  );
+}
+
+function IconSearch({ className = 'w-4 h-4' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="11" cy="11" r="8" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
+  );
+}
+
+function IconExport({ className = 'w-4 h-4' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+    </svg>
+  );
+}
+
+function IconLogout({ className = 'w-4 h-4' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" />
+    </svg>
+  );
+}
+
+function IconClose({ className = 'w-4 h-4' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
+    </svg>
+  );
+}
+
+function IconCalendar({ className = 'w-3.5 h-3.5' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+      <line x1="16" y1="2" x2="16" y2="6" />
+      <line x1="8" y1="2" x2="8" y2="6" />
+      <line x1="3" y1="10" x2="21" y2="10" />
+    </svg>
+  );
+}
+
+function IconMapPin({ className = 'w-3.5 h-3.5' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
+
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(() => storageService.isAdminAuthenticated());
   const [pinInput, setPinInput] = useState('');
   const [authError, setAuthError] = useState('');
-  const [activeTab, setActiveTab] = useState('appointments'); // 'appointments' | 'quotes' | 'guards' | 'settings'
 
-  // Data state
+  // Primary Data
   const [appointments, setAppointments] = useState(() => storageService.getAppointments());
-  const [quotes, setQuotes] = useState(() => storageService.getQuotes());
-  const [guards, setGuards] = useState(() => storageService.getGuards());
-  const [stats, setStats] = useState(() => storageService.getStats());
-
-  // Filter state
   const [apptFilter, setApptFilter] = useState('ALL');
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedItemDetail, setSelectedItemDetail] = useState(null);
+  const [selectedBooking, setSelectedBooking] = useState(null);
 
-  // Load data & verify session
+  // Optional Secondary View for General Contact Inquiries
+  const [viewMode, setViewMode] = useState('bookings'); // 'bookings' | 'quotes'
+  const [quotes, setQuotes] = useState(() => storageService.getQuotes());
+
   const refreshData = () => {
     setAppointments(storageService.getAppointments());
     setQuotes(storageService.getQuotes());
-    setGuards(storageService.getGuards());
-    setStats(storageService.getStats());
   };
 
   useEffect(() => {
-    const handleDataChange = () => {
-      refreshData();
-    };
-
+    const handleDataChange = () => refreshData();
     window.addEventListener('legend_data_change', handleDataChange);
     return () => window.removeEventListener('legend_data_change', handleDataChange);
   }, []);
 
-  // Login handler
+  // Passcode authentication
   const handleLogin = (e) => {
     e?.preventDefault();
     const res = storageService.loginAdmin(pinInput);
@@ -45,11 +137,11 @@ export default function AdminPage() {
       setAuthError('');
       refreshData();
     } else {
-      setAuthError(res.error);
+      setAuthError(res.error || 'Incorrect passcode');
     }
   };
 
-  const handleDemoQuickLogin = () => {
+  const handleQuickDemoLogin = () => {
     setPinInput('2026');
     const res = storageService.loginAdmin('2026');
     if (res.success) {
@@ -66,46 +158,23 @@ export default function AdminPage() {
   };
 
   // Status updates
-  const handleUpdateApptStatus = (id, newStatus) => {
+  const handleUpdateStatus = (id, newStatus) => {
     storageService.updateAppointmentStatus(id, newStatus);
     refreshData();
   };
 
-  const handleDeleteAppt = (id) => {
-    if (window.confirm(`Delete appointment record ${id}?`)) {
+  const handleDelete = (id) => {
+    if (window.confirm(`Delete booking record ${id}?`)) {
       storageService.deleteAppointment(id);
       refreshData();
-      if (selectedItemDetail?.id === id) setSelectedItemDetail(null);
+      if (selectedBooking?.id === id) setSelectedBooking(null);
     }
   };
 
-  const handleUpdateQuoteStatus = (id, newStatus) => {
-    storageService.updateQuoteStatus(id, newStatus);
-    refreshData();
-  };
-
-  const handleDeleteQuote = (id) => {
-    if (window.confirm(`Delete quote record ${id}?`)) {
-      storageService.deleteQuote(id);
-      refreshData();
-    }
-  };
-
-  const handleToggleGuard = (id) => {
-    storageService.toggleGuardStatus(id);
-    refreshData();
-  };
-
-  const handleResetData = () => {
-    if (window.confirm('Reset all operational records back to initial realistic enterprise demo dataset?')) {
-      storageService.resetToDemoData();
-      refreshData();
-    }
-  };
-
-  // WhatsApp quick trigger
-  const sendWhatsAppDirect = (phone, text) => {
+  // Direct WhatsApp dispatch
+  const sendWhatsApp = (phone, booking) => {
     const cleanPhone = phone.replace(/[^0-9]/g, '');
+    const text = `Hello ${booking.fullName}, this is Mosin Shaikh from The Legend Security confirming your scheduled site inspection for ${booking.date} (${booking.timeSlot}) at ${booking.location}.`;
     const url = `https://wa.me/${cleanPhone.startsWith('91') ? cleanPhone : '91' + cleanPhone}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
   };
@@ -114,99 +183,72 @@ export default function AdminPage() {
   const filteredAppointments = appointments.filter((a) => {
     const matchesFilter = apptFilter === 'ALL' || a.status === apptFilter;
     const matchesSearch =
-      searchQuery === '' ||
+      searchQuery.trim() === '' ||
       a.fullName?.toLowerCase().includes(searchQuery.toLowerCase()) ||
       a.orgName?.toLowerCase().includes(searchQuery.toLowerCase()) ||
       a.id?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      a.location?.toLowerCase().includes(searchQuery.toLowerCase());
+      a.location?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      a.phoneNum?.includes(searchQuery);
     return matchesFilter && matchesSearch;
   });
 
-  // Filtered Quotes
-  const filteredQuotes = quotes.filter((q) => {
-    return (
-      searchQuery === '' ||
-      q.fullName?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      q.orgName?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      q.serviceType?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      q.id?.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  });
+  const pendingCount = appointments.filter((a) => a.status === 'Pending').length;
+  const confirmedCount = appointments.filter((a) => a.status === 'Confirmed').length;
+  const completedCount = appointments.filter((a) => a.status === 'Completed').length;
 
   // -------------------------------------------------------------
-  // RENDER AUTHENTICATION GATE (IF NOT LOGGED IN)
+  // 1. MINIMALIST APPLE-STYLE PASSCODE GATE
   // -------------------------------------------------------------
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-[#07080b] flex items-center justify-center p-4 pt-24 pb-16">
-        <div className="w-full max-w-md bg-[#101117] border border-white/10 rounded-3xl p-7 sm:p-8 shadow-[0_20px_70px_rgba(0,0,0,0.85)] relative overflow-hidden">
-          <div className="h-1.5 w-full bg-gradient-to-r from-brand-red via-red-500 to-amber-500 absolute top-0 left-0 right-0" />
-
-          <div className="text-center mb-8">
-            <div className="w-16 h-16 rounded-2xl bg-brand-red/15 border border-brand-red/40 mx-auto flex items-center justify-center text-brand-red text-2xl mb-4 shadow-[0_0_30px_rgba(229,9,20,0.3)]">
-              <i className="fa-solid fa-lock" />
+      <div className="min-h-screen bg-[#090a0f] flex items-center justify-center p-4">
+        <div className="w-full max-w-sm bg-[#121318] border border-white/10 rounded-2xl p-7 sm:p-8 shadow-2xl backdrop-blur-xl">
+          <div className="text-center mb-6">
+            <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 mx-auto flex items-center justify-center text-slate-200 mb-3.5">
+              <IconLock className="w-5 h-5 text-slate-300" />
             </div>
-            <span className="font-mono text-[10px] uppercase tracking-widest text-brand-red font-bold">
-              RESTRICTED OPERATIONS CONSOLE
-            </span>
-            <h1 className="font-heading font-black text-2xl text-white uppercase tracking-tight mt-1">
-              Command Center Access
-            </h1>
-            <p className="text-xs text-slate-400 mt-1.5">
-              The Legend Security &amp; Bouncer Operations Hub
-            </p>
+            <h1 className="text-lg font-semibold text-white tracking-tight">Admin Passcode</h1>
+            <p className="text-xs text-slate-400 mt-1">The Legend Security • Client Bookings Desk</p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2">
-                Security Access PIN
-              </label>
               <input
                 type="password"
                 maxLength={6}
                 value={pinInput}
                 onChange={(e) => setPinInput(e.target.value)}
-                placeholder="Enter 4-digit PIN (Default: 2026)"
+                placeholder="Enter PIN (Default: 2026)"
                 autoFocus
-                className="w-full bg-white/5 border border-white/15 focus:border-brand-red rounded-xl px-4 py-3.5 text-center text-lg text-white font-mono tracking-widest focus:outline-none focus:ring-1 focus:ring-brand-red"
+                className="w-full bg-black/40 border border-white/10 focus:border-white/30 rounded-xl px-4 py-3 text-center text-base tracking-widest text-white placeholder:text-slate-500 focus:outline-none transition-colors"
               />
             </div>
 
             {authError && (
-              <div className="p-3 rounded-xl bg-red-900/20 border border-red-500/30 text-red-400 text-xs text-center font-mono">
-                {authError}
-              </div>
+              <p className="text-xs text-rose-400 text-center font-medium">{authError}</p>
             )}
 
             <button
               type="submit"
-              className="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-red to-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg shadow-red-900/40 hover:brightness-110 transition-all flex items-center justify-center gap-2"
+              className="w-full py-2.5 rounded-xl bg-white text-black font-semibold text-xs tracking-wide hover:bg-slate-200 transition-colors"
             >
-              <i className="fa-solid fa-shield-halved text-xs" />
-              <span>Authenticate &amp; Open Command Deck</span>
+              Unlock Bookings
             </button>
           </form>
 
-          {/* Quick Demo Access Button */}
-          <div className="mt-5 pt-5 border-t border-white/5 text-center">
+          <div className="mt-5 pt-4 border-t border-white/5 text-center space-y-3">
             <button
               type="button"
-              onClick={handleDemoQuickLogin}
-              className="w-full py-2.5 px-4 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-slate-300 hover:text-white text-xs font-mono transition-colors flex items-center justify-center gap-2"
+              onClick={handleQuickDemoLogin}
+              className="text-xs text-slate-400 hover:text-white transition-colors underline"
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>One-Click Demo Access (PIN: 2026)</span>
+              Demo Quick Unlock (2026)
             </button>
-            <p className="text-[11px] text-slate-500 mt-2 font-mono">
-              Default access configured for Mr. Mosin Azam Shaikh and Ops Desk
-            </p>
-          </div>
-
-          <div className="mt-6 text-center">
-            <Link to="/" className="text-xs text-slate-400 hover:text-white font-mono">
-              ← Return to Public Website
-            </Link>
+            <div>
+              <Link to="/" className="text-xs text-slate-500 hover:text-slate-300 transition-colors">
+                ← Return to Website
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -214,311 +256,245 @@ export default function AdminPage() {
   }
 
   // -------------------------------------------------------------
-  // RENDER AUTHENTICATED COMMAND CENTER DASHBOARD
+  // 2. ULTRA-MINIMALIST iOS BOOKINGS DASHBOARD
   // -------------------------------------------------------------
   return (
-    <div className="min-h-screen bg-[#07080b] text-slate-100 pt-24 sm:pt-28 pb-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        {/* Top Operational Bar */}
-        <div className="bg-[#101117] border border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-7 shadow-[0_10px_40px_rgba(0,0,0,0.5)] flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-brand-red/15 border border-brand-red/40 flex items-center justify-center text-brand-red text-xl shrink-0">
-              <i className="fa-solid fa-satellite-dish" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-red font-bold">
-                  COMMAND CENTER // SYSTEM ONLINE
-                </span>
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              </div>
-              <h1 className="font-heading font-black text-xl sm:text-2xl text-white uppercase tracking-tight">
-                Operations &amp; Appointments Command
-              </h1>
-              <p className="text-xs text-slate-400">
-                Authorized: Director <strong>Mr. Mosin Azam Shaikh</strong> &amp; Maharashtra Ops Control
-              </p>
-            </div>
+    <div className="min-h-screen bg-[#090a0f] text-slate-200 pt-24 sm:pt-28 pb-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        {/* Header Bar */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/[0.08]">
+          <div className="flex items-center gap-3">
+            <h1 className="text-2xl font-semibold text-white tracking-tight">Bookings</h1>
+            <span className="px-2.5 py-0.5 rounded-full bg-white/[0.06] border border-white/[0.08] text-xs text-slate-300 font-medium">
+              {appointments.length} Total
+            </span>
+            {pendingCount > 0 && (
+              <span className="px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs text-amber-400 font-medium">
+                {pendingCount} Need Action
+              </span>
+            )}
           </div>
 
-          {/* Quick Action Buttons */}
-          <div className="flex flex-wrap items-center gap-2.5">
-            <Link
-              to="/book-appointment"
-              target="_blank"
-              className="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-slate-300 hover:text-white transition-colors flex items-center gap-1.5"
-            >
-              <i className="fa-solid fa-arrow-up-right-from-square text-[10px]" />
-              <span>Public Booking Page</span>
-            </Link>
+          {/* Action Row */}
+          <div className="flex items-center gap-2">
+            {/* View switcher between Bookings and Inbound Quotes */}
+            <div className="inline-flex rounded-lg bg-white/[0.04] p-0.5 border border-white/[0.08]">
+              <button
+                type="button"
+                onClick={() => setViewMode('bookings')}
+                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+                  viewMode === 'bookings' ? 'bg-white/10 text-white shadow-sm' : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                Site Audits ({appointments.length})
+              </button>
+              <button
+                type="button"
+                onClick={() => setViewMode('quotes')}
+                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+                  viewMode === 'quotes' ? 'bg-white/10 text-white shadow-sm' : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                Inquiries ({quotes.length})
+              </button>
+            </div>
 
             <button
               onClick={() => storageService.exportToCSV('appointments')}
-              className="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-slate-300 hover:text-white transition-colors flex items-center gap-1.5"
-              title="Export all appointments to CSV"
+              className="p-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-slate-300 hover:text-white transition-colors"
+              title="Export Bookings to CSV"
             >
-              <i className="fa-solid fa-download text-[10px]" />
-              <span>Export CSV</span>
-            </button>
-
-            <button
-              onClick={handleResetData}
-              className="px-3.5 py-2 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-xs font-mono text-amber-400 transition-colors flex items-center gap-1.5"
-              title="Reset records to full enterprise demo data"
-            >
-              <i className="fa-solid fa-rotate text-[10px]" />
-              <span>Reset Demo Data</span>
+              <IconExport className="w-4 h-4" />
             </button>
 
             <button
               onClick={handleLogout}
-              className="px-3.5 py-2 rounded-xl bg-red-900/20 hover:bg-red-900/40 border border-red-500/30 text-xs font-mono text-red-300 transition-colors flex items-center gap-1.5"
+              className="p-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-slate-400 hover:text-rose-400 transition-colors"
+              title="Sign Out"
             >
-              <i className="fa-solid fa-right-from-bracket text-[10px]" />
-              <span>Logout</span>
+              <IconLogout className="w-4 h-4" />
             </button>
           </div>
         </div>
 
-        {/* 4-KPI Command Deck */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          <div className="bg-[#111218] border border-white/10 rounded-2xl p-5 relative overflow-hidden">
-            <div className="flex items-center justify-between text-xs text-slate-400 font-mono mb-2">
-              <span>SITE AUDITS &amp; APPOINTMENTS</span>
-              <i className="fa-solid fa-calendar-check text-brand-red" />
-            </div>
-            <div className="font-heading font-black text-2xl sm:text-3xl text-white">
-              {stats.totalAppointments || appointments.length}
-            </div>
-            <div className="flex items-center gap-2 mt-2 text-[11px] font-mono">
-              <span className="text-amber-400 font-bold">{stats.pendingAppointments} Pending</span>
-              <span className="text-slate-600">•</span>
-              <span className="text-emerald-400 font-bold">{stats.confirmedAppointments} Confirmed</span>
-            </div>
-          </div>
-
-          <div className="bg-[#111218] border border-white/10 rounded-2xl p-5 relative overflow-hidden">
-            <div className="flex items-center justify-between text-xs text-slate-400 font-mono mb-2">
-              <span>QUOTE LEADS &amp; PIPELINE</span>
-              <i className="fa-solid fa-file-invoice text-brand-red" />
-            </div>
-            <div className="font-heading font-black text-2xl sm:text-3xl text-white">
-              {stats.totalQuotes || quotes.length}
-            </div>
-            <div className="flex items-center gap-2 mt-2 text-[11px] font-mono">
-              <span className="text-brand-red font-bold">{stats.newQuotes} New Inquiries</span>
-              <span className="text-slate-600">•</span>
-              <span className="text-slate-400">Maharashtra</span>
-            </div>
-          </div>
-
-          <div className="bg-[#111218] border border-white/10 rounded-2xl p-5 relative overflow-hidden">
-            <div className="flex items-center justify-between text-xs text-slate-400 font-mono mb-2">
-              <span>EST. MONTHLY PIPELINE</span>
-              <i className="fa-solid fa-chart-line text-emerald-400" />
-            </div>
-            <div className="font-heading font-black text-2xl sm:text-3xl text-emerald-400">
-              {stats.estimatedPipelineValue || '₹ 13.1 L/mo'}
-            </div>
-            <div className="text-[11px] font-mono text-slate-400 mt-2">
-              B2B Security Contracts Value
-            </div>
-          </div>
-
-          <div className="bg-[#111218] border border-white/10 rounded-2xl p-5 relative overflow-hidden">
-            <div className="flex items-center justify-between text-xs text-slate-400 font-mono mb-2">
-              <span>DEPLOYED FIELD OFFICERS</span>
-              <i className="fa-solid fa-user-shield text-brand-red" />
-            </div>
-            <div className="font-heading font-black text-2xl sm:text-3xl text-white">
-              {stats.activeGuards || guards.length} / {guards.length}
-            </div>
-            <div className="flex items-center gap-2 mt-2 text-[11px] font-mono text-emerald-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Active on Maharashtra Posts</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Tab Controls */}
-        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-4">
-          <div className="flex items-center gap-2">
-            {[
-              { id: 'appointments', label: 'Site Audits & Appointments', icon: 'fa-calendar-days', count: appointments.length },
-              { id: 'quotes', label: 'Quotation Leads CRM', icon: 'fa-file-invoice-dollar', count: quotes.length },
-              { id: 'guards', label: 'Guard Roster & Deployment', icon: 'fa-shield-halved', count: guards.length },
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => {
-                  setActiveTab(tab.id);
-                  setSearchQuery('');
-                }}
-                className={`px-4 py-2.5 rounded-xl font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 ${
-                  activeTab === tab.id
-                    ? 'bg-brand-red text-white shadow-lg shadow-red-900/40'
-                    : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10'
-                }`}
-              >
-                <i className={`fa-solid ${tab.icon} text-xs`} />
-                <span>{tab.label}</span>
-                <span className="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-black/40">
-                  {tab.count}
-                </span>
-              </button>
-            ))}
-          </div>
-
-          {/* Search Bar */}
-          <div className="relative w-full sm:w-64">
-            <i className="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search records, client, city..."
-              className="w-full bg-white/5 border border-white/10 focus:border-brand-red rounded-xl pl-9 pr-3.5 py-2 text-xs text-white focus:outline-none"
-            />
-          </div>
-        </div>
-
         {/* ------------------------------------------------------------- */}
-        {/* TAB 1: APPOINTMENTS & SITE AUDITS */}
+        {/* VIEW 1: BOOKINGS LIST (PRIMARY) */}
         {/* ------------------------------------------------------------- */}
-        {activeTab === 'appointments' && (
-          <div className="space-y-4">
-            {/* Filter Pills */}
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-mono text-slate-400 mr-2">Status Filter:</span>
-              {['ALL', 'Pending', 'Confirmed', 'Completed', 'Cancelled'].map((f) => (
-                <button
-                  key={f}
-                  onClick={() => setApptFilter(f)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-colors ${
-                    apptFilter === f
-                      ? 'bg-white/20 text-white font-bold border border-white/30'
-                      : 'bg-white/5 text-slate-400 hover:text-white'
-                  }`}
-                >
-                  {f}
-                </button>
-              ))}
+        {viewMode === 'bookings' && (
+          <div className="pt-6 space-y-4">
+            {/* Search & Segmented Filter Bar */}
+            <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+              {/* iOS Segmented Pill Filter */}
+              <div className="inline-flex rounded-xl bg-white/[0.03] p-1 border border-white/[0.08] overflow-x-auto">
+                {[
+                  { key: 'ALL', label: 'All', count: appointments.length },
+                  { key: 'Pending', label: 'Pending', count: pendingCount },
+                  { key: 'Confirmed', label: 'Confirmed', count: confirmedCount },
+                  { key: 'Completed', label: 'Completed', count: completedCount },
+                ].map((item) => (
+                  <button
+                    key={item.key}
+                    type="button"
+                    onClick={() => setApptFilter(item.key)}
+                    className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
+                      apptFilter === item.key
+                        ? 'bg-white text-black font-semibold shadow-sm'
+                        : 'text-slate-400 hover:text-white'
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                    <span className={`ml-1.5 text-[11px] ${apptFilter === item.key ? 'text-black/70' : 'text-slate-500'}`}>
+                      {item.count}
+                    </span>
+                  </button>
+                ))}
+              </div>
+
+              {/* Minimal Search Bar */}
+              <div className="relative w-full md:w-72">
+                <IconSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 w-4 h-4" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search by client, property, area..."
+                  className="w-full bg-white/[0.03] border border-white/[0.08] focus:border-white/20 rounded-xl pl-9 pr-3 py-1.5 text-xs text-white placeholder:text-slate-500 focus:outline-none transition-colors"
+                />
+              </div>
             </div>
 
-            {/* Appointments Table / Cards */}
-            <div className="bg-[#101117] border border-white/10 rounded-2xl overflow-hidden shadow-xl">
+            {/* Bookings Minimalist Table */}
+            <div className="bg-[#0f1015] border border-white/[0.08] rounded-2xl overflow-hidden shadow-xl">
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                   <thead>
-                    <tr className="bg-white/[0.03] border-b border-white/10 text-[11px] font-mono text-slate-400 uppercase tracking-wider">
-                      <th className="py-3.5 px-4">Ref Code</th>
-                      <th className="py-3.5 px-4">Client &amp; Organization</th>
-                      <th className="py-3.5 px-4">Audit Category</th>
-                      <th className="py-3.5 px-4">Date &amp; Time Slot</th>
+                    <tr className="border-b border-white/[0.06] text-xs font-medium text-slate-400">
+                      <th className="py-3.5 px-4">Client</th>
+                      <th className="py-3.5 px-4">Requirement</th>
+                      <th className="py-3.5 px-4">Inspection Date</th>
                       <th className="py-3.5 px-4">Location</th>
                       <th className="py-3.5 px-4">Status</th>
-                      <th className="py-3.5 px-4 text-right">Quick Actions</th>
+                      <th className="py-3.5 px-4 text-right">Actions</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-white/5 text-xs">
+                  <tbody className="divide-y divide-white/[0.05] text-xs">
                     {filteredAppointments.length === 0 ? (
                       <tr>
-                        <td colSpan={7} className="py-10 text-center text-slate-400 font-mono">
-                          No appointment records match the selected query.
+                        <td colSpan={6} className="py-12 text-center text-slate-500">
+                          No bookings found matching your filter.
                         </td>
                       </tr>
                     ) : (
-                      filteredAppointments.map((item) => (
-                        <tr key={item.id} className="hover:bg-white/[0.02] transition-colors">
-                          <td className="py-3.5 px-4 font-mono text-brand-red font-bold whitespace-nowrap">
-                            {item.id}
-                          </td>
-                          <td className="py-3.5 px-4">
-                            <div className="font-heading font-bold text-white text-xs">
-                              {item.fullName}
-                            </div>
-                            <div className="text-[11px] text-slate-400">{item.orgName || 'Individual / Site'}</div>
-                            <div className="text-[10px] font-mono text-slate-500">{item.phoneNum}</div>
-                          </td>
-                          <td className="py-3.5 px-4">
-                            <div className="text-white font-medium text-xs">{item.auditType}</div>
-                            <span className="font-mono text-[9px] px-1.5 py-0.5 rounded bg-white/5 text-slate-400">
-                              {item.riskLevel}
-                            </span>
-                          </td>
-                          <td className="py-3.5 px-4 font-mono whitespace-nowrap">
-                            <div className="text-slate-200">{item.date}</div>
-                            <div className="text-brand-red text-[11px]">{item.timeSlot}</div>
-                          </td>
-                          <td className="py-3.5 px-4 text-slate-300 text-xs max-w-[180px] truncate">
-                            {item.location}
-                          </td>
-                          <td className="py-3.5 px-4 whitespace-nowrap">
-                            <select
-                              value={item.status}
-                              onChange={(e) => handleUpdateApptStatus(item.id, e.target.value)}
-                              className={`text-[11px] font-mono font-bold px-2 py-1 rounded-lg border focus:outline-none bg-[#13141b] ${
-                                item.status === 'Confirmed'
-                                  ? 'border-emerald-500/50 text-emerald-400'
-                                  : item.status === 'Pending'
-                                  ? 'border-amber-500/50 text-amber-400'
-                                  : item.status === 'Completed'
-                                  ? 'border-blue-500/50 text-blue-400'
-                                  : 'border-slate-600 text-slate-400'
-                              }`}
-                            >
-                              <option value="Pending">Pending</option>
-                              <option value="Confirmed">Confirmed</option>
-                              <option value="Completed">Completed</option>
-                              <option value="Cancelled">Cancelled</option>
-                            </select>
-                          </td>
-                          <td className="py-3.5 px-4 text-right whitespace-nowrap">
-                            <div className="flex items-center justify-end gap-1.5">
-                              {/* WhatsApp Direct */}
-                              <button
-                                onClick={() =>
-                                  sendWhatsAppDirect(
-                                    item.phoneNum,
-                                    `Hello ${item.fullName}, this is Mosin Azam Shaikh from The Legend Security. Regarding your appointment ${item.id} scheduled for ${item.date} at ${item.timeSlot} (${item.location})...`
-                                  )
-                                }
-                                className="w-7 h-7 rounded-lg bg-[#25D366]/20 hover:bg-[#25D366]/30 text-[#25D366] flex items-center justify-center transition-colors"
-                                title="Open WhatsApp Chat with Client"
-                              >
-                                <i className="fa-brands fa-whatsapp text-xs" />
-                              </button>
+                      filteredAppointments.map((item) => {
+                        const statusDotColor =
+                          item.status === 'Confirmed'
+                            ? 'bg-emerald-400'
+                            : item.status === 'Pending'
+                            ? 'bg-amber-400'
+                            : item.status === 'Completed'
+                            ? 'bg-blue-400'
+                            : 'bg-rose-400';
 
-                              {/* Phone Direct */}
-                              <a
-                                href={`tel:${item.phoneNum}`}
-                                className="w-7 h-7 rounded-lg bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 flex items-center justify-center transition-colors"
-                                title="Call Client Phone"
-                              >
-                                <i className="fa-solid fa-phone text-[10px]" />
-                              </a>
+                        return (
+                          <tr key={item.id} className="hover:bg-white/[0.02] transition-colors">
+                            {/* Client & Organization */}
+                            <td className="py-3.5 px-4">
+                              <div className="font-semibold text-white">{item.fullName}</div>
+                              <div className="text-[11px] text-slate-400 mt-0.5">{item.orgName || 'Private Client'}</div>
+                              <div className="text-[11px] text-slate-500">{item.phoneNum}</div>
+                            </td>
 
-                              {/* Details Modal Trigger */}
-                              <button
-                                onClick={() => setSelectedItemDetail(item)}
-                                className="w-7 h-7 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 flex items-center justify-center transition-colors"
-                                title="View Full Inspection Dossier"
-                              >
-                                <i className="fa-solid fa-eye text-[10px]" />
-                              </button>
+                            {/* Requirement */}
+                            <td className="py-3.5 px-4">
+                              <div className="text-slate-200 font-medium">{item.auditType}</div>
+                              {item.riskLevel && (
+                                <span className="inline-block mt-1 text-[10px] px-2 py-0.5 rounded bg-white/[0.04] text-slate-400">
+                                  {item.riskLevel}
+                                </span>
+                              )}
+                            </td>
 
-                              {/* Delete */}
-                              <button
-                                onClick={() => handleDeleteAppt(item.id)}
-                                className="w-7 h-7 rounded-lg bg-red-900/20 hover:bg-red-900/40 text-red-400 flex items-center justify-center transition-colors"
-                                title="Delete Appointment"
-                              >
-                                <i className="fa-solid fa-trash-can text-[10px]" />
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                      ))
+                            {/* Date & Slot */}
+                            <td className="py-3.5 px-4 whitespace-nowrap">
+                              <div className="flex items-center gap-1.5 text-white font-medium">
+                                <IconCalendar className="text-slate-400" />
+                                <span>{item.date}</span>
+                              </div>
+                              <div className="text-[11px] text-slate-400 mt-0.5">{item.timeSlot}</div>
+                            </td>
+
+                            {/* Location */}
+                            <td className="py-3.5 px-4 max-w-[190px]">
+                              <div className="flex items-start gap-1 text-slate-300">
+                                <IconMapPin className="text-slate-400 shrink-0 mt-0.5" />
+                                <span className="truncate">{item.location}</span>
+                              </div>
+                            </td>
+
+                            {/* Status Pill with Dropdown */}
+                            <td className="py-3.5 px-4 whitespace-nowrap">
+                              <div className="relative inline-flex items-center">
+                                <span className={`w-2 h-2 rounded-full mr-2 ${statusDotColor}`} />
+                                <select
+                                  value={item.status}
+                                  onChange={(e) => handleUpdateStatus(item.id, e.target.value)}
+                                  className="bg-transparent text-xs text-white font-medium focus:outline-none cursor-pointer pr-4"
+                                >
+                                  <option value="Pending" className="bg-[#121318] text-white">Pending</option>
+                                  <option value="Confirmed" className="bg-[#121318] text-white">Confirmed</option>
+                                  <option value="Completed" className="bg-[#121318] text-white">Completed</option>
+                                  <option value="Cancelled" className="bg-[#121318] text-white">Cancelled</option>
+                                </select>
+                              </div>
+                            </td>
+
+                            {/* Minimal iOS Action Icons */}
+                            <td className="py-3.5 px-4 text-right whitespace-nowrap">
+                              <div className="inline-flex items-center gap-1.5">
+                                {/* WhatsApp */}
+                                <button
+                                  type="button"
+                                  onClick={() => sendWhatsApp(item.phoneNum, item)}
+                                  className="w-7 h-7 rounded-lg bg-white/[0.04] hover:bg-emerald-500/20 text-slate-300 hover:text-emerald-400 flex items-center justify-center transition-colors"
+                                  title="WhatsApp Client"
+                                >
+                                  <IconWhatsApp />
+                                </button>
+
+                                {/* Direct Call */}
+                                <a
+                                  href={`tel:${item.phoneNum}`}
+                                  className="w-7 h-7 rounded-lg bg-white/[0.04] hover:bg-blue-500/20 text-slate-300 hover:text-blue-400 flex items-center justify-center transition-colors"
+                                  title="Call Client Phone"
+                                >
+                                  <IconPhone />
+                                </a>
+
+                                {/* View Details */}
+                                <button
+                                  type="button"
+                                  onClick={() => setSelectedBooking(item)}
+                                  className="w-7 h-7 rounded-lg bg-white/[0.04] hover:bg-white/[0.1] text-slate-300 hover:text-white flex items-center justify-center transition-colors"
+                                  title="Inspect Booking Details"
+                                >
+                                  <IconEye />
+                                </button>
+
+                                {/* Delete */}
+                                <button
+                                  type="button"
+                                  onClick={() => handleDelete(item.id)}
+                                  className="w-7 h-7 rounded-lg bg-white/[0.04] hover:bg-rose-500/20 text-slate-400 hover:text-rose-400 flex items-center justify-center transition-colors"
+                                  title="Delete Booking"
+                                >
+                                  <IconTrash />
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        );
+                      })
                     )}
                   </tbody>
                 </table>
@@ -528,103 +504,90 @@ export default function AdminPage() {
         )}
 
         {/* ------------------------------------------------------------- */}
-        {/* TAB 2: QUOTATIONS & LEADS CRM */}
+        {/* VIEW 2: QUOTATION INQUIRIES (SUBTLE SECONDARY DESK) */}
         {/* ------------------------------------------------------------- */}
-        {activeTab === 'quotes' && (
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <p className="text-xs text-slate-400">
-                All client quote requests submitted from website contact forms and quote estimators.
-              </p>
+        {viewMode === 'quotes' && (
+          <div className="pt-6 space-y-4">
+            <div className="flex items-center justify-between text-xs text-slate-400">
+              <p>Inbound price quotation inquiries submitted via website contact form:</p>
               <button
+                type="button"
                 onClick={() => storageService.exportToCSV('quotes')}
-                className="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-mono text-slate-300 border border-white/10"
+                className="text-slate-300 hover:text-white underline flex items-center gap-1"
               >
-                <i className="fa-solid fa-download mr-1.5 text-[10px]" />
-                Export Leads CSV
+                <IconExport className="w-3.5 h-3.5" />
+                <span>Export CSV</span>
               </button>
             </div>
 
-            <div className="bg-[#101117] border border-white/10 rounded-2xl overflow-hidden shadow-xl">
+            <div className="bg-[#0f1015] border border-white/[0.08] rounded-2xl overflow-hidden shadow-xl">
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                   <thead>
-                    <tr className="bg-white/[0.03] border-b border-white/10 text-[11px] font-mono text-slate-400 uppercase tracking-wider">
-                      <th className="py-3.5 px-4">Lead ID</th>
-                      <th className="py-3.5 px-4">Organization &amp; Contact</th>
-                      <th className="py-3.5 px-4">Service &amp; Guards</th>
-                      <th className="py-3.5 px-4">Shift &amp; Location</th>
-                      <th className="py-3.5 px-4">Est. Pipeline</th>
+                    <tr className="border-b border-white/[0.06] text-xs font-medium text-slate-400">
+                      <th className="py-3.5 px-4">Contact</th>
+                      <th className="py-3.5 px-4">Requested Service</th>
+                      <th className="py-3.5 px-4">Guards / Shift</th>
+                      <th className="py-3.5 px-4">Location</th>
                       <th className="py-3.5 px-4">Stage</th>
                       <th className="py-3.5 px-4 text-right">Actions</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-white/5 text-xs">
-                    {filteredQuotes.length === 0 ? (
+                  <tbody className="divide-y divide-white/[0.05] text-xs">
+                    {quotes.length === 0 ? (
                       <tr>
-                        <td colSpan={7} className="py-10 text-center text-slate-400 font-mono">
-                          No quotation leads found.
+                        <td colSpan={6} className="py-10 text-center text-slate-500">
+                          No quotation inquiries received yet.
                         </td>
                       </tr>
                     ) : (
-                      filteredQuotes.map((item) => (
-                        <tr key={item.id} className="hover:bg-white/[0.02] transition-colors">
-                          <td className="py-3.5 px-4 font-mono text-brand-red font-bold whitespace-nowrap">
-                            {item.id}
-                          </td>
+                      quotes.map((q) => (
+                        <tr key={q.id} className="hover:bg-white/[0.02] transition-colors">
                           <td className="py-3.5 px-4">
-                            <div className="font-heading font-bold text-white text-xs">
-                              {item.fullName}
-                            </div>
-                            <div className="text-[11px] text-slate-300">{item.orgName || 'N/A'}</div>
-                            <div className="text-[10px] font-mono text-slate-500">{item.phoneNum}</div>
+                            <div className="font-semibold text-white">{q.fullName}</div>
+                            <div className="text-[11px] text-slate-400">{q.orgName || 'N/A'}</div>
+                            <div className="text-[11px] text-slate-500">{q.phoneNum}</div>
                           </td>
+                          <td className="py-3.5 px-4 text-slate-200">{q.serviceType}</td>
+                          <td className="py-3.5 px-4 text-slate-300">
+                            {q.manpowerCount} Guards • {q.shiftType}
+                          </td>
+                          <td className="py-3.5 px-4 text-slate-400">{q.location}</td>
                           <td className="py-3.5 px-4">
-                            <div className="text-white font-medium">{item.serviceType}</div>
-                            <span className="font-mono text-[10px] text-brand-red font-bold">
-                              {item.personnelCount || 'Custom Roster'}
-                            </span>
-                          </td>
-                          <td className="py-3.5 px-4">
-                            <div className="text-slate-300 text-xs">{item.siteLocation}</div>
-                            <div className="text-[10px] font-mono text-slate-500">{item.shiftDuration}</div>
-                          </td>
-                          <td className="py-3.5 px-4 font-mono text-emerald-400 font-bold whitespace-nowrap">
-                            {item.estValue || '₹ Quote Needed'}
-                          </td>
-                          <td className="py-3.5 px-4 whitespace-nowrap">
                             <select
-                              value={item.status}
-                              onChange={(e) => handleUpdateQuoteStatus(item.id, e.target.value)}
-                              className="text-[11px] font-mono font-bold px-2 py-1 rounded-lg border border-white/20 bg-[#13141b] text-white focus:outline-none"
+                              value={q.status}
+                              onChange={(e) => {
+                                storageService.updateQuoteStatus(q.id, e.target.value);
+                                refreshData();
+                              }}
+                              className="bg-transparent text-xs text-white font-medium focus:outline-none cursor-pointer"
                             >
-                              <option value="New Lead">New Lead</option>
-                              <option value="Audit Scheduled">Audit Scheduled</option>
-                              <option value="Proposal Dispatched">Proposal Dispatched</option>
-                              <option value="Contract Signed">Contract Signed</option>
-                              <option value="Closed / Lost">Closed / Lost</option>
+                              <option value="New" className="bg-[#121318]">New</option>
+                              <option value="Contacted" className="bg-[#121318]">Contacted</option>
+                              <option value="Closed" className="bg-[#121318]">Closed</option>
                             </select>
                           </td>
-                          <td className="py-3.5 px-4 text-right whitespace-nowrap">
-                            <div className="flex items-center justify-end gap-1.5">
-                              <button
-                                onClick={() =>
-                                  sendWhatsAppDirect(
-                                    item.phoneNum,
-                                    `Hello ${item.fullName}, Mosin Shaikh here from The Legend Security. We received your proposal request for ${item.serviceType} at ${item.siteLocation}...`
-                                  )
-                                }
-                                className="w-7 h-7 rounded-lg bg-[#25D366]/20 hover:bg-[#25D366]/30 text-[#25D366] flex items-center justify-center transition-colors"
-                                title="WhatsApp Proposal"
+                          <td className="py-3.5 px-4 text-right">
+                            <div className="inline-flex items-center gap-1.5">
+                              <a
+                                href={`tel:${q.phoneNum}`}
+                                className="w-7 h-7 rounded-lg bg-white/[0.04] hover:bg-blue-500/20 text-slate-300 hover:text-blue-400 flex items-center justify-center"
+                                title="Call"
                               >
-                                <i className="fa-brands fa-whatsapp text-xs" />
-                              </button>
+                                <IconPhone />
+                              </a>
                               <button
-                                onClick={() => handleDeleteQuote(item.id)}
-                                className="w-7 h-7 rounded-lg bg-red-900/20 hover:bg-red-900/40 text-red-400 flex items-center justify-center transition-colors"
-                                title="Delete Lead"
+                                type="button"
+                                onClick={() => {
+                                  if (window.confirm(`Delete quote ${q.id}?`)) {
+                                    storageService.deleteQuote(q.id);
+                                    refreshData();
+                                  }
+                                }}
+                                className="w-7 h-7 rounded-lg bg-white/[0.04] hover:bg-rose-500/20 text-slate-400 hover:text-rose-400 flex items-center justify-center"
+                                title="Delete"
                               >
-                                <i className="fa-solid fa-trash-can text-[10px]" />
+                                <IconTrash />
                               </button>
                             </div>
                           </td>
@@ -639,179 +602,92 @@ export default function AdminPage() {
         )}
 
         {/* ------------------------------------------------------------- */}
-        {/* TAB 3: GUARDS ROSTER & DEPLOYMENT */}
+        {/* iOS-STYLE DETAIL SHEET MODAL */}
         {/* ------------------------------------------------------------- */}
-        {activeTab === 'guards' && (
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <p className="text-xs text-slate-400">
-                Key officers, armed bouncers, and squad leaders stationed across Pune, Mumbai, and Palghar command hubs.
-              </p>
-              <span className="font-mono text-xs text-emerald-400 font-bold">
-                100% Police Verified &amp; PSARA Certified
-              </span>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {guards.map((g) => (
-                <div
-                  key={g.id}
-                  className="bg-[#111218] border border-white/10 rounded-2xl p-5 flex flex-col justify-between hover:border-white/20 transition-all"
-                >
-                  <div>
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="flex items-center gap-3">
-                        <img
-                          src={g.avatar}
-                          alt={g.name}
-                          className="w-12 h-12 rounded-xl object-cover border border-white/15"
-                        />
-                        <div>
-                          <h4 className="font-heading font-bold text-sm text-white">{g.name}</h4>
-                          <p className="text-[11px] text-slate-400">{g.role}</p>
-                        </div>
-                      </div>
-                      <span className="font-mono text-[9px] px-2 py-0.5 rounded bg-brand-red/20 text-brand-red border border-brand-red/30 font-bold">
-                        {g.badge}
-                      </span>
-                    </div>
-
-                    <div className="space-y-1.5 text-xs text-slate-300 font-mono py-2 border-y border-white/5">
-                      <div className="flex justify-between">
-                        <span className="text-slate-500">Zone:</span>
-                        <span className="text-white">{g.zone}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-slate-500">Experience:</span>
-                        <span className="text-white">{g.experience}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-slate-500">Hotline:</span>
-                        <span className="text-brand-red font-bold">{g.phone}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="pt-3 mt-2 flex items-center justify-between">
-                    <span
-                      className={`inline-flex items-center gap-1.5 text-xs font-mono font-bold ${
-                        g.status === 'On Duty' ? 'text-emerald-400' : 'text-amber-400'
-                      }`}
-                    >
-                      <span
-                        className={`w-2 h-2 rounded-full ${
-                          g.status === 'On Duty' ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'
-                        }`}
-                      />
-                      <span>{g.status}</span>
-                    </span>
-
-                    <button
-                      onClick={() => handleToggleGuard(g.id)}
-                      className="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-[11px] font-mono text-slate-300 hover:text-white transition-colors"
-                    >
-                      Toggle Duty State
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* ------------------------------------------------------------- */}
-        {/* DETAIL MODAL (WHEN VIEWING AN APPOINTMENT) */}
-        {/* ------------------------------------------------------------- */}
-        {selectedItemDetail && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-            <div className="bg-[#121319] border border-white/15 rounded-3xl max-w-lg w-full p-6 sm:p-7 space-y-4 shadow-2xl relative">
-              <div className="flex items-center justify-between pb-3 border-b border-white/10">
-                <div className="flex items-center gap-2">
-                  <span className="font-mono text-xs text-brand-red font-bold">
-                    {selectedItemDetail.id}
-                  </span>
-                  <span className="text-slate-600">•</span>
-                  <span className="text-xs text-slate-300 font-mono">Full Inspection Dossier</span>
+        {selectedBooking && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md">
+            <div className="bg-[#121318] border border-white/10 rounded-2xl max-w-lg w-full p-6 shadow-2xl space-y-4">
+              <div className="flex items-center justify-between pb-3 border-b border-white/[0.08]">
+                <div>
+                  <h3 className="text-base font-semibold text-white">Booking Details</h3>
+                  <p className="text-xs text-slate-400">Ref: {selectedBooking.id}</p>
                 </div>
                 <button
-                  onClick={() => setSelectedItemDetail(null)}
-                  className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white flex items-center justify-center"
+                  type="button"
+                  onClick={() => setSelectedBooking(null)}
+                  className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white flex items-center justify-center transition-colors"
                 >
-                  ✕
+                  <IconClose />
                 </button>
               </div>
 
-              <div className="space-y-3 text-xs">
+              <div className="space-y-3.5 text-xs">
                 <div>
-                  <label className="text-slate-500 font-mono text-[10px] uppercase">Client &amp; Org</label>
-                  <p className="font-heading font-bold text-white text-base">
-                    {selectedItemDetail.fullName}
-                  </p>
-                  <p className="text-slate-300">{selectedItemDetail.orgName || 'N/A'}</p>
+                  <span className="text-slate-400 block text-[11px]">Client Name &amp; Organization</span>
+                  <p className="text-white font-medium text-sm mt-0.5">{selectedBooking.fullName}</p>
+                  <p className="text-slate-300">{selectedBooking.orgName || 'Private Facility'}</p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3 pt-2">
+                <div className="grid grid-cols-2 gap-3 pt-1">
                   <div>
-                    <label className="text-slate-500 font-mono text-[10px] uppercase">Direct Phone</label>
-                    <p className="font-mono text-brand-red font-bold">{selectedItemDetail.phoneNum}</p>
+                    <span className="text-slate-400 block text-[11px]">Phone Number</span>
+                    <a href={`tel:${selectedBooking.phoneNum}`} className="text-white hover:underline font-medium">
+                      {selectedBooking.phoneNum}
+                    </a>
                   </div>
                   <div>
-                    <label className="text-slate-500 font-mono text-[10px] uppercase">Email</label>
-                    <p className="font-mono text-slate-300">{selectedItemDetail.emailAddr || 'None provided'}</p>
+                    <span className="text-slate-400 block text-[11px]">Email Address</span>
+                    <p className="text-slate-200">{selectedBooking.emailAddr || 'None provided'}</p>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3 pt-2">
+                <div className="grid grid-cols-2 gap-3 pt-1">
                   <div>
-                    <label className="text-slate-500 font-mono text-[10px] uppercase">Survey Date &amp; Slot</label>
-                    <p className="text-white font-mono">{selectedItemDetail.date}</p>
-                    <p className="text-brand-red font-mono text-[11px]">{selectedItemDetail.timeSlot}</p>
+                    <span className="text-slate-400 block text-[11px]">Scheduled Date &amp; Slot</span>
+                    <p className="text-white font-medium">{selectedBooking.date}</p>
+                    <p className="text-slate-400">{selectedBooking.timeSlot}</p>
                   </div>
                   <div>
-                    <label className="text-slate-500 font-mono text-[10px] uppercase">Risk Tier</label>
-                    <p className="text-amber-400 font-bold">{selectedItemDetail.riskLevel}</p>
+                    <span className="text-slate-400 block text-[11px]">Audit Scope</span>
+                    <p className="text-slate-200">{selectedBooking.auditType}</p>
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-slate-500 font-mono text-[10px] uppercase">Deployment Area / Location</label>
-                  <p className="text-slate-200">{selectedItemDetail.location}</p>
+                  <span className="text-slate-400 block text-[11px]">Facility Location</span>
+                  <p className="text-slate-200 mt-0.5">{selectedBooking.location}</p>
                 </div>
 
-                {selectedItemDetail.notes && (
-                  <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                    <label className="text-slate-400 font-mono text-[10px] uppercase block mb-1">
-                      Facility Notes &amp; Scope
-                    </label>
-                    <p className="text-slate-200 italic">{selectedItemDetail.notes}</p>
+                {selectedBooking.notes && (
+                  <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                    <span className="text-slate-400 block text-[11px]">Client Scope Notes:</span>
+                    <p className="text-slate-200 mt-1 italic">{selectedBooking.notes}</p>
                   </div>
                 )}
               </div>
 
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between">
                 <button
-                  onClick={() =>
-                    sendWhatsAppDirect(
-                      selectedItemDetail.phoneNum,
-                      `Hello ${selectedItemDetail.fullName}, this is Mosin Azam Shaikh from The Legend Security confirming your site survey on ${selectedItemDetail.date} (${selectedItemDetail.timeSlot}).`
-                    )
-                  }
-                  className="px-4 py-2.5 rounded-xl bg-[#25D366] text-black font-heading font-bold text-xs uppercase flex items-center gap-2"
+                  type="button"
+                  onClick={() => sendWhatsApp(selectedBooking.phoneNum, selectedBooking)}
+                  className="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-black font-medium text-xs flex items-center gap-2 transition-colors"
                 >
-                  <i className="fa-brands fa-whatsapp text-sm" />
+                  <IconWhatsApp className="w-3.5 h-3.5" />
                   <span>WhatsApp Client</span>
                 </button>
 
                 <button
-                  onClick={() => setSelectedItemDetail(null)}
-                  className="px-4 py-2.5 rounded-xl bg-white/10 text-white text-xs font-mono"
+                  type="button"
+                  onClick={() => setSelectedBooking(null)}
+                  className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-medium transition-colors"
                 >
-                  Close Dossier
+                  Done
                 </button>
               </div>
             </div>
           </div>
         )}
+
       </div>
     </div>
   );
