@@ -47,7 +47,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[76px] sm:h-[82px] flex items-center justify-between">
           {/* Brand Logo — Custom Shield Badge Outline */}
           <Link to="/" className="flex items-center gap-3 sm:gap-3.5 group shrink-0 mr-3 lg:mr-6">
-            <div className="relative w-11 h-11 sm:w-13 sm:h-13 lg:w-[52px] lg:h-[52px] flex items-center justify-center filter drop-shadow-[0_0_12px_rgba(229,9,20,0.55)] group-hover:drop-shadow-[0_0_24px_rgba(229,9,20,0.85)] transition-all duration-300 group-hover:scale-105 shrink-0">
+            <div className="relative w-11 h-11 sm:w-13 sm:h-13 lg:w-[50px] lg:h-[50px] flex items-center justify-center transition-all duration-300 group-hover:scale-105 shrink-0">
               <img
                 src="/assets/shield_logo.png"
                 alt="The Legend Security and Bouncer Logo"
@@ -59,7 +59,7 @@ export default function Header() {
               <span className="font-heading font-black text-sm sm:text-base lg:text-lg tracking-wider uppercase text-white group-hover:text-brand-red transition-colors duration-300">
                 The Legend
               </span>
-              <span className="text-[10px] sm:text-[11px] lg:text-xs font-bold tracking-widest uppercase text-brand-red leading-none mt-1 font-mono">
+              <span className="text-[10px] sm:text-[11px] lg:text-xs font-semibold tracking-wider uppercase text-brand-red leading-none mt-1">
                 Security &amp; Bouncer
               </span>
             </div>
@@ -83,7 +83,7 @@ export default function Header() {
                   <>
                     <span>{link.name}</span>
                     {link.badge && (
-                      <span className="px-1.5 py-0.2 rounded-full text-[9px] font-mono bg-brand-red text-white font-black animate-pulse">
+                      <span className="px-1.5 py-0.2 rounded-full text-[9px] font-sans bg-brand-red text-white font-bold">
                         {link.badge}
                       </span>
                     )}

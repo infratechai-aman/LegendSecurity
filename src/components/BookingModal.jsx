@@ -145,13 +145,13 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-red font-bold">
-                  OFFICIAL AUDIT DESK
+                <span className="text-[11px] font-semibold tracking-wider text-brand-red uppercase">
+                  Official Audit Desk
                 </span>
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-[10px] text-emerald-400 font-mono">LIVE SLOTS</span>
+                <span className="text-[11px] text-emerald-400 font-medium">Available Slots</span>
               </div>
-              <h2 className="font-heading font-black text-lg sm:text-xl text-white uppercase tracking-tight">
+              <h2 className="font-heading font-black text-lg sm:text-xl text-white tracking-tight">
                 {step === 4 ? 'Appointment Confirmed' : 'Book Security Meeting & Site Audit'}
               </h2>
             </div>
@@ -176,15 +176,15 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
             ].map((s) => (
               <div
                 key={s.num}
-                className={`flex items-center gap-2 text-xs font-mono cursor-pointer transition-colors ${
-                  step === s.num ? 'text-brand-red font-bold' : step > s.num ? 'text-slate-300' : 'text-slate-600'
+                className={`flex items-center gap-2 text-xs font-medium cursor-pointer transition-colors ${
+                  step === s.num ? 'text-brand-red font-semibold' : step > s.num ? 'text-slate-300' : 'text-slate-500'
                 }`}
                 onClick={() => (step > s.num ? setStep(s.num) : null)}
               >
                 <div
                   className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold ${
                     step === s.num
-                      ? 'bg-brand-red text-white shadow-sm shadow-red-500/50'
+                      ? 'bg-brand-red text-white shadow-sm'
                       : step > s.num
                       ? 'bg-white/20 text-white'
                       : 'bg-white/5 text-slate-500 border border-white/10'
@@ -233,7 +233,7 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
                             {type.title}
                           </h4>
                           {type.badge && (
-                            <span className="font-mono text-[9px] px-1.5 py-0.5 rounded bg-white/10 text-slate-300 tracking-wider">
+                            <span className="text-[10px] font-medium px-2 py-0.5 rounded bg-white/10 text-slate-300">
                               {type.badge}
                             </span>
                           )}
@@ -260,9 +260,9 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
                 <button
                   type="button"
                   onClick={() => setStep(2)}
-                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-brand-red to-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg shadow-red-900/30 hover:brightness-110 transition-all flex items-center gap-2"
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-brand-red to-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg shadow-black/40 hover:brightness-110 transition-all flex items-center gap-2"
                 >
-                  <span>Continue to Tactical Slot</span>
+                  <span>Select Date &amp; Time</span>
                   <i className="fa-solid fa-arrow-right text-xs" />
                 </button>
               </div>
@@ -273,7 +273,7 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
           {step === 2 && (
             <div className="space-y-4">
               <div>
-                <label className="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2">
+                <label className="block text-xs font-semibold text-slate-300 mb-2">
                   1. Target Survey / Meeting Date
                 </label>
                 <div className="relative">
@@ -283,7 +283,7 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
                     value={formData.date}
                     min={new Date().toISOString().slice(0, 10)}
                     onChange={handleInputChange}
-                    className="w-full bg-white/5 border border-white/15 focus:border-brand-red rounded-xl px-4 py-3 text-sm text-white font-mono focus:outline-none focus:ring-1 focus:ring-brand-red transition-colors"
+                    className="w-full bg-white/5 border border-white/15 focus:border-brand-red rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-1 focus:ring-brand-red transition-colors"
                   />
                 </div>
                 <p className="text-[11px] text-slate-400 mt-1.5 flex items-center gap-1.5">
@@ -293,8 +293,8 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2">
-                  2. Preferred Tactical Time Window
+                <label className="block text-xs font-semibold text-slate-300 mb-2">
+                  2. Preferred Time Window
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {TIME_SLOTS.map((t) => {
@@ -314,11 +314,11 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
                           <span className="font-heading font-bold text-xs uppercase text-white">
                             {t.label}
                           </span>
-                          <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-white/10 text-slate-300">
+                          <span className="text-[10px] font-medium px-2 py-0.5 rounded bg-white/10 text-slate-300">
                             {t.tag}
                           </span>
                         </div>
-                        <div className="text-xs font-mono text-brand-red font-semibold">{t.slot}</div>
+                        <div className="text-xs font-semibold text-brand-red">{t.slot}</div>
                       </button>
                     );
                   })}
@@ -329,14 +329,14 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
                 <button
                   type="button"
                   onClick={() => setStep(1)}
-                  className="px-4 py-2.5 rounded-xl text-slate-400 hover:text-white text-xs font-mono"
+                  className="px-4 py-2.5 rounded-xl text-slate-400 hover:text-white text-xs font-medium"
                 >
                   ← Back
                 </button>
                 <button
                   type="button"
                   onClick={() => setStep(3)}
-                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-brand-red to-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg shadow-red-900/30 hover:brightness-110 transition-all flex items-center gap-2"
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-brand-red to-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg shadow-black/40 hover:brightness-110 transition-all flex items-center gap-2"
                 >
                   <span>Continue to Client Details</span>
                   <i className="fa-solid fa-arrow-right text-xs" />
@@ -350,7 +350,7 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
             <form onSubmit={handleBookingSubmit} className="space-y-3.5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[11px] font-mono text-slate-300 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">
                     Full Name *
                   </label>
                   <input
@@ -364,7 +364,7 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-mono text-slate-300 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">
                     Company / Property Name
                   </label>
                   <input
@@ -380,7 +380,7 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[11px] font-mono text-slate-300 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">
                     Mobile Phone (+91) *
                   </label>
                   <input
@@ -390,11 +390,11 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
                     placeholder="+91 98220 XXXXX"
                     value={formData.phoneNum}
                     onChange={handleInputChange}
-                    className="w-full bg-white/5 border border-white/15 focus:border-brand-red rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white font-mono focus:outline-none focus:ring-1 focus:ring-brand-red"
+                    className="w-full bg-white/5 border border-white/15 focus:border-brand-red rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:ring-1 focus:ring-brand-red"
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-mono text-slate-300 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">
                     Email Address
                   </label>
                   <input
@@ -409,7 +409,7 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono text-slate-300 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-semibold text-slate-300 mb-1.5">
                   Deployment / Facility Location in Maharashtra *
                 </label>
                 <select
@@ -428,7 +428,7 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[11px] font-mono text-slate-300 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">
                     Security Priority Tier
                   </label>
                   <select
@@ -443,7 +443,7 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-[11px] font-mono text-slate-300 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">
                     Facility Notes / Specific Scope
                   </label>
                   <input
@@ -461,26 +461,26 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
               <div className="p-3 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-between text-xs">
                 <div className="flex items-center gap-2">
                   <i className="fa-solid fa-shield-check text-brand-red" />
-                  <span className="text-slate-300">Audit Desk:</span>
-                  <span className="text-white font-semibold font-mono">{formData.date}</span>
+                  <span className="text-slate-300">Appointment:</span>
+                  <span className="text-white font-medium">{formData.date}</span>
                   <span className="text-slate-500">•</span>
-                  <span className="text-brand-red font-mono font-medium">{formData.timeSlot}</span>
+                  <span className="text-brand-red font-medium">{formData.timeSlot}</span>
                 </div>
-                <span className="text-[10px] font-mono text-slate-400 hidden sm:inline">PSARA Licensed</span>
+                <span className="text-[11px] text-slate-400 hidden sm:inline">PSARA Licensed Agency</span>
               </div>
 
               <div className="pt-3 flex items-center justify-between border-t border-white/5">
                 <button
                   type="button"
                   onClick={() => setStep(2)}
-                  className="px-4 py-2.5 rounded-xl text-slate-400 hover:text-white text-xs font-mono"
+                  className="px-4 py-2.5 rounded-xl text-slate-400 hover:text-white text-xs font-medium"
                 >
                   ← Back
                 </button>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-brand-red to-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg shadow-red-900/40 hover:brightness-110 transition-all flex items-center gap-2 disabled:opacity-50"
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-brand-red to-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg shadow-black/40 hover:brightness-110 transition-all flex items-center gap-2 disabled:opacity-50"
                 >
                   {isSubmitting ? (
                     <>
@@ -501,16 +501,16 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
           {/* STEP 4: SUCCESS CONFIRMATION */}
           {step === 4 && confirmedBooking && (
             <div className="space-y-5 text-center py-2 animate-scale-up">
-              <div className="w-16 h-16 rounded-2xl bg-brand-red/15 border border-brand-red/40 mx-auto flex items-center justify-center text-brand-red text-2xl shadow-[0_0_30px_rgba(229,9,20,0.3)]">
+              <div className="w-16 h-16 rounded-2xl bg-brand-red/15 border border-brand-red/40 mx-auto flex items-center justify-center text-brand-red text-2xl shadow-lg shadow-black/30">
                 <i className="fa-solid fa-shield-check" />
               </div>
 
               <div>
-                <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs uppercase tracking-widest font-bold mb-2">
+                <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wider mb-2">
                   ✓ Slot Successfully Reserved
                 </span>
-                <h3 className="font-heading font-black text-2xl text-white uppercase tracking-tight">
-                  Security Audit Locked In
+                <h3 className="font-heading font-black text-2xl text-white tracking-tight">
+                  Security Audit Confirmed
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto mt-1 leading-relaxed">
                   Your appointment has been registered in The Legend Security dispatch queue. Director <strong>Mr. Mosin Azam Shaikh</strong> and operations supervisors have received your booking.
@@ -518,14 +518,14 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
               </div>
 
               {/* Reference Card */}
-              <div className="bg-[#14151c] border border-white/10 rounded-2xl p-4 text-left max-w-md mx-auto space-y-2 font-mono text-xs">
+              <div className="bg-[#14151c] border border-white/10 rounded-2xl p-4 text-left max-w-md mx-auto space-y-2 text-xs">
                 <div className="flex justify-between items-center pb-2 border-b border-white/5">
                   <span className="text-slate-400">Reference ID:</span>
-                  <span className="text-brand-red font-bold tracking-wider">{confirmedBooking.id}</span>
+                  <span className="text-brand-red font-semibold font-mono tracking-wider">{confirmedBooking.id}</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-slate-400">Client:</span>
-                  <span className="text-white">{confirmedBooking.fullName}</span>
+                  <span className="text-white font-medium">{confirmedBooking.fullName}</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-slate-400">Date &amp; Slot:</span>
@@ -537,7 +537,7 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
                 </div>
                 <div className="flex justify-between items-center pt-2 border-t border-white/5">
                   <span className="text-slate-400">Status:</span>
-                  <span className="text-amber-400 font-bold">Pending Supervisor Dispatch</span>
+                  <span className="text-emerald-400 font-semibold">Confirmed - Operations Notified</span>
                 </div>
               </div>
 

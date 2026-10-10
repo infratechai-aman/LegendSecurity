@@ -211,73 +211,54 @@ export default function HomePage() {
             <HeroTrustStrip />
           </div>
 
-          {/* Bespoke Luxury CTA Actions & Fast Dispatch Strip */}
+          {/* Executive Action Row — Clean, Authoritative, Real-World Corporate */}
           <div
-            className={`flex flex-col items-center justify-center gap-4 w-full max-w-2xl mx-auto transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
             style={{ transitionDelay: '600ms' }}
           >
-            {/* Primary Action Cluster */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full">
-              {/* Primary Action 1: Book Consultation & Site Audit */}
-              <button
-                type="button"
-                onClick={() => {
-                  setSelectedAuditType('On-Site Vulnerability & Security Audit');
-                  setIsBookingModalOpen(true);
-                }}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#e50914] via-[#dc1c25] to-[#b80a12] hover:brightness-110 text-white font-heading font-bold text-xs uppercase tracking-wider px-7 py-4 rounded-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.4),0_12px_28px_rgba(229,9,20,0.45)] transition-all duration-300 group cursor-pointer relative overflow-hidden"
-              >
-                <div className="w-6 h-6 rounded-lg bg-black/20 flex items-center justify-center text-white text-xs">
-                  <i className="fa-solid fa-calendar-check" />
-                </div>
-                <div className="text-left flex flex-col leading-tight">
-                  <span className="text-[11px] sm:text-xs">Schedule Security Audit</span>
-                  <span className="text-[9px] font-mono text-white/80 font-normal">100% Free On-Site Survey</span>
-                </div>
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse ml-1 shrink-0" title="Slots Available Today" />
-              </button>
+            {/* Primary Action Button */}
+            <button
+              type="button"
+              onClick={() => {
+                setSelectedAuditType('On-Site Vulnerability & Security Audit');
+                setIsBookingModalOpen(true);
+              }}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-brand-red hover:bg-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-md transition-all duration-200 cursor-pointer group"
+            >
+              <i className="fa-solid fa-calendar-check text-xs" />
+              <span>Schedule Security Audit</span>
+              <i className="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform" />
+            </button>
 
-              {/* Primary Action 2: Request Instant Quote */}
-              <Link
-                to="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white/[0.05] hover:bg-white/[0.09] backdrop-blur-xl border border-white/15 hover:border-brand-red/60 text-white font-heading font-bold text-xs uppercase tracking-wider px-6 py-4 rounded-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_8px_20px_rgba(0,0,0,0.35)] transition-all duration-300 group"
-              >
-                <i className="fa-solid fa-file-invoice text-brand-red text-sm group-hover:scale-110 transition-transform" />
-                <div className="text-left flex flex-col leading-tight">
-                  <span className="text-[11px] sm:text-xs">Get Official Quote</span>
-                  <span className="text-[9px] font-mono text-slate-400 font-normal">Fast 15-Min Response</span>
-                </div>
-              </Link>
+            {/* Secondary Action Button */}
+            <Link
+              to="/contact"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/[0.04] hover:bg-white/[0.08] border border-white/20 hover:border-white/40 text-slate-100 font-heading font-semibold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all duration-200"
+            >
+              <i className="fa-solid fa-file-invoice text-brand-red text-xs" />
+              <span>Request a Quote</span>
+            </Link>
+          </div>
 
-              {/* Tertiary Link: Explore Services */}
-              <Link
-                to="/services"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-4 text-slate-300 hover:text-white font-heading font-bold text-xs uppercase tracking-wider hover:bg-white/5 rounded-xl transition-all group"
-              >
-                <span>Services</span>
-                <i className="fa-solid fa-arrow-right text-[11px] text-slate-400 group-hover:text-brand-red group-hover:translate-x-1 transition-all" />
-              </Link>
-            </div>
-
-            {/* Quick Tactical Dispatch Micro-Strip */}
-            <div className="w-full p-2.5 px-4 rounded-xl bg-white/[0.03] border border-white/10 flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-300 backdrop-blur-md">
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="font-mono text-slate-400">RAPID SURVEY:</span>
-                <span className="text-white font-medium">Pune • Mumbai • Chakan MIDC • BKC</span>
-              </div>
-              <button
-                type="button"
-                onClick={() => {
-                  setSelectedAuditType('Direct Strategy Consultation (Phone/Video)');
-                  setIsBookingModalOpen(true);
-                }}
-                className="font-mono text-brand-red hover:underline font-bold text-[10px] uppercase flex items-center gap-1 cursor-pointer"
-              >
-                <span>Book 30-Min Call with Director Mosin Shaikh</span>
-                <i className="fa-solid fa-chevron-right text-[8px]" />
-              </button>
-            </div>
+          {/* Clean Executive Assurances (No boxes, No robotic monospace fonts) */}
+          <div
+            className={`flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-slate-400 font-sans transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            style={{ transitionDelay: '650ms' }}
+          >
+            <span className="flex items-center gap-1.5">
+              <i className="fa-solid fa-shield-check text-brand-red text-[11px]" />
+              <span className="text-slate-300">Free On-Site Survey</span>
+            </span>
+            <span className="text-slate-700 hidden sm:inline">•</span>
+            <span className="flex items-center gap-1.5">
+              <i className="fa-solid fa-shield-check text-brand-red text-[11px]" />
+              <span className="text-slate-300">PSARA Certified Officers</span>
+            </span>
+            <span className="text-slate-700 hidden sm:inline">•</span>
+            <span className="flex items-center gap-1.5">
+              <i className="fa-solid fa-shield-check text-brand-red text-[11px]" />
+              <span className="text-slate-300">Rapid 24-Hour Deployment Across MH</span>
+            </span>
           </div>
 
           {/* Stats Row */}
