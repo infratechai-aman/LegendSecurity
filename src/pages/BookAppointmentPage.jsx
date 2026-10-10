@@ -124,31 +124,35 @@ export default function BookAppointmentPage() {
   const AUDIT_TYPES = [
     {
       id: 'On-Site Vulnerability & Security Audit',
-      title: 'Facility Vulnerability & Security Survey',
+      title: 'Facility Vulnerability & Survey',
+      shortDesc: 'Threat mapping for plants, factories & IT parks',
       desc: 'Comprehensive threat mapping for manufacturing units, MIDC plants, IT parks & commercial towers.',
       badge: 'Factories, MIDC Units, Gated Townships',
-      icon: <IconShield className="w-5 h-5" />,
+      icon: <IconShield className="w-4 h-4 sm:w-5 sm:h-5" />,
     },
     {
       id: 'VIP & Executive Protection Briefing',
-      title: 'Executive Protection & VIP Bouncer Squad',
+      title: 'Executive Protection & VIP Bouncers',
+      shortDesc: 'Close protection bodyguards & escort convoys',
       desc: 'Armed transit protocols, close protection bodyguards, escort convoys, and private security.',
       badge: 'Celebrities, Executives, High-Net-Worth',
-      icon: <IconUserShield className="w-5 h-5" />,
+      icon: <IconUserShield className="w-4 h-4 sm:w-5 sm:h-5" />,
     },
     {
       id: 'Event Security Command & Crowd Control',
-      title: 'Event Security Command & Crowd Control',
+      title: 'Event Security & Crowd Control',
+      shortDesc: 'Screening, barricades & VIP lounge security',
       desc: 'Barricade management, metal detector entry screening, VIP lounge protection & emergency exits.',
       badge: 'Weddings, Concerts, Corporate Summits',
-      icon: <IconUsers className="w-5 h-5" />,
+      icon: <IconUsers className="w-4 h-4 sm:w-5 sm:h-5" />,
     },
     {
       id: 'Direct Strategy Consultation (Phone/Video)',
-      title: 'Strategic Consultation with Director Mosin Shaikh',
+      title: 'Strategic Consultation with Director',
+      shortDesc: 'Direct advisory on tariffs & PSARA compliance',
       desc: 'Direct advisory brief on security manpower design, regulatory PSARA compliance & official tariffs.',
       badge: 'Corporate HR, Facility Directors, Society Chairmen',
-      icon: <IconBriefcase className="w-5 h-5" />,
+      icon: <IconBriefcase className="w-4 h-4 sm:w-5 sm:h-5" />,
     },
   ];
 
@@ -249,42 +253,38 @@ export default function BookAppointmentPage() {
     <div className="flex flex-col w-full min-h-screen">
 
       {/* ══════════════════════════════════════════
-          HERO SECTION (DARK ACCENT CANVAS)
+          HERO SECTION (COMPACT ON MOBILE, RICH ON DESKTOP)
       ══════════════════════════════════════════ */}
-      <section className="w-full bg-[#0a0a0c] text-white pt-28 pb-14 px-4 sm:px-6 lg:px-8 border-b border-[#1d1e24] relative overflow-hidden">
-        {/* Ambient accent */}
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-red/5 rounded-full blur-[100px] pointer-events-none" />
-
+      <section className="w-full bg-[#0a0a0c] text-white pt-24 sm:pt-28 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 border-b border-[#1d1e24] relative overflow-hidden">
         <div className="max-w-6xl mx-auto relative z-10">
+          
           {/* Breadcrumb Navigation */}
-          <nav className="flex items-center gap-2 text-slate-400 text-xs mb-4">
+          <nav className="flex items-center gap-2 text-slate-400 text-xs mb-3">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <span className="text-slate-600">/</span>
             <span className="text-slate-300 font-medium">Book Consultation</span>
           </nav>
 
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/10 border border-brand-red/25 mb-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                <span className="text-[11px] font-semibold text-slate-300 uppercase tracking-wider">
-                  Free On-Site Surveys Across Maharashtra
+              <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-brand-red/15 border border-brand-red/30 mb-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
+                <span className="text-[10px] sm:text-[11px] font-semibold text-brand-red uppercase tracking-wider">
+                  Free On-Site Survey Across Maharashtra
                 </span>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl font-semibold tracking-tight text-white">
+              <h1 className="text-2xl sm:text-4xl font-semibold tracking-tight text-white">
                 Schedule a Security Consultation
               </h1>
 
-              <p className="text-sm sm:text-base text-slate-300 mt-2 max-w-2xl leading-relaxed">
-                Certified vulnerability inspections and private security briefings across{' '}
-                <strong className="text-white">Pune, Mumbai, Thane, and Palghar</strong>. Coordinated directly by Director{' '}
-                <strong>Mr. Mosin Azam Shaikh</strong> and operations field supervisors.
+              <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl leading-relaxed">
+                Facility threat inspections and VIP briefings across Pune, Mumbai, Thane &amp; Palghar. Coordinated directly by Director <strong>Mr. Mosin Azam Shaikh</strong>.
               </p>
             </div>
 
-            <div className="shrink-0">
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-slate-300 text-xs font-medium">
+            <div className="hidden sm:block shrink-0">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 text-slate-300 text-xs font-medium">
                 <span className="w-2 h-2 rounded-full bg-emerald-400" />
                 Director Coordinated • Free Survey
               </span>
@@ -294,97 +294,83 @@ export default function BookAppointmentPage() {
       </section>
 
       {/* ══════════════════════════════════════════
-          MAIN CONTENT (CRISP LIGHT CANVAS)
+          MAIN CONTENT (MOBILE APP-STYLE + DESKTOP 2-COLUMN)
       ══════════════════════════════════════════ */}
-      <section className="w-full bg-[#f8fafc] text-slate-900 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+      <section className="w-full bg-[#f8fafc] text-slate-900 py-6 sm:py-12 px-3.5 sm:px-6 lg:px-8 flex-1">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
           
-          {/* LEFT COLUMN: INTERACTIVE BOOKING ENGINE (7 cols) */}
-          <div className="lg:col-span-7 bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm">
+          {/* INTERACTIVE BOOKING ENGINE (MOBILE-FIRST) */}
+          <div className="lg:col-span-7 bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-7 border border-slate-200/90 shadow-sm">
             
-            {/* Step Progress Indicator (Clean Light Style) */}
+            {/* Step Progress Indicator (Clean Mobile + Desktop) */}
             {step < 4 && (
-              <div className="flex items-center gap-2 pb-6 mb-6 border-b border-slate-100">
-                {[
-                  { num: 1, label: 'Scope' },
-                  { num: 2, label: 'Schedule' },
-                  { num: 3, label: 'Details' },
-                ].map((s, idx) => (
-                  <div key={s.num} className="flex items-center gap-2 flex-1">
-                    <button
-                      type="button"
-                      onClick={() => (step > s.num ? setStep(s.num) : null)}
-                      className={`flex items-center gap-2 text-xs font-semibold transition-colors ${
-                        step === s.num
-                          ? 'text-slate-900'
-                          : step > s.num
-                          ? 'text-slate-700 cursor-pointer hover:text-brand-red'
-                          : 'text-slate-400'
+              <div className="flex items-center justify-between pb-3 sm:pb-5 mb-4 sm:mb-6 border-b border-slate-100">
+                <div>
+                  <span className="text-[10px] font-semibold uppercase tracking-wider text-brand-red block">
+                    Step {step} of 3
+                  </span>
+                  <span className="text-sm sm:text-base font-semibold text-slate-900">
+                    {step === 1 ? 'Select Security Scope' : step === 2 ? 'Date & Time Window' : 'Facility & Contact Details'}
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  {[1, 2, 3].map((num) => (
+                    <div
+                      key={num}
+                      className={`h-1.5 rounded-full transition-all ${
+                        step === num
+                          ? 'w-6 bg-brand-red'
+                          : step > num
+                          ? 'w-3 bg-emerald-500'
+                          : 'w-3 bg-slate-200'
                       }`}
-                    >
-                      <span
-                        className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
-                          step === s.num
-                            ? 'bg-brand-red text-white shadow-sm'
-                            : step > s.num
-                            ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                            : 'bg-slate-100 text-slate-400 border border-slate-200'
-                        }`}
-                      >
-                        {step > s.num ? '✓' : s.num}
-                      </span>
-                      <span className="hidden sm:inline">{s.label}</span>
-                    </button>
-                    {idx < 2 && (
-                      <div className={`flex-1 h-[1px] transition-colors ${step > idx + 1 ? 'bg-emerald-400' : 'bg-slate-200'}`} />
-                    )}
-                  </div>
-                ))}
+                    />
+                  ))}
+                </div>
               </div>
             )}
 
-            {/* STEP 1: AUDIT SCOPE */}
+            {/* STEP 1: AUDIT SCOPE (COMPACT TAP CARDS FOR MOBILE) */}
             {step === 1 && (
-              <div className="space-y-5">
-                <div>
-                  <h2 className="text-lg font-semibold text-slate-900 tracking-tight">Select Security Scope</h2>
-                  <p className="text-xs text-slate-500 mt-0.5">Choose the primary requirement for your facility or event:</p>
-                </div>
+              <div className="space-y-3 sm:space-y-4">
+                <p className="text-xs text-slate-500 hidden sm:block">
+                  Choose the primary requirement for your facility or event:
+                </p>
 
-                <div className="space-y-3">
+                <div className="space-y-2 sm:space-y-2.5">
                   {AUDIT_TYPES.map((type) => {
                     const isSelected = formData.auditType === type.id;
                     return (
                       <div
                         key={type.id}
                         onClick={() => setFormData((p) => ({ ...p, auditType: type.id }))}
-                        className={`p-4 rounded-xl border transition-all cursor-pointer flex items-start gap-3.5 ${
+                        className={`p-3 sm:p-3.5 rounded-xl border transition-all cursor-pointer flex items-center gap-3 ${
                           isSelected
                             ? 'bg-red-50/40 border-2 border-brand-red shadow-sm ring-1 ring-brand-red/10'
                             : 'bg-slate-50/70 border-slate-200/90 hover:border-slate-300 hover:bg-slate-50'
                         }`}
                       >
+                        {/* Icon */}
                         <div
-                          className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
+                          className={`w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
                             isSelected ? 'bg-brand-red text-white' : 'bg-slate-200/80 text-slate-700'
                           }`}
                         >
                           {type.icon}
                         </div>
 
+                        {/* Title & Short text */}
                         <div className="flex-1 min-w-0">
-                          <h3 className="font-semibold text-sm text-slate-900 mb-0.5">
+                          <h3 className="font-semibold text-xs sm:text-sm text-slate-900 leading-snug">
                             {type.title}
                           </h3>
-                          <p className="text-xs text-slate-600 leading-relaxed mb-2">
-                            {type.desc}
+                          <p className="text-[11px] text-slate-500 truncate sm:whitespace-normal mt-0.5">
+                            {type.shortDesc}
                           </p>
-                          <span className="inline-block text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-white text-slate-600 border border-slate-200 shadow-2xs">
-                            Best for: {type.badge}
-                          </span>
                         </div>
 
-                        <div className="shrink-0 mt-1">
+                        {/* Radio Selection Dot */}
+                        <div className="shrink-0">
                           <div
                             className={`w-4 h-4 rounded-full border flex items-center justify-center transition-colors ${
                               isSelected ? 'border-brand-red bg-brand-red' : 'border-slate-300 bg-white'
@@ -398,11 +384,11 @@ export default function BookAppointmentPage() {
                   })}
                 </div>
 
-                <div className="pt-3 flex justify-end">
+                <div className="pt-2 sm:pt-3">
                   <button
                     type="button"
                     onClick={() => setStep(2)}
-                    className="px-6 py-2.5 rounded-xl bg-brand-red hover:bg-red-600 text-white font-semibold text-xs tracking-wide transition-colors flex items-center gap-2 shadow-md shadow-red-700/20 cursor-pointer"
+                    className="w-full sm:w-auto sm:ml-auto py-3 px-6 rounded-xl bg-brand-red hover:bg-red-600 text-white font-semibold text-xs tracking-wide transition-colors flex items-center justify-center gap-2 shadow-md shadow-red-700/20 cursor-pointer"
                   >
                     <span>Continue to Schedule</span>
                     <IconArrowRight />
@@ -413,14 +399,9 @@ export default function BookAppointmentPage() {
 
             {/* STEP 2: DATE & TIME WINDOW */}
             {step === 2 && (
-              <div className="space-y-5">
+              <div className="space-y-4">
                 <div>
-                  <h2 className="text-lg font-semibold text-slate-900 tracking-tight">Select Date &amp; Time Window</h2>
-                  <p className="text-xs text-slate-500 mt-0.5">Our certified supervisor team arrives with full facility inspection checklists.</p>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-2">
+                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                     Inspection Date
                   </label>
                   <input
@@ -429,28 +410,28 @@ export default function BookAppointmentPage() {
                     value={formData.date}
                     min={new Date().toISOString().slice(0, 10)}
                     onChange={handleInputChange}
-                    className="w-full bg-slate-50/70 border border-slate-200 text-slate-900 focus:bg-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 rounded-xl px-4 py-2.5 text-xs focus:outline-none transition-colors"
+                    className="w-full bg-slate-50/70 border border-slate-200 text-slate-900 focus:bg-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-2">
+                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                     Preferred Time Window
                   </label>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
                     {TIME_SLOTS.map((t) => {
                       const isSelected = formData.timeSlot === t.slot;
                       return (
                         <div
                           key={t.slot}
                           onClick={() => setFormData((p) => ({ ...p, timeSlot: t.slot }))}
-                          className={`p-3.5 rounded-xl border cursor-pointer transition-all ${
+                          className={`p-2.5 sm:p-3 rounded-xl border cursor-pointer transition-all ${
                             isSelected
                               ? 'bg-red-50/50 border-2 border-brand-red text-slate-900 shadow-sm'
                               : 'bg-slate-50/70 border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-100'
                           }`}
                         >
-                          <div className="flex items-center justify-between mb-1">
+                          <div className="flex items-center justify-between mb-0.5">
                             <span className="font-semibold text-xs text-slate-900">
                               {t.label}
                             </span>
@@ -465,20 +446,20 @@ export default function BookAppointmentPage() {
                   </div>
                 </div>
 
-                <div className="pt-3 flex items-center justify-between border-t border-slate-100">
+                <div className="pt-3 flex items-center justify-between border-t border-slate-100 gap-3">
                   <button
                     type="button"
                     onClick={() => setStep(1)}
-                    className="px-4 py-2 rounded-xl text-slate-600 hover:text-slate-900 text-xs font-semibold transition-colors cursor-pointer"
+                    className="py-2.5 px-3 rounded-xl text-slate-600 hover:text-slate-900 text-xs font-semibold transition-colors cursor-pointer"
                   >
-                    ← Back to Scope
+                    ← Back
                   </button>
                   <button
                     type="button"
                     onClick={() => setStep(3)}
-                    className="px-6 py-2.5 rounded-xl bg-brand-red hover:bg-red-600 text-white font-semibold text-xs tracking-wide transition-colors flex items-center gap-2 shadow-md shadow-red-700/20 cursor-pointer"
+                    className="flex-1 sm:flex-initial py-3 px-6 rounded-xl bg-brand-red hover:bg-red-600 text-white font-semibold text-xs tracking-wide transition-colors flex items-center justify-center gap-2 shadow-md shadow-red-700/20 cursor-pointer"
                   >
-                    <span>Continue to Contact</span>
+                    <span>Continue to Details</span>
                     <IconArrowRight />
                   </button>
                 </div>
@@ -487,15 +468,10 @@ export default function BookAppointmentPage() {
 
             {/* STEP 3: CLIENT & FACILITY DETAILS */}
             {step === 3 && (
-              <form onSubmit={handleBookingSubmit} className="space-y-4">
-                <div>
-                  <h2 className="text-lg font-semibold text-slate-900 tracking-tight">Facility Details &amp; Contact</h2>
-                  <p className="text-xs text-slate-500 mt-0.5">Authorized contact details for supervisor entry clearance:</p>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <form onSubmit={handleBookingSubmit} className="space-y-3.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                    <label className="block text-xs font-semibold text-slate-700 mb-1">
                       Client Full Name *
                     </label>
                     <input
@@ -509,13 +485,13 @@ export default function BookAppointmentPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                    <label className="block text-xs font-semibold text-slate-700 mb-1">
                       Company / Property Title
                     </label>
                     <input
                       type="text"
                       name="orgName"
-                      placeholder="e.g. Apex Industrial Hub / Oberoi Splendor"
+                      placeholder="e.g. Apex Industrial Hub"
                       value={formData.orgName}
                       onChange={handleInputChange}
                       className="w-full bg-slate-50/70 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:bg-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none transition-colors"
@@ -523,23 +499,23 @@ export default function BookAppointmentPage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                    <label className="block text-xs font-semibold text-slate-700 mb-1">
                       Mobile Phone Number (+91) *
                     </label>
                     <input
                       type="tel"
                       name="phoneNum"
                       required
-                      placeholder="+91 98220 XXXXX"
+                      placeholder="+91 98220 12345"
                       value={formData.phoneNum}
                       onChange={handleInputChange}
                       className="w-full bg-slate-50/70 border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:bg-white focus:border-brand-red focus:ring-1 focus:ring-brand-red/20 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                    <label className="block text-xs font-semibold text-slate-700 mb-1">
                       Email Address
                     </label>
                     <input
@@ -554,7 +530,7 @@ export default function BookAppointmentPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">
                     Facility Region in Maharashtra *
                   </label>
                   <select
@@ -571,9 +547,9 @@ export default function BookAppointmentPage() {
                   </select>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                    <label className="block text-xs font-semibold text-slate-700 mb-1">
                       Priority Level
                     </label>
                     <select
@@ -584,11 +560,11 @@ export default function BookAppointmentPage() {
                     >
                       <option value="Standard Facility Audit">Standard Facility Survey</option>
                       <option value="Urgent Dispatch (<24 Hours)">Urgent Dispatch (&lt;24 Hours)</option>
-                      <option value="High Threat Assessment">High Threat / Armed Escort</option>
+                      <option value="High Threat Assessment">High Threat Assessment</option>
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                    <label className="block text-xs font-semibold text-slate-700 mb-1">
                       Facility Scope Notes
                     </label>
                     <input
@@ -603,30 +579,32 @@ export default function BookAppointmentPage() {
                 </div>
 
                 {/* Summary Strip */}
-                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
-                  <div className="flex items-center gap-2">
-                    <span className="text-slate-500">Scheduled:</span>
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex flex-wrap items-center justify-between text-xs gap-1">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-slate-500">Slot:</span>
                     <span className="text-slate-900 font-semibold">{formData.date}</span>
                     <span className="text-slate-300">•</span>
                     <span className="text-brand-red font-semibold">{formData.timeSlot}</span>
                   </div>
-                  <span className="text-[11px] text-emerald-700 font-semibold px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-100">100% Free On-Site Survey</span>
+                  <span className="text-[10px] text-emerald-700 font-semibold px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-100">
+                    100% Free Survey
+                  </span>
                 </div>
 
-                <div className="pt-3 flex items-center justify-between border-t border-slate-100">
+                <div className="pt-2 flex items-center justify-between border-t border-slate-100 gap-3">
                   <button
                     type="button"
                     onClick={() => setStep(2)}
-                    className="px-4 py-2 rounded-xl text-slate-600 hover:text-slate-900 text-xs font-semibold transition-colors cursor-pointer"
+                    className="py-2.5 px-3 rounded-xl text-slate-600 hover:text-slate-900 text-xs font-semibold transition-colors cursor-pointer"
                   >
-                    ← Back to Schedule
+                    ← Back
                   </button>
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="px-6 py-2.5 rounded-xl bg-brand-red hover:bg-red-600 text-white font-semibold text-xs tracking-wide transition-colors flex items-center gap-2 shadow-md shadow-red-700/20 disabled:opacity-50 cursor-pointer"
+                    className="flex-1 sm:flex-initial py-3 px-6 rounded-xl bg-brand-red hover:bg-red-600 text-white font-semibold text-xs tracking-wide transition-colors flex items-center justify-center gap-2 shadow-md shadow-red-700/20 disabled:opacity-50 cursor-pointer"
                   >
-                    {isSubmitting ? 'Confirming...' : 'Confirm & Book Consultation'}
+                    {isSubmitting ? 'Confirming...' : 'Confirm Audit Booking'}
                   </button>
                 </div>
               </form>
@@ -634,26 +612,26 @@ export default function BookAppointmentPage() {
 
             {/* STEP 4: SUCCESS CONFIRMATION RECEIPT */}
             {step === 4 && confirmedBooking && (
-              <div className="py-4 text-center space-y-5">
+              <div className="py-3 text-center space-y-4">
                 <div className="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 mx-auto flex items-center justify-center">
                   <IconShield className="w-6 h-6 text-emerald-600" />
                 </div>
 
                 <div>
-                  <span className="inline-block px-3 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold mb-1.5">
+                  <span className="inline-block px-3 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold mb-1">
                     Appointment Confirmed
                   </span>
-                  <h3 className="text-xl font-semibold text-slate-900 tracking-tight">
+                  <h3 className="text-lg sm:text-xl font-semibold text-slate-900 tracking-tight">
                     Security Survey Scheduled
                   </h3>
-                  <p className="text-slate-600 text-xs max-w-md mx-auto mt-1 leading-relaxed">
+                  <p className="text-slate-600 text-xs max-w-md mx-auto mt-0.5 leading-relaxed">
                     Your appointment has been registered in the operations queue. Director <strong>Mr. Mosin Shaikh</strong> and field supervisors have received your booking.
                   </p>
                 </div>
 
                 {/* Reference Receipt */}
-                <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-left max-w-md mx-auto space-y-2 text-xs">
-                  <div className="flex justify-between items-center pb-2 border-b border-slate-200/80">
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-3.5 text-left max-w-md mx-auto space-y-1.5 text-xs">
+                  <div className="flex justify-between items-center pb-1.5 border-b border-slate-200/80">
                     <span className="text-slate-500">Reference:</span>
                     <span className="text-slate-900 font-semibold">{confirmedBooking.id}</span>
                   </div>
@@ -671,7 +649,7 @@ export default function BookAppointmentPage() {
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 pt-2">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 pt-1">
                   <button
                     type="button"
                     onClick={handleWhatsAppNotify}
@@ -690,9 +668,9 @@ export default function BookAppointmentPage() {
                   </a>
                 </div>
 
-                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 max-w-md mx-auto">
+                <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 max-w-md mx-auto">
                   <Link to="/admin" className="text-brand-red hover:underline font-semibold">
-                    → Admin Command Center
+                    → Admin Command
                   </Link>
                   <button
                     type="button"
@@ -706,8 +684,28 @@ export default function BookAppointmentPage() {
             )}
           </div>
 
-          {/* RIGHT COLUMN: EXECUTIVE CREDENTIALS & TRUST (5 cols) */}
-          <div className="lg:col-span-5 space-y-5">
+          {/* MOBILE DIRECT CALL PILL (VISIBLE ONLY ON MOBILE) */}
+          <div className="block lg:hidden w-full space-y-3">
+            <div className="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-sm text-center">
+              <div className="flex items-center justify-center gap-2 text-xs text-slate-700">
+                <IconPhone className="text-brand-red w-3.5 h-3.5" />
+                <span>Prefer to book over call?</span>
+                <a href="tel:+918806078777" className="text-brand-red font-semibold hover:underline">
+                  +91 88060 78777
+                </a>
+              </div>
+              <div className="flex items-center justify-center gap-2 text-[10px] text-slate-400 pt-1.5 mt-1.5 border-t border-slate-100">
+                <span>PSARA Licensed</span>
+                <span>•</span>
+                <span>24/7 Dispatch</span>
+                <span>•</span>
+                <span>100% Free Survey</span>
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT COLUMN: EXECUTIVE CREDENTIALS & TRUST (DESKTOP ONLY) */}
+          <div className="hidden lg:block lg:col-span-5 space-y-5">
             
             {/* Director's Personal Signature Card */}
             <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm space-y-4">
