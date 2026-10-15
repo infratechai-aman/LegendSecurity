@@ -8,7 +8,7 @@ export default function AboutPage() {
     {
       name: 'Mr. Mosin Azam Shaikh',
       role: 'Director & Founder',
-      phone: '+91 88060 78777',
+      phone: '+91 88060 78677',
       initial: 'M',
       desc: 'Founded The Legend Security and Bouncer in 2018 with a commitment to quality, discipline, and uncompromising on-ground vigilance across Maharashtra.',
     },
@@ -27,16 +27,16 @@ export default function AboutPage() {
       city: 'Pune Head Office',
       icon: 'fa-building',
       address: 'Sr. No. 1/74, Gujarwadi Road, Bharat Nagar, Near Mahadev Mandir, Katraj, Pune 411046',
-      contact: '+91 88060 78777 / 70582 67585',
+      contact: '+91 88060 78677 / 70582 67585',
       email: 'thelegendscrt16@gmail.com',
       accent: true,
     },
     {
       badge: '2ND BRANCH',
-      city: 'Mumbai Branch',
-      icon: 'fa-city',
-      address: 'Patel Society, Indira Nagar, Pathanwadi, Rani Sati Marg, Malad East, Mumbai 400097',
-      contact: '+91 88302 65954 / 78603 13601',
+      city: 'Bhawani Peth Branch',
+      icon: 'fa-building-shield',
+      address: '857, Bhawani Peth, Near Bharat Talkies, Pune',
+      contact: '+91 78603 13601',
       email: 'thelegendscrt16@gmail.com',
     },
     {
@@ -44,7 +44,7 @@ export default function AboutPage() {
       city: 'Palghar Branch',
       icon: 'fa-map-marker-alt',
       address: 'Station Road Commercial Node, Nalasopara East, Palghar District, Maharashtra',
-      contact: '+91 88060 78777',
+      contact: '+91 88060 78677',
       email: 'thelegendscrt16@gmail.com',
     },
   ];
@@ -342,12 +342,12 @@ export default function AboutPage() {
               <span>Schedule Site Survey</span>
             </Link>
             <a
-              href="tel:+918806078777"
+              href="tel:+918806078677"
               className="px-6 py-3.5 rounded-xl bg-black/40 border border-white/30 text-white font-heading font-black text-xs uppercase tracking-wider hover:bg-black/60 transition-all shadow-2xl whitespace-nowrap flex items-center gap-2"
               title="Director Mosin Shaikh"
             >
               <i className="fa-solid fa-phone" />
-              <span>+91 88060 78777</span>
+              <span>+91 88060 78677</span>
             </a>
             <a
               href="tel:+917860313601"

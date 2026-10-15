@@ -6,11 +6,11 @@ export default function FloatingEmergency() {
 
   const contacts = [
     {
-      href: 'tel:+918806078777',
+      href: 'tel:+918806078677',
       icon: 'fa-phone',
       iconBg: 'bg-brand-red',
       name: 'Director Mosin Shaikh',
-      sub: '+91 88060 78777',
+      sub: '+91 88060 78677',
       badge: 'DIRECTOR',
       hoverClass: 'hover:border-brand-red/60',
     },
@@ -33,11 +33,11 @@ export default function FloatingEmergency() {
       hoverClass: 'hover:border-slate-500',
     },
     {
-      href: 'https://wa.me/918806078777',
+      href: 'https://wa.me/918806078677',
       icon: 'fa-whatsapp',
       iconBg: 'bg-emerald-600',
       name: 'WhatsApp Dispatch',
-      sub: '+91 88060 78777',
+      sub: '+91 88060 78677',
       badge: 'INSTANT CHAT',
       hoverClass: 'hover:border-emerald-500',
       external: true,
@@ -46,7 +46,7 @@ export default function FloatingEmergency() {
   ];
 
   return (
-    <div className="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end gap-3">
+    <div className="fixed bottom-20 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end gap-3">
       {/* Expanded contacts panel */}
       {expanded && (
         <div className="flex flex-col gap-2 p-3.5 rounded-2xl bg-[#0e0f14]/98 border border-brand-red/40 shadow-[0_8px_40px_rgba(0,0,0,0.8)] backdrop-blur-xl text-xs animate-slide-up w-72 sm:w-80">

@@ -104,7 +104,7 @@ export default function Header() {
             {/* Minimalist Hotlines (xl+ only) */}
             <div className="hidden xl:flex items-center gap-3 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md">
               <a
-                href="tel:+918806078777"
+                href="tel:+918806078677"
                 className="flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors duration-200 group"
                 title="Director: Mr. Mosin Azam Shaikh"
               >
@@ -113,7 +113,7 @@ export default function Header() {
                   Director:
                 </span>
                 <span className="font-heading font-bold text-xs tracking-wider text-white group-hover:text-brand-red transition-colors">
-                  +91 88060 78777
+                  +91 88060 78677
                 </span>
               </a>
             </div>
@@ -157,11 +157,12 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div
-            className="absolute inset-0 bg-black/75 backdrop-blur-md"
+            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
             onClick={() => setMobileMenuOpen(false)}
           />
 
-          <div className="absolute top-0 right-0 bottom-0 w-full max-w-xs bg-[#0c0d12] border-l border-[#272930] flex flex-col nav-slide-down shadow-2xl">
+          <div className="absolute top-0 right-0 bottom-0 w-full max-w-[320px] bg-[#0c0d12] border-l border-[#272930] flex flex-col nav-slide-right shadow-2xl">
+
             {/* Panel Header */}
             <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-slate-800/60">
               <div className="flex items-center gap-3">
@@ -243,14 +244,14 @@ export default function Header() {
 
               <div className="grid grid-cols-1 gap-2">
                 <a
-                  href="tel:+918806078777"
+                  href="tel:+918806078677"
                   className="w-full flex items-center justify-between px-3 bg-[#18191d] border border-slate-700 hover:border-brand-red text-slate-200 font-heading font-semibold text-xs uppercase tracking-wider py-2.5 rounded-xl transition-all"
                 >
                   <div className="flex items-center gap-2">
                     <div className="w-5 h-5 rounded-full bg-brand-red flex items-center justify-center">
                       <i className="fa-solid fa-phone text-white text-[9px]" />
                     </div>
-                    <span>+91 88060 78777</span>
+                    <span>+91 88060 78677</span>
                   </div>
                   <span className="text-[9px] font-mono font-bold text-brand-red">DIRECTOR</span>
                 </a>

@@ -63,6 +63,7 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
 
   const LOCATIONS = [
     'Pune — Katraj & Pune South',
+    'Pune — Bhawani Peth & Central Pune',
     'Pune — Chakan & Bhosari MIDC',
     'Pune — Hinjawadi IT Park & PCMC',
     'Mumbai — BKC & South Mumbai',
@@ -104,7 +105,7 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
     if (!confirmedBooking) return '#';
     const title = encodeURIComponent(`Security Consultation: ${confirmedBooking.auditType} - The Legend Security`);
     const details = encodeURIComponent(
-      `Appointment Ref: ${confirmedBooking.id}\nClient: ${confirmedBooking.fullName} (${confirmedBooking.orgName})\nPhone: ${confirmedBooking.phoneNum}\nDirector Hotline: +91 88060 78777\nThe Legend Security and Bouncer (PSARA Certified)`
+      `Appointment Ref: ${confirmedBooking.id}\nClient: ${confirmedBooking.fullName} (${confirmedBooking.orgName})\nPhone: ${confirmedBooking.phoneNum}\nDirector Hotline: +91 88060 78677\nThe Legend Security and Bouncer (PSARA Certified)`
     );
     const loc = encodeURIComponent(confirmedBooking.location);
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${loc}`;
@@ -125,7 +126,7 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
       `*Risk Tier:* ${confirmedBooking.riskLevel}\n\n` +
       `*Request to Director Mr. Mosin Azam Shaikh (The Legend Security)*`
     );
-    window.open(`https://wa.me/918806078777?text=${msg}`, '_blank');
+    window.open(`https://wa.me/918806078677?text=${msg}`, '_blank');
   };
 
   return (
@@ -566,7 +567,7 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
               <div className="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
                 <span className="flex items-center gap-1.5">
                   <i className="fa-solid fa-phone text-brand-red" />
-                  <span>Immediate Escalation: +91 88060 78777</span>
+                  <span>Immediate Escalation: +91 88060 78677</span>
                 </span>
                 <button
                   type="button"

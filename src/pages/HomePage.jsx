@@ -579,13 +579,13 @@ export default function HomePage() {
                   <span>Request Quotation</span>
                   <i className="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <a href="tel:+918806078777" className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-white/5 border border-slate-600 hover:border-brand-red/60 transition-all group">
+                <a href="tel:+918806078677" className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-white/5 border border-slate-600 hover:border-brand-red/60 transition-all group">
                   <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-xs">
                     <i className="fa-solid fa-phone" />
                   </div>
                   <div className="text-left">
                     <p className="text-[9px] font-mono text-slate-400 uppercase">Director Mosin Shaikh</p>
-                    <p className="font-heading font-bold text-xs text-white group-hover:text-brand-red transition-colors">+91 88060 78777</p>
+                    <p className="font-heading font-bold text-xs text-white group-hover:text-brand-red transition-colors">+91 88060 78677</p>
                   </div>
                 </a>
                 <a href="tel:+917860313601" className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-white/5 border border-slate-600 hover:border-brand-red/60 transition-all group">
@@ -597,7 +597,7 @@ export default function HomePage() {
                     <p className="font-heading font-bold text-xs text-white group-hover:text-brand-red transition-colors">+91 78603 13601</p>
                   </div>
                 </a>
-                <a href="https://wa.me/918806078777" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-emerald-950/50 border border-emerald-800/60 hover:border-emerald-500 transition-all group">
+                <a href="https://wa.me/918806078677" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-emerald-950/50 border border-emerald-800/60 hover:border-emerald-500 transition-all group">
                   <div className="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center">
                     <i className="fa-brands fa-whatsapp text-sm" />
                   </div>
@@ -629,7 +629,7 @@ export default function HomePage() {
                 <div className="space-y-2.5 text-slate-300">
                   {[
                     { label: '🏢 Pune HQ', value: 'Gujarwadi Rd, Bharat Nagar, Katraj, Pune 411046' },
-                    { label: '🏙 Mumbai', value: 'Patel Society, Malad East, Mumbai 400097' },
+                    { label: '📍 Bhawani Peth', value: '857, Bhawani Peth, Near Bharat Talkies, Pune' },
                     { label: '🌐 Palghar', value: 'Nalasopara East, Palghar Dist.' },
                   ].map((b, i) => (
                     <p key={i} className="leading-snug">
@@ -679,7 +679,7 @@ function StatsBanner() {
     { icon: 'fa-stamp', val: 1, label: 'PSARA Govt License', suffix: '', prefix: '', note: 'Controlling Authority MH' },
     { icon: 'fa-users', val: 500, label: 'Trained Personnel', suffix: '+', prefix: '', note: 'Police Verified Staff' },
     { icon: 'fa-building', val: 20, label: 'Active Client Sites', suffix: '+', prefix: '', note: 'Industrial & Automobile' },
-    { icon: 'fa-location-dot', val: 3, label: 'MH Branches', suffix: '', prefix: '', note: 'Pune · Mumbai · Palghar' },
+    { icon: 'fa-location-dot', val: 3, label: 'MH Branches', suffix: '', prefix: '', note: 'Katraj · Bhawani Peth · Palghar' },
     { icon: 'fa-calendar', val: 6, label: 'Years of Service', suffix: '+', prefix: '', note: 'Est. 2018' },
   ];
 

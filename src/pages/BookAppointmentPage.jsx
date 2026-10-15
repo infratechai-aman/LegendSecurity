@@ -166,6 +166,7 @@ export default function BookAppointmentPage() {
 
   const LOCATIONS = [
     'Pune — Katraj & Pune South',
+    'Pune — Bhawani Peth & Central Pune',
     'Pune — Chakan & Bhosari MIDC',
     'Pune — Hinjawadi IT Park & PCMC',
     'Pune — Hadapsar, Kharadi & Magarpatta',
@@ -208,7 +209,7 @@ export default function BookAppointmentPage() {
     if (!confirmedBooking) return '#';
     const title = encodeURIComponent(`Security Consultation: ${confirmedBooking.auditType} - The Legend Security`);
     const details = encodeURIComponent(
-      `Appointment Ref: ${confirmedBooking.id}\nClient: ${confirmedBooking.fullName} (${confirmedBooking.orgName})\nPhone: ${confirmedBooking.phoneNum}\nDirector Mosin Shaikh: +91 88060 78777\nThe Legend Security and Bouncer`
+      `Appointment Ref: ${confirmedBooking.id}\nClient: ${confirmedBooking.fullName} (${confirmedBooking.orgName})\nPhone: ${confirmedBooking.phoneNum}\nDirector Mosin Shaikh: +91 88060 78677\nThe Legend Security and Bouncer`
     );
     const loc = encodeURIComponent(confirmedBooking.location);
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${loc}`;
@@ -229,7 +230,7 @@ export default function BookAppointmentPage() {
       `*Risk Tier:* ${confirmedBooking.riskLevel}\n\n` +
       `*Direct Dispatch Request to Mr. Mosin Azam Shaikh (The Legend Security)*`
     );
-    window.open(`https://wa.me/918806078777?text=${msg}`, '_blank');
+    window.open(`https://wa.me/918806078677?text=${msg}`, '_blank');
   };
 
   const resetForm = () => {
@@ -690,8 +691,8 @@ export default function BookAppointmentPage() {
               <div className="flex items-center justify-center gap-2 text-xs text-slate-700">
                 <IconPhone className="text-brand-red w-3.5 h-3.5" />
                 <span>Prefer to book over call?</span>
-                <a href="tel:+918806078777" className="text-brand-red font-semibold hover:underline">
-                  +91 88060 78777
+                <a href="tel:+918806078677" className="text-brand-red font-semibold hover:underline">
+                  +91 88060 78677
                 </a>
               </div>
               <div className="flex items-center justify-center gap-2 text-[10px] text-slate-400 pt-1.5 mt-1.5 border-t border-slate-100">
@@ -732,7 +733,7 @@ export default function BookAppointmentPage() {
 
               <div className="space-y-2 pt-1">
                 <a
-                  href="tel:+918806078777"
+                  href="tel:+918806078677"
                   className="flex items-center justify-between p-3 rounded-xl bg-slate-50/70 border border-slate-100 hover:border-red-200 transition-colors group"
                 >
                   <div className="flex items-center gap-2.5">
@@ -742,7 +743,7 @@ export default function BookAppointmentPage() {
                     <span className="text-xs text-slate-600 group-hover:text-slate-900">Director Direct Line:</span>
                   </div>
                   <span className="text-xs font-semibold text-brand-red">
-                    +91 88060 78777
+                    +91 88060 78677
                   </span>
                 </a>
 
@@ -813,7 +814,7 @@ export default function BookAppointmentPage() {
                 Regional Command Hubs
               </div>
               <p className="text-slate-600">📍 <strong className="text-slate-900">Pune HQ:</strong> Katraj, Gujarwadi Road, Pune 411046</p>
-              <p className="text-slate-600">📍 <strong className="text-slate-900">Mumbai:</strong> Rani Sati Marg, Malad East, Mumbai 400097</p>
+              <p className="text-slate-600">📍 <strong className="text-slate-900">Bhawani Peth:</strong> 857, Bhawani Peth, Near Bharat Talkies, Pune</p>
               <p className="text-slate-600">📍 <strong className="text-slate-900">Palghar:</strong> Commercial Zone, Nalasopara East, Palghar</p>
             </div>
           </div>

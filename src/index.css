@@ -321,7 +321,7 @@
    MOBILE PREMIUM LAYOUT HELPERS
    ===================================================== */
 
-/* Stack everything cenered on mobile */
+/* Stack everything centered on mobile */
 @media (max-width: 1023px) {
   .mobile-center {
     text-align: center !important;
@@ -332,6 +332,95 @@
     width: 100% !important;
     max-width: 100% !important;
   }
+}
+
+/* =====================================================
+   MOBILE-FIRST PREMIUM POLISH
+   ===================================================== */
+
+/* Remove tap highlight on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hide scrollbar but keep scroll — for filter chips */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile card active press state */
+@media (max-width: 640px) {
+  .card-premium-light:active {
+    transform: scale(0.97);
+    transition: transform 0.1s ease;
+  }
+
+  /* Mobile safe area bottom padding for floating buttons */
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+  }
+
+  /* Hero heading scale for small phones */
+  .hero-h1-mobile {
+    font-size: clamp(1.75rem, 8vw, 3rem);
+  }
+
+  /* Full-bleed mobile sections */
+  .mobile-px {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* Mobile slide-in from right animation for nav drawer */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.nav-slide-right {
+  animation: slideInRight 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Mobile bottom action bar sticky */
+.mobile-sticky-bar {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background: rgba(10, 10, 12, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(229, 9, 20, 0.2);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Pulse ring for mobile CTA buttons */
+@keyframes pulseRing {
+  0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.5); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(229, 9, 20, 0); }
+  100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
+}
+
+.btn-pulse-ring {
+  animation: pulseRing 2s ease-in-out infinite;
+}
+
+/* Prevent font scaling on orientation change */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 /* =====================================================

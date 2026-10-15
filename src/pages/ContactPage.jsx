@@ -128,21 +128,21 @@ export default function ContactPage() {
       region: 'Pune HQ',
       title: 'Katraj Head Office',
       address: 'Sr. No. 1/74, Gujarwadi Road, Bharat Nagar, Katraj, Pune 411046',
-      contact: '+91 88060 78777',
+      contact: '+91 88060 78677',
       jurisdiction: 'Katraj, Hinjawadi, Chakan MIDC, Bhosari & PCMC',
     },
     {
-      region: 'Mumbai Base',
-      title: 'Malad East Branch',
-      address: 'Patel Society, Pathanwadi, Rani Sati Marg, Malad East, Mumbai 400097',
-      contact: '+91 88302 65954',
-      jurisdiction: 'Malad, Andheri, BKC, Bandra West, Powai & Thane',
+      region: 'Pune Central',
+      title: 'Bhawani Peth Branch',
+      address: '857, Bhawani Peth, Near Bharat Talkies, Pune',
+      contact: '+91 78603 13601',
+      jurisdiction: 'Bhawani Peth, Camp, Swargate, Nana Peth & Central Pune',
     },
     {
       region: 'Palghar Base',
       title: 'Nalasopara East Branch',
       address: 'Commercial Zone, Nalasopara East, Palghar District, Maharashtra',
-      contact: '+91 88060 78777',
+      contact: '+91 88060 78677',
       jurisdiction: 'Nalasopara, Vasai-Virar, Boisar MIDC & Palghar Belt',
     },
   ];
@@ -222,8 +222,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <span className="text-[11px] text-slate-500 block">Mr. Mosin Azam Shaikh</span>
-                    <a href="tel:+918806078777" className="text-xs font-semibold text-slate-900 hover:text-brand-red transition-colors">
-                      +91 88060 78777
+                    <a href="tel:+918806078677" className="text-xs font-semibold text-slate-900 hover:text-brand-red transition-colors">
+                      +91 88060 78677
                     </a>
                   </div>
                 </div>
@@ -252,7 +252,7 @@ export default function ContactPage() {
 
               {/* WhatsApp Quick Chat */}
               <a
-                href="https://wa.me/918806078777?text=Hello%20The%20Legend%20Security,%20I%20need%20security%20quotation%20information."
+                href="https://wa.me/918806078677?text=Hello%20The%20Legend%20Security,%20I%20need%20security%20quotation%20information."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-3 rounded-xl bg-slate-50/70 border border-slate-100 hover:border-emerald-200 transition-colors group"
@@ -264,7 +264,7 @@ export default function ContactPage() {
                   <div>
                     <span className="text-[11px] text-slate-500 block">Official WhatsApp Desk</span>
                     <span className="text-xs font-semibold text-slate-900 group-hover:text-emerald-700 transition-colors">
-                      +91 88060 78777
+                      +91 88060 78677
                     </span>
                   </div>
                 </div>

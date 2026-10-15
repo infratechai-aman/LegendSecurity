@@ -25,7 +25,7 @@ const INITIAL_GUARDS = [
     badge: 'EX-ARMY',
     status: 'On Duty',
     experience: '14 Years',
-    phone: '+91 88060 78777',
+    phone: '+91 88060 78677',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
   },
   {
@@ -58,7 +58,7 @@ const INITIAL_GUARDS = [
     badge: 'ARMED GUARD',
     status: 'Standby',
     experience: '11 Years',
-    phone: '+91 88302 65954',
+    phone: '+91 70582 67585',
     avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80',
   },
   {
@@ -69,7 +69,7 @@ const INITIAL_GUARDS = [
     badge: 'PSARA CERTIFIED',
     status: 'On Duty',
     experience: '6 Years',
-    phone: '+91 88060 78777',
+    phone: '+91 88060 78677',
     avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
   },
 ];

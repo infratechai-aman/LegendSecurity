@@ -86,11 +86,11 @@ export default function ServicesPage() {
               <span>Request Quote</span>
             </Link>
             <a
-              href="tel:+918806078777"
+              href="tel:+918806078677"
               className="px-4 py-3.5 rounded-xl bg-white/[0.03] border border-white/10 hover:border-brand-red text-slate-300 hover:text-white font-mono text-xs uppercase transition-all flex items-center gap-2"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-brand-red" />
-              <span>+91 88060 78777</span>
+              <span>+91 88060 78677</span>
             </a>
           </div>
         </div>

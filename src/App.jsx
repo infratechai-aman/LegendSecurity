@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, NavLink } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import FloatingEmergency from './components/FloatingEmergency';
@@ -14,6 +14,49 @@ import ContactPage from './pages/ContactPage';
 import BookAppointmentPage from './pages/BookAppointmentPage';
 import AdminPage from './pages/AdminPage';
 
+/* ── Mobile Bottom Nav — 5-tab bar for thumb-friendly navigation ── */
+function MobileBottomNav() {
+  const tabs = [
+    { path: '/',        icon: 'fa-house',        label: 'Home'     },
+    { path: '/services',icon: 'fa-user-shield',  label: 'Services' },
+    { path: '/gallery', icon: 'fa-images',       label: 'Gallery'  },
+    { path: '/contact', icon: 'fa-phone',        label: 'Contact'  },
+    { path: '/book-appointment', icon: 'fa-calendar-check', label: 'Book' },
+  ];
+  return (
+    <nav className="lg:hidden mobile-sticky-bar">
+      <div className="flex items-center justify-around px-1 py-2">
+        {tabs.map((tab) => (
+          <NavLink
+            key={tab.path}
+            to={tab.path}
+            end={tab.path === '/'}
+            className={({ isActive }) =>
+              `flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-xl transition-all duration-200 min-w-[52px] ${
+                isActive
+                  ? 'text-brand-red'
+                  : 'text-slate-500 hover:text-slate-300'
+              }`
+            }
+          >
+            {({ isActive }) => (
+              <>
+                <div className={`w-8 h-8 rounded-xl flex items-center justify-center transition-all duration-200 ${
+                  isActive ? 'bg-brand-red/15 scale-110' : ''
+                } ${tab.label === 'Book' && !isActive ? 'bg-brand-red text-white scale-110 shadow-lg shadow-red-900/40' : ''}`}>
+                  <i className={`fa-solid ${tab.icon} text-xs ${tab.label === 'Book' && !isActive ? 'text-white' : ''}`} />
+                </div>
+                <span className="text-[9px] font-heading font-bold uppercase tracking-wider">{tab.label}</span>
+                {isActive && <span className="w-1 h-1 rounded-full bg-brand-red" />}
+              </>
+            )}
+          </NavLink>
+        ))}
+      </div>
+    </nav>
+  );
+}
+
 export default function App() {
   return (
     <Router>
@@ -23,7 +66,7 @@ export default function App() {
         <Header />
 
         {/* Dynamic Route Pages */}
-        <main className="flex-1 w-full flex flex-col">
+        <main className="flex-1 w-full flex flex-col pb-[68px] lg:pb-0">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
@@ -47,9 +90,13 @@ export default function App() {
         {/* Global Tactical Footer */}
         <Footer />
 
+        {/* Mobile Bottom Navigation Bar */}
+        <MobileBottomNav />
+
         {/* 24/7 Rapid Response Floating Action Widget */}
         <FloatingEmergency />
       </div>
     </Router>
   );
 }
+

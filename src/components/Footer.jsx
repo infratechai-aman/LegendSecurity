@@ -66,8 +66,8 @@ export default function Footer() {
 
             {/* Social/contact quick row */}
             <div className="flex items-center gap-2.5 pt-1">
-              <a href="tel:+918806078777"
-                title="Director: +91 88060 78777"
+              <a href="tel:+918806078677"
+                title="Director: +91 88060 78677"
                 className="w-9 h-9 rounded-xl bg-brand-red flex items-center justify-center text-white hover:bg-red-700 transition-colors shadow-md">
                 <i className="fa-solid fa-phone text-xs" />
               </a>
@@ -76,7 +76,7 @@ export default function Footer() {
                 className="w-9 h-9 rounded-xl bg-red-800 flex items-center justify-center text-white hover:bg-red-700 transition-colors shadow-md">
                 <i className="fa-solid fa-headset text-xs" />
               </a>
-              <a href="https://wa.me/918806078777" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/918806078677" target="_blank" rel="noopener noreferrer"
                 title="WhatsApp Dispatch"
                 className="w-9 h-9 rounded-xl bg-emerald-700 flex items-center justify-center text-white hover:bg-emerald-600 transition-colors shadow-md">
                 <i className="fa-brands fa-whatsapp text-sm" />
@@ -135,9 +135,9 @@ export default function Footer() {
                 </p>
               </div>
 
-              <a href="tel:+918806078777" className="flex items-center gap-2.5 group">
+              <a href="tel:+918806078677" className="flex items-center gap-2.5 group">
                 <i className="fa-solid fa-phone text-brand-red" />
-                <span className="text-white font-semibold hover:text-brand-red transition-colors">+91 88060 78777 (Director)</span>
+                <span className="text-white font-semibold hover:text-brand-red transition-colors">+91 88060 78677 (Director)</span>
               </a>
 
               <a href="tel:+917860313601" className="flex items-center gap-2.5 group">
@@ -150,9 +150,9 @@ export default function Footer() {
                 <span className="text-slate-300 hover:text-brand-red transition-colors">+91 70582 67585 (Mr. Nazim)</span>
               </a>
 
-              <a href="https://wa.me/918806078777" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5">
+              <a href="https://wa.me/918806078677" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5">
                 <i className="fa-brands fa-whatsapp text-emerald-500" />
-                <span className="text-emerald-400 hover:underline">+91 88060 78777 (WhatsApp)</span>
+                <span className="text-emerald-400 hover:underline">+91 88060 78677 (WhatsApp)</span>
               </a>
 
               <a href="mailto:thelegendscrt16@gmail.com" className="flex items-center gap-2.5">
@@ -161,7 +161,7 @@ export default function Footer() {
               </a>
 
               <div className="pt-2 border-t border-slate-800 space-y-1.5 text-[11px] text-slate-400">
-                <p><strong className="text-slate-300">Mumbai:</strong> Malad East, Rani Sati Marg</p>
+                <p><strong className="text-slate-300">Bhawani Peth:</strong> 857, Bhawani Peth, Near Bharat Talkies, Pune</p>
                 <p><strong className="text-slate-300">Palghar:</strong> Nalasopara East</p>
               </div>
             </div>
