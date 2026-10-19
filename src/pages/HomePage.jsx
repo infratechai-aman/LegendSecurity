@@ -84,6 +84,7 @@ export default function HomePage() {
   const [statsRef, statsVisible] = useScrollAnimation({ threshold: 0.2 });
   const [aboutRef, aboutVisible] = useScrollAnimation({ threshold: 0.1 });
   const [clientsContainerRef, clientsVisible] = useStaggerAnimation(8, { staggerMs: 80 });
+  const [eventsRef, eventsVisible] = useScrollAnimation({ threshold: 0.1 });
   const [ctaRef, ctaVisible] = useScrollAnimation({ threshold: 0.15 });
 
   const services = [
@@ -479,8 +480,160 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════
-          CLIENTS SECTION
+          EVENTS & CELEBRATIONS SHOWCASE SECTION
       ══════════════════════════════════════════ */}
+      <section className="py-20 sm:py-28 bg-[#0c0d12] text-white relative overflow-hidden border-b border-[#272930]">
+        {/* Ambient glow accents */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-red/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-10 w-80 h-80 bg-amber-500/5 rounded-full blur-[100px] pointer-events-none" />
+
+        <div ref={eventsRef} className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 transition-all duration-700 ${eventsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/10 border border-brand-red/25 mb-3">
+                <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
+                <span className="text-[11px] font-mono text-brand-red font-bold uppercase tracking-wider">
+                  WEDDINGS • BIRTHDAYS • CONCERTS • PRIVATE PARTIES
+                </span>
+              </div>
+              <h2 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-white leading-tight">
+                SPECIAL EVENT BOUNCERS &amp; <span className="text-gradient-red">CELEBRATIONS</span>
+              </h2>
+              <p className="text-slate-400 text-xs sm:text-sm max-w-2xl mt-2 leading-relaxed">
+                Hosting a royal Indian wedding (<strong className="text-slate-200">विवाह सोहळा</strong>), landmark birthday party, Dandiya night, or farmhouse soirée? We deploy vetted, suited bouncers, polite gatekeepers, and lady security guards across Maharashtra.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-3 shrink-0 self-start md:self-end">
+              <Link
+                to="/events"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-red to-red-700 hover:brightness-110 text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg shadow-red-950/40 transition-all"
+              >
+                <span>View All 8 Event Categories</span>
+                <i className="fa-solid fa-arrow-right text-xs" />
+              </Link>
+            </div>
+          </div>
+
+          {/* 4 Feature Event Cards with Real Samsung S23 Indian Aesthetic Photos */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                title: 'Royal Weddings & Sangeet',
+                marathi: 'भव्य विवाह व संगीत',
+                desc: 'Mandap entry security, gift room vigil, baraat escort, and trained lady bouncers for bridal safety.',
+                image: '/assets/events/indian_wedding_security.jpg',
+                badge: 'WEDDINGS',
+                squad: '6 to 15 Bouncers',
+              },
+              {
+                title: 'Milestone Birthday Bashes',
+                marathi: 'वाढदिवस व पार्टी संरक्षण',
+                desc: 'Gatecrasher prevention, polite invitation checking, children safety, and family peace of mind.',
+                image: '/assets/events/indian_birthday_security.jpg',
+                badge: 'BIRTHDAYS',
+                squad: '2 to 6 Bouncers',
+              },
+              {
+                title: 'Concerts & Dandiya Utsav',
+                marathi: 'महोत्सव व दांडिया',
+                desc: 'Heavy-duty front barricade defense, backstage artist cordon, and metal detector entry portals.',
+                image: '/assets/events/indian_concert_dandiya.jpg',
+                badge: 'CONCERTS',
+                squad: '15 to 80+ Bouncers',
+              },
+              {
+                title: 'Celebrity Villa & Farmhouses',
+                marathi: 'फार्महाऊस पार्ट्या',
+                desc: 'Strict NDA privacy, anti-paparazzi protection, and pool parameter guards in Lonavala & Alibaug.',
+                image: '/assets/events/indian_farmhouse_vip.jpg',
+                badge: 'VIP FARMHOUSE',
+                squad: '4 to 10 Bouncers',
+              },
+            ].map((ev, i) => (
+              <div
+                key={i}
+                className="group rounded-2xl bg-[#14151c] border border-[#272930] hover:border-brand-red/60 overflow-hidden shadow-xl hover:shadow-[0_12px_35px_rgba(229,9,20,0.18)] transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="relative w-full h-48 overflow-hidden bg-black/40">
+                    <img
+                      src={ev.image}
+                      alt={ev.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-95 group-hover:brightness-100"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#14151c] via-transparent to-transparent" />
+                    <div className="absolute top-3 left-3">
+                      <span className="px-2.5 py-0.5 rounded-full text-[9px] font-mono font-bold bg-brand-red text-white uppercase tracking-wider">
+                        {ev.badge}
+                      </span>
+                    </div>
+                    <div className="absolute bottom-2.5 left-3 right-3">
+                      <p className="font-heading font-black text-sm text-white uppercase tracking-wide leading-tight">
+                        {ev.title}
+                      </p>
+                      <p className="text-[10px] text-brand-red font-medium mt-0.5">
+                        {ev.marathi}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <p className="text-xs text-slate-400 leading-relaxed">
+                      {ev.desc}
+                    </p>
+                    <div className="mt-3 pt-2.5 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-slate-300">
+                      <span className="text-slate-500">Typical Squad:</span>
+                      <span className="font-bold text-white">{ev.squad}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-4 pt-0">
+                  <Link
+                    to="/events"
+                    className="w-full py-2 px-3 rounded-lg bg-white/5 hover:bg-brand-red text-slate-200 hover:text-white font-heading font-bold text-[11px] uppercase tracking-wider transition-all flex items-center justify-center gap-1.5"
+                  >
+                    <span>Event Details &amp; Booking</span>
+                    <i className="fa-solid fa-arrow-right text-[10px]" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Quick Callout Bottom Bar */}
+          <div className="mt-10 p-4 sm:p-5 rounded-2xl bg-[#161720] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-300 text-center sm:text-left">
+              <div className="w-10 h-10 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red shrink-0">
+                <i className="fa-solid fa-user-shield text-base" />
+              </div>
+              <div>
+                <p className="font-heading font-bold text-white uppercase">Need Bouncers for This Weekend?</p>
+                <p className="text-xs text-slate-400">Emergency &amp; rapid dispatch available across Pune, PCMC, Mumbai &amp; Thane.</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <a
+                href="tel:+918806078677"
+                className="px-4 py-2 rounded-xl bg-brand-red hover:bg-red-700 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2"
+              >
+                <i className="fa-solid fa-phone text-xs" />
+                <span>+91 88060 78677</span>
+              </a>
+              <a
+                href="https://wa.me/918806078677?text=Hello%20Legend%20Security,%20I%20need%20event%20bouncers."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-1.5"
+              >
+                <i className="fa-brands fa-whatsapp text-sm" />
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="py-20 sm:py-28 bg-[#f5f6f8] relative" id="clients">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">

@@ -155,6 +155,35 @@ export default function ServicesPage() {
               </div>
             ))}
           </div>
+
+          {/* Events & Celebrations Callout Banner */}
+          <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#0c0d12] via-[#161720] to-[#0c0d12] border border-brand-red/30 text-white flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-brand-red/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="flex items-center gap-4 relative z-10">
+              <div className="w-14 h-14 rounded-2xl bg-brand-red/15 border border-brand-red/30 flex items-center justify-center text-brand-red text-2xl shrink-0">
+                <i className="fa-solid fa-champagne-glasses" />
+              </div>
+              <div>
+                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-brand-red/20 text-brand-red text-[10px] font-mono font-bold uppercase mb-1">
+                  SPECIALIZED DEPLOYMENT • EVENTS &amp; CELEBRATIONS
+                </div>
+                <h3 className="font-heading font-black text-lg sm:text-xl uppercase tracking-tight text-white">
+                  Weddings, Milestone Birthdays, Concerts &amp; Private Parties
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mt-1 leading-relaxed">
+                  Looking for suited bouncers, polite gatekeepers, and lady guards for your special day? Explore our dedicated event management page with authentic photos and manpower sizing guides.
+                </p>
+              </div>
+            </div>
+
+            <Link
+              to="/events"
+              className="relative z-10 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-red to-red-700 hover:brightness-110 text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg shadow-red-950/50 transition-all flex items-center gap-2 shrink-0 whitespace-nowrap"
+            >
+              <span>Explore Event Security</span>
+              <i className="fa-solid fa-arrow-right text-xs" />
+            </Link>
+          </div>
         </div>
       </section>
 

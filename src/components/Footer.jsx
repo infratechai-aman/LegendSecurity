@@ -9,6 +9,7 @@ export default function Footer() {
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
     { name: 'All Services', path: '/services' },
+    { name: 'Events & Celebrations', path: '/events' },
     { name: 'Book Site Audit', path: '/book-appointment' },
     { name: 'Client Sites (20)', path: '/clients' },
     { name: 'Squad Gallery', path: '/gallery' },
@@ -18,6 +19,8 @@ export default function Footer() {
 
   const services = [
     'Industrial Security Guards',
+    'Royal Wedding & Event Bouncers',
+    'Milestone Birthday & Party Security',
     'Elite Event & Club Bouncers',
     'Commercial Housekeeping',
     'CIT (Cash-In-Transit) Services',
