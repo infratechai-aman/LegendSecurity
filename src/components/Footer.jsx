@@ -148,9 +148,9 @@ export default function Footer() {
                 <span className="text-white font-semibold hover:text-brand-red transition-colors">+91 78603 13601 (Operations Desk)</span>
               </a>
 
-              <a href="tel:+917058267585" className="flex items-center gap-2.5">
+              <a href="tel:+918975866597" className="flex items-center gap-2.5">
                 <i className="fa-solid fa-phone text-slate-500" />
-                <span className="text-slate-300 hover:text-brand-red transition-colors">+91 70582 67585 (Mr. Nazim)</span>
+                <span className="text-slate-300 hover:text-brand-red transition-colors">+91 89758 66597 (Mr. Shahid Shaikh)</span>
               </a>
 
               <a href="https://wa.me/918806078677" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5">

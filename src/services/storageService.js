@@ -47,7 +47,7 @@ const INITIAL_GUARDS = [
     badge: 'FIRE & SAFETY CERTIFIED',
     status: 'On Duty',
     experience: '8 Years',
-    phone: '+91 70582 67585',
+    phone: '+91 89758 66597',
     avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80',
   },
   {
@@ -58,7 +58,7 @@ const INITIAL_GUARDS = [
     badge: 'ARMED GUARD',
     status: 'Standby',
     experience: '11 Years',
-    phone: '+91 70582 67585',
+    phone: '+91 89758 66597',
     avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80',
   },
   {

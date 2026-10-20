@@ -13,10 +13,10 @@ export default function AboutPage() {
       desc: 'Founded The Legend Security and Bouncer in 2018 with a commitment to quality, discipline, and uncompromising on-ground vigilance across Maharashtra.',
     },
     {
-      name: 'Mr. Nazim Azam Shaikh',
+      name: 'Mr. Shahid Shaikh',
       role: 'Operations & Management',
-      phone: '+91 70582 67585',
-      initial: 'N',
+      phone: '+91 89758 66597',
+      initial: 'S',
       desc: 'Oversees day-to-day deployment logistics, guard supervisor rosters, client coordination, and rapid replacement readiness across Western India.',
     },
   ];
@@ -27,7 +27,7 @@ export default function AboutPage() {
       city: 'Pune Head Office',
       icon: 'fa-building',
       address: 'Sr. No. 1/74, Gujarwadi Road, Bharat Nagar, Near Mahadev Mandir, Katraj, Pune 411046',
-      contact: '+91 88060 78677 / 70582 67585',
+      contact: '+91 88060 78677 / 89758 66597',
       email: 'thelegendscrt16@gmail.com',
       accent: true,
     },
