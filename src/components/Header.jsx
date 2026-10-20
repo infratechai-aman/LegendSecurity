@@ -26,7 +26,7 @@ export default function Header() {
     { name: 'Home', path: '/', icon: 'fa-house' },
     { name: 'About Us', path: '/about', icon: 'fa-shield-halved' },
     { name: 'Services', path: '/services', icon: 'fa-user-shield' },
-    { name: 'Events & Parties', path: '/events', icon: 'fa-champagne-glasses', badge: 'POPULAR' },
+    { name: 'Events & Parties', path: '/events', icon: 'fa-champagne-glasses' },
     { name: 'Book Audit', path: '/book-appointment', icon: 'fa-calendar-check' },
     { name: 'Clients', path: '/clients', icon: 'fa-building-shield' },
     { name: 'Gallery', path: '/gallery', icon: 'fa-images' },
@@ -45,10 +45,10 @@ export default function Header() {
         {/* Red accent top line */}
         <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-brand-red to-transparent opacity-80" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[76px] sm:h-[82px] flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[76px] sm:h-[82px] flex items-center justify-between gap-2 xl:gap-4">
           {/* Brand Logo — Custom Shield Badge Outline */}
-          <Link to="/" className="flex items-center gap-3 sm:gap-3.5 group shrink-0 mr-3 lg:mr-6">
-            <div className="relative w-11 h-11 sm:w-13 sm:h-13 lg:w-[50px] lg:h-[50px] flex items-center justify-center transition-all duration-300 group-hover:scale-105 shrink-0">
+          <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-[46px] lg:h-[46px] flex items-center justify-center transition-all duration-300 group-hover:scale-105 shrink-0">
               <img
                 src="/assets/shield_logo.png"
                 alt="The Legend Security and Bouncer Logo"
@@ -67,13 +67,13 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center justify-center gap-3.5 xl:gap-5 font-heading text-[11px] xl:text-xs font-bold tracking-wider uppercase flex-1 max-w-2xl mx-auto">
+          <nav className="hidden lg:flex items-center justify-center gap-1.5 xl:gap-3.5 2xl:gap-5 font-heading text-[11px] xl:text-xs font-bold tracking-wider uppercase flex-1 min-w-0">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `relative py-2 px-1 whitespace-nowrap transition-all duration-300 group flex items-center gap-1.5 ${
+                  `relative py-2 px-1.5 xl:px-2 whitespace-nowrap transition-all duration-300 group flex items-center gap-1 ${
                     isActive
                       ? 'text-brand-red font-extrabold'
                       : 'text-slate-300 hover:text-white'
@@ -101,7 +101,7 @@ export default function Header() {
           </nav>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0 ml-3 lg:ml-6">
+          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
             {/* Minimalist Hotlines (xl+ only) */}
             <div className="hidden xl:flex items-center gap-3 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md">
               <a
