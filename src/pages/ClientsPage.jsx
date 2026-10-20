@@ -52,33 +52,33 @@ export default function ClientsPage() {
         <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-brand-red/6 rounded-full blur-[100px] pointer-events-none" />
 
         <div ref={heroRef} className="max-w-7xl mx-auto relative z-10 flex flex-col items-center text-center">
-          <nav className={`flex items-center gap-2 text-xs uppercase tracking-wider mb-6 font-mono font-bold transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <nav className={`flex items-center gap-2 text-xs uppercase tracking-wider mb-5 text-slate-400 font-medium transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             <Link to="/" className="text-slate-400 hover:text-brand-red transition-colors">Home</Link>
             <span className="text-slate-600">/</span>
             <span className="text-brand-red">Our Clients</span>
           </nav>
 
-          <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-red/10 border border-brand-red/25 mb-6 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '100ms' }}>
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="font-mono text-xs uppercase tracking-widest text-slate-300 font-bold">PUNE • MUMBAI • ALL OVER MAHARASHTRA | VERIFIED CLIENTELE</span>
+          <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 mb-5 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '100ms' }}>
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-xs text-slate-300 font-medium tracking-wide">Verified Clientele • Pune, Mumbai &amp; All Maharashtra</span>
           </div>
 
-          <h1 className={`font-heading font-black text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight max-w-4xl leading-tight mb-6 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '200ms' }}>
-            OUR ESTEEMED <span className="text-gradient-red">CLIENTELE</span>
+          <h1 className={`font-heading font-bold text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight max-w-4xl leading-tight mb-5 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '200ms' }}>
+            Our Esteemed <span className="text-gradient-red">Clientele</span>
           </h1>
 
-          <p className={`text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed mb-8 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '300ms' }}>
-            Providing reliable security guards, bouncers, and housekeeping across major industrial plants and automotive dealerships in <strong className="text-white">Pune, Mumbai, and All Over Maharashtra</strong>.
+          <p className={`text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed mb-8 font-light transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '300ms' }}>
+            Providing reliable security guards, bouncers, and facility management across major industrial plants and automotive dealerships in <strong className="text-white font-medium">Pune, Mumbai, and All Over Maharashtra</strong>.
           </p>
 
           {/* Stats pills */}
-          <div className={`flex flex-wrap items-center justify-center gap-3 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '400ms' }}>
+          <div className={`flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '400ms' }}>
             {[
               { icon: 'fa-industry', label: '10 Industrial Sites' },
               { icon: 'fa-car', label: '10 Automobile Sites' },
               { icon: 'fa-shield-halved', label: '100% Active Deployments' },
             ].map((pill, i) => (
-              <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1b21] border border-[#2a2b32] text-xs font-semibold text-slate-300">
+              <div key={i} className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-xs text-slate-300 font-medium">
                 <i className={`fa-solid ${pill.icon} text-brand-red text-xs`} />
                 {pill.label}
               </div>
@@ -88,17 +88,17 @@ export default function ClientsPage() {
       </section>
 
       {/* ══════════════ FILTER TABS ══════════════ */}
-      <div className="w-full bg-[#18191d] border-b border-[#272930] sticky top-[72px] z-30 backdrop-blur-xl">
+      <div className="w-full bg-white/95 border-b border-slate-200 sticky top-[72px] z-30 backdrop-blur-md shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="flex items-center gap-1 sm:gap-2 overflow-x-auto py-3 scrollbar-none">
+          <div className="flex items-center gap-2 overflow-x-auto py-2.5 scrollbar-none">
             {filterTabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-xl font-heading font-bold text-[11px] uppercase tracking-wider transition-all duration-300 cursor-pointer whitespace-nowrap ${
+                className={`flex items-center gap-2 px-4 py-2 rounded-full font-heading font-semibold text-xs tracking-wide transition-all duration-200 cursor-pointer whitespace-nowrap ${
                   activeTab === tab.id
-                    ? 'bg-brand-red text-white shadow-lg shadow-red-900/30'
-                    : 'text-slate-300 hover:bg-slate-700/50 hover:text-white'
+                    ? 'bg-brand-red text-white shadow-sm'
+                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                 }`}
               >
                 <i className={`fa-solid ${tab.icon} text-[10px]`} />
@@ -110,16 +110,16 @@ export default function ClientsPage() {
       </div>
 
       {/* ══════════════ CLIENT CARDS (Mobile) + TABLE (Desktop) ══════════════ */}
-      <section className="w-full bg-[#f8fafc] text-slate-900 py-16 sm:py-20 px-4 sm:px-6 lg:px-12">
+      <section className="w-full bg-[#f8fafc] text-slate-900 py-14 sm:py-20 px-4 sm:px-6 lg:px-12 border-b border-slate-200">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4 pb-6 border-b border-slate-200">
             <div>
-              <span className="font-mono text-xs uppercase text-brand-red tracking-widest font-bold">DOCUMENT REFERENCE (PAGE 4)</span>
-              <h2 className="font-heading font-black text-2xl sm:text-3xl uppercase text-slate-950 mt-1">
+              <span className="text-xs font-semibold text-brand-red uppercase tracking-wider">Verified Client Network</span>
+              <h2 className="font-heading font-bold text-2xl sm:text-3xl text-slate-900 tracking-tight mt-1">
                 Active Client Sites ({displayedClients.length})
               </h2>
             </div>
-            <p className="text-xs text-slate-500">Verified physical security and facility deployments across Maharashtra.</p>
+            <p className="text-xs text-slate-500 font-light">Verified physical security and facility deployments across Maharashtra.</p>
           </div>
 
           {/* Mobile card grid */}
@@ -127,7 +127,7 @@ export default function ClientsPage() {
             {displayedClients.map((client, idx) => (
               <div
                 key={idx}
-                className={`card-premium-light bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between transition-all duration-500 ${cardsVisible.has(idx) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+                className={`bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between transition-all duration-300 ${cardsVisible.has(idx) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
                 style={{ transitionDelay: `${idx * 40}ms` }}
               >
                 <div className="flex items-start gap-3 mb-4">
@@ -135,18 +135,18 @@ export default function ClientsPage() {
                     <i className={`fa-solid ${client.icon}`} />
                   </div>
                   <div>
-                    <span className="font-heading font-black text-xs uppercase text-slate-900 leading-snug">{client.name}</span>
-                    <p className="text-[11px] text-slate-500 mt-1 flex items-center gap-1.5">
+                    <span className="font-heading font-semibold text-xs text-slate-900 leading-snug">{client.name}</span>
+                    <p className="text-[11px] text-slate-500 mt-1 flex items-center gap-1.5 font-light">
                       <i className="fa-solid fa-location-dot text-brand-red text-[10px]" />
                       {client.location}
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center justify-between text-[11px]">
-                  <span className="px-2.5 py-1 rounded-full bg-red-50 text-brand-red font-semibold uppercase border border-red-100">{client.category}</span>
-                  <span className="flex items-center gap-1.5 text-emerald-600 font-bold font-mono">
+                <div className="flex items-center justify-between text-[11px] pt-3 border-t border-slate-100">
+                  <span className="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 font-medium">{client.category}</span>
+                  <span className="flex items-center gap-1.5 text-emerald-600 font-semibold text-xs">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    ACTIVE
+                    Active
                   </span>
                 </div>
               </div>
@@ -155,49 +155,48 @@ export default function ClientsPage() {
 
           {/* Desktop table */}
           <div className="hidden lg:block">
-            <div className="bg-white rounded-3xl border border-slate-200 shadow-lg overflow-hidden">
+            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
                   <thead>
-                    <tr className="bg-slate-900 text-white font-heading uppercase tracking-wider">
-                      <th className="py-4 px-6 w-16">Sr.</th>
-                      <th className="py-4 px-6">Client Name</th>
-                      <th className="py-4 px-6">Location</th>
-                      <th className="py-4 px-6">Service</th>
-                      <th className="py-4 px-6 text-right">Status</th>
+                    <tr className="bg-slate-900 text-white font-heading uppercase tracking-wider text-[11px]">
+                      <th className="py-3.5 px-6 w-16">Sr.</th>
+                      <th className="py-3.5 px-6">Client Name</th>
+                      <th className="py-3.5 px-6">Location</th>
+                      <th className="py-3.5 px-6">Service</th>
+                      <th className="py-3.5 px-6 text-right">Status</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100 text-slate-700">
                     {displayedClients.map((client, idx) => (
                       <tr
                         key={idx}
-                        className={`hover:bg-red-50/50 transition-colors duration-200 ${cardsVisible.has(idx) ? 'opacity-100' : 'opacity-0'}`}
-                        style={{ transitionDelay: `${idx * 30}ms` }}
+                        className="hover:bg-slate-50 transition-colors duration-150"
                       >
-                        <td className="py-4 px-6 font-mono font-bold text-brand-red">{client.sr}.</td>
-                        <td className="py-4 px-6">
+                        <td className="py-3.5 px-6 font-medium text-brand-red">{client.sr}.</td>
+                        <td className="py-3.5 px-6">
                           <div className="flex items-center gap-3">
                             <div className="w-7 h-7 rounded-lg bg-red-50 text-brand-red flex items-center justify-center text-xs">
                               <i className={`fa-solid ${client.icon}`} />
                             </div>
-                            <span className="font-heading font-bold text-slate-950 uppercase text-xs">{client.name}</span>
+                            <span className="font-heading font-medium text-slate-900 text-xs">{client.name}</span>
                           </div>
                         </td>
-                        <td className="py-4 px-6 text-slate-600">
+                        <td className="py-3.5 px-6 text-slate-600 font-light">
                           <span className="flex items-center gap-1.5">
                             <i className="fa-solid fa-location-dot text-brand-red text-[10px]" />
                             {client.location}
                           </span>
                         </td>
-                        <td className="py-4 px-6">
-                          <span className="px-2.5 py-1 rounded-full bg-red-50 text-brand-red font-semibold text-[11px] uppercase border border-red-100">
+                        <td className="py-3.5 px-6">
+                          <span className="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 font-medium text-[11px]">
                             {client.category}
                           </span>
                         </td>
-                        <td className="py-4 px-6 text-right">
-                          <span className="inline-flex items-center gap-1.5 text-emerald-600 font-bold text-[11px] font-mono">
-                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                            ACTIVE
+                        <td className="py-3.5 px-6 text-right">
+                          <span className="inline-flex items-center gap-1.5 text-emerald-600 font-semibold text-xs">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                            Active
                           </span>
                         </td>
                       </tr>
@@ -211,20 +210,19 @@ export default function ClientsPage() {
       </section>
 
       {/* ══════════════ CTA ══════════════ */}
-      <section ref={ctaRef} className="w-full bg-gradient-to-r from-brand-red via-red-700 to-brand-red py-16 sm:py-20 px-4 sm:px-6 lg:px-12 relative overflow-hidden animate-gradient-shift">
-        <div className="absolute inset-0 diagonal-stripes opacity-20 pointer-events-none" />
-        <div className={`max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left relative z-10 transition-all duration-700 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+      <section ref={ctaRef} className="w-full bg-[#0d0e12] py-14 sm:py-18 px-4 sm:px-6 lg:px-12 text-center sm:text-left">
+        <div className={`max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 transition-all duration-700 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <div>
-            <h3 className="font-heading font-black text-2xl sm:text-3xl uppercase text-white">Deploy Security For Your Facility</h3>
-            <p className="text-sm text-white/85 mt-1">Join the leading industrial and automotive hubs safeguarded by The Legend Security.</p>
+            <h3 className="font-heading font-bold text-2xl sm:text-3xl text-white tracking-tight">Deploy Security For Your Facility</h3>
+            <p className="text-xs sm:text-sm text-slate-400 mt-1 font-light">Join the leading industrial and automotive hubs safeguarded by The Legend Security.</p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
-            <Link to="/book-appointment" className="px-7 py-4 rounded-xl bg-white text-brand-red font-heading font-black text-xs uppercase tracking-wider hover:bg-slate-100 transition-all shadow-2xl whitespace-nowrap flex items-center gap-2">
+            <Link to="/book-appointment" className="px-5 py-3 rounded-xl bg-brand-red hover:bg-red-600 text-white font-heading font-semibold text-xs uppercase tracking-wider transition-all shadow-md shadow-red-950/40 whitespace-nowrap flex items-center gap-2">
               <i className="fa-solid fa-calendar-check" />
               <span>Book On-Site Survey</span>
             </Link>
-            <Link to="/contact" className="px-6 py-4 rounded-xl bg-black/40 border border-white/30 text-white font-heading font-black text-xs uppercase tracking-wider hover:bg-black/60 transition-all shadow-2xl whitespace-nowrap flex items-center gap-2">
-              <i className="fa-solid fa-file-invoice" />
+            <Link to="/contact" className="px-5 py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-white font-heading font-semibold text-xs uppercase tracking-wider transition-all whitespace-nowrap flex items-center gap-2">
+              <i className="fa-solid fa-file-invoice text-xs" />
               <span>Request Quotation</span>
             </Link>
           </div>

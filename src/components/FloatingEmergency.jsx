@@ -51,16 +51,16 @@ export default function FloatingEmergency() {
       {expanded && (
         <div className="flex flex-col gap-2 p-3.5 rounded-2xl bg-[#0e0f14]/98 border border-brand-red/40 shadow-[0_8px_40px_rgba(0,0,0,0.8)] backdrop-blur-xl text-xs animate-slide-up w-72 sm:w-80">
           {/* Header */}
-          <div className="px-2 py-1.5 border-b border-slate-800 flex items-center justify-between">
+          <div className="px-2 py-1.5 border-b border-white/10 flex items-center justify-between">
             <div className="flex flex-col">
-              <span className="font-heading font-black text-[11px] uppercase tracking-wider text-white">
+              <span className="font-heading font-semibold text-xs text-white">
                 Pune • Mumbai • All Maharashtra
               </span>
-              <span className="text-[10px] text-slate-400 font-mono">Immediate Guard &amp; Bouncer Deployment</span>
+              <span className="text-[11px] text-slate-400 font-light">Immediate Guard &amp; Bouncer Deployment</span>
             </div>
-            <span className="flex items-center gap-1.5 text-emerald-400 font-bold font-mono text-[10px]">
+            <span className="flex items-center gap-1.5 text-emerald-400 font-medium text-xs">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              LIVE
+              Live
             </span>
           </div>
 
@@ -68,21 +68,21 @@ export default function FloatingEmergency() {
           <Link
             to="/book-appointment"
             onClick={() => setExpanded(false)}
-            className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-gradient-to-r from-brand-red to-brand-crimson text-white transition-all duration-200 group shadow-md hover:brightness-110"
+            className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-gradient-to-r from-brand-red to-red-600 text-white transition-all duration-200 group shadow-md hover:brightness-110"
           >
             <div className="w-9 h-9 rounded-xl bg-black/20 text-white flex items-center justify-center shrink-0">
               <i className="fa-solid fa-calendar-check text-sm" />
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between gap-1">
-                <p className="font-heading font-bold text-xs uppercase leading-tight truncate">
+                <p className="font-heading font-semibold text-xs leading-tight truncate">
                   Book Security Audit
                 </p>
-                <span className="text-[9px] font-mono font-bold bg-white/20 text-white px-1.5 py-0.5 rounded uppercase">
-                  FREE
+                <span className="text-[10px] font-medium bg-white/20 text-white px-2 py-0.5 rounded-full uppercase">
+                  Free
                 </span>
               </div>
-              <p className="text-[11px] text-white/80 font-mono mt-0.5">On-Site Inspection Slot</p>
+              <p className="text-xs text-white/80 font-light mt-0.5">On-Site Inspection Slot</p>
             </div>
           </Link>
 
@@ -92,23 +92,23 @@ export default function FloatingEmergency() {
               href={c.href}
               target={c.external ? '_blank' : undefined}
               rel={c.external ? 'noopener noreferrer' : undefined}
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-xl bg-[#18191d] border border-slate-800 ${c.hoverClass} text-white transition-all duration-200 group`}
+              className={`flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 ${c.hoverClass} text-white transition-all duration-200 group`}
             >
-              <div className={`w-9 h-9 rounded-xl ${c.iconBg} text-white flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform`}>
+              <div className={`w-9 h-9 rounded-xl ${c.iconBg} text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform`}>
                 <i className={`fa-${c.isBrand ? 'brands' : 'solid'} ${c.icon} text-sm`} />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between gap-1">
-                  <p className="font-heading font-bold text-xs uppercase leading-tight group-hover:text-brand-red transition-colors truncate">
+                  <p className="font-heading font-semibold text-xs leading-tight group-hover:text-brand-red transition-colors truncate">
                     {c.name}
                   </p>
                   {c.badge && (
-                    <span className="text-[9px] font-mono font-bold text-brand-red bg-brand-red/10 px-1.5 py-0.5 rounded border border-brand-red/20 uppercase shrink-0">
+                    <span className="text-[10px] font-medium text-brand-red bg-brand-red/10 px-2 py-0.5 rounded-full border border-brand-red/20 uppercase shrink-0">
                       {c.badge}
                     </span>
                   )}
                 </div>
-                <p className="text-[11px] text-slate-300 font-mono mt-0.5">{c.sub}</p>
+                <p className="text-xs text-slate-300 font-light mt-0.5">{c.sub}</p>
               </div>
             </a>
           ))}

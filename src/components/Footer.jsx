@@ -58,12 +58,12 @@ export default function Footer() {
               Incorporated in <strong className="text-slate-300">2018</strong> by Director <strong className="text-slate-300">Mr. Mosin Azam Shaikh</strong>. Providing professionally managed Security Guards, Bouncers, Housekeeping, CIT Services, and Labour Supply across <strong className="text-white">Pune, Mumbai, and All Over Maharashtra</strong>.
             </p>
 
-            <div className="flex flex-wrap gap-2 font-mono text-[10px]">
-              <span className="px-2.5 py-1 rounded-lg bg-[#18191d] border border-slate-800 text-slate-300 font-semibold">
+            <div className="flex flex-wrap gap-2 text-xs">
+              <span className="px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/10 text-slate-300 font-medium text-[11px]">
                 PSARA: PSA/L/50/MH/2026/JULI/6495
               </span>
-              <span className="px-2.5 py-1 rounded-lg bg-brand-red/10 border border-brand-red/30 text-brand-red font-bold">
-                PUNE • MUMBAI • ALL MAHARASHTRA
+              <span className="px-2.5 py-1 rounded-lg bg-brand-red/10 border border-brand-red/25 text-brand-red font-medium text-[11px]">
+                Pune • Mumbai • All Maharashtra
               </span>
             </div>
 
@@ -160,7 +160,7 @@ export default function Footer() {
 
               <a href="mailto:thelegendscrt16@gmail.com" className="flex items-center gap-2.5">
                 <i className="fa-solid fa-envelope text-slate-400" />
-                <span className="text-slate-300 hover:text-brand-red transition-colors font-mono text-[11px]">thelegendscrt16@gmail.com</span>
+                <span className="text-slate-300 hover:text-brand-red transition-colors text-xs">thelegendscrt16@gmail.com</span>
               </a>
 
               <div className="pt-2 border-t border-slate-800 space-y-1.5 text-[11px] text-slate-400">

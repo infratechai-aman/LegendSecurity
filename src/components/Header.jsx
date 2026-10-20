@@ -197,7 +197,7 @@ export default function Header() {
                     </div>
                     <span className="flex-1">{link.name}</span>
                     {link.badge && (
-                      <span className="px-1.5 py-0.2 rounded-full text-[9px] font-mono bg-brand-red text-white font-bold">
+                      <span className="px-2 py-0.5 rounded-full text-[10px] bg-brand-red text-white font-medium">
                         {link.badge}
                       </span>
                     )}
@@ -209,7 +209,7 @@ export default function Header() {
                 <NavLink
                   to="/admin"
                   className={({ isActive }) =>
-                    `flex items-center gap-4 px-4 py-3 rounded-xl font-heading text-xs font-bold tracking-wider uppercase transition-all duration-200 mt-2 ${
+                    `flex items-center gap-4 px-4 py-3 rounded-xl font-heading text-xs font-semibold tracking-wider transition-all duration-200 mt-2 ${
                       isActive
                         ? 'bg-amber-500/15 text-amber-400 border border-amber-500/25'
                         : 'text-amber-400/80 hover:bg-slate-800/70 hover:text-amber-300 border border-white/5 bg-white/[0.02]'
@@ -220,7 +220,7 @@ export default function Header() {
                     <i className="fa-solid fa-lock text-xs text-amber-400" />
                   </div>
                   <span className="flex-1">Admin Command Center</span>
-                  <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300">
+                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-medium">
                     PIN: 2026
                   </span>
                 </NavLink>
@@ -231,7 +231,7 @@ export default function Header() {
             <div className="px-4 pb-8 pt-4 border-t border-slate-800/60 flex flex-col gap-2.5">
               <Link
                 to="/book-appointment"
-                className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-brand-red to-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider py-3 rounded-xl shadow-lg shadow-red-900/30 transition-all"
+                className="w-full flex items-center justify-center gap-2 bg-brand-red hover:bg-red-600 text-white font-heading font-semibold text-xs uppercase tracking-wider py-3 rounded-xl shadow-md transition-all"
               >
                 <i className="fa-solid fa-calendar-check text-xs" />
                 <span>Book Security Audit</span>
@@ -240,7 +240,7 @@ export default function Header() {
               <div className="grid grid-cols-1 gap-2">
                 <a
                   href="tel:+918806078677"
-                  className="w-full flex items-center justify-between px-3 bg-[#18191d] border border-slate-700 hover:border-brand-red text-slate-200 font-heading font-semibold text-xs uppercase tracking-wider py-2.5 rounded-xl transition-all"
+                  className="w-full flex items-center justify-between px-3 bg-white/[0.04] border border-white/10 hover:border-brand-red text-slate-200 font-heading font-medium text-xs tracking-wider py-2.5 rounded-xl transition-all"
                 >
                   <div className="flex items-center gap-2">
                     <div className="w-5 h-5 rounded-full bg-brand-red flex items-center justify-center">
@@ -248,7 +248,7 @@ export default function Header() {
                     </div>
                     <span>+91 88060 78677</span>
                   </div>
-                  <span className="text-[9px] font-mono font-bold text-brand-red">DIRECTOR</span>
+                  <span className="text-[10px] font-medium text-brand-red bg-brand-red/10 px-2 py-0.5 rounded-full">Director</span>
                 </a>
               </div>
             </div>

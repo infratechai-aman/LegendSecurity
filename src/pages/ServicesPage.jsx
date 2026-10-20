@@ -46,23 +46,23 @@ export default function ServicesPage() {
         <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-brand-red/6 rounded-full blur-[100px] pointer-events-none" />
 
         <div ref={heroRef} className="max-w-7xl mx-auto relative z-10 flex flex-col items-center text-center">
-          <nav className={`flex items-center gap-2 text-xs uppercase tracking-wider mb-6 font-mono font-bold transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <nav className={`flex items-center gap-2 text-xs uppercase tracking-wider mb-5 text-slate-400 font-medium transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             <Link to="/" className="text-slate-400 hover:text-brand-red transition-colors">Home</Link>
             <span className="text-slate-600">/</span>
             <span className="text-brand-red">Services</span>
           </nav>
 
-          <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-red/10 border border-brand-red/25 mb-6 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '100ms' }}>
-            <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
-            <span className="font-mono text-xs uppercase tracking-widest text-brand-red font-bold">PUNE • MUMBAI • ALL OVER MAHARASHTRA | 14 CAPABILITIES</span>
+          <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 mb-5 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '100ms' }}>
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
+            <span className="text-xs text-slate-300 font-medium tracking-wide">14 Core Capabilities • Pune, Mumbai &amp; All Maharashtra</span>
           </div>
 
-          <h1 className={`font-heading font-black text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight max-w-4xl leading-tight mb-6 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '200ms' }}>
-            PROFESSIONAL SERVICES <span className="text-gradient-red">SPECTRUM</span>
+          <h1 className={`font-heading font-bold text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight max-w-4xl leading-tight mb-5 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '200ms' }}>
+            Professional Services <span className="text-gradient-red">Spectrum</span>
           </h1>
 
-          <p className={`text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl leading-relaxed mb-10 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '300ms' }}>
-            Comprehensive security guards, executive bouncers, facility housekeeping, and labour supply solutions deployed across <strong className="text-white">Pune, Mumbai, and All Over Maharashtra</strong>.
+          <p className={`text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl leading-relaxed mb-9 font-light transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '300ms' }}>
+            Comprehensive security guards, executive bouncers, facility housekeeping, and labour supply solutions deployed across <strong className="text-white font-medium">Pune, Mumbai, and All Over Maharashtra</strong>.
           </p>
 
           <div className={`flex flex-wrap items-center justify-center gap-3 sm:gap-4 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '400ms' }}>
@@ -72,24 +72,23 @@ export default function ServicesPage() {
                 setSelectedAuditType('On-Site Vulnerability & Security Audit');
                 setIsBookingModalOpen(true);
               }}
-              className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-brand-red via-red-600 to-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider shadow-[inset_0_1px_1px_rgba(255,255,255,0.4),0_10px_25px_rgba(229,9,20,0.4)] hover:brightness-110 transition-all flex items-center gap-2.5 cursor-pointer"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-brand-red to-red-600 text-white font-heading font-semibold text-xs uppercase tracking-wider shadow-md shadow-red-950/40 hover:brightness-110 transition-all flex items-center gap-2 cursor-pointer"
             >
               <i className="fa-solid fa-calendar-check text-xs" />
               <span>Schedule Security Audit</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             </button>
             <Link
               to="/contact"
-              className="px-6 py-3.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.09] backdrop-blur-md border border-white/15 hover:border-brand-red/60 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2"
+              className="px-5 py-3 rounded-xl bg-white/[0.05] hover:bg-white/[0.09] border border-white/10 text-white font-heading font-semibold text-xs uppercase tracking-wider transition-all flex items-center gap-2"
             >
               <i className="fa-solid fa-file-invoice text-brand-red text-xs" />
               <span>Request Quote</span>
             </Link>
             <a
               href="tel:+918806078677"
-              className="px-4 py-3.5 rounded-xl bg-white/[0.03] border border-white/10 hover:border-brand-red text-slate-300 hover:text-white font-mono text-xs uppercase transition-all flex items-center gap-2"
+              className="px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 hover:border-white/20 text-slate-300 hover:text-white font-heading font-medium text-xs tracking-wider transition-all flex items-center gap-2"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-red" />
+              <i className="fa-solid fa-phone text-brand-red text-xs" />
               <span>+91 88060 78677</span>
             </a>
           </div>
@@ -97,14 +96,14 @@ export default function ServicesPage() {
       </section>
 
       {/* ══════════════ SERVICES GRID ══════════════ */}
-      <section className="w-full bg-[#f8fafc] text-slate-900 py-20 sm:py-28 px-4 sm:px-6 lg:px-12">
+      <section className="w-full bg-[#f8fafc] text-slate-900 py-16 sm:py-24 px-4 sm:px-6 lg:px-12 border-b border-slate-200">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-14 border-b border-slate-200">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 pb-6 mb-12 border-b border-slate-200">
             <div>
-              <span className="font-mono text-xs uppercase tracking-widest text-brand-red font-bold">OPERATIONAL OFFERINGS</span>
-              <h2 className="font-heading font-black text-2xl sm:text-4xl uppercase text-slate-950 mt-1">Full Services Directory</h2>
+              <span className="text-xs font-semibold text-brand-red uppercase tracking-wider">Operational Offerings</span>
+              <h2 className="font-heading font-bold text-2xl sm:text-4xl text-slate-900 tracking-tight mt-1">Full Services Directory</h2>
             </div>
-            <p className="text-slate-500 text-xs sm:text-sm max-w-md">
+            <p className="text-slate-500 text-xs sm:text-sm max-w-md font-light">
               Deployable across Maharashtra on short notice. All personnel vetted with police verification and rigorous on-ground training.
             </p>
           </div>
@@ -113,42 +112,42 @@ export default function ServicesPage() {
             {serviceCategories.map((card, idx) => (
               <div
                 key={idx}
-                className={`card-premium-light group bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 shadow-sm flex flex-col justify-between transition-all duration-500 ${cardsVisible.has(idx) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                style={{ transitionDelay: `${idx * 50}ms` }}
+                className={`bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between ${cardsVisible.has(idx) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${idx * 40}ms` }}
               >
                 <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="w-12 h-12 rounded-xl bg-red-50 text-brand-red flex items-center justify-center text-xl group-hover:bg-brand-red group-hover:text-white transition-all duration-300 shadow-sm">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-11 h-11 rounded-xl bg-red-50 text-brand-red flex items-center justify-center text-lg">
                       <i className={`fa-solid ${card.icon}`} />
                     </div>
-                    <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 font-bold uppercase tracking-wider">
+                    <span className="text-[10px] px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 font-medium uppercase tracking-wider">
                       {card.tag}
                     </span>
                   </div>
-                  <h3 className="font-heading font-black text-sm uppercase text-slate-950 mb-2.5 group-hover:text-brand-red transition-colors leading-tight">
+                  <h3 className="font-heading font-semibold text-base text-slate-900 mb-2 leading-snug">
                     {card.title}
                   </h3>
-                  <p className="text-slate-500 text-xs leading-relaxed mb-5">{card.desc}</p>
+                  <p className="text-slate-500 text-xs leading-relaxed mb-5 font-light">{card.desc}</p>
                 </div>
-                <div className="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs">
-                  <span className="font-medium text-slate-600 flex items-center gap-1.5">
+                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span className="text-slate-500 flex items-center gap-1.5 font-normal">
                     <i className="fa-solid fa-clock text-brand-red text-[10px]" />
                     8 &amp; 12 Hr Shifts
                   </span>
-                  <div className="flex items-center gap-2.5">
+                  <div className="flex items-center gap-2">
                     <button
                       type="button"
                       onClick={() => {
                         setSelectedAuditType(card.title);
                         setIsBookingModalOpen(true);
                       }}
-                      className="px-2.5 py-1 rounded-lg bg-brand-red/10 hover:bg-brand-red hover:text-white text-brand-red font-heading font-bold text-[10px] uppercase tracking-wider transition-all"
+                      className="px-2.5 py-1 rounded-lg bg-red-50 hover:bg-brand-red hover:text-white text-brand-red font-medium text-[11px] transition-all cursor-pointer"
                     >
                       Audit
                     </button>
-                    <Link to="/contact" className="inline-flex items-center gap-1 font-heading font-bold text-xs uppercase text-slate-700 hover:text-brand-red transition-colors">
+                    <Link to="/contact" className="inline-flex items-center gap-1 font-medium text-xs text-slate-700 hover:text-brand-red transition-colors">
                       <span>Quote</span>
-                      <i className="fa-solid fa-arrow-right text-[9px]" />
+                      <i className="fa-solid fa-arrow-right text-[8px]" />
                     </Link>
                   </div>
                 </div>
@@ -157,20 +156,19 @@ export default function ServicesPage() {
           </div>
 
           {/* Events & Celebrations Callout Banner */}
-          <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#0c0d12] via-[#161720] to-[#0c0d12] border border-brand-red/30 text-white flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-80 h-80 bg-brand-red/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-[#0e0f14] border border-brand-red/30 text-white flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xl relative overflow-hidden">
             <div className="flex items-center gap-4 relative z-10">
-              <div className="w-14 h-14 rounded-2xl bg-brand-red/15 border border-brand-red/30 flex items-center justify-center text-brand-red text-2xl shrink-0">
+              <div className="w-12 h-12 rounded-2xl bg-brand-red/15 border border-brand-red/30 flex items-center justify-center text-brand-red text-xl shrink-0">
                 <i className="fa-solid fa-champagne-glasses" />
               </div>
               <div>
-                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-brand-red/20 text-brand-red text-[10px] font-mono font-bold uppercase mb-1">
-                  SPECIALIZED DEPLOYMENT • EVENTS &amp; CELEBRATIONS
+                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-brand-red/20 text-brand-red text-[10px] font-medium uppercase tracking-wider mb-1">
+                  Specialized Coverage • Events &amp; Celebrations
                 </div>
-                <h3 className="font-heading font-black text-lg sm:text-xl uppercase tracking-tight text-white">
+                <h3 className="font-heading font-semibold text-lg sm:text-xl text-white tracking-tight">
                   Weddings, Milestone Birthdays, Concerts &amp; Private Parties
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mt-1 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mt-1 leading-relaxed font-light">
                   Looking for suited bouncers, polite gatekeepers, and lady guards for your special day? Explore our dedicated event management page with authentic photos and manpower sizing guides.
                 </p>
               </div>
@@ -178,7 +176,7 @@ export default function ServicesPage() {
 
             <Link
               to="/events"
-              className="relative z-10 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-red to-red-700 hover:brightness-110 text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg shadow-red-950/50 transition-all flex items-center gap-2 shrink-0 whitespace-nowrap"
+              className="relative z-10 px-5 py-3 rounded-xl bg-brand-red hover:bg-red-600 text-white font-heading font-semibold text-xs uppercase tracking-wider shadow-md shadow-red-950/50 transition-all flex items-center gap-2 shrink-0 whitespace-nowrap"
             >
               <span>Explore Event Security</span>
               <i className="fa-solid fa-arrow-right text-xs" />
@@ -188,34 +186,34 @@ export default function ServicesPage() {
       </section>
 
       {/* ══════════════ QUOTATION TABLE ══════════════ */}
-      <section className="w-full bg-[#0f1014] text-white py-20 sm:py-28 px-4 sm:px-6 lg:px-12 border-t border-[#272930]">
+      <section className="w-full bg-[#0a0a0d] text-white py-16 sm:py-24 px-4 sm:px-6 lg:px-12 border-b border-white/10">
         <div ref={tableRef} className="max-w-5xl mx-auto">
-          <div className={`text-center max-w-2xl mx-auto mb-12 transition-all duration-700 ${tableVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <span className="font-mono text-xs uppercase text-brand-red font-bold tracking-widest">OFFICIAL TARIFF FRAMEWORK</span>
-            <h2 className="font-heading font-black text-2xl sm:text-4xl uppercase text-white mt-2">Quotation Structure</h2>
-            <p className="text-slate-400 text-xs sm:text-sm mt-2">Standard shift duty schedules for commercial, industrial, and personal protection assignments.</p>
+          <div className={`text-center max-w-2xl mx-auto mb-10 transition-all duration-700 ${tableVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <span className="text-xs font-semibold text-brand-red uppercase tracking-wider">Official Tariff Framework</span>
+            <h2 className="font-heading font-bold text-2xl sm:text-4xl text-white tracking-tight mt-1">Quotation Structure</h2>
+            <p className="text-slate-400 text-xs sm:text-sm mt-1.5 font-light">Standard shift duty schedules for commercial, industrial, and personal protection assignments.</p>
           </div>
 
-          <div className={`bg-[#1a1b21] rounded-3xl overflow-hidden border border-[#2a2b32] shadow-2xl transition-all duration-800 ${tableVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '150ms' }}>
-            <div className="p-6 sm:p-7 bg-[#1e1f26] border-b border-[#2a2b32] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div className={`bg-white/[0.03] rounded-3xl overflow-hidden border border-white/10 shadow-xl transition-all duration-800 ${tableVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '150ms' }}>
+            <div className="p-5 sm:p-6 bg-white/[0.02] border-b border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
               <div>
-                <h3 className="font-heading font-black text-base uppercase text-white">The Legend Security & Bouncer</h3>
-                <p className="text-xs text-slate-400 mt-0.5">Gujarwadi Road, Bharat Nagar, Katraj, Pune 411046</p>
+                <h3 className="font-heading font-semibold text-base text-white">The Legend Security &amp; Bouncer</h3>
+                <p className="text-xs text-slate-400 mt-0.5 font-light">Gujarwadi Road, Bharat Nagar, Katraj, Pune 411046</p>
               </div>
-              <span className="px-3 py-1.5 rounded-full bg-brand-red/20 text-brand-red font-mono text-xs font-bold border border-brand-red/30">
-                OFFICIAL SLAB
+              <span className="px-3 py-1 rounded-full bg-white/[0.04] text-slate-300 border border-white/10 text-xs font-medium">
+                Standard Tariff Slab
               </span>
             </div>
 
             {/* Mobile-friendly card view on small screens */}
-            <div className="block sm:hidden divide-y divide-[#2a2b32]">
+            <div className="block sm:hidden divide-y divide-white/5">
               {quotationItems.map((row) => (
                 <div key={row.no} className="p-4 flex items-center justify-between gap-3">
                   <div className="flex items-center gap-3">
-                    <span className="font-mono font-bold text-brand-red text-sm w-6 shrink-0">{row.no}.</span>
-                    <span className="font-heading font-bold text-white uppercase text-xs">{row.role}</span>
+                    <span className="font-medium text-brand-red text-xs w-5 shrink-0">{row.no}.</span>
+                    <span className="font-heading font-medium text-white text-xs">{row.role}</span>
                   </div>
-                  <span className="font-mono text-[11px] text-slate-400 whitespace-nowrap">Contact Mgmt.</span>
+                  <span className="text-[11px] text-slate-400 font-light whitespace-nowrap">Contact Mgmt.</span>
                 </div>
               ))}
             </div>
@@ -224,31 +222,31 @@ export default function ServicesPage() {
             <div className="hidden sm:block overflow-x-auto">
               <table className="w-full text-left text-xs">
                 <thead>
-                  <tr className="bg-[#13141a] text-slate-400 font-heading uppercase tracking-wider border-b border-[#2a2b32]">
-                    <th className="py-4 px-6 w-16">No.</th>
-                    <th className="py-4 px-6">Particular</th>
-                    <th className="py-4 px-6 text-center">08 Hrs.</th>
-                    <th className="py-4 px-6 text-center">12 Hrs.</th>
+                  <tr className="bg-white/[0.02] text-slate-400 font-heading uppercase tracking-wider border-b border-white/10 text-[11px]">
+                    <th className="py-3.5 px-6 w-16">No.</th>
+                    <th className="py-3.5 px-6">Particular</th>
+                    <th className="py-3.5 px-6 text-center">08 Hrs.</th>
+                    <th className="py-3.5 px-6 text-center">12 Hrs.</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#2a2b32] text-slate-200">
+                <tbody className="divide-y divide-white/5 text-slate-200">
                   {quotationItems.map((row) => (
-                    <tr key={row.no} className="hover:bg-white/3 transition-colors">
-                      <td className="py-4 px-6 font-mono font-bold text-brand-red">{row.no}.</td>
-                      <td className="py-4 px-6 font-heading font-bold text-white uppercase">{row.role}</td>
-                      <td className="py-4 px-6 text-center text-slate-400">Contact Management</td>
-                      <td className="py-4 px-6 text-center text-slate-400">Contact Management</td>
+                    <tr key={row.no} className="hover:bg-white/[0.02] transition-colors">
+                      <td className="py-3.5 px-6 font-medium text-brand-red">{row.no}.</td>
+                      <td className="py-3.5 px-6 font-medium text-white">{row.role}</td>
+                      <td className="py-3.5 px-6 text-center text-slate-400 font-light">Contact Management</td>
+                      <td className="py-3.5 px-6 text-center text-slate-400 font-light">Contact Management</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
 
-            <div className="p-5 sm:p-6 bg-[#0e0f13] border-t border-[#2a2b32] space-y-1.5 text-xs text-slate-400">
-              <p className="font-heading font-bold uppercase text-slate-300 mb-3 text-[11px]">Terms & Conditions (As per Document):</p>
+            <div className="p-5 bg-black/40 border-t border-white/10 space-y-1.5 text-xs text-slate-400 font-light">
+              <p className="font-medium text-slate-300 mb-2 text-xs">Terms &amp; Conditions (As per Document):</p>
               {['GST will be extra on above charges.', 'The rate will be different for temporary / event-basis services.', 'Rates are valid for one year from contract signing date.'].map((t, i) => (
                 <p key={i} className="flex items-start gap-2">
-                  <i className="fa-solid fa-circle-dot text-brand-red text-[9px] mt-0.5 shrink-0" />
+                  <i className="fa-solid fa-circle-dot text-brand-red text-[8px] mt-1 shrink-0" />
                   {t}
                 </p>
               ))}
@@ -258,13 +256,12 @@ export default function ServicesPage() {
       </section>
 
       {/* ══════════════ CTA ══════════════ */}
-      <section ref={ctaRef} className="w-full bg-gradient-to-r from-[#111218] via-[#161720] to-[#111218] border-t border-white/10 py-16 sm:py-20 px-4 sm:px-6 lg:px-12 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-brand-red/10 rounded-full blur-[100px] pointer-events-none" />
+      <section ref={ctaRef} className="w-full bg-[#0d0e12] py-14 sm:py-18 px-4 sm:px-6 lg:px-12 relative overflow-hidden">
         <div className={`max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left relative z-10 transition-all duration-700 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <div>
-            <span className="font-mono text-[10px] uppercase tracking-widest text-brand-red font-bold">ZERO OBLIGATION CONSULTATION</span>
-            <h3 className="font-heading font-black text-2xl sm:text-3xl uppercase text-white mt-1">Get Official Price Quote &amp; Site Survey</h3>
-            <p className="text-xs sm:text-sm text-slate-300 mt-1">Speak directly with Director Mosin Azam Shaikh for your site survey and estimate across Maharashtra.</p>
+            <span className="text-xs font-semibold text-brand-red uppercase tracking-wider">Direct Consultation</span>
+            <h3 className="font-heading font-bold text-2xl sm:text-3xl text-white tracking-tight mt-1">Get Official Price Quote &amp; Survey</h3>
+            <p className="text-xs sm:text-sm text-slate-300 mt-1 font-light">Speak directly with Director Mosin Azam Shaikh for your site survey and estimate across Maharashtra.</p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <button
@@ -273,12 +270,12 @@ export default function ServicesPage() {
                 setSelectedAuditType('On-Site Vulnerability & Security Audit');
                 setIsBookingModalOpen(true);
               }}
-              className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-red to-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg shadow-red-900/40 hover:brightness-110 transition-all flex items-center gap-2 cursor-pointer"
+              className="px-5 py-3 rounded-xl bg-brand-red hover:bg-red-600 text-white font-heading font-semibold text-xs uppercase tracking-wider shadow-md shadow-red-950/40 hover:brightness-110 transition-all flex items-center gap-2 cursor-pointer"
             >
               <i className="fa-solid fa-calendar-check text-xs" />
               <span>Schedule Audit</span>
             </button>
-            <Link to="/contact" className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all whitespace-nowrap flex items-center gap-2">
+            <Link to="/contact" className="px-5 py-3 rounded-xl bg-white/[0.05] hover:bg-white/[0.09] border border-white/10 text-white font-heading font-semibold text-xs uppercase tracking-wider transition-all whitespace-nowrap flex items-center gap-2">
               <i className="fa-solid fa-file-invoice text-xs" />
               <span>Submit Requisition</span>
             </Link>

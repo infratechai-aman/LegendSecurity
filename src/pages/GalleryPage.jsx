@@ -31,13 +31,13 @@ function MobileLightbox({ image, total, currentIndex, isOpen, onClose, onPrev, o
     <div className="fixed inset-0 z-[100] bg-black flex flex-col" {...swipe}>
       <div className="flex items-center justify-between px-4 py-3 bg-black/90 backdrop-blur-xl border-b border-white/10 shrink-0">
         <div className="flex items-center gap-2.5 min-w-0">
-          <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-brand-red text-white uppercase tracking-wider shrink-0">{image.tag}</span>
-          <span className="font-heading font-black text-xs text-white uppercase tracking-wide truncate">{image.title}</span>
+          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-brand-red text-white tracking-wide shrink-0">{image.tag}</span>
+          <span className="font-heading font-semibold text-xs text-white truncate">{image.title}</span>
         </div>
         <div className="flex items-center gap-2 shrink-0 ml-2">
-          <span className="text-[11px] font-mono text-slate-400">{currentIndex + 1} / {total}</span>
-          <button onClick={onClose} className="w-9 h-9 rounded-xl bg-white/10 hover:bg-brand-red text-white flex items-center justify-center transition-colors">
-            <i className="fa-solid fa-xmark text-sm" />
+          <span className="text-xs text-slate-400 font-medium">{currentIndex + 1} / {total}</span>
+          <button onClick={onClose} className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer" aria-label="Close">
+            <i className="fa-solid fa-xmark text-xs" />
           </button>
         </div>
       </div>
@@ -45,27 +45,27 @@ function MobileLightbox({ image, total, currentIndex, isOpen, onClose, onPrev, o
         <img src={image.src} alt={image.title} className="max-h-full max-w-full object-contain select-none" draggable={false} />
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-sm pointer-events-none">
           <i className="fa-solid fa-left-right text-white/60 text-[10px]" />
-          <span className="text-[10px] text-white/60 font-mono">Swipe to navigate</span>
+          <span className="text-[10px] text-white/70 font-normal">Swipe to navigate</span>
         </div>
-        <button onClick={(e) => { e.stopPropagation(); onPrev(); }} className="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/70 hover:bg-brand-red text-white flex items-center justify-center transition-all shadow-xl">
-          <i className="fa-solid fa-chevron-left text-sm" />
+        <button onClick={(e) => { e.stopPropagation(); onPrev(); }} className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-brand-red text-white flex items-center justify-center transition-all shadow-xl cursor-pointer">
+          <i className="fa-solid fa-chevron-left text-xs" />
         </button>
-        <button onClick={(e) => { e.stopPropagation(); onNext(); }} className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/70 hover:bg-brand-red text-white flex items-center justify-center transition-all shadow-xl">
-          <i className="fa-solid fa-chevron-right text-sm" />
+        <button onClick={(e) => { e.stopPropagation(); onNext(); }} className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-brand-red text-white flex items-center justify-center transition-all shadow-xl cursor-pointer">
+          <i className="fa-solid fa-chevron-right text-xs" />
         </button>
       </div>
       <div className="shrink-0 px-4 py-4 bg-[#0a0a0d]/95 backdrop-blur-xl border-t border-white/10">
         <div className="flex items-start justify-between gap-3 mb-3">
           <div className="min-w-0">
-            <p className="text-[11px] font-mono text-brand-red font-bold uppercase tracking-wider mb-0.5">{image.categoryLabel}</p>
-            <p className="text-xs text-slate-300 leading-relaxed">{image.desc}</p>
+            <p className="text-[11px] text-brand-red font-medium uppercase tracking-wider mb-0.5">{image.categoryLabel}</p>
+            <p className="text-xs text-slate-300 leading-relaxed font-light">{image.desc}</p>
           </div>
           <div className="flex items-center gap-1 shrink-0 text-slate-400 text-[11px]">
             <i className="fa-solid fa-location-dot text-brand-red text-[10px]" />
             <span>{image.location}</span>
           </div>
         </div>
-        <a href="tel:+918806078677" className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-brand-red to-red-700 text-white font-heading font-bold text-xs uppercase tracking-wider py-3 rounded-xl shadow-lg shadow-red-900/30">
+        <a href="tel:+918806078677" className="w-full flex items-center justify-center gap-2 bg-brand-red hover:bg-red-600 text-white font-heading font-semibold text-xs tracking-wider py-3 rounded-xl shadow-md">
           <i className="fa-solid fa-phone text-xs" />
           <span>Deploy Similar Squad — +91 88060 78677</span>
         </a>
@@ -149,29 +149,29 @@ export default function GalleryPage() {
       />
 
       {/* HERO */}
-      <section className="relative w-full bg-[#0a0a0c] text-white py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-12 overflow-hidden tactical-grid pt-24 sm:pt-28">
+      <section className="relative w-full bg-[#0a0a0c] text-white py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 overflow-hidden tactical-grid pt-24 sm:pt-28 border-b border-white/10">
         <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-brand-red/6 rounded-full blur-[100px] pointer-events-none" />
         <div ref={heroRef} className="max-w-7xl mx-auto relative z-10 flex flex-col items-center text-center">
-          <nav className={`flex items-center gap-2 text-xs uppercase tracking-wider mb-5 font-mono font-bold transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <nav className={`flex items-center gap-2 text-xs uppercase tracking-wider mb-5 text-slate-400 font-medium transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             <Link to="/" className="text-slate-400 hover:text-brand-red transition-colors">Home</Link>
             <span className="text-slate-600">/</span>
             <span className="text-brand-red">Gallery</span>
           </nav>
-          <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-red/10 border border-brand-red/25 mb-5 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '100ms' }}>
-            <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
-            <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-brand-red font-bold">PUNE • MUMBAI • ALL OVER MAHARASHTRA</span>
+          <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 mb-5 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '100ms' }}>
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
+            <span className="text-xs text-slate-300 font-medium tracking-wide">On-Ground Squads • Pune, Mumbai &amp; All Maharashtra</span>
           </div>
-          <h1 className={`font-heading font-black text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight max-w-4xl leading-tight mb-4 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '200ms' }}>
-            OUR SQUADS <span className="text-gradient-red">IN ACTION</span>
+          <h1 className={`font-heading font-bold text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight max-w-4xl leading-tight mb-4 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '200ms' }}>
+            Our Squads <span className="text-gradient-red">In Action</span>
           </h1>
-          <p className={`text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed mb-6 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '300ms' }}>
-            Authentic operational photographs of The Legend Security personnel during on-ground duties, ceremonial drills, VIP assignments, and real client deployments across <strong className="text-white">Pune, Mumbai, and All Over Maharashtra</strong>.
+          <p className={`text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed mb-6 font-light transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '300ms' }}>
+            Authentic operational photographs of The Legend Security personnel during on-ground duties, ceremonial drills, VIP assignments, and real client deployments across <strong className="text-white font-medium">Pune, Mumbai, and All Over Maharashtra</strong>.
           </p>
           <div className={`flex items-center gap-6 sm:gap-12 transition-all duration-700 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '400ms' }}>
             {[{ num: '33', label: 'Real Photos' }, { num: '500+', label: 'Guards Deployed' }, { num: '10+', label: 'Yrs Experience' }].map((s) => (
               <div key={s.label} className="text-center">
-                <p className="font-heading font-black text-2xl sm:text-4xl text-brand-red">{s.num}</p>
-                <p className="text-[10px] sm:text-xs text-slate-400 font-mono uppercase tracking-wider mt-0.5">{s.label}</p>
+                <p className="font-heading font-bold text-2xl sm:text-4xl text-brand-red">{s.num}</p>
+                <p className="text-[11px] text-slate-400 font-light mt-0.5">{s.label}</p>
               </div>
             ))}
           </div>
@@ -179,7 +179,7 @@ export default function GalleryPage() {
       </section>
 
       {/* FILTER + GRID */}
-      <section className="w-full bg-[#f8fafc] px-3 sm:px-6 lg:px-12 py-8 sm:py-16">
+      <section className="w-full bg-[#f8fafc] px-3 sm:px-6 lg:px-12 py-8 sm:py-16 border-b border-slate-200">
         <div className="max-w-7xl mx-auto">
 
           {/* Scrollable filter chips */}
@@ -189,15 +189,15 @@ export default function GalleryPage() {
                 <button
                   key={cat.id}
                   onClick={() => { setActiveCategory(cat.id); setSelectedIndex(null); }}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl font-heading font-bold text-[11px] sm:text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer whitespace-nowrap shrink-0 ${
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full font-heading font-semibold text-xs tracking-wide transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0 ${
                     activeCategory === cat.id
-                      ? 'bg-brand-red text-white shadow-lg shadow-red-900/30 scale-105'
-                      : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 hover:border-brand-red/30'
+                      ? 'bg-brand-red text-white shadow-sm'
+                      : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
                   }`}
                 >
                   <i className={`fa-solid ${cat.icon} text-[10px]`} />
                   {cat.label}
-                  <span className={`px-1.5 py-0.5 rounded-full text-[9px] font-mono font-black ${activeCategory === cat.id ? 'bg-white/25 text-white' : 'bg-slate-100 text-slate-500'}`}>
+                  <span className={`px-2 py-0.5 rounded-full text-[10px] font-medium ${activeCategory === cat.id ? 'bg-white/25 text-white' : 'bg-slate-100 text-slate-500'}`}>
                     {cat.count}
                   </span>
                 </button>
@@ -207,64 +207,63 @@ export default function GalleryPage() {
 
           {/* Count + hint */}
           <div className="flex items-center justify-between mb-4 sm:mb-8">
-            <p className="text-xs font-mono text-slate-500 font-bold uppercase tracking-wider">
-              Showing <span className="text-brand-red text-sm">{filteredItems.length}</span> photo{filteredItems.length !== 1 ? 's' : ''}
+            <p className="text-xs text-slate-600 font-medium">
+              Showing <span className="text-brand-red font-semibold">{filteredItems.length}</span> photographs
             </p>
-            <p className="text-[11px] text-slate-400 flex items-center gap-1.5">
+            <p className="text-[11px] text-slate-400 flex items-center gap-1.5 font-light">
               <i className="fa-solid fa-hand-pointer text-brand-red text-[10px]" />
               <span className="hidden sm:inline">Click to enlarge</span>
-              <span className="sm:hidden">Tap to enlarge</span>
+              <span className="sm:hidden">Tap to view</span>
             </p>
           </div>
 
           {/* Grid — 2 cols mobile, 3 cols desktop */}
-          <div ref={gridRef} className="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-4 lg:gap-6">
+          <div ref={gridRef} className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5 lg:gap-6">
             {filteredItems.map((item, idx) => (
               <article
                 key={item.id}
                 onClick={() => setSelectedIndex(idx)}
-                className={`group relative flex flex-col bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-slate-200 hover:border-brand-red/30 cursor-pointer transition-all duration-500 ${
+                className={`group relative flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md border border-slate-200/90 hover:border-brand-red/40 cursor-pointer transition-all duration-300 ${
                   gridVisible.has(idx) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{ transitionDelay: `${Math.min(idx * 35, 600)}ms` }}
               >
                 <div className="relative w-full overflow-hidden bg-slate-900" style={{ aspectRatio: '4/3' }}>
                   <img
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                     alt={item.title}
                     src={item.src}
                     loading="lazy"
                   />
-                  <div className="absolute top-2 left-2 glass-panel px-2 py-0.5 rounded-lg">
-                    <span className="font-mono text-[9px] sm:text-[10px] text-white uppercase font-bold tracking-wider">{item.tag}</span>
+                  <div className="absolute top-2 left-2 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/10">
+                    <span className="text-[10px] text-white font-medium">{item.tag}</span>
                   </div>
-                  <div className="sm:hidden absolute bottom-2 right-2 w-7 h-7 rounded-full bg-brand-red/90 text-white flex items-center justify-center shadow-lg">
+                  <div className="sm:hidden absolute bottom-2 right-2 w-7 h-7 rounded-full bg-brand-red text-white flex items-center justify-center shadow-md">
                     <i className="fa-solid fa-magnifying-glass-plus text-[10px]" />
                   </div>
-                  <div className="hidden sm:flex absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-brand-red text-white flex items-center justify-center shadow-xl transform scale-75 group-hover:scale-100 transition-transform duration-300">
-                      <i className="fa-solid fa-magnifying-glass-plus text-sm" />
+                  <div className="hidden sm:flex absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center">
+                    <div className="w-10 h-10 rounded-full bg-brand-red text-white flex items-center justify-center shadow-lg">
+                      <i className="fa-solid fa-magnifying-glass-plus text-xs" />
                     </div>
                   </div>
                 </div>
 
-                <div className="flex flex-col p-2.5 sm:p-5 gap-1 flex-1">
+                <div className="flex flex-col p-3 sm:p-4 gap-1 flex-1">
                   <div className="flex items-center justify-between gap-1">
-                    <span className="font-mono text-[9px] sm:text-[11px] text-brand-red font-bold uppercase truncate">{item.categoryLabel}</span>
-                    <span className="flex items-center gap-1 text-slate-400 font-medium text-[9px] sm:text-[10px] shrink-0">
+                    <span className="text-[10px] sm:text-xs text-brand-red font-medium uppercase tracking-wider truncate">{item.categoryLabel}</span>
+                    <span className="flex items-center gap-1 text-slate-400 font-light text-[10px] shrink-0">
                       <i className="fa-solid fa-location-dot text-brand-red text-[8px]" />
                       {item.location}
                     </span>
                   </div>
-                  <h3 className="font-heading font-black text-[11px] sm:text-sm text-slate-900 uppercase tracking-wide group-hover:text-brand-red transition-colors leading-snug line-clamp-2">{item.title}</h3>
-                  <p className="hidden sm:block text-slate-500 text-xs leading-relaxed line-clamp-2 mt-0.5">{item.desc}</p>
+                  <h3 className="font-heading font-medium text-xs sm:text-sm text-slate-900 group-hover:text-brand-red transition-colors leading-snug line-clamp-2">{item.title}</h3>
+                  <p className="hidden sm:block text-slate-500 text-xs leading-relaxed line-clamp-2 mt-0.5 font-light">{item.desc}</p>
                   <div className="pt-2 mt-auto border-t border-slate-100 flex items-center justify-between">
-                    <span className="font-mono text-[9px] text-slate-400 font-semibold hidden sm:block">{item.shift}</span>
-                    <span className="font-mono text-[9px] sm:hidden text-slate-400 font-semibold">#{item.id}</span>
-                    <span className="inline-flex items-center gap-1 text-brand-red font-heading font-bold uppercase text-[10px] group-hover:translate-x-0.5 transition-transform duration-200">
-                      <span className="hidden sm:inline">Enlarge</span>
-                      <span className="sm:hidden">View</span>
-                      <i className="fa-solid fa-arrow-right text-[9px]" />
+                    <span className="text-[10px] text-slate-400 font-light hidden sm:block">{item.shift}</span>
+                    <span className="text-[10px] sm:hidden text-slate-400 font-light">#{item.id}</span>
+                    <span className="inline-flex items-center gap-1 text-brand-red font-medium text-[11px] group-hover:translate-x-0.5 transition-transform duration-200">
+                      <span>View</span>
+                      <i className="fa-solid fa-arrow-right text-[8px]" />
                     </span>
                   </div>
                 </div>
@@ -274,20 +273,20 @@ export default function GalleryPage() {
 
           <div className="mt-6 flex items-center justify-center gap-2 sm:hidden">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
-            <p className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">All {filteredItems.length} photos loaded</p>
+            <p className="text-xs text-slate-400 font-light">All {filteredItems.length} photos loaded</p>
           </div>
         </div>
       </section>
 
       {/* MOBILE CTA STRIP */}
-      <section className="sm:hidden w-full bg-[#0a0a0c] px-4 py-6 border-t border-brand-red/20">
-        <p className="text-center text-[11px] font-mono text-slate-400 uppercase tracking-wider mb-3">Need a security squad like this?</p>
+      <section className="sm:hidden w-full bg-[#0a0a0c] px-4 py-5 border-t border-white/10">
+        <p className="text-center text-xs text-slate-400 font-light mb-3">Need dedicated security personnel?</p>
         <div className="grid grid-cols-2 gap-2">
-          <a href="tel:+918806078677" className="flex items-center justify-center gap-2 bg-brand-red text-white font-heading font-bold text-xs uppercase tracking-wider py-3.5 rounded-xl shadow-lg shadow-red-900/30">
+          <a href="tel:+918806078677" className="flex items-center justify-center gap-2 bg-brand-red text-white font-heading font-semibold text-xs uppercase tracking-wider py-3 rounded-xl shadow-sm">
             <i className="fa-solid fa-phone text-xs" />
             <span>Call Now</span>
           </a>
-          <a href="https://wa.me/918806078677" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-emerald-600 text-white font-heading font-bold text-xs uppercase tracking-wider py-3.5 rounded-xl">
+          <a href="https://wa.me/918806078677" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-emerald-600 text-white font-heading font-semibold text-xs uppercase tracking-wider py-3 rounded-xl">
             <i className="fa-brands fa-whatsapp text-sm" />
             <span>WhatsApp</span>
           </a>
@@ -295,16 +294,15 @@ export default function GalleryPage() {
       </section>
 
       {/* BOTTOM CTA */}
-      <section className="w-full bg-gradient-to-r from-brand-red via-red-700 to-brand-red py-12 sm:py-20 px-4 sm:px-6 lg:px-12 relative overflow-hidden animate-gradient-shift">
-        <div className="absolute inset-0 diagonal-stripes opacity-20 pointer-events-none" />
+      <section className="w-full bg-[#0d0e12] py-12 sm:py-16 px-4 sm:px-6 lg:px-12 relative overflow-hidden">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left relative z-10">
           <div>
-            <h3 className="font-heading font-black text-xl sm:text-3xl uppercase text-white">Require Trained Manpower?</h3>
-            <p className="text-xs sm:text-sm text-white/85 mt-1">Contact Director Mosin Azam Shaikh (+91 88060 78677) for rapid deployment.</p>
+            <h3 className="font-heading font-bold text-xl sm:text-3xl text-white tracking-tight">Require Trained Manpower?</h3>
+            <p className="text-xs sm:text-sm text-slate-400 mt-1 font-light">Contact Director Mosin Azam Shaikh (+91 88060 78677) for rapid deployment.</p>
           </div>
-          <Link to="/contact" className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-white text-brand-red font-heading font-black text-xs uppercase tracking-wider hover:bg-slate-100 transition-all shadow-2xl whitespace-nowrap flex items-center gap-2">
-            <i className="fa-solid fa-file-invoice" />
-            Request Quotation
+          <Link to="/contact" className="px-6 py-3 rounded-xl bg-brand-red hover:bg-red-600 text-white font-heading font-semibold text-xs uppercase tracking-wider transition-all shadow-md shadow-red-950/40 whitespace-nowrap flex items-center gap-2">
+            <i className="fa-solid fa-file-invoice text-xs" />
+            <span>Request Quotation</span>
           </Link>
         </div>
       </section>
