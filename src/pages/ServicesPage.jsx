@@ -198,7 +198,7 @@ export default function ServicesPage() {
             <div className="p-5 sm:p-6 bg-white/[0.02] border-b border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
               <div>
                 <h3 className="font-heading font-semibold text-base text-white">The Legend Security &amp; Bouncer</h3>
-                <p className="text-xs text-slate-400 mt-0.5 font-light">Gujarwadi Road, Bharat Nagar, Katraj, Pune 411046</p>
+                <p className="text-xs text-slate-400 mt-0.5 font-light">Main Branch: 857, Bhawani Peth, Near Bharat Talkies, Pune 411042</p>
               </div>
               <span className="px-3 py-1 rounded-full bg-white/[0.04] text-slate-300 border border-white/10 text-xs font-medium">
                 Standard Tariff Slab

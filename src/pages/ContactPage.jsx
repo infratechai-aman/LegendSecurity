@@ -125,25 +125,25 @@ export default function ContactPage() {
 
   const branches = [
     {
-      region: 'Pune HQ',
-      title: 'Katraj Head Office',
+      region: 'Pune Main Branch',
+      title: 'Bhawani Peth Head Office',
+      address: '857, Bhawani Peth, Near Bharat Talkies, Pune 411042',
+      contact: '+91 88060 78677 / 89758 66597',
+      jurisdiction: 'Bhawani Peth, Camp, Swargate, Nana Peth, Pune City & Central MH',
+    },
+    {
+      region: 'Pune South',
+      title: 'Katraj Branch',
       address: 'Sr. No. 1/74, Gujarwadi Road, Bharat Nagar, Katraj, Pune 411046',
-      contact: '+91 88060 78677',
+      contact: '+91 78603 13601',
       jurisdiction: 'Katraj, Hinjawadi, Chakan MIDC, Bhosari & PCMC',
     },
     {
-      region: 'Pune Central',
-      title: 'Bhawani Peth Branch',
-      address: '857, Bhawani Peth, Near Bharat Talkies, Pune',
-      contact: '+91 78603 13601',
-      jurisdiction: 'Bhawani Peth, Camp, Swargate, Nana Peth & Central Pune',
-    },
-    {
-      region: 'Palghar Base',
-      title: 'Nalasopara East Branch',
-      address: 'Commercial Zone, Nalasopara East, Palghar District, Maharashtra',
-      contact: '+91 88060 78677',
-      jurisdiction: 'Nalasopara, Vasai-Virar, Boisar MIDC & Palghar Belt',
+      region: 'Mumbai Region',
+      title: 'Malad East Branch',
+      address: 'Patel Society, Indira Nagar, Pathanwadi, Rani Sati Marg, Malad East, Mumbai 97',
+      contact: '+91 88060 78677 / 89758 66597',
+      jurisdiction: 'Malad, Andheri, BKC, Borivali, Goregaon & Western Suburbs',
     },
   ];
 

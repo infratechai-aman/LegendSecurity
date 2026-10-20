@@ -165,15 +165,14 @@ export default function BookAppointmentPage() {
   ];
 
   const LOCATIONS = [
+    'Pune — Bhawani Peth (Main Branch)',
     'Pune — Katraj & Pune South',
-    'Pune — Bhawani Peth & Central Pune',
     'Pune — Chakan & Bhosari MIDC',
     'Pune — Hinjawadi IT Park & PCMC',
     'Pune — Hadapsar, Kharadi & Magarpatta',
     'Mumbai — Bandra-Kurla Complex (BKC) & South Mumbai',
-    'Mumbai — Malad, Andheri, Goregaon & Western Belt',
+    'Mumbai — Malad East (Patel Society, Pathanwadi)',
     'Thane & Navi Mumbai Industrial Corridor',
-    'Palghar — Nalasopara, Vasai & Boisar MIDC',
     'Other Region in Maharashtra',
   ];
 
@@ -280,7 +279,7 @@ export default function BookAppointmentPage() {
               </h1>
 
               <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl leading-relaxed">
-                Facility threat inspections and VIP briefings across Pune, Mumbai, Thane &amp; Palghar. Coordinated directly by Director <strong>Mr. Mosin Azam Shaikh</strong>.
+                Facility threat inspections and VIP briefings across Pune, Mumbai, Thane &amp; All Maharashtra. Coordinated directly by Director <strong>Mr. Mosin Azam Shaikh</strong>.
               </p>
             </div>
 
@@ -813,9 +812,9 @@ export default function BookAppointmentPage() {
               <div className="text-[11px] font-semibold text-slate-900 tracking-wide">
                 Regional Command Hubs
               </div>
-              <p className="text-slate-600">📍 <strong className="text-slate-900">Pune HQ:</strong> Katraj, Gujarwadi Road, Pune 411046</p>
-              <p className="text-slate-600">📍 <strong className="text-slate-900">Bhawani Peth:</strong> 857, Bhawani Peth, Near Bharat Talkies, Pune</p>
-              <p className="text-slate-600">📍 <strong className="text-slate-900">Palghar:</strong> Commercial Zone, Nalasopara East, Palghar</p>
+              <p className="text-slate-600">📍 <strong className="text-slate-900">Main Branch:</strong> 857, Bhawani Peth, Near Bharat Talkies, Pune 411042</p>
+              <p className="text-slate-600">📍 <strong className="text-slate-900">Katraj Branch:</strong> Gujarwadi Road, Bharat Nagar, Katraj, Pune 411046</p>
+              <p className="text-slate-600">📍 <strong className="text-slate-900">Mumbai Branch:</strong> Patel Society, Indira Nagar, Pathanwadi, Rani Sati Marg, Malad East, Mumbai 97</p>
             </div>
           </div>
 

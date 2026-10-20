@@ -807,15 +807,15 @@ export default function HomePage() {
 
                 <div className="space-y-2.5 text-slate-300">
                   {[
-                    { label: '🏢 Pune HQ', value: 'Gujarwadi Rd, Bharat Nagar, Katraj, Pune 411046' },
-                    { label: '📍 Bhawani Peth', value: '857, Bhawani Peth, Near Bharat Talkies, Pune' },
-                    { label: '🌐 Palghar', value: 'Nalasopara East, Palghar Dist.' },
+                    { label: '🏢 Main Branch', value: '857, Bhawani Peth, Near Bharat Talkies, Pune 411042' },
+                    { label: '📍 Katraj Branch', value: 'Gujarwadi Rd, Bharat Nagar, Katraj, Pune 411046' },
+                    { label: '🏙️ Mumbai Branch', value: 'Patel Society, Indira Nagar, Pathanwadi, Rani Sati Marg, Malad East, Mumbai 97' },
                   ].map((b, i) => (
                     <p key={i} className="leading-snug">
                       <strong className="text-white text-[11px]">{b.label}:</strong> <span className="text-slate-400">{b.value}</span>
                     </p>
                   ))}
-                  <p className="font-mono text-emerald-400 text-[11px] pt-1">thelegendscrt16@gmail.com</p>
+                  <p className="text-emerald-400 text-[11px] pt-1">thelegendscrt16@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -858,7 +858,7 @@ function StatsBanner() {
     { icon: 'fa-stamp', val: 1, label: 'PSARA Govt License', suffix: '', prefix: '', note: 'Controlling Authority MH' },
     { icon: 'fa-users', val: 500, label: 'Trained Personnel', suffix: '+', prefix: '', note: 'Police Verified Staff' },
     { icon: 'fa-building', val: 20, label: 'Active Client Sites', suffix: '+', prefix: '', note: 'Industrial & Automobile' },
-    { icon: 'fa-location-dot', val: 3, label: 'MH Branches', suffix: '', prefix: '', note: 'Katraj · Bhawani Peth · Palghar' },
+    { icon: 'fa-location-dot', val: 3, label: 'MH Branches', suffix: '', prefix: '', note: 'Bhawani Peth · Katraj · Malad (Mumbai)' },
     { icon: 'fa-calendar', val: 6, label: 'Years of Service', suffix: '+', prefix: '', note: 'Est. 2018' },
   ];
 

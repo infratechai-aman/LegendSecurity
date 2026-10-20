@@ -133,8 +133,8 @@ export default function Footer() {
               <div className="flex items-start gap-2.5 group">
                 <i className="fa-solid fa-location-dot text-brand-red mt-0.5 shrink-0" />
                 <p className="text-slate-400 leading-snug">
-                  <strong className="text-white text-[11px] block mb-0.5">Katraj, Pune HQ:</strong>
-                  Sr. No. 1/74, Gujarwadi Road, Bharat Nagar, Katraj, Pune 411046
+                  <strong className="text-white text-[11px] block mb-0.5">Main Branch (Pune):</strong>
+                  857, Bhawani Peth, Near Bharat Talkies, Pune 411042
                 </p>
               </div>
 
@@ -164,8 +164,8 @@ export default function Footer() {
               </a>
 
               <div className="pt-2 border-t border-slate-800 space-y-1.5 text-[11px] text-slate-400">
-                <p><strong className="text-slate-300">Bhawani Peth:</strong> 857, Bhawani Peth, Near Bharat Talkies, Pune</p>
-                <p><strong className="text-slate-300">Palghar:</strong> Nalasopara East</p>
+                <p><strong className="text-slate-300">Katraj Branch:</strong> Sr. No. 1/74, Gujarwadi Road, Bharat Nagar, Katraj, Pune 411046</p>
+                <p><strong className="text-slate-300">Mumbai Branch:</strong> Patel Society, Indira Nagar, Pathanwadi, Rani Sati Marg, Malad East, Mumbai 97</p>
               </div>
             </div>
           </div>

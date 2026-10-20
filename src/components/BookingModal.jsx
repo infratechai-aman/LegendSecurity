@@ -58,18 +58,17 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
     { slot: '11:00 AM - 12:30 PM', label: 'Prime Inspection', tag: 'Recommended' },
     { slot: '02:30 PM - 04:00 PM', label: 'Afternoon Survey', tag: 'Available' },
     { slot: '04:00 PM - 05:30 PM', label: 'Operations Brief', tag: 'Available' },
-    { slot: '07:00 PM - 08:30 PM', label: 'Night Shift Audit', tag: 'Tactical' },
+    { slot: '07:00 PM - 08:30 PM', label: 'Night Shift Audit', tag: 'Available' },
   ];
 
   const LOCATIONS = [
+    'Pune — Bhawani Peth (Main Branch)',
     'Pune — Katraj & Pune South',
-    'Pune — Bhawani Peth & Central Pune',
     'Pune — Chakan & Bhosari MIDC',
     'Pune — Hinjawadi IT Park & PCMC',
     'Mumbai — BKC & South Mumbai',
-    'Mumbai — Malad, Andheri & Western Suburbs',
+    'Mumbai — Malad East (Patel Society, Pathanwadi)',
     'Thane & Navi Mumbai Industrial Corridor',
-    'Palghar & Nalasopara / Boisar MIDC',
     'Other Location in Maharashtra',
   ];
 
