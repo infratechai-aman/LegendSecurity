@@ -27,7 +27,6 @@ export default function Header() {
     { name: 'About Us', path: '/about', icon: 'fa-shield-halved' },
     { name: 'Services', path: '/services', icon: 'fa-user-shield' },
     { name: 'Events & Parties', path: '/events', icon: 'fa-champagne-glasses' },
-    { name: 'Book Audit', path: '/book-appointment', icon: 'fa-calendar-check' },
     { name: 'Clients', path: '/clients', icon: 'fa-building-shield' },
     { name: 'Gallery', path: '/gallery', icon: 'fa-images' },
     { name: 'Contact', path: '/contact', icon: 'fa-phone' },
@@ -45,10 +44,10 @@ export default function Header() {
         {/* Red accent top line */}
         <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-brand-red to-transparent opacity-80" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[76px] sm:h-[82px] flex items-center justify-between gap-2 xl:gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[76px] sm:h-[82px] flex items-center justify-between gap-4">
           {/* Brand Logo — Custom Shield Badge Outline */}
           <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-            <div className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-[46px] lg:h-[46px] flex items-center justify-center transition-all duration-300 group-hover:scale-105 shrink-0">
+            <div className="relative w-10 h-10 sm:w-11 sm:h-11 lg:w-[44px] lg:h-[44px] flex items-center justify-center transition-all duration-300 group-hover:scale-105 shrink-0">
               <img
                 src="/assets/shield_logo.png"
                 alt="The Legend Security and Bouncer Logo"
@@ -57,23 +56,23 @@ export default function Header() {
               />
             </div>
             <div className="flex flex-col leading-none">
-              <span className="font-heading font-black text-sm sm:text-base lg:text-lg tracking-wider uppercase text-white group-hover:text-brand-red transition-colors duration-300">
+              <span className="font-heading font-black text-sm sm:text-base lg:text-lg tracking-wider uppercase text-white group-hover:text-brand-red transition-colors duration-300 whitespace-nowrap">
                 The Legend
               </span>
-              <span className="text-[10px] sm:text-[11px] lg:text-xs font-semibold tracking-wider uppercase text-brand-red leading-none mt-1">
+              <span className="text-[10px] sm:text-[11px] lg:text-xs font-semibold tracking-wider uppercase text-brand-red leading-none mt-1 whitespace-nowrap">
                 Security &amp; Bouncer
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center justify-center gap-1.5 xl:gap-3.5 2xl:gap-5 font-heading text-[11px] xl:text-xs font-bold tracking-wider uppercase flex-1 min-w-0">
+          <nav className="hidden lg:flex items-center justify-center gap-2 xl:gap-4 2xl:gap-6 font-heading text-[11px] xl:text-xs font-bold tracking-wider uppercase">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `relative py-2 px-1.5 xl:px-2 whitespace-nowrap transition-all duration-300 group flex items-center gap-1 ${
+                  `relative py-2 px-1 xl:px-2 whitespace-nowrap transition-all duration-300 group flex items-center gap-1 ${
                     isActive
                       ? 'text-brand-red font-extrabold'
                       : 'text-slate-300 hover:text-white'
@@ -83,11 +82,6 @@ export default function Header() {
                 {({ isActive }) => (
                   <>
                     <span>{link.name}</span>
-                    {link.badge && (
-                      <span className="px-1.5 py-0.2 rounded-full text-[9px] font-sans bg-brand-red text-white font-bold">
-                        {link.badge}
-                      </span>
-                    )}
                     {/* Underline hover animation */}
                     <span
                       className={`absolute -bottom-0.5 left-0 h-[2px] bg-brand-red transition-all duration-300 ${
@@ -101,9 +95,9 @@ export default function Header() {
           </nav>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
-            {/* Minimalist Hotlines (xl+ only) */}
-            <div className="hidden xl:flex items-center gap-3 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            {/* Minimalist Hotlines (2xl+ screens only, avoiding laptop navbar squeeze) */}
+            <div className="hidden 2xl:flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md">
               <a
                 href="tel:+918806078677"
                 className="flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors duration-200 group"

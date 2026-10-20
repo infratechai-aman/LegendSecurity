@@ -7,6 +7,7 @@ export default function EventsPage() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const [selectedAuditType, setSelectedAuditType] = useState('Event Security Command & Crowd Control');
   const [previewImage, setPreviewImage] = useState(null);
+  const [activeDetailEvent, setActiveDetailEvent] = useState(null);
 
   // Filter state for event cards
   const [activeFilter, setActiveFilter] = useState('all');
@@ -17,8 +18,7 @@ export default function EventsPage() {
       category: 'wedding',
       title: 'Royal Weddings & Sangeet Receptions',
       marathiTitle: 'भव्य विवाह व संगीत सोहळा सुरक्षा',
-      badge: 'MOST POPULAR',
-      badgeColor: 'bg-amber-500/15 text-amber-400 border-amber-500/30',
+      categoryLabel: 'Weddings & Receptions',
       image: '/assets/events/indian_wedding_security.jpg',
       tagline: 'Flawless dignity, grand hospitality & uncompromising VIP safety.',
       desc: 'Royal Indian weddings, destination marriages, high-profile Sangeet nights, and Baraat processions demand refined, polite yet formidable security. We manage entryway access, gifts & jewelry room protection, VIP stage cordons, and smooth valet traffic.',
@@ -39,8 +39,7 @@ export default function EventsPage() {
       category: 'private',
       title: 'Milestone Birthdays & Luxury Celebrations',
       marathiTitle: 'वाढदिवस व खाजगी पार्ट्यांचे संरक्षण',
-      badge: 'FAMILY & PRIVATE',
-      badgeColor: 'bg-rose-500/15 text-rose-400 border-rose-500/30',
+      categoryLabel: 'Private & Birthdays',
       image: '/assets/events/indian_birthday_security.jpg',
       tagline: 'Warm welcome for your guests, zero entry for uninvited intruders.',
       desc: 'From grand 1st birthday bashes to 18th/21st milestones and 50th golden jubilee celebrations at premium banquet halls, hotels, and lawns. Our bouncers maintain courteous entryway screening, prevent gatecrashers, and ensure a joyful, safe atmosphere for kids and families.',
@@ -61,8 +60,7 @@ export default function EventsPage() {
       category: 'public',
       title: 'Concerts, Bollywood DJ & Dandiya Nights',
       marathiTitle: 'संगीत महोत्सव, गरबा-दांडिया व डीजे नाईट्स',
-      badge: 'HIGH-VOLTAGE FOOTFALL',
-      badgeColor: 'bg-red-500/15 text-red-400 border-red-500/30',
+      categoryLabel: 'Concerts & Festivals',
       image: '/assets/events/indian_concert_dandiya.jpg',
       tagline: 'Mass crowd control, barricade containment & artist stage defense.',
       desc: 'Large-scale live music concerts, Navratri Dandiya grounds, celebrity DJ nights, and college cultural festivals attracting thousands. We deploy battle-tested barricade personnel, emergency crowd-surge handlers, backstage green room cordons, and metal detector entry points.',
@@ -83,8 +81,7 @@ export default function EventsPage() {
       category: 'corporate',
       title: 'Corporate Galas, Awards & Annual Meets',
       marathiTitle: 'कॉर्पोरेट वार्षिक पुरस्कार व संमेलन',
-      badge: 'EXECUTIVE TIER',
-      badgeColor: 'bg-blue-500/15 text-blue-400 border-blue-500/30',
+      categoryLabel: 'Corporate Summits',
       image: '/assets/events/indian_corporate_gala.jpg',
       tagline: 'Corporate polish, bilingual officers & board-level discretion.',
       desc: 'Annual general meetings, prestigious corporate excellence awards, global tech summits, and leadership dinners at 5-star hotels (JW Marriott, Conrad, Taj, Hyatt). Our personnel are impeccably groomed, articulate in English and Hindi, and experienced in board-level protocol.',
@@ -105,8 +102,7 @@ export default function EventsPage() {
       category: 'private',
       title: 'Celebrity Villa & Farmhouse VIP Soirees',
       marathiTitle: 'सेलिब्रिटी व खाजगी फार्महाऊस पार्ट्या',
-      badge: 'STRICTLY CONFIDENTIAL',
-      badgeColor: 'bg-purple-500/15 text-purple-400 border-purple-500/30',
+      categoryLabel: 'Villa & Farmhouse',
       image: '/assets/events/indian_farmhouse_vip.jpg',
       tagline: 'Total privacy, anti-paparazzi protocols & secluded perimeter security.',
       desc: 'Exclusive private parties at luxury villas and farmhouses across Lonavala, Khandala, Alibaug, and Pune hills. We enforce strict NDAs (Non-Disclosure Agreements), manage private vehicle entry, secure poolside parameters, and prevent unauthorized cameras or drones.',
@@ -127,8 +123,7 @@ export default function EventsPage() {
       category: 'public',
       title: 'Ganesh Utsav, Shobha Yatra & Cultural Fests',
       marathiTitle: 'सार्वजनिक गणेशोत्सव व धार्मिक यात्रा',
-      badge: 'PUBLIC CROWD VANGUARD',
-      badgeColor: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30',
+      categoryLabel: 'Religious & Cultural',
       image: '/assets/events/indian_festival_utsav.jpg',
       tagline: 'Disciplined devotion, orderly queues & joint police liaison.',
       desc: 'Maharashtra’s world-renowned Ganesh Utsav pandals, festive Shobha Yatras, Navratri celebrations, and religious processions witness massive footfall. Our squads work in close coordination with local police to regulate peaceful darshan queues and family safety.',
@@ -149,8 +144,7 @@ export default function EventsPage() {
       category: 'public',
       title: 'Sports Championships & Stadium Tournaments',
       marathiTitle: 'क्रीडा स्पर्धा, क्रिकेट व स्टेडियम बंदोबस्त',
-      badge: 'ARENA SCALE',
-      badgeColor: 'bg-cyan-500/15 text-cyan-400 border-cyan-500/30',
+      categoryLabel: 'Sports & Tournaments',
       image: '/assets/guards_event_stadium.jpg',
       tagline: 'Perimeter vigilance, athlete safety & grandstand management.',
       desc: 'Cricket tournaments, state-level marathons, football leagues, and university athletics. We provide dugout protection, referee escorts, pitch invasion deterrents, and disciplined fan dispersal.',
@@ -169,8 +163,7 @@ export default function EventsPage() {
       category: 'corporate',
       title: 'Expos, Luxury Auto Shows & Jewelry Exhibitions',
       marathiTitle: 'भव्य प्रदर्शने, ऑटो एक्सपो व ज्वेलरी मेळावे',
-      badge: 'HIGH ASSET VALUE',
-      badgeColor: 'bg-yellow-500/15 text-yellow-400 border-yellow-500/30',
+      categoryLabel: 'Expos & Trade Shows',
       image: '/assets/bouncers_event_lineup.jpg',
       tagline: 'High-value bullion safety, visitor baggage scanning & booth vigil.',
       desc: 'Jewelry expos, luxury automobile showcases, trade expos, and fashion runways. We provide armed escort for bullion delivery, baggage frisking, visitor flow control, and overnight hall surveillance.',
@@ -211,7 +204,6 @@ export default function EventsPage() {
           HERO SECTION — Mobile-Optimized & Immediate Load (NO BLANK SPACE)
       ══════════════════════════════════════════ */}
       <section className="relative w-full pt-24 pb-10 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 overflow-hidden tactical-grid border-b border-[#272930]/40">
-        {/* Ambient atmospheric red & gold glow */}
         <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[350px] sm:w-[700px] h-[250px] sm:h-[350px] bg-brand-red/10 rounded-full blur-[90px] sm:blur-[140px] pointer-events-none" />
         <div className="absolute top-1/3 -right-20 w-[250px] sm:w-[400px] h-[200px] sm:h-[300px] bg-amber-500/5 rounded-full blur-[80px] sm:blur-[120px] pointer-events-none" />
 
@@ -231,12 +223,12 @@ export default function EventsPage() {
             </span>
           </div>
 
-          {/* Main Title - Mobile Sized */}
+          {/* Main Title */}
           <h1 className="font-heading font-black text-2xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight max-w-5xl leading-[1.12] mb-3 sm:mb-5 text-white">
             PREMIER EVENT SECURITY &amp; <span className="text-gradient-red">CELEBRATION MANAGEMENT</span>
           </h1>
 
-          {/* Subtitle with Marathi / Hindi touch */}
+          {/* Subtitle */}
           <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-3xl leading-relaxed mb-3">
             From royal Indian weddings (<strong className="text-white font-medium">विवाह सोहळा</strong>) &amp; milestone birthday parties to high-energy Bollywood concerts, Dandiya nights, celebrity farmhouse bashes, and corporate galas.
           </p>
@@ -245,7 +237,7 @@ export default function EventsPage() {
             Deployed with 100% police-verified, impeccably suited bouncers, polite gatekeepers, and dedicated lady guards who uphold your family’s honor and prestige.
           </p>
 
-          {/* Action Row - Mobile Touch Friendly */}
+          {/* Action Row */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2.5 sm:gap-4 w-full sm:w-auto max-w-md sm:max-w-none">
             <button
               type="button"
@@ -276,11 +268,11 @@ export default function EventsPage() {
             </a>
           </div>
 
-          {/* Quick Metrics Strip — Mobile 2x2 Grid */}
+          {/* Quick Metrics Strip */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-8 sm:mt-12 w-full max-w-4xl pt-6 sm:pt-8 border-t border-white/10">
             <div className="flex flex-col items-center p-3 rounded-xl bg-white/[0.02] border border-white/5">
               <span className="font-heading font-black text-xl sm:text-3xl text-white">450+</span>
-              <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5 text-center">Weddings &amp; Galas Secured</span>
+              <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5 text-center">Weddings &amp; Galas</span>
             </div>
             <div className="flex flex-col items-center p-3 rounded-xl bg-white/[0.02] border border-white/5">
               <span className="font-heading font-black text-xl sm:text-3xl text-brand-red">100%</span>
@@ -343,146 +335,75 @@ export default function EventsPage() {
       </section>
 
       {/* ══════════════════════════════════════════
-          EVENT CARDS GRID — Mobile Optimized Cards (Samsung S23 Indian Aesthetic)
+          SLEEK IMAGE-ONLY EVENT CARDS GRID
+          (Cards show clean image + titles. Clicking opens full interactive detail card!)
       ══════════════════════════════════════════ */}
-      <section className="py-10 sm:py-20 px-3 sm:px-6 lg:px-12 bg-[#0c0d11]">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-12 bg-[#0c0d11]">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/10 border border-brand-red/25 mb-2.5 text-[10px] sm:text-xs font-mono text-brand-red font-bold uppercase tracking-widest">
-              <span>AUTHENTIC FIELD-TESTED SQUADS</span>
+              <span>EXPLORE BY OCCASION</span>
             </div>
-            <h2 className="font-heading font-black text-xl sm:text-3xl md:text-4xl uppercase tracking-tight text-white mb-2">
-              TAILORED EVENT SECURITY <span className="text-gradient-red">SOLUTIONS</span>
+            <h2 className="font-heading font-black text-2xl sm:text-4xl uppercase tracking-tight text-white mb-2">
+              SELECT YOUR <span className="text-gradient-red">CELEBRATION TYPE</span>
             </h2>
             <p className="text-xs sm:text-sm text-slate-400">
-              Polite warmth with vigilant authority — protecting your family and guests seamlessly.
+              Tap on any event card below to view complete protocol specifications, squad turnout, and booking details.
             </p>
           </div>
 
-          {/* Cards Grid — Responsive 1-col mobile, 2-col desktop */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
+          {/* Sleek Visual Cards Grid (3-column on desktop, 1-col on mobile) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
             {filteredCategories.map((card) => (
               <div
                 key={card.id}
-                className="group rounded-2xl bg-[#14151c] border border-[#272930] hover:border-brand-red/60 overflow-hidden shadow-xl hover:shadow-[0_15px_40px_rgba(229,9,20,0.15)] transition-all duration-300 flex flex-col"
+                onClick={() => setActiveDetailEvent(card)}
+                className="group relative h-64 sm:h-72 md:h-80 rounded-2xl overflow-hidden border border-[#272930] hover:border-brand-red transition-all duration-300 shadow-xl hover:shadow-[0_12px_35px_rgba(229,9,20,0.25)] cursor-pointer flex flex-col justify-between p-4 sm:p-5"
               >
-                {/* Image Container with S23 Camera Badge */}
-                <div
-                  className="relative w-full h-48 sm:h-64 md:h-72 overflow-hidden bg-black/40 cursor-pointer"
-                  onClick={() => setPreviewImage({ src: card.image, title: card.title, desc: card.desc })}
-                >
-                  <img
-                    src={card.image}
-                    alt={card.title}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 filter brightness-95 group-hover:brightness-100"
-                    loading="lazy"
-                  />
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#14151c] via-[#14151c]/30 to-transparent" />
+                {/* Background Image */}
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 filter brightness-90 group-hover:brightness-100"
+                  loading="lazy"
+                />
 
-                  {/* Top Badges */}
-                  <div className="absolute top-2.5 sm:top-3.5 left-2.5 sm:left-3.5 flex flex-wrap gap-1.5 sm:gap-2 z-10">
-                    <span className={`px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-wider border backdrop-blur-md ${card.badgeColor}`}>
-                      {card.badge}
-                    </span>
-                    <span className="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-wider bg-black/75 text-slate-200 border border-white/10 backdrop-blur-md flex items-center gap-1">
-                      <i className="fa-solid fa-camera text-brand-red text-[8px]" />
-                      <span>S23 Photo</span>
-                    </span>
-                  </div>
+                {/* Dark Vignette Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-black/30 group-hover:via-black/30 transition-all duration-300" />
 
-                  {/* Zoom hint on hover */}
-                  <div className="absolute top-2.5 sm:top-3.5 right-2.5 sm:right-3.5 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black/60 hover:bg-brand-red text-white flex items-center justify-center transition-all z-10">
-                    <i className="fa-solid fa-expand text-[10px] sm:text-xs" />
-                  </div>
+                {/* Top Bar: Category Tag & Interactive Expand Badge */}
+                <div className="relative z-10 flex items-center justify-between w-full">
+                  <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-black/70 text-slate-200 border border-white/15 backdrop-blur-md">
+                    {card.categoryLabel}
+                  </span>
 
-                  {/* Bottom Image Overlay Tagline */}
-                  <div className="absolute bottom-2.5 sm:bottom-3 left-3 sm:left-4 right-3 sm:right-4 z-10">
-                    <p className="font-heading font-black text-base sm:text-xl text-white uppercase tracking-tight drop-shadow-md">
-                      {card.title}
-                    </p>
-                    <p className="text-[11px] sm:text-xs text-brand-red font-medium tracking-wide mt-0.5">
-                      {card.marathiTitle}
-                    </p>
-                  </div>
+                  <span className="w-8 h-8 rounded-full bg-black/60 group-hover:bg-brand-red text-white flex items-center justify-center transition-all duration-300 shadow-md">
+                    <i className="fa-solid fa-arrow-up-right-from-square text-xs" />
+                  </span>
                 </div>
 
-                {/* Card Body */}
-                <div className="p-4 sm:p-6 flex-1 flex flex-col justify-between">
-                  <div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
-                      {card.desc}
-                    </p>
+                {/* Bottom Overlay Info */}
+                <div className="relative z-10">
+                  <h3 className="font-heading font-black text-lg sm:text-xl text-white uppercase tracking-tight group-hover:text-red-400 transition-colors drop-shadow-md leading-tight">
+                    {card.title}
+                  </h3>
+                  <p className="text-xs text-brand-red font-semibold tracking-wide mt-1">
+                    {card.marathiTitle}
+                  </p>
+                  <p className="text-[11px] text-slate-300 line-clamp-1 mt-1.5 opacity-90">
+                    {card.tagline}
+                  </p>
 
-                    {/* Features checklist */}
-                    <div className="mb-4 sm:mb-5">
-                      <span className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400 block mb-2">
-                        Key Protocol Deliverables:
-                      </span>
-                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-slate-300">
-                        {card.features.map((feat, fIdx) => (
-                          <li key={fIdx} className="flex items-start gap-1.5 sm:gap-2">
-                            <i className="fa-solid fa-circle-check text-brand-red text-[11px] mt-0.5 shrink-0" />
-                            <span>{feat}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Specs Pills */}
-                    <div className="space-y-1.5 sm:space-y-2 pt-3 border-t border-white/5 text-[10px] sm:text-[11px] font-mono">
-                      <div className="flex items-center justify-between text-slate-400">
-                        <span className="flex items-center gap-1.5">
-                          <i className="fa-solid fa-vest text-brand-red text-xs" />
-                          <span>Turnout:</span>
-                        </span>
-                        <span className="text-slate-200 font-semibold text-right">{card.turnout}</span>
-                      </div>
-                      <div className="flex items-center justify-between text-slate-400">
-                        <span className="flex items-center gap-1.5">
-                          <i className="fa-solid fa-users text-brand-red text-xs" />
-                          <span>Typical Squad:</span>
-                        </span>
-                        <span className="text-slate-200 font-semibold text-right">{card.typicalSquad}</span>
-                      </div>
-                      <div className="flex items-center justify-between text-slate-400">
-                        <span className="flex items-center gap-1.5">
-                          <i className="fa-solid fa-location-dot text-brand-red text-xs" />
-                          <span>Coverage:</span>
-                        </span>
-                        <span className="text-slate-200 font-semibold text-right">{card.locations}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Card Bottom CTA Buttons — Mobile Touch Sized */}
-                  <div className="flex items-center gap-2 pt-4 sm:pt-5 mt-4 sm:mt-5 border-t border-white/10">
-                    <button
-                      type="button"
-                      onClick={() => handleOpenBooking(`Booking: ${card.title}`)}
-                      className="flex-1 py-3 px-3 rounded-xl bg-brand-red hover:bg-red-700 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-md shadow-red-950/40 cursor-pointer"
-                    >
-                      <i className="fa-solid fa-calendar-check text-[11px]" />
-                      <span>Book Squad</span>
-                    </button>
-                    <a
-                      href={`https://wa.me/918806078677?text=Hello%20Legend%20Security,%20I%20am%20inquiring%20about%20bouncers%20for%20${encodeURIComponent(card.title)}.`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="py-3 px-3.5 rounded-xl bg-emerald-600/90 hover:bg-emerald-600 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-1.5"
-                      title="Direct WhatsApp"
-                    >
-                      <i className="fa-brands fa-whatsapp text-sm" />
-                      <span className="hidden sm:inline">WhatsApp</span>
-                    </a>
-                    <a
-                      href="tel:+918806078677"
-                      className="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white flex items-center justify-center transition-all border border-white/10 shrink-0"
-                      title="Direct Call"
-                    >
-                      <i className="fa-solid fa-phone text-xs" />
-                    </a>
+                  <div className="mt-3 pt-2.5 border-t border-white/15 flex items-center justify-between text-[11px] font-mono text-slate-300 group-hover:text-white">
+                    <span className="flex items-center gap-1.5">
+                      <i className="fa-solid fa-user-shield text-brand-red text-xs" />
+                      <span>{card.typicalSquad.split('+')[0]}</span>
+                    </span>
+                    <span className="text-brand-red font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                      <span>View Details</span>
+                      <i className="fa-solid fa-chevron-right text-[10px]" />
+                    </span>
                   </div>
                 </div>
               </div>
@@ -492,14 +413,15 @@ export default function EventsPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
-          WHITE LUXURY THEME SECTION (30% OF THE PAGE)
-          Section 1: Manpower Sizing Guide
-          Section 2: Why Hosts Trust The Legend Security
+          WHITE LUXURY THEME SECTION (~35% OF THE PAGE)
+          Sub-Section 1: Deployment Sizing Guideline (Manpower Estimator)
+          Sub-Section 2: Why Hosts Trust The Legend Security
+          Sub-Section 3: On-Ground Real Squad Gallery Strip (WHITE BG)
       ══════════════════════════════════════════════════════════════ */}
       <div className="bg-[#f8f9fa] text-slate-900 border-t-4 border-brand-red">
 
         {/* ── WHITE SUB-SECTION 1: MANPOWER SIZING GUIDE ── */}
-        <section className="py-12 sm:py-20 px-3 sm:px-6 lg:px-12 border-b border-slate-200">
+        <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-12 border-b border-slate-200">
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
               <span className="px-3 py-1 rounded-full bg-red-100 text-brand-red border border-red-200 text-[10px] sm:text-xs font-mono font-bold uppercase tracking-widest inline-block">
@@ -552,7 +474,7 @@ export default function EventsPage() {
               {/* Tier 2 — Highlighted */}
               <div className="p-5 sm:p-6 rounded-2xl bg-white border-2 border-brand-red shadow-[0_8px_30px_rgba(229,9,20,0.15)] relative flex flex-col justify-between">
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-brand-red text-white font-mono text-[10px] font-bold uppercase tracking-wider shadow-sm">
-                  MOST POPULAR
+                  RECOMMENDED FOR WEDDINGS
                 </div>
                 <div>
                   <div className="flex items-center justify-between mb-3 sm:mb-4 mt-1">
@@ -630,7 +552,7 @@ export default function EventsPage() {
         </section>
 
         {/* ── WHITE SUB-SECTION 2: WHY HOSTS TRUST THE LEGEND SECURITY ── */}
-        <section className="py-12 sm:py-20 px-3 sm:px-6 lg:px-12 bg-white">
+        <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-12 bg-white border-b border-slate-200">
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
               <span className="px-3 py-1 rounded-full bg-red-100 text-brand-red border border-red-200 text-[10px] sm:text-xs font-mono font-bold uppercase tracking-widest inline-block">
@@ -698,57 +620,55 @@ export default function EventsPage() {
           </div>
         </section>
 
+        {/* ── WHITE SUB-SECTION 3: ON-GROUND REAL SQUAD GALLERY (REQUESTED WHITE BG) ── */}
+        <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-12 bg-[#f8f9fa]">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-4 mb-6 sm:mb-10">
+              <div>
+                <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-widest text-brand-red">
+                  ON-GROUND REAL ACTION
+                </span>
+                <h2 className="font-heading font-black text-xl sm:text-3xl uppercase tracking-tight text-slate-900 mt-1">
+                  OUR EVENT BOUNCERS &amp; SQUADS <span className="text-brand-red">IN ACTION</span>
+                </h2>
+              </div>
+              <Link
+                to="/gallery"
+                className="inline-flex items-center gap-2 text-xs font-heading font-bold uppercase tracking-wider text-brand-red hover:text-slate-900 transition-colors"
+              >
+                <span>View Full Gallery (33+ Photos)</span>
+                <i className="fa-solid fa-arrow-right text-xs" />
+              </Link>
+            </div>
+
+            {/* Mobile 3-column / Desktop 6-column Grid */}
+            <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-4">
+              {realGallery.map((item, gIdx) => (
+                <div
+                  key={gIdx}
+                  className="relative rounded-xl overflow-hidden aspect-square group bg-slate-200 cursor-pointer border border-slate-200 shadow-sm hover:shadow-lg hover:border-brand-red transition-all"
+                  onClick={() => setPreviewImage(item)}
+                >
+                  <img
+                    src={item.src}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-2 sm:p-2.5">
+                    <p className="text-[9px] sm:text-[10px] font-heading font-bold text-white leading-tight uppercase truncate">{item.title}</p>
+                    <p className="text-[8px] sm:text-[9px] font-mono text-brand-red">{item.location}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
       </div>
 
       {/* ══════════════════════════════════════════
-          ON-GROUND REAL SQUAD GALLERY STRIP (DARK LUXURY)
-      ══════════════════════════════════════════ */}
-      <section className="py-12 sm:py-20 px-3 sm:px-6 lg:px-12 bg-[#0e0f14] border-t border-[#272930]">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-4 mb-6 sm:mb-10">
-            <div>
-              <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-widest text-brand-red">
-                ON-GROUND REAL ACTION
-              </span>
-              <h2 className="font-heading font-black text-xl sm:text-3xl uppercase tracking-tight text-white mt-1">
-                OUR EVENT BOUNCERS &amp; SQUADS <span className="text-gradient-red">IN ACTION</span>
-              </h2>
-            </div>
-            <Link
-              to="/gallery"
-              className="inline-flex items-center gap-2 text-xs font-heading font-bold uppercase tracking-wider text-brand-red hover:text-white transition-colors"
-            >
-              <span>View Full Gallery (33+ Photos)</span>
-              <i className="fa-solid fa-arrow-right text-xs" />
-            </Link>
-          </div>
-
-          {/* Mobile 3-column / Desktop 6-column Grid */}
-          <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-4">
-            {realGallery.map((item, gIdx) => (
-              <div
-                key={gIdx}
-                className="relative rounded-xl overflow-hidden aspect-square group bg-black/40 cursor-pointer border border-white/5 hover:border-brand-red transition-all"
-                onClick={() => setPreviewImage(item)}
-              >
-                <img
-                  src={item.src}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-2 sm:p-2.5">
-                  <p className="text-[9px] sm:text-[10px] font-heading font-bold text-white leading-tight uppercase truncate">{item.title}</p>
-                  <p className="text-[8px] sm:text-[9px] font-mono text-brand-red">{item.location}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════
-          CALL TO ACTION / EVENT BOOKING BANNER
+          CALL TO ACTION / EVENT BOOKING BANNER (DARK LUXURY)
       ══════════════════════════════════════════ */}
       <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-12 bg-gradient-to-b from-[#0a0a0c] via-red-950/20 to-[#0a0a0c] border-t border-[#272930] relative overflow-hidden">
         <div className="max-w-5xl mx-auto text-center relative z-10">
@@ -809,6 +729,143 @@ export default function EventsPage() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════
+          INTERACTIVE LARGE CARD DETAIL MODAL
+          (Opens when clicking any event card)
+      ══════════════════════════════════════════ */}
+      {activeDetailEvent && (
+        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+          <div className="relative w-full max-w-3xl bg-[#13141a] border border-[#272930] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl my-auto animate-fade-in flex flex-col max-h-[92vh]">
+            
+            {/* Modal Image Header Banner */}
+            <div className="relative w-full h-52 sm:h-64 md:h-72 overflow-hidden shrink-0">
+              <img
+                src={activeDetailEvent.image}
+                alt={activeDetailEvent.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#13141a] via-[#13141a]/40 to-black/40" />
+
+              {/* Close Button */}
+              <button
+                type="button"
+                onClick={() => setActiveDetailEvent(null)}
+                className="absolute top-3.5 right-3.5 w-10 h-10 rounded-full bg-black/70 hover:bg-brand-red text-white flex items-center justify-center transition-all z-20 cursor-pointer shadow-lg"
+                aria-label="Close modal"
+              >
+                <i className="fa-solid fa-xmark text-sm" />
+              </button>
+
+              {/* Category Pill */}
+              <div className="absolute top-3.5 left-3.5 z-10">
+                <span className="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-black/70 text-slate-200 border border-white/20 backdrop-blur-md">
+                  {activeDetailEvent.categoryLabel}
+                </span>
+              </div>
+
+              {/* Header Titles */}
+              <div className="absolute bottom-3 sm:bottom-4 left-4 sm:left-6 right-4 sm:right-6 z-10">
+                <h3 className="font-heading font-black text-xl sm:text-2xl md:text-3xl text-white uppercase tracking-tight drop-shadow-md">
+                  {activeDetailEvent.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-brand-red font-medium tracking-wide mt-0.5">
+                  {activeDetailEvent.marathiTitle}
+                </p>
+              </div>
+            </div>
+
+            {/* Modal Scrollable Body */}
+            <div className="p-4 sm:p-6 md:p-8 overflow-y-auto space-y-5 flex-1">
+              {/* Tagline */}
+              <p className="text-xs sm:text-sm text-white font-medium italic border-l-2 border-brand-red pl-3">
+                "{activeDetailEvent.tagline}"
+              </p>
+
+              {/* Description */}
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                {activeDetailEvent.desc}
+              </p>
+
+              {/* Deliverables Checklist */}
+              <div>
+                <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-2">
+                  <i className="fa-solid fa-clipboard-check text-brand-red" />
+                  <span>Key Protocol Deliverables:</span>
+                </h4>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
+                  {activeDetailEvent.features.map((feat, fIdx) => (
+                    <li key={fIdx} className="flex items-start gap-2 bg-white/[0.03] p-2.5 rounded-lg border border-white/5">
+                      <i className="fa-solid fa-circle-check text-brand-red text-xs mt-0.5 shrink-0" />
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Specs Strip */}
+              <div className="bg-[#181a22] p-4 rounded-xl border border-white/10 space-y-2.5 text-xs font-mono">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-slate-400">
+                  <span className="flex items-center gap-1.5">
+                    <i className="fa-solid fa-vest text-brand-red" />
+                    <span>Dress Code / Turnout:</span>
+                  </span>
+                  <span className="text-slate-200 font-semibold">{activeDetailEvent.turnout}</span>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-slate-400 border-t border-white/5 pt-2">
+                  <span className="flex items-center gap-1.5">
+                    <i className="fa-solid fa-users text-brand-red" />
+                    <span>Typical Squad Sizing:</span>
+                  </span>
+                  <span className="text-slate-200 font-semibold">{activeDetailEvent.typicalSquad}</span>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-slate-400 border-t border-white/5 pt-2">
+                  <span className="flex items-center gap-1.5">
+                    <i className="fa-solid fa-location-dot text-brand-red" />
+                    <span>Operational Locations:</span>
+                  </span>
+                  <span className="text-slate-200 font-semibold">{activeDetailEvent.locations}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Modal Bottom Fixed CTA Buttons */}
+            <div className="p-4 sm:p-5 bg-[#0f1015] border-t border-[#272930] flex flex-col sm:flex-row items-center gap-2.5 shrink-0">
+              <button
+                type="button"
+                onClick={() => {
+                  const evTitle = activeDetailEvent.title;
+                  setActiveDetailEvent(null);
+                  handleOpenBooking(`Booking: ${evTitle}`);
+                }}
+                className="w-full sm:flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-brand-red via-red-600 to-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg shadow-red-900/40 hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <i className="fa-solid fa-calendar-check text-xs" />
+                <span>Book This Squad Online</span>
+              </button>
+
+              <a
+                href={`https://wa.me/918806078677?text=Hello%20Legend%20Security,%20I%20want%20to%20book%20bouncers%20for%20${encodeURIComponent(activeDetailEvent.title)}.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-md shadow-emerald-950/40"
+              >
+                <i className="fa-brands fa-whatsapp text-sm" />
+                <span>WhatsApp Quote</span>
+              </a>
+
+              <a
+                href="tel:+918806078677"
+                className="w-full sm:w-auto px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 hover:text-white font-mono text-xs uppercase transition-all flex items-center justify-center gap-2"
+              >
+                <i className="fa-solid fa-phone text-brand-red" />
+                <span>+91 88060 78677</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      )}
 
       {/* Booking Modal */}
       <BookingModal
