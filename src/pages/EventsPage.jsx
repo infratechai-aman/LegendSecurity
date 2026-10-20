@@ -104,7 +104,7 @@ export default function EventsPage() {
         'Dedicated Women Safe Zone & Lady Bouncers',
         'Emergency Evacuation Corridor Management',
       ],
-      turnout: 'Black Tactical Security Polos with Lanyards',
+      turnout: 'Executive Black Polos with ID Badges',
       typicalSquad: '15 to 80+ Bouncers + Metal Detectors + Supervisors',
       locations: 'Pune Grounds • Mumbai MMRDA • Navi Mumbai • Nashik',
     },
@@ -156,7 +156,7 @@ export default function EventsPage() {
         'Overnight Vigilance for Multi-Day Villa Rentals',
         '24/7 Motorized Perimeter Patrol Capability',
       ],
-      turnout: 'Dark Charcoal Blazers / Tactical Covert Wear',
+      turnout: 'Dark Charcoal Blazers / Executive Suits',
       typicalSquad: '4 to 10 Bodyguards & Suited Bouncers',
       locations: 'Lonavala • Khandala • Alibaug • Mulshi • Mahabaleshwar',
     },
@@ -182,7 +182,7 @@ export default function EventsPage() {
         'Multi-Day Continuous 24/7 Shift Rotations',
         'Prasad Counter & Gold Ornament Vigilance',
       ],
-      turnout: 'Tactical Event Security Uniforms / Vests',
+      turnout: 'Tailored Event Uniforms & High-Vis Vests',
       typicalSquad: '10 to 50+ Bouncers + Supervisors',
       locations: 'Pune • Mumbai • Kolhapur • Solapur • All Maharashtra',
     },
@@ -206,7 +206,7 @@ export default function EventsPage() {
         'Grandstand Segment & Entry Turnstile Security',
         'Medical & First Responder Team Coordination',
       ],
-      turnout: 'Sport Tactical Uniforms / High-Vis Security Badges',
+      turnout: 'Athletic Security Uniforms & Badges',
       typicalSquad: '12 to 40+ Guards & Bouncers',
       locations: 'Pune Stadiums • Mumbai Sports Complexes • University Grounds',
     },
@@ -558,7 +558,7 @@ export default function EventsPage() {
                   </p>
                   <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 space-y-2 mb-6 text-xs">
                     <div className="flex justify-between text-slate-600">
-                      <span>Tactical Personnel:</span>
+                      <span>Security Personnel:</span>
                       <span className="font-medium text-slate-900">20 to 80+ Officers</span>
                     </div>
                     <div className="flex justify-between text-slate-600">
@@ -759,58 +759,50 @@ export default function EventsPage() {
               </div>
             </div>
 
-            {/* Body */}
+            {/* Body — Minimal, Luxurious & Spacious */}
             <div className="p-4 sm:p-6 overflow-y-auto space-y-4 sm:space-y-5 flex-1">
-              {/* Tagline Accent Box */}
-              {activeDetailEvent.tagline && (
-                <div className="p-3 sm:p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.07] flex items-center gap-3">
-                  <span className="w-1 h-6 rounded-full bg-brand-red/80 shrink-0" />
-                  <p className="text-xs sm:text-sm text-slate-200 italic font-light leading-relaxed">
+              {/* Tagline & Executive Summary */}
+              <div className="space-y-2">
+                {activeDetailEvent.tagline && (
+                  <p className="text-xs sm:text-sm text-slate-200 italic font-light leading-relaxed border-l-2 border-brand-red pl-3">
                     "{activeDetailEvent.tagline}"
                   </p>
-                </div>
-              )}
-
-              {/* Summary Description */}
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
-                {activeDetailEvent.summary || activeDetailEvent.desc}
-              </p>
-
-              {/* Service Focus Pillars */}
-              <div>
-                <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-2.5">
-                  Service Focus Areas
+                )}
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+                  {activeDetailEvent.summary || activeDetailEvent.desc}
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                  {activeDetailEvent.pillars?.map((p, idx) => (
-                    <div key={idx} className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.07] hover:border-white/15 transition-all">
-                      <p className="font-heading font-semibold text-xs text-white mb-1">{p.title}</p>
-                      <p className="text-[11px] text-slate-400 leading-relaxed font-light">{p.desc}</p>
+              </div>
+
+              {/* 3 Clean Focus Pillars (Minimal cards, zero clutter) */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
+                {activeDetailEvent.pillars?.map((p, idx) => (
+                  <div
+                    key={idx}
+                    className="p-3 sm:p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.07] hover:border-white/15 transition-all text-left"
+                  >
+                    <div className="flex items-center gap-1.5 mb-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-red shrink-0" />
+                      <p className="font-heading font-semibold text-xs text-white tracking-wide">{p.title}</p>
                     </div>
-                  ))}
-                </div>
+                    <p className="text-[11px] text-slate-400 leading-relaxed font-light">{p.desc}</p>
+                  </div>
+                ))}
               </div>
 
-              {/* Key Deliverables Chips */}
-              <div>
-                <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-2">
-                  Key Services Included
-                </p>
-                <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                  {activeDetailEvent.features.slice(0, 6).map((feat, fIdx) => (
-                    <span key={fIdx} className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/[0.03] border border-white/[0.07] text-[11px] sm:text-xs text-slate-300 font-light">
-                      <i className="fa-solid fa-check text-brand-red text-[10px]" />
-                      <span>{feat}</span>
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Minimal Specs */}
-              <div className="pt-3 border-t border-white/[0.08] grid grid-cols-1 sm:grid-cols-3 gap-2 text-[11px] text-slate-400">
-                <div><span className="text-slate-500">Dress Code:</span> <span className="text-slate-200 font-medium ml-1">{activeDetailEvent.turnout}</span></div>
-                <div><span className="text-slate-500">Squad Sizing:</span> <span className="text-slate-200 font-medium ml-1">{activeDetailEvent.typicalSquad}</span></div>
-                <div><span className="text-slate-500">Coverage:</span> <span className="text-slate-200 font-medium ml-1">{activeDetailEvent.locations}</span></div>
+              {/* Clean Inline Specs Row */}
+              <div className="pt-3 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-y-2 gap-x-4 text-xs text-slate-400 font-light">
+                <span className="flex items-center gap-1.5">
+                  <i className="fa-solid fa-user-tie text-brand-red text-xs" />
+                  <span className="text-slate-200">{activeDetailEvent.turnout}</span>
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <i className="fa-solid fa-users text-brand-red text-xs" />
+                  <span className="text-slate-200">{activeDetailEvent.typicalSquad.split('+')[0]}</span>
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <i className="fa-solid fa-location-dot text-brand-red text-xs" />
+                  <span className="text-slate-200">Pune • Mumbai • All MH</span>
+                </span>
               </div>
             </div>
 

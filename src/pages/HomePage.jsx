@@ -164,122 +164,148 @@ export default function HomePage() {
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 sm:py-24 lg:py-28 w-full flex flex-col items-center text-center space-y-7 sm:space-y-8">
 
-          {/* Minimalist Editorial Eyebrow */}
+          {/* Dynamic Live Status Eyebrow */}
           <div
-            className={`flex items-center justify-center gap-2 sm:gap-2.5 text-xs transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`inline-flex items-center gap-2 sm:gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 hover:border-brand-red/40 backdrop-blur-md shadow-lg shadow-black/30 transition-all duration-500 hover:scale-[1.02] cursor-default ${
+              heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
             style={{ transitionDelay: '100ms' }}
           >
-            <span className="w-3.5 sm:w-5 h-[2px] bg-brand-red inline-block shrink-0" />
-            <span className="font-heading font-black tracking-[0.16em] sm:tracking-[0.2em] uppercase text-brand-red text-[11px] sm:text-xs shrink-0">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-red"></span>
+            </span>
+            <span className="font-heading font-bold tracking-wider uppercase text-brand-red text-[11px] sm:text-xs">
               Govt. PSARA Licensed
             </span>
             <span className="text-slate-600 font-bold select-none">•</span>
-            <span className="font-heading font-semibold tracking-wider text-slate-400 text-[11px] sm:text-xs uppercase shrink-0">
+            <span className="font-medium tracking-wide text-slate-300 text-[11px] sm:text-xs">
               <span className="sm:hidden">Pune • Mumbai • All MH</span>
               <span className="hidden sm:inline">Pune • Mumbai • All Maharashtra</span>
             </span>
-            <span className="w-3.5 sm:w-5 h-[2px] bg-brand-red inline-block shrink-0" />
           </div>
 
-          {/* Monumental Centered Headline — Extra Large on Android/Mobile, Unchanged on Desktop */}
-          <h1
-            className={`font-heading font-black text-[clamp(2.85rem,12vw,3.75rem)] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] text-white tracking-tight leading-[0.92] uppercase transition-all duration-800 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-            style={{ transitionDelay: '250ms' }}
-          >
-            The Legend
-            <br />
-            <span className="text-gradient-red">Security</span>
-            <br />
-            And Bouncer
-          </h1>
+          {/* Monumental Centered Headline with Dynamic Ambient Glow */}
+          <div className="relative w-full">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 sm:w-96 h-32 sm:h-44 bg-brand-red/25 rounded-full blur-[70px] pointer-events-none" />
+            <h1
+              className={`relative font-heading font-black text-[clamp(2.85rem,12vw,3.75rem)] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] text-white tracking-tight leading-[0.92] uppercase transition-all duration-800 ${
+                heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+              }`}
+              style={{ transitionDelay: '250ms' }}
+            >
+              The Legend
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-500 to-red-500 drop-shadow-[0_0_35px_rgba(220,38,38,0.45)]">
+                Security
+              </span>
+              <br />
+              And Bouncer
+            </h1>
+          </div>
 
-          {/* Refined Description */}
+          {/* Shortened, Impactful Minimal Description */}
           <p
-            className={`text-slate-400 text-xs sm:text-base md:text-lg max-w-2xl mx-auto font-normal leading-relaxed transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`text-slate-300 text-sm sm:text-base md:text-lg max-w-xl mx-auto font-light leading-relaxed transition-all duration-700 ${
+              heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
             style={{ transitionDelay: '400ms' }}
           >
-            Incorporated in <span className="text-slate-200 font-medium">2018</span> under Director{' '}
-            <span className="text-slate-200 font-medium">Mr. Mosin Azam Shaikh</span> — delivering licensed manned guarding,
-            executive bouncers, facility management, and turnkey manpower solutions across{' '}
-            <span className="text-slate-200 font-medium">Pune, Mumbai, and All Over Maharashtra</span>.
+            Government-licensed manned guarding &amp; executive bouncers across{' '}
+            <span className="text-white font-medium">Pune, Mumbai &amp; All Maharashtra</span>.
           </p>
 
-          {/* Trust & Credibility Strip — Matches reference image 3 */}
+          {/* Trust & Credibility Strip */}
           <div
-            className={`w-full flex justify-center transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`w-full flex justify-center transition-all duration-700 ${
+              heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
             style={{ transitionDelay: '500ms' }}
           >
             <HeroTrustStrip />
           </div>
 
-          {/* Executive Action Row — Clean, Authoritative, Real-World Corporate */}
+          {/* Executive Action Row */}
           <div
-            className={`flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto transition-all duration-700 ${
+              heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
             style={{ transitionDelay: '600ms' }}
           >
-            {/* Primary Action Button */}
+            {/* Primary Action Button with Dynamic Glow */}
             <button
               type="button"
               onClick={() => {
                 setSelectedAuditType('On-Site Vulnerability & Security Audit');
                 setIsBookingModalOpen(true);
               }}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-brand-red hover:bg-brand-crimson text-white font-heading font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-md transition-all duration-200 cursor-pointer group"
+              className="w-full sm:w-auto relative group overflow-hidden inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-brand-red via-red-600 to-brand-red bg-[length:200%_auto] hover:bg-right text-white font-heading font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-[0_4px_25px_rgba(220,38,38,0.4)] hover:shadow-[0_8px_35px_rgba(220,38,38,0.65)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 cursor-pointer"
             >
               <i className="fa-solid fa-calendar-check text-xs" />
               <span>Schedule Security Audit</span>
               <i className="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform" />
             </button>
 
-            {/* Secondary Action Button */}
+            {/* Secondary Action Button with Frosted Glass */}
             <Link
               to="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/[0.04] hover:bg-white/[0.08] border border-white/20 hover:border-white/40 text-slate-100 font-heading font-semibold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all duration-200"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/[0.04] hover:bg-white/[0.08] border border-white/20 hover:border-white/40 text-slate-100 font-heading font-semibold text-xs uppercase tracking-wider px-8 py-4 rounded-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 backdrop-blur-sm"
             >
               <i className="fa-solid fa-file-invoice text-brand-red text-xs" />
               <span>Request a Quote</span>
             </Link>
           </div>
 
-          {/* Clean Executive Assurances (No boxes, No robotic monospace fonts) */}
+          {/* Clean Executive Assurances */}
           <div
-            className={`flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-slate-400 font-sans transition-all duration-700 ${heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-slate-400 font-sans transition-all duration-700 ${
+              heroReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
             style={{ transitionDelay: '650ms' }}
           >
-            <span className="flex items-center gap-1.5">
-              <i className="fa-solid fa-shield-check text-brand-red text-[11px]" />
-              <span className="text-slate-300">Free On-Site Survey</span>
+            <span className="flex items-center gap-2 group cursor-default">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-red group-hover:scale-125 transition-transform" />
+              <span className="text-slate-300 group-hover:text-white transition-colors">Free On-Site Survey</span>
             </span>
             <span className="text-slate-700 hidden sm:inline">•</span>
-            <span className="flex items-center gap-1.5">
-              <i className="fa-solid fa-shield-check text-brand-red text-[11px]" />
-              <span className="text-slate-300">PSARA Certified Officers</span>
+            <span className="flex items-center gap-2 group cursor-default">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-red group-hover:scale-125 transition-transform" />
+              <span className="text-slate-300 group-hover:text-white transition-colors">PSARA Certified Officers</span>
             </span>
             <span className="text-slate-700 hidden sm:inline">•</span>
-            <span className="flex items-center gap-1.5">
-              <i className="fa-solid fa-shield-check text-brand-red text-[11px]" />
-              <span className="text-slate-300">Rapid 24-Hour Deployment Across MH</span>
+            <span className="flex items-center gap-2 group cursor-default">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-red group-hover:scale-125 transition-transform" />
+              <span className="text-slate-300 group-hover:text-white transition-colors">Rapid 24-Hour Deployment</span>
             </span>
           </div>
 
-          {/* Stats Row */}
+          {/* Dynamic Stats Row with Frosted Micro-Cards */}
           <div
             ref={statsRef}
-            className={`pt-8 sm:pt-10 border-t border-white/10 grid grid-cols-3 gap-6 sm:gap-12 w-full max-w-xl mx-auto transition-all duration-700 ${statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`pt-6 sm:pt-8 border-t border-white/10 grid grid-cols-3 gap-3 sm:gap-6 w-full max-w-2xl mx-auto transition-all duration-700 ${
+              statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
             style={{ transitionDelay: '700ms' }}
           >
             {[
               { val: '2018', label: 'Established', suffix: '' },
-              { val: '500', label: 'Trained Staff', suffix: '+', color: 'text-brand-red' },
-              { val: '20', label: 'Major Clients', suffix: '+' },
+              { val: '500', label: 'Trained Force', suffix: '+', color: 'text-brand-red' },
+              { val: '20', label: 'Enterprise Clients', suffix: '+' },
             ].map((s, i) => (
-              <div key={i} className={`text-center ${i > 0 ? 'border-l border-white/10 pl-6 sm:pl-12' : ''}`}>
-                <div className={`font-heading font-black text-2xl sm:text-4xl text-white ${s.color || ''}`}>
+              <div
+                key={i}
+                className="p-3 sm:p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-brand-red/30 hover:bg-white/[0.04] transition-all duration-300 group"
+              >
+                <div
+                  className={`font-heading font-black text-2xl sm:text-3xl lg:text-4xl text-white group-hover:scale-105 transition-transform duration-300 ${
+                    s.color || ''
+                  }`}
+                >
                   {i === 0 ? s.val : (
-                    <><AnimatedCounter target={s.val} suffix={s.suffix} /></>
+                    <AnimatedCounter target={s.val} suffix={s.suffix} />
                   )}
                 </div>
-                <div className="text-[10px] sm:text-xs text-slate-400 font-semibold uppercase tracking-wider mt-1">
+                <div className="text-[10px] sm:text-xs text-slate-400 font-medium uppercase tracking-wider mt-1 group-hover:text-slate-200 transition-colors">
                   {s.label}
                 </div>
               </div>

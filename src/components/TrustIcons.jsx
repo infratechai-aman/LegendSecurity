@@ -133,14 +133,16 @@ export default function HeroTrustStrip({ className = '' }) {
 
   return (
     <div
-      className={`inline-flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-4 gap-y-3 py-2 px-3 sm:px-6 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-sm ${className}`}
+      className={`inline-flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-4 gap-y-3 py-2 px-3 sm:px-6 rounded-full bg-white/[0.03] border border-white/10 hover:border-brand-red/30 backdrop-blur-md shadow-lg shadow-black/20 transition-all duration-300 ${className}`}
     >
       {items.map((item, idx) => (
         <React.Fragment key={idx}>
-          <div className="flex items-center gap-2.5 px-2 sm:px-3">
-            {item.icon}
+          <div className="flex items-center gap-2.5 px-2 sm:px-3 group cursor-default transition-all duration-200 hover:scale-[1.03]">
+            <div className="transition-transform duration-300 group-hover:scale-110">
+              {item.icon}
+            </div>
             <div className="flex flex-col text-left leading-tight">
-              <span className="font-heading font-bold text-white text-xs sm:text-sm tracking-wide">
+              <span className="font-heading font-bold text-white text-xs sm:text-sm tracking-wide group-hover:text-red-300 transition-colors">
                 {item.line1}
               </span>
               <span className="text-[11px] text-slate-400 font-normal">
