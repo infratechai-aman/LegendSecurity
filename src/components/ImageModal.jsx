@@ -85,7 +85,7 @@ export default function ImageModal({ image, isOpen, onClose, onPrev, onNext }) {
 
           <div className="shrink-0 flex items-center gap-3 w-full sm:w-auto">
             <a
-              href="tel:+918806078677"
+              href="tel:+917249108658"
               className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-brand-red hover:bg-red-600 text-white font-heading font-semibold text-xs tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm"
             >
               <i className="fa-solid fa-phone text-xs"></i>

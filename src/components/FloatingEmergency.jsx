@@ -6,11 +6,20 @@ export default function FloatingEmergency() {
 
   const contacts = [
     {
-      href: 'tel:+918806078677',
+      href: 'tel:+917249108658',
       icon: 'fa-phone',
       iconBg: 'bg-brand-red',
-      name: 'Director Mosin Shaikh',
-      sub: '+91 88060 78677',
+      name: 'Director Desk',
+      sub: '+91 72491 08658',
+      badge: 'DIRECTOR',
+      hoverClass: 'hover:border-brand-red/60',
+    },
+    {
+      href: 'tel:+919834024371',
+      icon: 'fa-phone',
+      iconBg: 'bg-red-700',
+      name: 'Director Desk',
+      sub: '+91 98340 24371',
       badge: 'DIRECTOR',
       hoverClass: 'hover:border-brand-red/60',
     },
@@ -33,11 +42,11 @@ export default function FloatingEmergency() {
       hoverClass: 'hover:border-slate-500',
     },
     {
-      href: 'https://wa.me/918806078677',
+      href: 'https://wa.me/917249108658',
       icon: 'fa-whatsapp',
       iconBg: 'bg-emerald-600',
       name: 'WhatsApp Dispatch',
-      sub: '+91 88060 78677',
+      sub: '+91 72491 08658',
       badge: 'INSTANT CHAT',
       hoverClass: 'hover:border-emerald-500',
       external: true,
@@ -118,11 +127,10 @@ export default function FloatingEmergency() {
       {/* FAB Trigger Button */}
       <button
         onClick={() => setExpanded(!expanded)}
-        className={`relative flex items-center gap-2.5 text-white px-4 py-3.5 rounded-full shadow-[0_0_25px_rgba(229,9,20,0.5)] hover:shadow-[0_0_40px_rgba(229,9,20,0.7)] transition-all duration-300 font-heading font-bold text-xs uppercase tracking-wider focus:outline-none cursor-pointer ${
-          expanded
+        className={`relative flex items-center gap-2.5 text-white px-4 py-3.5 rounded-full shadow-[0_0_25px_rgba(229,9,20,0.5)] hover:shadow-[0_0_40px_rgba(229,9,20,0.7)] transition-all duration-300 font-heading font-bold text-xs uppercase tracking-wider focus:outline-none cursor-pointer ${expanded
             ? 'bg-gradient-to-r from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600'
             : 'bg-gradient-to-r from-brand-red to-red-700 hover:from-red-600 hover:to-brand-red hover:scale-105'
-        }`}
+          }`}
         title="24/7 Deployment Hotline"
       >
         {/* Live pulse indicator */}

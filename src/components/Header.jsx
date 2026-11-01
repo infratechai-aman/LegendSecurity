@@ -97,19 +97,25 @@ export default function Header() {
           {/* Right Actions */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             {/* Minimalist Hotlines (2xl+ screens only, avoiding laptop navbar squeeze) */}
-            <div className="hidden 2xl:flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md">
+            <div className="hidden 2xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
+              <span className="text-[11px] font-heading font-medium text-slate-400">
+                Director:
+              </span>
               <a
-                href="tel:+918806078677"
-                className="flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors duration-200 group"
-                title="Director: Mr. Mosin Azam Shaikh"
+                href="tel:+917249108658"
+                className="font-heading font-bold text-xs tracking-wider text-white hover:text-brand-red transition-colors"
+                title="Director: +91 72491 08658"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
-                <span className="text-[11px] font-heading font-medium text-slate-400">
-                  Director:
-                </span>
-                <span className="font-heading font-bold text-xs tracking-wider text-white group-hover:text-brand-red transition-colors">
-                  +91 88060 78677
-                </span>
+                +91 72491 08658
+              </a>
+              <span className="text-slate-600 text-[10px]">/</span>
+              <a
+                href="tel:+919834024371"
+                className="font-heading font-bold text-xs tracking-wider text-white hover:text-brand-red transition-colors"
+                title="Director: +91 98340 24371"
+              >
+                +91 98340 24371
               </a>
             </div>
 
@@ -239,14 +245,26 @@ export default function Header() {
 
               <div className="grid grid-cols-1 gap-2">
                 <a
-                  href="tel:+918806078677"
+                  href="tel:+917249108658"
                   className="w-full flex items-center justify-between px-3 bg-white/[0.04] border border-white/10 hover:border-brand-red text-slate-200 font-heading font-medium text-xs tracking-wider py-2.5 rounded-xl transition-all"
                 >
                   <div className="flex items-center gap-2">
                     <div className="w-5 h-5 rounded-full bg-brand-red flex items-center justify-center">
                       <i className="fa-solid fa-phone text-white text-[9px]" />
                     </div>
-                    <span>+91 88060 78677</span>
+                    <span>+91 72491 08658</span>
+                  </div>
+                  <span className="text-[10px] font-medium text-brand-red bg-brand-red/10 px-2 py-0.5 rounded-full">Director</span>
+                </a>
+                <a
+                  href="tel:+919834024371"
+                  className="w-full flex items-center justify-between px-3 bg-white/[0.04] border border-white/10 hover:border-brand-red text-slate-200 font-heading font-medium text-xs tracking-wider py-2.5 rounded-xl transition-all"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-full bg-brand-red flex items-center justify-center">
+                      <i className="fa-solid fa-phone text-white text-[9px]" />
+                    </div>
+                    <span>+91 98340 24371</span>
                   </div>
                   <span className="text-[10px] font-medium text-brand-red bg-brand-red/10 px-2 py-0.5 rounded-full">Director</span>
                 </a>

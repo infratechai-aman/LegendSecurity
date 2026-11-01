@@ -301,7 +301,7 @@ export default function EventsPage() {
             </button>
 
             <a
-              href="https://wa.me/918806078677?text=Hello%20Legend%20Security,%20I%20need%20event%20bouncers%20and%20security%20for%20an%20upcoming%20celebration."
+              href="https://wa.me/917249108658?text=Hello%20Legend%20Security,%20I%20need%20event%20bouncers%20and%20security%20for%20an%20upcoming%20celebration."
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-heading font-semibold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-sm"
@@ -311,11 +311,21 @@ export default function EventsPage() {
             </a>
 
             <a
-              href="tel:+918806078677"
-              className="px-5 py-3.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-slate-200 text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+              href="tel:+917249108658"
+              className="px-4 py-3.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-slate-200 text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+              title="Director: +91 72491 08658"
             >
               <i className="fa-solid fa-phone text-brand-red text-xs" />
-              <span>+91 88060 78677</span>
+              <span>+91 72491 08658</span>
+            </a>
+
+            <a
+              href="tel:+919834024371"
+              className="px-4 py-3.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-slate-200 text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+              title="Director: +91 98340 24371"
+            >
+              <i className="fa-solid fa-phone text-brand-red text-xs" />
+              <span>+91 98340 24371</span>
             </a>
           </div>
 
@@ -675,7 +685,7 @@ export default function EventsPage() {
           </h2>
 
           <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto mb-8 font-light leading-relaxed">
-            Ensure your wedding, birthday celebration, concert, or corporate meet is remembered for its elegance and seamless safety. Connect directly with Director <strong className="text-white font-medium">Mr. Mosin Azam Shaikh</strong>.
+            Ensure your wedding, birthday celebration, concert, or corporate meet is remembered for its elegance and seamless safety. Connect directly with the <strong className="text-white font-medium">Director</strong>.
           </p>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 max-w-md sm:max-w-none mx-auto">
@@ -689,7 +699,7 @@ export default function EventsPage() {
             </button>
 
             <a
-              href="https://wa.me/918806078677?text=Hello%20Legend%20Security,%20I%20want%20to%20book%20security%20and%20bouncers%20for%20an%20event."
+              href="https://wa.me/917249108658?text=Hello%20Legend%20Security,%20I%20want%20to%20book%20security%20and%20bouncers%20for%20an%20event."
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-heading font-semibold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-sm"
@@ -699,11 +709,21 @@ export default function EventsPage() {
             </a>
 
             <a
-              href="tel:+918806078677"
-              className="px-5 py-3.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-white text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+              href="tel:+917249108658"
+              className="px-4 py-3.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-white text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+              title="Director: +91 72491 08658"
             >
               <i className="fa-solid fa-phone text-brand-red text-xs" />
-              <span>+91 88060 78677</span>
+              <span>+91 72491 08658</span>
+            </a>
+
+            <a
+              href="tel:+919834024371"
+              className="px-4 py-3.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-white text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+              title="Director: +91 98340 24371"
+            >
+              <i className="fa-solid fa-phone text-brand-red text-xs" />
+              <span>+91 98340 24371</span>
             </a>
           </div>
         </div>
@@ -822,7 +842,7 @@ export default function EventsPage() {
               </button>
 
               <a
-                href={`https://wa.me/918806078677?text=Hello%20Legend%20Security,%20I%20want%20to%20book%20bouncers%20for%20${encodeURIComponent(activeDetailEvent.title)}.`}
+                href={`https://wa.me/917249108658?text=Hello%20Legend%20Security,%20I%20want%20to%20book%20bouncers%20for%20${encodeURIComponent(activeDetailEvent.title)}.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-4 py-2.5 sm:py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-heading font-semibold text-xs tracking-wider transition-all flex items-center justify-center gap-2 shadow-sm"
@@ -832,11 +852,21 @@ export default function EventsPage() {
               </a>
 
               <a
-                href="tel:+918806078677"
-                className="w-full sm:w-auto px-4 py-2.5 sm:py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-slate-300 hover:text-white font-heading font-medium text-xs transition-all flex items-center justify-center gap-2"
+                href="tel:+917249108658"
+                className="w-full sm:w-auto px-3.5 py-2.5 sm:py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-slate-300 hover:text-white font-heading font-medium text-xs transition-all flex items-center justify-center gap-1.5"
+                title="Director: +91 72491 08658"
               >
                 <i className="fa-solid fa-phone text-brand-red text-xs" />
-                <span>+91 88060 78677</span>
+                <span>+91 72491 08658</span>
+              </a>
+
+              <a
+                href="tel:+919834024371"
+                className="w-full sm:w-auto px-3.5 py-2.5 sm:py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-slate-300 hover:text-white font-heading font-medium text-xs transition-all flex items-center justify-center gap-1.5"
+                title="Director: +91 98340 24371"
+              >
+                <i className="fa-solid fa-phone text-brand-red text-xs" />
+                <span>+91 98340 24371</span>
               </a>
             </div>
 

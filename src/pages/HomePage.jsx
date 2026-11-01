@@ -400,7 +400,7 @@ export default function HomePage() {
                     </div>
                     <div className="min-w-0">
                       <p className="font-heading font-black text-xs uppercase tracking-wider text-slate-900 truncate">
-                        Director: Mr. Mosin Azam Shaikh
+                        Director
                       </p>
                       <p className="text-[11px] font-medium text-slate-500 truncate mt-0.5">
                         Govt. PSARA Licensed Agency • Est. 2018
@@ -461,7 +461,7 @@ export default function HomePage() {
                 across Maharashtra factories, establishments, and institutes.
               </p>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Promoted by Director <strong>Mr. Mosin Azam Shaikh</strong>, who believes in quality, dedication,
+                Promoted by the <strong>Director</strong>, who believes in quality, dedication,
                 and hard work — the company engages trained and police-verified personnel deployed on
                 8-hour and 12-hour shift schedules.
               </p>
@@ -639,19 +639,28 @@ export default function HomePage() {
                 <p className="text-xs text-slate-400">Emergency &amp; rapid dispatch available across Pune, PCMC, Mumbai &amp; Thane.</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 shrink-0">
+            <div className="flex flex-wrap items-center gap-2.5 shrink-0">
               <a
-                href="tel:+918806078677"
-                className="px-4 py-2 rounded-xl bg-brand-red hover:bg-red-700 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2"
+                href="tel:+917249108658"
+                className="px-3.5 py-2 rounded-xl bg-brand-red hover:bg-red-700 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-1.5"
+                title="Director: +91 72491 08658"
               >
                 <i className="fa-solid fa-phone text-xs" />
-                <span>+91 88060 78677</span>
+                <span>+91 72491 08658</span>
               </a>
               <a
-                href="https://wa.me/918806078677?text=Hello%20Legend%20Security,%20I%20need%20event%20bouncers."
+                href="tel:+919834024371"
+                className="px-3.5 py-2 rounded-xl bg-red-700 hover:bg-red-600 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-1.5"
+                title="Director: +91 98340 24371"
+              >
+                <i className="fa-solid fa-phone text-xs" />
+                <span>+91 98340 24371</span>
+              </a>
+              <a
+                href="https://wa.me/917249108658?text=Hello%20Legend%20Security,%20I%20need%20event%20bouncers."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-1.5"
+                className="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-1.5"
               >
                 <i className="fa-brands fa-whatsapp text-sm" />
                 <span>WhatsApp</span>
@@ -758,13 +767,22 @@ export default function HomePage() {
                   <span>Request Quotation</span>
                   <i className="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <a href="tel:+918806078677" className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-white/5 border border-slate-600 hover:border-brand-red/60 transition-all group">
+                <a href="tel:+917249108658" className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-white/5 border border-slate-600 hover:border-brand-red/60 transition-all group">
                   <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-xs">
                     <i className="fa-solid fa-phone" />
                   </div>
                   <div className="text-left">
-                    <p className="text-[9px] font-mono text-slate-400 uppercase">Director Mosin Shaikh</p>
-                    <p className="font-heading font-bold text-xs text-white group-hover:text-brand-red transition-colors">+91 88060 78677</p>
+                    <p className="text-[9px] font-mono text-slate-400 uppercase">Director</p>
+                    <p className="font-heading font-bold text-xs text-white group-hover:text-brand-red transition-colors">+91 72491 08658</p>
+                  </div>
+                </a>
+                <a href="tel:+919834024371" className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-white/5 border border-slate-600 hover:border-brand-red/60 transition-all group">
+                  <div className="w-8 h-8 rounded-full bg-red-700 text-white flex items-center justify-center text-xs">
+                    <i className="fa-solid fa-phone" />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-[9px] font-mono text-slate-400 uppercase">Director</p>
+                    <p className="font-heading font-bold text-xs text-white group-hover:text-brand-red transition-colors">+91 98340 24371</p>
                   </div>
                 </a>
                 <a href="tel:+917860313601" className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-white/5 border border-slate-600 hover:border-brand-red/60 transition-all group">
@@ -776,7 +794,7 @@ export default function HomePage() {
                     <p className="font-heading font-bold text-xs text-white group-hover:text-brand-red transition-colors">+91 78603 13601</p>
                   </div>
                 </a>
-                <a href="https://wa.me/918806078677" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-emerald-950/50 border border-emerald-800/60 hover:border-emerald-500 transition-all group">
+                <a href="https://wa.me/917249108658" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-emerald-950/50 border border-emerald-800/60 hover:border-emerald-500 transition-all group">
                   <div className="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center">
                     <i className="fa-brands fa-whatsapp text-sm" />
                   </div>

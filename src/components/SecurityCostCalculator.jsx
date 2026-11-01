@@ -350,7 +350,7 @@ export default function SecurityCostCalculator({ onBookAudit }) {
         ) : (
           <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium flex items-center gap-2">
             <IconCheck className="text-emerald-400" />
-            <span>Estimate dispatched to Admin Desk. Director Mosin Shaikh will contact you shortly.</span>
+            <span>Estimate dispatched to Admin Desk. Director will contact you shortly.</span>
           </div>
         )}
 

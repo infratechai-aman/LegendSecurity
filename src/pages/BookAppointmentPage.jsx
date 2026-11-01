@@ -208,7 +208,7 @@ export default function BookAppointmentPage() {
     if (!confirmedBooking) return '#';
     const title = encodeURIComponent(`Security Consultation: ${confirmedBooking.auditType} - The Legend Security`);
     const details = encodeURIComponent(
-      `Appointment Ref: ${confirmedBooking.id}\nClient: ${confirmedBooking.fullName} (${confirmedBooking.orgName})\nPhone: ${confirmedBooking.phoneNum}\nDirector Mosin Shaikh: +91 88060 78677\nThe Legend Security and Bouncer`
+      `Appointment Ref: ${confirmedBooking.id}\nClient: ${confirmedBooking.fullName} (${confirmedBooking.orgName})\nPhone: ${confirmedBooking.phoneNum}\nDirector Hotline: +91 72491 08658 / +91 98340 24371\nThe Legend Security and Bouncer`
     );
     const loc = encodeURIComponent(confirmedBooking.location);
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${loc}`;
@@ -227,9 +227,9 @@ export default function BookAppointmentPage() {
       `*Time Slot:* ${confirmedBooking.timeSlot}\n` +
       `*Location:* ${confirmedBooking.location}\n` +
       `*Risk Tier:* ${confirmedBooking.riskLevel}\n\n` +
-      `*Direct Dispatch Request to Mr. Mosin Azam Shaikh (The Legend Security)*`
+      `*Direct Dispatch Request to Director (The Legend Security)*`
     );
-    window.open(`https://wa.me/918806078677?text=${msg}`, '_blank');
+    window.open(`https://wa.me/917249108658?text=${msg}`, '_blank');
   };
 
   const resetForm = () => {
@@ -279,7 +279,7 @@ export default function BookAppointmentPage() {
               </h1>
 
               <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl leading-relaxed">
-                Facility threat inspections and VIP briefings across Pune, Mumbai, Thane &amp; All Maharashtra. Coordinated directly by Director <strong>Mr. Mosin Azam Shaikh</strong>.
+                Facility threat inspections and VIP briefings across Pune, Mumbai, Thane &amp; All Maharashtra. Coordinated directly by the <strong>Director</strong>.
               </p>
             </div>
 
@@ -625,7 +625,7 @@ export default function BookAppointmentPage() {
                     Security Survey Scheduled
                   </h3>
                   <p className="text-slate-600 text-xs max-w-md mx-auto mt-0.5 leading-relaxed">
-                    Your appointment has been registered in the operations queue. Director <strong>Mr. Mosin Shaikh</strong> and field supervisors have received your booking.
+                    Your appointment has been registered in the operations queue. The <strong>Director</strong> and field supervisors have received your booking.
                   </p>
                 </div>
 
@@ -687,11 +687,15 @@ export default function BookAppointmentPage() {
           {/* MOBILE DIRECT CALL PILL (VISIBLE ONLY ON MOBILE) */}
           <div className="block lg:hidden w-full space-y-3">
             <div className="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-sm text-center">
-              <div className="flex items-center justify-center gap-2 text-xs text-slate-700">
+              <div className="flex flex-wrap items-center justify-center gap-2 text-xs text-slate-700">
                 <IconPhone className="text-brand-red w-3.5 h-3.5" />
                 <span>Prefer to book over call?</span>
-                <a href="tel:+918806078677" className="text-brand-red font-semibold hover:underline">
-                  +91 88060 78677
+                <a href="tel:+917249108658" className="text-brand-red font-semibold hover:underline">
+                  +91 72491 08658
+                </a>
+                <span className="text-slate-400">/</span>
+                <a href="tel:+919834024371" className="text-brand-red font-semibold hover:underline">
+                  +91 98340 24371
                 </a>
               </div>
               <div className="flex items-center justify-center gap-2 text-[10px] text-slate-400 pt-1.5 mt-1.5 border-t border-slate-100">
@@ -711,14 +715,14 @@ export default function BookAppointmentPage() {
             <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm space-y-4">
               <div className="flex items-center gap-3.5 pb-3 border-b border-slate-100">
                 <div className="w-11 h-11 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-brand-red font-bold text-sm tracking-wider shrink-0">
-                  MS
+                  D
                 </div>
                 <div>
                   <span className="text-[11px] uppercase tracking-wider text-brand-red font-semibold">
                     Director's Direct Desk
                   </span>
                   <h3 className="font-semibold text-base text-slate-900">
-                    Mr. Mosin Azam Shaikh
+                    Director
                   </h3>
                   <p className="text-xs text-slate-500">
                     Managing Director • Founded 2018
@@ -732,17 +736,32 @@ export default function BookAppointmentPage() {
 
               <div className="space-y-2 pt-1">
                 <a
-                  href="tel:+918806078677"
+                  href="tel:+917249108658"
                   className="flex items-center justify-between p-3 rounded-xl bg-slate-50/70 border border-slate-100 hover:border-red-200 transition-colors group"
                 >
                   <div className="flex items-center gap-2.5">
                     <div className="w-7 h-7 rounded-lg bg-red-50 text-brand-red flex items-center justify-center shrink-0">
                       <IconPhone className="text-brand-red" />
                     </div>
-                    <span className="text-xs text-slate-600 group-hover:text-slate-900">Director Direct Line:</span>
+                    <span className="text-xs text-slate-600 group-hover:text-slate-900">Director Line 1:</span>
                   </div>
                   <span className="text-xs font-semibold text-brand-red">
-                    +91 88060 78677
+                    +91 72491 08658
+                  </span>
+                </a>
+
+                <a
+                  href="tel:+919834024371"
+                  className="flex items-center justify-between p-3 rounded-xl bg-slate-50/70 border border-slate-100 hover:border-red-200 transition-colors group"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-7 h-7 rounded-lg bg-red-50 text-brand-red flex items-center justify-center shrink-0">
+                      <IconPhone className="text-brand-red" />
+                    </div>
+                    <span className="text-xs text-slate-600 group-hover:text-slate-900">Director Line 2:</span>
+                  </div>
+                  <span className="text-xs font-semibold text-brand-red">
+                    +91 98340 24371
                   </span>
                 </a>
 

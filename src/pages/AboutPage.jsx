@@ -6,10 +6,11 @@ import { PsaraShieldIcon, PoliceVerifiedIcon } from '../components/TrustIcons';
 export default function AboutPage() {
   const leadership = [
     {
-      name: 'Mr. Mosin Azam Shaikh',
+      name: 'Director',
       role: 'Director & Founder',
-      phone: '+91 88060 78677',
-      initial: 'M',
+      phone: '+91 72491 08658',
+      secondPhone: '+91 98340 24371',
+      initial: 'D',
       desc: 'Founded The Legend Security and Bouncer in 2018 with a commitment to quality, discipline, and uncompromising on-ground vigilance across Maharashtra.',
     },
     {
@@ -27,7 +28,7 @@ export default function AboutPage() {
       city: 'Bhawani Peth (Main Branch)',
       icon: 'fa-building',
       address: '857, Bhawani Peth, Near Bharat Talkies, Pune 411042',
-      contact: '+91 88060 78677 / 89758 66597',
+      contact: '+91 72491 08658 / +91 98340 24371',
       email: 'thelegendscrt16@gmail.com',
       accent: true,
     },
@@ -44,7 +45,7 @@ export default function AboutPage() {
       city: 'Malad East (Mumbai Branch)',
       icon: 'fa-city',
       address: 'Patel Society, Indira Nagar, Pathanwadi, Rani Sati Marg, Malad East, Mumbai 97',
-      contact: '+91 88060 78677 / 89758 66597',
+      contact: '+91 72491 08658 / +91 98340 24371',
       email: 'thelegendscrt16@gmail.com',
     },
   ];
@@ -148,13 +149,13 @@ export default function AboutPage() {
                 We introduce ourselves as one of the leading and professionally managed security services organizations in the manpower and executive protection sector.
               </p>
               <p>
-                <strong className="text-slate-900 font-semibold">The Legend Security and Bouncer</strong> was established in 2018 with a dedication to discipline, integrity, and proactive on-ground vigilance. Promoted by Founder &amp; Director <strong className="text-slate-900 font-semibold">Mr. Mosin Azam Shaikh</strong>, who maintains direct oversight across all client deployments.
+                <strong className="text-slate-900 font-semibold">The Legend Security and Bouncer</strong> was established in 2018 with a dedication to discipline, integrity, and proactive on-ground vigilance. Promoted by Founder &amp; <strong className="text-slate-900 font-semibold">Director</strong>, who maintains direct oversight across all client deployments.
               </p>
               <p>
                 Our company provides end-to-end security, VIP bouncer protection, corporate event cordons, industrial guarding, firefighting readiness, and facility housekeeping across commercial and residential premises.
               </p>
-              <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-normal">
-                <span>Direct Contact: +91 88060 78677</span>
+              <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 font-normal">
+                <span>Direct Contact: +91 72491 08658 / +91 98340 24371</span>
                 <span className="text-brand-red font-medium">thelegendscrt16@gmail.com</span>
               </div>
             </div>
@@ -253,20 +254,39 @@ export default function AboutPage() {
                   <p className="text-xs text-slate-600 leading-relaxed font-light">{leader.desc}</p>
                 </div>
 
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs mt-4">
-                  <a href={`tel:${leader.phone.replace(/[^0-9+]/g, '')}`}
-                    className="font-medium text-slate-800 hover:text-brand-red transition-colors flex items-center gap-2 group">
-                    <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center group-hover:bg-brand-red transition-colors">
-                      <i className="fa-solid fa-phone text-brand-red text-[9px] group-hover:text-white transition-colors" />
+                <div className="pt-4 border-t border-slate-100 flex flex-col gap-2 text-xs mt-4">
+                  <div className="flex items-center justify-between">
+                    <a href={`tel:${leader.phone.replace(/[^0-9+]/g, '')}`}
+                      className="font-medium text-slate-800 hover:text-brand-red transition-colors flex items-center gap-2 group">
+                      <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center group-hover:bg-brand-red transition-colors">
+                        <i className="fa-solid fa-phone text-brand-red text-[9px] group-hover:text-white transition-colors" />
+                      </div>
+                      {leader.phone}
+                    </a>
+                    <a href={`https://wa.me/${leader.phone.replace(/[^0-9]/g, '')}`}
+                      target="_blank" rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
+                      <i className="fa-brands fa-whatsapp text-sm" />
+                      WhatsApp
+                    </a>
+                  </div>
+                  {leader.secondPhone && (
+                    <div className="flex items-center justify-between">
+                      <a href={`tel:${leader.secondPhone.replace(/[^0-9+]/g, '')}`}
+                        className="font-medium text-slate-800 hover:text-brand-red transition-colors flex items-center gap-2 group">
+                        <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center group-hover:bg-brand-red transition-colors">
+                          <i className="fa-solid fa-phone text-brand-red text-[9px] group-hover:text-white transition-colors" />
+                        </div>
+                        {leader.secondPhone}
+                      </a>
+                      <a href={`https://wa.me/${leader.secondPhone.replace(/[^0-9]/g, '')}`}
+                        target="_blank" rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
+                        <i className="fa-brands fa-whatsapp text-sm" />
+                        WhatsApp
+                      </a>
                     </div>
-                    {leader.phone}
-                  </a>
-                  <a href={`https://wa.me/${leader.phone.replace(/[^0-9]/g, '')}`}
-                    target="_blank" rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
-                    <i className="fa-brands fa-whatsapp text-sm" />
-                    WhatsApp
-                  </a>
+                  )}
                 </div>
               </div>
             ))}
@@ -326,7 +346,7 @@ export default function AboutPage() {
         <div className={`max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 transition-all duration-700 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <div>
             <h3 className="font-heading font-bold text-2xl sm:text-3xl text-white tracking-tight">Connect With Management</h3>
-            <p className="text-xs sm:text-sm text-slate-400 mt-1 font-light">Contact Director Mosin Shaikh directly for site inspection and guard deployment.</p>
+            <p className="text-xs sm:text-sm text-slate-400 mt-1 font-light">Contact Director directly for site inspection and guard deployment.</p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <Link
@@ -337,12 +357,20 @@ export default function AboutPage() {
               <span>Schedule Site Survey</span>
             </Link>
             <a
-              href="tel:+918806078677"
-              className="px-5 py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-white font-heading font-semibold text-xs tracking-wider transition-all whitespace-nowrap flex items-center gap-2"
-              title="Director Mosin Shaikh"
+              href="tel:+917249108658"
+              className="px-4 py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-white font-heading font-semibold text-xs tracking-wider transition-all whitespace-nowrap flex items-center gap-2"
+              title="Director: +91 72491 08658"
             >
               <i className="fa-solid fa-phone text-brand-red text-xs" />
-              <span>+91 88060 78677</span>
+              <span>+91 72491 08658</span>
+            </a>
+            <a
+              href="tel:+919834024371"
+              className="px-4 py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-white font-heading font-semibold text-xs tracking-wider transition-all whitespace-nowrap flex items-center gap-2"
+              title="Director: +91 98340 24371"
+            >
+              <i className="fa-solid fa-phone text-brand-red text-xs" />
+              <span>+91 98340 24371</span>
             </a>
           </div>
         </div>

@@ -166,7 +166,7 @@ export default function AdminPage() {
   // Direct WhatsApp dispatch
   const sendWhatsApp = (phone, booking) => {
     const cleanPhone = phone.replace(/[^0-9]/g, '');
-    const text = `Hello ${booking.fullName}, this is Mosin Shaikh from The Legend Security confirming your scheduled site inspection for ${booking.date} (${booking.timeSlot}) at ${booking.location}.`;
+    const text = `Hello ${booking.fullName}, this is the Director from The Legend Security confirming your scheduled site inspection for ${booking.date} (${booking.timeSlot}) at ${booking.location}.`;
     const url = `https://wa.me/${cleanPhone.startsWith('91') ? cleanPhone : '91' + cleanPhone}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
   };

@@ -65,9 +65,9 @@ function MobileLightbox({ image, total, currentIndex, isOpen, onClose, onPrev, o
             <span>{image.location}</span>
           </div>
         </div>
-        <a href="tel:+918806078677" className="w-full flex items-center justify-center gap-2 bg-brand-red hover:bg-red-600 text-white font-heading font-semibold text-xs tracking-wider py-3 rounded-xl shadow-md">
+        <a href="tel:+917249108658" className="w-full flex items-center justify-center gap-2 bg-brand-red hover:bg-red-600 text-white font-heading font-semibold text-xs tracking-wider py-3 rounded-xl shadow-md">
           <i className="fa-solid fa-phone text-xs" />
-          <span>Deploy Similar Squad — +91 88060 78677</span>
+          <span>Deploy Similar Squad — +91 72491 08658 / +91 98340 24371</span>
         </a>
       </div>
     </div>
@@ -75,44 +75,44 @@ function MobileLightbox({ image, total, currentIndex, isOpen, onClose, onPrev, o
 }
 
 const galleryItems = [
-  { id: 1,  tag: 'FIELD OPS',       category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Pune',         title: 'Security Squad — Field Operation 01',  desc: 'Legend Security personnel on active duty during on-ground field operation.',        shift: 'ACTIVE DEPLOYMENT',    src: '/assets/gallery/photo_1.jpg' },
-  { id: 2,  tag: 'SQUAD FORMATION', category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Pune',         title: 'Guard Formation and Briefing',         desc: 'Supervised formation and pre-shift briefing before daily deployment.',              shift: 'DAILY SHIFT PROTOCOL', src: '/assets/gallery/photo_2.jpg' },
-  { id: 3,  tag: 'ON-DUTY',         category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Maharashtra',  title: 'On-Duty Security Personnel',           desc: 'Uniformed security guard maintaining vigil at assigned post.',                      shift: 'STANDARD TURNOUT',     src: '/assets/gallery/photo_3.jpg' },
-  { id: 4,  tag: 'TEAM LINEUP',     category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Pune',         title: 'Team Lineup and Attendance',           desc: 'Full squad attendance and uniform inspection prior to client site deployment.',     shift: 'SHIFT ROLLCALL',       src: '/assets/gallery/photo_4.jpg' },
-  { id: 5,  tag: 'DEPLOYMENT',      category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Pune',         title: 'Guard Deployment — Client Site',       desc: 'Security personnel deployed at client premises for round-the-clock surveillance.', shift: 'CLIENT DEPLOYMENT',    src: '/assets/gallery/photo_5.jpg' },
-  { id: 6,  tag: 'BOUNCER FORCE',   category: ['bouncers'],          categoryLabel: 'BOUNCERS AND EVENTS',location: 'Event Venue',  title: 'Executive Bouncers Event Squad',       desc: 'Formidable event bouncers ensuring VIP safety and access control.',                shift: 'EVENT SECURITY',       src: '/assets/gallery/photo_6.jpg' },
-  { id: 7,  tag: 'VIP DETAIL',      category: ['bouncers'],          categoryLabel: 'BOUNCERS AND EVENTS',location: 'Executive',    title: 'Close Protection Bouncer',             desc: 'Trained bouncer for private VIP escorting and executive protection.',              shift: 'CLOSE PROTECTION',     src: '/assets/gallery/photo_7.jpg' },
-  { id: 8,  tag: 'EVENT CROWD',     category: ['bouncers'],          categoryLabel: 'BOUNCERS AND EVENTS',location: 'Event Venue',  title: 'Crowd Management at Premium Event',    desc: 'Bouncers managing crowd flow and access control at high-footfall event.',          shift: 'CROWD CONTROL',        src: '/assets/gallery/photo_8.jpg' },
-  { id: 9,  tag: 'NIGHT DETAIL',    category: ['bouncers'],          categoryLabel: 'BOUNCERS AND EVENTS',location: 'Club Venue',   title: 'Night Venue Security Team',            desc: 'Elite bouncer team securing nightclub premises and entry checkpoint.',             shift: 'NIGHT OPERATIONS',     src: '/assets/gallery/photo_9.jpg' },
-  { id: 10, tag: 'STADIUM EVENT',   category: ['bouncers','squad'],  categoryLabel: 'EVENTS AND STADIUMS',location: 'Sports Arena', title: 'Perimeter Security at Sports Event',   desc: 'Squad deployment at large-scale sports tournament barricades.',                    shift: 'ARENA PERIMETER',      src: '/assets/gallery/photo_10.jpg' },
-  { id: 11, tag: 'SQUAD PATROL',    category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Pune',         title: 'Patrol Duty — Industrial Zone',        desc: 'Guards on patrol at industrial client site, monitoring perimeter round-the-clock.',shift: 'PERIMETER PATROL',     src: '/assets/gallery/photo_11.jpg' },
-  { id: 12, tag: 'INSPECTION',      category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Maharashtra',  title: 'Senior Supervisor Inspection',         desc: 'Senior supervisor conducting spot inspection and quality audit of deployed guards.',shift: 'QUALITY AUDIT',        src: '/assets/gallery/photo_12.jpg' },
-  { id: 13, tag: 'CORPORATE',       category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Pune',         title: 'Corporate Security Post',              desc: 'Front-desk security and visitor management at corporate facility.',                shift: 'CORPORATE GUARD',      src: '/assets/gallery/photo_13.jpg' },
-  { id: 14, tag: 'FIELD OPS',       category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Pune',         title: 'Ground Security Operations',           desc: 'Guards during active ground security operations at assigned client location.',     shift: 'GROUND OPS',           src: '/assets/gallery/photo_14.jpg' },
-  { id: 15, tag: 'TEAM STRENGTH',   category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Maharashtra',  title: 'Full Squad Strength Display',          desc: 'Complete guard force assembled showcasing manpower depth and readiness.',          shift: 'FORCE DISPLAY',        src: '/assets/gallery/photo_15.jpg' },
-  { id: 16, tag: 'LADY GUARDS',     category: ['squad'],             categoryLabel: 'LADY SECURITY',      location: 'Pune',         title: 'Lady Security Guards on Duty',         desc: 'Trained lady guards deployed at residential complexes and corporate premises.',    shift: 'LADY GUARD DUTY',      src: '/assets/gallery/photo_16.jpg' },
-  { id: 17, tag: 'DRILL PRACTICE',  category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Training Ground', title: 'Guard Drill and Marching Practice',  desc: 'Physical conditioning, flag salutes, and ceremonial drill training.',             shift: 'DISCIPLINE DRILLS',    src: '/assets/gallery/photo_17.jpg' },
-  { id: 18, tag: 'TURNOUT CHECK',   category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Katraj HQ',    title: 'Uniform and Equipment Turnout',        desc: 'Supervisor-led uniform and equipment check before deployment.',                    shift: 'PRE-SHIFT TURNOUT',    src: '/assets/gallery/photo_18.jpg' },
-  { id: 19, tag: 'POLICE LIAISON',  category: ['squad'],             categoryLabel: 'JOINT OPERATIONS',   location: 'Maharashtra',  title: 'Coordination with Police',             desc: 'Directors liaising with local law enforcement for synchronized safety operations.',shift: 'JOINT COORDINATION',   src: '/assets/gallery/photo_19.jpg' },
-  { id: 20, tag: 'HIGH ALERT',      category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Pune',         title: 'High Alert Security Deployment',       desc: 'Guards on heightened alert during special occasion security assignments.',        shift: 'HIGH ALERT DUTY',      src: '/assets/gallery/photo_20.jpg' },
-  { id: 21, tag: 'SITE SECURITY',   category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Mumbai',       title: 'Construction Site Security',           desc: 'Dedicated security at construction and project sites — theft and access prevention.',shift: 'SITE GUARD',          src: '/assets/gallery/photo_21.jpg' },
-  { id: 22, tag: 'SOCIETY GUARD',   category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Pune',         title: 'Residential Society Security',         desc: 'Guards at gated community ensuring resident safety and visitor verification.',     shift: 'SOCIETY DUTY',         src: '/assets/gallery/photo_22.jpg' },
-  { id: 23, tag: 'VIP PROTECTION',  category: ['bouncers'],          categoryLabel: 'BOUNCERS AND EVENTS',location: 'Pune',         title: 'VIP Escort and Protection Detail',     desc: 'Close protection team escorting VIP clients at high-profile events.',             shift: 'VIP ESCORT',           src: '/assets/gallery/photo_23.jpg' },
-  { id: 24, tag: 'EVENT SQUAD',     category: ['bouncers'],          categoryLabel: 'BOUNCERS AND EVENTS',location: 'Event Venue',  title: 'Full Event Security Formation',        desc: 'Complete event security team in formation before major venue assignment.',        shift: 'EVENT FORMATION',      src: '/assets/gallery/photo_24.jpg' },
-  { id: 25, tag: 'NIGHT WATCH',     category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Maharashtra',  title: 'Night Watch — Industrial Complex',     desc: 'Guards maintaining night watch at industrial premises ensuring zero breach.',      shift: 'NIGHT WATCH',          src: '/assets/gallery/photo_25.jpg' },
-  { id: 26, tag: 'TEAM BRIEFING',   category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Pune',         title: 'Operational Briefing Session',         desc: 'Team leader conducting pre-deployment briefing on site safety protocols.',        shift: 'BRIEFING SESSION',     src: '/assets/gallery/photo_26.jpg' },
-  { id: 27, tag: 'MULTI-POST',      category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Pune',         title: 'Multi-Post Deployment Strategy',       desc: 'Multiple-point guard deployment at large commercial establishment.',              shift: 'MULTI-POST COVER',     src: '/assets/gallery/photo_27.jpg' },
-  { id: 28, tag: 'EMERGENCY DRILL', category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Training HQ',  title: 'Emergency Response Drill',             desc: 'Guards undertaking emergency response and evacuation drill training.',            shift: 'EMERGENCY DRILL',      src: '/assets/gallery/photo_28.jpg' },
-  { id: 29, tag: 'MASS SQUAD',      category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Maharashtra',  title: 'Large-Scale Squad Assembly',           desc: 'Massive squad assembly showcasing Legend Security full manpower capability.',      shift: 'FORCE PARADE',         src: '/assets/gallery/photo_29.jpg' },
-  { id: 30, tag: 'CLIENT SITE',     category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Pune',         title: 'Active Client Site Coverage',          desc: 'Personnel actively covering client site with disciplined formation and vigilance.',shift: 'CLIENT COVERAGE',      src: '/assets/gallery/photo_30.jpg' },
-  { id: 31, tag: 'SUPERVISOR',      category: ['squad'],             categoryLabel: 'SECURITY SQUAD',     location: 'Pune',         title: 'Field Supervisor on Duty',             desc: 'Field supervisor monitoring guard posts and ensuring SOP compliance.',            shift: 'SUPERVISOR ROUND',     src: '/assets/gallery/photo_31.jpg' },
-  { id: 32, tag: 'SPECIAL EVENT',   category: ['bouncers'],          categoryLabel: 'BOUNCERS AND EVENTS',location: 'Event Venue',  title: 'Special Event Security Cover',         desc: 'Dedicated event security team ensuring complete safety at high-profile event.',   shift: 'SPECIAL ASSIGNMENT',   src: '/assets/gallery/photo_32.jpg' },
-  { id: 33, tag: 'FULL FORCE',      category: ['squad','bouncers'],  categoryLabel: 'FULL FORCE DISPLAY', location: 'Maharashtra',  title: 'The Legend Security — Full Force',     desc: 'Combined squad and bouncer force on parade — showcasing total operational strength.',shift: 'FORCE PARADE',       src: '/assets/gallery/photo_33.jpg' },
+  { id: 1, tag: 'FIELD OPS', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Pune', title: 'Security Squad — Field Operation 01', desc: 'Legend Security personnel on active duty during on-ground field operation.', shift: 'ACTIVE DEPLOYMENT', src: '/assets/gallery/photo_1.jpg' },
+  { id: 2, tag: 'SQUAD FORMATION', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Pune', title: 'Guard Formation and Briefing', desc: 'Supervised formation and pre-shift briefing before daily deployment.', shift: 'DAILY SHIFT PROTOCOL', src: '/assets/gallery/photo_2.jpg' },
+  { id: 3, tag: 'ON-DUTY', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Maharashtra', title: 'On-Duty Security Personnel', desc: 'Uniformed security guard maintaining vigil at assigned post.', shift: 'STANDARD TURNOUT', src: '/assets/gallery/photo_3.jpg' },
+  { id: 4, tag: 'TEAM LINEUP', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Pune', title: 'Team Lineup and Attendance', desc: 'Full squad attendance and uniform inspection prior to client site deployment.', shift: 'SHIFT ROLLCALL', src: '/assets/gallery/photo_4.jpg' },
+  { id: 5, tag: 'DEPLOYMENT', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Pune', title: 'Guard Deployment — Client Site', desc: 'Security personnel deployed at client premises for round-the-clock surveillance.', shift: 'CLIENT DEPLOYMENT', src: '/assets/gallery/photo_5.jpg' },
+  { id: 6, tag: 'BOUNCER FORCE', category: ['bouncers'], categoryLabel: 'BOUNCERS AND EVENTS', location: 'Event Venue', title: 'Executive Bouncers Event Squad', desc: 'Formidable event bouncers ensuring VIP safety and access control.', shift: 'EVENT SECURITY', src: '/assets/gallery/photo_6.jpg' },
+  { id: 7, tag: 'VIP DETAIL', category: ['bouncers'], categoryLabel: 'BOUNCERS AND EVENTS', location: 'Executive', title: 'Close Protection Bouncer', desc: 'Trained bouncer for private VIP escorting and executive protection.', shift: 'CLOSE PROTECTION', src: '/assets/gallery/photo_7.jpg' },
+  { id: 8, tag: 'EVENT CROWD', category: ['bouncers'], categoryLabel: 'BOUNCERS AND EVENTS', location: 'Event Venue', title: 'Crowd Management at Premium Event', desc: 'Bouncers managing crowd flow and access control at high-footfall event.', shift: 'CROWD CONTROL', src: '/assets/gallery/photo_8.jpg' },
+  { id: 9, tag: 'NIGHT DETAIL', category: ['bouncers'], categoryLabel: 'BOUNCERS AND EVENTS', location: 'Club Venue', title: 'Night Venue Security Team', desc: 'Elite bouncer team securing nightclub premises and entry checkpoint.', shift: 'NIGHT OPERATIONS', src: '/assets/gallery/photo_9.jpg' },
+  { id: 10, tag: 'STADIUM EVENT', category: ['bouncers', 'squad'], categoryLabel: 'EVENTS AND STADIUMS', location: 'Sports Arena', title: 'Perimeter Security at Sports Event', desc: 'Squad deployment at large-scale sports tournament barricades.', shift: 'ARENA PERIMETER', src: '/assets/gallery/photo_10.jpg' },
+  { id: 11, tag: 'SQUAD PATROL', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Pune', title: 'Patrol Duty — Industrial Zone', desc: 'Guards on patrol at industrial client site, monitoring perimeter round-the-clock.', shift: 'PERIMETER PATROL', src: '/assets/gallery/photo_11.jpg' },
+  { id: 12, tag: 'INSPECTION', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Maharashtra', title: 'Senior Supervisor Inspection', desc: 'Senior supervisor conducting spot inspection and quality audit of deployed guards.', shift: 'QUALITY AUDIT', src: '/assets/gallery/photo_12.jpg' },
+  { id: 13, tag: 'CORPORATE', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Pune', title: 'Corporate Security Post', desc: 'Front-desk security and visitor management at corporate facility.', shift: 'CORPORATE GUARD', src: '/assets/gallery/photo_13.jpg' },
+  { id: 14, tag: 'FIELD OPS', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Pune', title: 'Ground Security Operations', desc: 'Guards during active ground security operations at assigned client location.', shift: 'GROUND OPS', src: '/assets/gallery/photo_14.jpg' },
+  { id: 15, tag: 'TEAM STRENGTH', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Maharashtra', title: 'Full Squad Strength Display', desc: 'Complete guard force assembled showcasing manpower depth and readiness.', shift: 'FORCE DISPLAY', src: '/assets/gallery/photo_15.jpg' },
+  { id: 16, tag: 'LADY GUARDS', category: ['squad'], categoryLabel: 'LADY SECURITY', location: 'Pune', title: 'Lady Security Guards on Duty', desc: 'Trained lady guards deployed at residential complexes and corporate premises.', shift: 'LADY GUARD DUTY', src: '/assets/gallery/photo_16.jpg' },
+  { id: 17, tag: 'DRILL PRACTICE', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Training Ground', title: 'Guard Drill and Marching Practice', desc: 'Physical conditioning, flag salutes, and ceremonial drill training.', shift: 'DISCIPLINE DRILLS', src: '/assets/gallery/photo_17.jpg' },
+  { id: 18, tag: 'TURNOUT CHECK', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Katraj HQ', title: 'Uniform and Equipment Turnout', desc: 'Supervisor-led uniform and equipment check before deployment.', shift: 'PRE-SHIFT TURNOUT', src: '/assets/gallery/photo_18.jpg' },
+  { id: 19, tag: 'POLICE LIAISON', category: ['squad'], categoryLabel: 'JOINT OPERATIONS', location: 'Maharashtra', title: 'Coordination with Police', desc: 'Directors liaising with local law enforcement for synchronized safety operations.', shift: 'JOINT COORDINATION', src: '/assets/gallery/photo_19.jpg' },
+  { id: 20, tag: 'HIGH ALERT', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Pune', title: 'High Alert Security Deployment', desc: 'Guards on heightened alert during special occasion security assignments.', shift: 'HIGH ALERT DUTY', src: '/assets/gallery/photo_20.jpg' },
+  { id: 21, tag: 'SITE SECURITY', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Mumbai', title: 'Construction Site Security', desc: 'Dedicated security at construction and project sites — theft and access prevention.', shift: 'SITE GUARD', src: '/assets/gallery/photo_21.jpg' },
+  { id: 22, tag: 'SOCIETY GUARD', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Pune', title: 'Residential Society Security', desc: 'Guards at gated community ensuring resident safety and visitor verification.', shift: 'SOCIETY DUTY', src: '/assets/gallery/photo_22.jpg' },
+  { id: 23, tag: 'VIP PROTECTION', category: ['bouncers'], categoryLabel: 'BOUNCERS AND EVENTS', location: 'Pune', title: 'VIP Escort and Protection Detail', desc: 'Close protection team escorting VIP clients at high-profile events.', shift: 'VIP ESCORT', src: '/assets/gallery/photo_23.jpg' },
+  { id: 24, tag: 'EVENT SQUAD', category: ['bouncers'], categoryLabel: 'BOUNCERS AND EVENTS', location: 'Event Venue', title: 'Full Event Security Formation', desc: 'Complete event security team in formation before major venue assignment.', shift: 'EVENT FORMATION', src: '/assets/gallery/photo_24.jpg' },
+  { id: 25, tag: 'NIGHT WATCH', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Maharashtra', title: 'Night Watch — Industrial Complex', desc: 'Guards maintaining night watch at industrial premises ensuring zero breach.', shift: 'NIGHT WATCH', src: '/assets/gallery/photo_25.jpg' },
+  { id: 26, tag: 'TEAM BRIEFING', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Pune', title: 'Operational Briefing Session', desc: 'Team leader conducting pre-deployment briefing on site safety protocols.', shift: 'BRIEFING SESSION', src: '/assets/gallery/photo_26.jpg' },
+  { id: 27, tag: 'MULTI-POST', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Pune', title: 'Multi-Post Deployment Strategy', desc: 'Multiple-point guard deployment at large commercial establishment.', shift: 'MULTI-POST COVER', src: '/assets/gallery/photo_27.jpg' },
+  { id: 28, tag: 'EMERGENCY DRILL', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Training HQ', title: 'Emergency Response Drill', desc: 'Guards undertaking emergency response and evacuation drill training.', shift: 'EMERGENCY DRILL', src: '/assets/gallery/photo_28.jpg' },
+  { id: 29, tag: 'MASS SQUAD', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Maharashtra', title: 'Large-Scale Squad Assembly', desc: 'Massive squad assembly showcasing Legend Security full manpower capability.', shift: 'FORCE PARADE', src: '/assets/gallery/photo_29.jpg' },
+  { id: 30, tag: 'CLIENT SITE', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Pune', title: 'Active Client Site Coverage', desc: 'Personnel actively covering client site with disciplined formation and vigilance.', shift: 'CLIENT COVERAGE', src: '/assets/gallery/photo_30.jpg' },
+  { id: 31, tag: 'SUPERVISOR', category: ['squad'], categoryLabel: 'SECURITY SQUAD', location: 'Pune', title: 'Field Supervisor on Duty', desc: 'Field supervisor monitoring guard posts and ensuring SOP compliance.', shift: 'SUPERVISOR ROUND', src: '/assets/gallery/photo_31.jpg' },
+  { id: 32, tag: 'SPECIAL EVENT', category: ['bouncers'], categoryLabel: 'BOUNCERS AND EVENTS', location: 'Event Venue', title: 'Special Event Security Cover', desc: 'Dedicated event security team ensuring complete safety at high-profile event.', shift: 'SPECIAL ASSIGNMENT', src: '/assets/gallery/photo_32.jpg' },
+  { id: 33, tag: 'FULL FORCE', category: ['squad', 'bouncers'], categoryLabel: 'FULL FORCE DISPLAY', location: 'Maharashtra', title: 'The Legend Security — Full Force', desc: 'Combined squad and bouncer force on parade — showcasing total operational strength.', shift: 'FORCE PARADE', src: '/assets/gallery/photo_33.jpg' },
 ];
 
 const categories = [
-  { id: 'all',      label: 'All Photos',        icon: 'fa-border-all',               count: galleryItems.length },
-  { id: 'squad',    label: 'Security Squad',    icon: 'fa-users',                    count: galleryItems.filter(i => i.category.includes('squad')).length },
+  { id: 'all', label: 'All Photos', icon: 'fa-border-all', count: galleryItems.length },
+  { id: 'squad', label: 'Security Squad', icon: 'fa-users', count: galleryItems.filter(i => i.category.includes('squad')).length },
   { id: 'bouncers', label: 'Bouncers and Events', icon: 'fa-person-military-pointing', count: galleryItems.filter(i => i.category.includes('bouncers')).length },
 ];
 
@@ -189,11 +189,10 @@ export default function GalleryPage() {
                 <button
                   key={cat.id}
                   onClick={() => { setActiveCategory(cat.id); setSelectedIndex(null); }}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full font-heading font-semibold text-xs tracking-wide transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0 ${
-                    activeCategory === cat.id
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full font-heading font-semibold text-xs tracking-wide transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0 ${activeCategory === cat.id
                       ? 'bg-brand-red text-white shadow-sm'
                       : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
-                  }`}
+                    }`}
                 >
                   <i className={`fa-solid ${cat.icon} text-[10px]`} />
                   {cat.label}
@@ -223,9 +222,8 @@ export default function GalleryPage() {
               <article
                 key={item.id}
                 onClick={() => setSelectedIndex(idx)}
-                className={`group relative flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md border border-slate-200/90 hover:border-brand-red/40 cursor-pointer transition-all duration-300 ${
-                  gridVisible.has(idx) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
+                className={`group relative flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md border border-slate-200/90 hover:border-brand-red/40 cursor-pointer transition-all duration-300 ${gridVisible.has(idx) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}
                 style={{ transitionDelay: `${Math.min(idx * 35, 600)}ms` }}
               >
                 <div className="relative w-full overflow-hidden bg-slate-900" style={{ aspectRatio: '4/3' }}>
@@ -282,11 +280,11 @@ export default function GalleryPage() {
       <section className="sm:hidden w-full bg-[#0a0a0c] px-4 py-5 border-t border-white/10">
         <p className="text-center text-xs text-slate-400 font-light mb-3">Need dedicated security personnel?</p>
         <div className="grid grid-cols-2 gap-2">
-          <a href="tel:+918806078677" className="flex items-center justify-center gap-2 bg-brand-red text-white font-heading font-semibold text-xs uppercase tracking-wider py-3 rounded-xl shadow-sm">
+          <a href="tel:+917249108658" className="flex items-center justify-center gap-2 bg-brand-red text-white font-heading font-semibold text-xs uppercase tracking-wider py-3 rounded-xl shadow-sm">
             <i className="fa-solid fa-phone text-xs" />
             <span>Call Now</span>
           </a>
-          <a href="https://wa.me/918806078677" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-emerald-600 text-white font-heading font-semibold text-xs uppercase tracking-wider py-3 rounded-xl">
+          <a href="https://wa.me/917249108658" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-emerald-600 text-white font-heading font-semibold text-xs uppercase tracking-wider py-3 rounded-xl">
             <i className="fa-brands fa-whatsapp text-sm" />
             <span>WhatsApp</span>
           </a>
@@ -298,7 +296,7 @@ export default function GalleryPage() {
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left relative z-10">
           <div>
             <h3 className="font-heading font-bold text-xl sm:text-3xl text-white tracking-tight">Require Trained Manpower?</h3>
-            <p className="text-xs sm:text-sm text-slate-400 mt-1 font-light">Contact Director Mosin Azam Shaikh (+91 88060 78677) for rapid deployment.</p>
+            <p className="text-xs sm:text-sm text-slate-400 mt-1 font-light">Contact Director (+91 72491 08658 / +91 98340 24371) for rapid deployment.</p>
           </div>
           <Link to="/contact" className="px-6 py-3 rounded-xl bg-brand-red hover:bg-red-600 text-white font-heading font-semibold text-xs uppercase tracking-wider transition-all shadow-md shadow-red-950/40 whitespace-nowrap flex items-center gap-2">
             <i className="fa-solid fa-file-invoice text-xs" />

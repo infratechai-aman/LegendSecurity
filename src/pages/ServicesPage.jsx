@@ -85,11 +85,20 @@ export default function ServicesPage() {
               <span>Request Quote</span>
             </Link>
             <a
-              href="tel:+918806078677"
-              className="px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 hover:border-white/20 text-slate-300 hover:text-white font-heading font-medium text-xs tracking-wider transition-all flex items-center gap-2"
+              href="tel:+917249108658"
+              className="px-3.5 py-3 rounded-xl bg-white/[0.03] border border-white/10 hover:border-white/20 text-slate-300 hover:text-white font-heading font-medium text-xs tracking-wider transition-all flex items-center gap-1.5"
+              title="Director: +91 72491 08658"
             >
               <i className="fa-solid fa-phone text-brand-red text-xs" />
-              <span>+91 88060 78677</span>
+              <span>+91 72491 08658</span>
+            </a>
+            <a
+              href="tel:+919834024371"
+              className="px-3.5 py-3 rounded-xl bg-white/[0.03] border border-white/10 hover:border-white/20 text-slate-300 hover:text-white font-heading font-medium text-xs tracking-wider transition-all flex items-center gap-1.5"
+              title="Director: +91 98340 24371"
+            >
+              <i className="fa-solid fa-phone text-brand-red text-xs" />
+              <span>+91 98340 24371</span>
             </a>
           </div>
         </div>
@@ -261,7 +270,7 @@ export default function ServicesPage() {
           <div>
             <span className="text-xs font-semibold text-brand-red uppercase tracking-wider">Direct Consultation</span>
             <h3 className="font-heading font-bold text-2xl sm:text-3xl text-white tracking-tight mt-1">Get Official Price Quote &amp; Survey</h3>
-            <p className="text-xs sm:text-sm text-slate-300 mt-1 font-light">Speak directly with Director Mosin Azam Shaikh for your site survey and estimate across Maharashtra.</p>
+            <p className="text-xs sm:text-sm text-slate-300 mt-1 font-light">Speak directly with Director for your site survey and estimate across Maharashtra.</p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <button
