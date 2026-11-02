@@ -208,7 +208,7 @@ export default function BookAppointmentPage() {
     if (!confirmedBooking) return '#';
     const title = encodeURIComponent(`Security Consultation: ${confirmedBooking.auditType} - The Legend Security`);
     const details = encodeURIComponent(
-      `Appointment Ref: ${confirmedBooking.id}\nClient: ${confirmedBooking.fullName} (${confirmedBooking.orgName})\nPhone: ${confirmedBooking.phoneNum}\nDirector Hotline: +91 72491 08658 / +91 98340 24371\nThe Legend Security and Bouncer`
+      `Appointment Ref: ${confirmedBooking.id}\nClient: ${confirmedBooking.fullName} (${confirmedBooking.orgName})\nPhone: ${confirmedBooking.phoneNum}\nDirector Main Hotline: +91 88060 78677\nDirector Desk: +91 72491 08658 / +91 98340 24371\nThe Legend Security and Bouncer`
     );
     const loc = encodeURIComponent(confirmedBooking.location);
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${loc}`;
@@ -229,7 +229,7 @@ export default function BookAppointmentPage() {
       `*Risk Tier:* ${confirmedBooking.riskLevel}\n\n` +
       `*Direct Dispatch Request to Director (The Legend Security)*`
     );
-    window.open(`https://wa.me/917249108658?text=${msg}`, '_blank');
+    window.open(`https://wa.me/918806078677?text=${msg}`, '_blank');
   };
 
   const resetForm = () => {
@@ -690,11 +690,15 @@ export default function BookAppointmentPage() {
               <div className="flex flex-wrap items-center justify-center gap-2 text-xs text-slate-700">
                 <IconPhone className="text-brand-red w-3.5 h-3.5" />
                 <span>Prefer to book over call?</span>
-                <a href="tel:+917249108658" className="text-brand-red font-semibold hover:underline">
+                <a href="tel:+918806078677" className="text-brand-red font-bold hover:underline">
+                  +91 88060 78677 (Main)
+                </a>
+                <span className="text-slate-400">/</span>
+                <a href="tel:+917249108658" className="text-slate-700 font-semibold hover:underline">
                   +91 72491 08658
                 </a>
                 <span className="text-slate-400">/</span>
-                <a href="tel:+919834024371" className="text-brand-red font-semibold hover:underline">
+                <a href="tel:+919834024371" className="text-slate-700 font-semibold hover:underline">
                   +91 98340 24371
                 </a>
               </div>
@@ -736,16 +740,31 @@ export default function BookAppointmentPage() {
 
               <div className="space-y-2 pt-1">
                 <a
+                  href="tel:+918806078677"
+                  className="flex items-center justify-between p-3 rounded-xl bg-red-50/60 border border-red-200 hover:border-brand-red transition-colors group"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-7 h-7 rounded-lg bg-brand-red text-white flex items-center justify-center shrink-0">
+                      <IconPhone className="text-white" />
+                    </div>
+                    <span className="text-xs font-semibold text-slate-900 group-hover:text-brand-red">Director Main Line:</span>
+                  </div>
+                  <span className="text-xs font-bold text-brand-red">
+                    +91 88060 78677
+                  </span>
+                </a>
+
+                <a
                   href="tel:+917249108658"
                   className="flex items-center justify-between p-3 rounded-xl bg-slate-50/70 border border-slate-100 hover:border-red-200 transition-colors group"
                 >
                   <div className="flex items-center gap-2.5">
-                    <div className="w-7 h-7 rounded-lg bg-red-50 text-brand-red flex items-center justify-center shrink-0">
-                      <IconPhone className="text-brand-red" />
+                    <div className="w-7 h-7 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center shrink-0">
+                      <IconPhone className="text-slate-700" />
                     </div>
-                    <span className="text-xs text-slate-600 group-hover:text-slate-900">Director Line 1:</span>
+                    <span className="text-xs text-slate-600 group-hover:text-slate-900">Director Desk 2:</span>
                   </div>
-                  <span className="text-xs font-semibold text-brand-red">
+                  <span className="text-xs font-semibold text-slate-900">
                     +91 72491 08658
                   </span>
                 </a>
@@ -755,12 +774,12 @@ export default function BookAppointmentPage() {
                   className="flex items-center justify-between p-3 rounded-xl bg-slate-50/70 border border-slate-100 hover:border-red-200 transition-colors group"
                 >
                   <div className="flex items-center gap-2.5">
-                    <div className="w-7 h-7 rounded-lg bg-red-50 text-brand-red flex items-center justify-center shrink-0">
-                      <IconPhone className="text-brand-red" />
+                    <div className="w-7 h-7 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center shrink-0">
+                      <IconPhone className="text-slate-700" />
                     </div>
-                    <span className="text-xs text-slate-600 group-hover:text-slate-900">Director Line 2:</span>
+                    <span className="text-xs text-slate-600 group-hover:text-slate-900">Director Desk 3:</span>
                   </div>
-                  <span className="text-xs font-semibold text-brand-red">
+                  <span className="text-xs font-semibold text-slate-900">
                     +91 98340 24371
                   </span>
                 </a>

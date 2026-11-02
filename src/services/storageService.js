@@ -25,7 +25,7 @@ const INITIAL_GUARDS = [
     badge: 'EX-ARMY',
     status: 'On Duty',
     experience: '14 Years',
-    phone: '+91 72491 08658',
+    phone: '+91 88060 78677',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
   },
   {

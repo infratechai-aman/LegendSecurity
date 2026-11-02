@@ -85,9 +85,17 @@ export default function ServicesPage() {
               <span>Request Quote</span>
             </Link>
             <a
+              href="tel:+918806078677"
+              className="px-4 py-3 rounded-xl bg-brand-red hover:bg-red-700 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-md"
+              title="Director (Main Hotline): +91 88060 78677"
+            >
+              <i className="fa-solid fa-phone text-xs" />
+              <span>+91 88060 78677</span>
+            </a>
+            <a
               href="tel:+917249108658"
               className="px-3.5 py-3 rounded-xl bg-white/[0.03] border border-white/10 hover:border-white/20 text-slate-300 hover:text-white font-heading font-medium text-xs tracking-wider transition-all flex items-center gap-1.5"
-              title="Director: +91 72491 08658"
+              title="Director Desk: +91 72491 08658"
             >
               <i className="fa-solid fa-phone text-brand-red text-xs" />
               <span>+91 72491 08658</span>
@@ -95,7 +103,7 @@ export default function ServicesPage() {
             <a
               href="tel:+919834024371"
               className="px-3.5 py-3 rounded-xl bg-white/[0.03] border border-white/10 hover:border-white/20 text-slate-300 hover:text-white font-heading font-medium text-xs tracking-wider transition-all flex items-center gap-1.5"
-              title="Director: +91 98340 24371"
+              title="Director Desk: +91 98340 24371"
             >
               <i className="fa-solid fa-phone text-brand-red text-xs" />
               <span>+91 98340 24371</span>

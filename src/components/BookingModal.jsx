@@ -104,7 +104,7 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
     if (!confirmedBooking) return '#';
     const title = encodeURIComponent(`Security Consultation: ${confirmedBooking.auditType} - The Legend Security`);
     const details = encodeURIComponent(
-      `Appointment Ref: ${confirmedBooking.id}\nClient: ${confirmedBooking.fullName} (${confirmedBooking.orgName})\nPhone: ${confirmedBooking.phoneNum}\nDirector Hotline: +91 72491 08658 / +91 98340 24371\nThe Legend Security and Bouncer (PSARA Certified)`
+      `Appointment Ref: ${confirmedBooking.id}\nClient: ${confirmedBooking.fullName} (${confirmedBooking.orgName})\nPhone: ${confirmedBooking.phoneNum}\nDirector Main Hotline: +91 88060 78677\nDirector Desk: +91 72491 08658 / +91 98340 24371\nThe Legend Security and Bouncer (PSARA Certified)`
     );
     const loc = encodeURIComponent(confirmedBooking.location);
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${loc}`;
@@ -125,7 +125,7 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
       `*Risk Tier:* ${confirmedBooking.riskLevel}\n\n` +
       `*Request to Director (The Legend Security)*`
     );
-    window.open(`https://wa.me/917249108658?text=${msg}`, '_blank');
+    window.open(`https://wa.me/918806078677?text=${msg}`, '_blank');
   };
 
   return (
@@ -566,7 +566,7 @@ export default function BookingModal({ isOpen, onClose, initialType = '' }) {
               <div className="pt-3 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400">
                 <span className="flex items-center gap-1.5">
                   <i className="fa-solid fa-phone text-brand-red" />
-                  <span>Immediate Escalation: <a href="tel:+917249108658" className="text-white hover:text-brand-red font-semibold">+91 72491 08658</a> / <a href="tel:+919834024371" className="text-white hover:text-brand-red font-semibold">+91 98340 24371</a></span>
+                  <span>Immediate Escalation: <a href="tel:+918806078677" className="text-white hover:text-brand-red font-bold">+91 88060 78677</a> (Director - Main) / <a href="tel:+917249108658" className="text-white hover:text-brand-red font-semibold">+91 72491 08658</a> / <a href="tel:+919834024371" className="text-white hover:text-brand-red font-semibold">+91 98340 24371</a></span>
                 </span>
                 <button
                   type="button"

@@ -69,22 +69,27 @@ export default function Footer() {
 
             {/* Social/contact quick row */}
             <div className="flex items-center gap-2.5 pt-1">
-              <a href="tel:+917249108658"
-                title="Director: +91 72491 08658"
+              <a href="tel:+918806078677"
+                title="Director (Main Hotline): +91 88060 78677"
                 className="w-9 h-9 rounded-xl bg-brand-red flex items-center justify-center text-white hover:bg-red-700 transition-colors shadow-md">
                 <i className="fa-solid fa-phone text-xs" />
               </a>
-              <a href="tel:+919834024371"
-                title="Director: +91 98340 24371"
+              <a href="tel:+917249108658"
+                title="Director Desk: +91 72491 08658"
                 className="w-9 h-9 rounded-xl bg-red-700 flex items-center justify-center text-white hover:bg-red-600 transition-colors shadow-md">
+                <i className="fa-solid fa-phone text-xs" />
+              </a>
+              <a href="tel:+919834024371"
+                title="Director Desk: +91 98340 24371"
+                className="w-9 h-9 rounded-xl bg-red-800 flex items-center justify-center text-white hover:bg-red-700 transition-colors shadow-md">
                 <i className="fa-solid fa-phone text-xs" />
               </a>
               <a href="tel:+917860313601"
                 title="Operations: +91 78603 13601"
-                className="w-9 h-9 rounded-xl bg-red-800 flex items-center justify-center text-white hover:bg-red-700 transition-colors shadow-md">
+                className="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center text-white hover:bg-slate-700 transition-colors shadow-md">
                 <i className="fa-solid fa-headset text-xs" />
               </a>
-              <a href="https://wa.me/917249108658" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/918806078677" target="_blank" rel="noopener noreferrer"
                 title="WhatsApp Dispatch"
                 className="w-9 h-9 rounded-xl bg-emerald-700 flex items-center justify-center text-white hover:bg-emerald-600 transition-colors shadow-md">
                 <i className="fa-brands fa-whatsapp text-sm" />
@@ -143,14 +148,19 @@ export default function Footer() {
                 </p>
               </div>
 
+              <a href="tel:+918806078677" className="flex items-center gap-2.5 group">
+                <i className="fa-solid fa-phone text-brand-red" />
+                <span className="text-white font-bold hover:text-brand-red transition-colors">+91 88060 78677 (Director - Main)</span>
+              </a>
+
               <a href="tel:+917249108658" className="flex items-center gap-2.5 group">
                 <i className="fa-solid fa-phone text-brand-red" />
-                <span className="text-white font-semibold hover:text-brand-red transition-colors">+91 72491 08658 (Director)</span>
+                <span className="text-slate-200 font-semibold hover:text-brand-red transition-colors">+91 72491 08658 (Director Desk)</span>
               </a>
 
               <a href="tel:+919834024371" className="flex items-center gap-2.5 group">
                 <i className="fa-solid fa-phone text-brand-red" />
-                <span className="text-white font-semibold hover:text-brand-red transition-colors">+91 98340 24371 (Director)</span>
+                <span className="text-slate-200 font-semibold hover:text-brand-red transition-colors">+91 98340 24371 (Director Desk)</span>
               </a>
 
               <a href="tel:+917860313601" className="flex items-center gap-2.5 group">
@@ -163,9 +173,9 @@ export default function Footer() {
                 <span className="text-slate-300 hover:text-brand-red transition-colors">+91 89758 66597 (Mr. Shahid Shaikh)</span>
               </a>
 
-              <a href="https://wa.me/917249108658" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5">
+              <a href="https://wa.me/918806078677" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5">
                 <i className="fa-brands fa-whatsapp text-emerald-500" />
-                <span className="text-emerald-400 hover:underline">+91 72491 08658 / +91 98340 24371 (WhatsApp)</span>
+                <span className="text-emerald-400 hover:underline">+91 88060 78677 (WhatsApp)</span>
               </a>
 
               <a href="mailto:thelegendscrt16@gmail.com" className="flex items-center gap-2.5">

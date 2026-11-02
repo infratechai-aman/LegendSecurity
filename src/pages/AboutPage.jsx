@@ -8,8 +8,9 @@ export default function AboutPage() {
     {
       name: 'Director',
       role: 'Director & Founder',
-      phone: '+91 72491 08658',
-      secondPhone: '+91 98340 24371',
+      phone: '+91 88060 78677',
+      secondPhone: '+91 72491 08658',
+      thirdPhone: '+91 98340 24371',
       initial: 'D',
       desc: 'Founded The Legend Security and Bouncer in 2018 with a commitment to quality, discipline, and uncompromising on-ground vigilance across Maharashtra.',
     },
@@ -28,7 +29,7 @@ export default function AboutPage() {
       city: 'Bhawani Peth (Main Branch)',
       icon: 'fa-building',
       address: '857, Bhawani Peth, Near Bharat Talkies, Pune 411042',
-      contact: '+91 72491 08658 / +91 98340 24371',
+      contact: '+91 88060 78677 / 72491 08658 / 98340 24371',
       email: 'thelegendscrt16@gmail.com',
       accent: true,
     },
@@ -45,7 +46,7 @@ export default function AboutPage() {
       city: 'Malad East (Mumbai Branch)',
       icon: 'fa-city',
       address: 'Patel Society, Indira Nagar, Pathanwadi, Rani Sati Marg, Malad East, Mumbai 97',
-      contact: '+91 72491 08658 / +91 98340 24371',
+      contact: '+91 88060 78677 / 72491 08658 / 98340 24371',
       email: 'thelegendscrt16@gmail.com',
     },
   ];
@@ -155,7 +156,7 @@ export default function AboutPage() {
                 Our company provides end-to-end security, VIP bouncer protection, corporate event cordons, industrial guarding, firefighting readiness, and facility housekeeping across commercial and residential premises.
               </p>
               <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 font-normal">
-                <span>Direct Contact: +91 72491 08658 / +91 98340 24371</span>
+                <span>Direct Contact: <strong className="text-slate-800 font-semibold">+91 88060 78677 (Main)</strong> / +91 72491 08658 / +91 98340 24371</span>
                 <span className="text-brand-red font-medium">thelegendscrt16@gmail.com</span>
               </div>
             </div>
@@ -287,6 +288,23 @@ export default function AboutPage() {
                       </a>
                     </div>
                   )}
+                  {leader.thirdPhone && (
+                    <div className="flex items-center justify-between">
+                      <a href={`tel:${leader.thirdPhone.replace(/[^0-9+]/g, '')}`}
+                        className="font-medium text-slate-800 hover:text-brand-red transition-colors flex items-center gap-2 group">
+                        <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center group-hover:bg-brand-red transition-colors">
+                          <i className="fa-solid fa-phone text-brand-red text-[9px] group-hover:text-white transition-colors" />
+                        </div>
+                        {leader.thirdPhone}
+                      </a>
+                      <a href={`https://wa.me/${leader.thirdPhone.replace(/[^0-9]/g, '')}`}
+                        target="_blank" rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
+                        <i className="fa-brands fa-whatsapp text-sm" />
+                        WhatsApp
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -357,9 +375,17 @@ export default function AboutPage() {
               <span>Schedule Site Survey</span>
             </Link>
             <a
+              href="tel:+918806078677"
+              className="px-4 py-3 rounded-xl bg-brand-red hover:bg-red-700 text-white font-heading font-bold text-xs tracking-wider transition-all whitespace-nowrap flex items-center gap-2 shadow-md"
+              title="Director (Main Hotline): +91 88060 78677"
+            >
+              <i className="fa-solid fa-phone text-xs" />
+              <span>+91 88060 78677</span>
+            </a>
+            <a
               href="tel:+917249108658"
               className="px-4 py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-white font-heading font-semibold text-xs tracking-wider transition-all whitespace-nowrap flex items-center gap-2"
-              title="Director: +91 72491 08658"
+              title="Director Desk: +91 72491 08658"
             >
               <i className="fa-solid fa-phone text-brand-red text-xs" />
               <span>+91 72491 08658</span>
@@ -367,7 +393,7 @@ export default function AboutPage() {
             <a
               href="tel:+919834024371"
               className="px-4 py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-white font-heading font-semibold text-xs tracking-wider transition-all whitespace-nowrap flex items-center gap-2"
-              title="Director: +91 98340 24371"
+              title="Director Desk: +91 98340 24371"
             >
               <i className="fa-solid fa-phone text-brand-red text-xs" />
               <span>+91 98340 24371</span>

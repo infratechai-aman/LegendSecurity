@@ -65,9 +65,9 @@ function MobileLightbox({ image, total, currentIndex, isOpen, onClose, onPrev, o
             <span>{image.location}</span>
           </div>
         </div>
-        <a href="tel:+917249108658" className="w-full flex items-center justify-center gap-2 bg-brand-red hover:bg-red-600 text-white font-heading font-semibold text-xs tracking-wider py-3 rounded-xl shadow-md">
+        <a href="tel:+918806078677" className="w-full flex items-center justify-center gap-2 bg-brand-red hover:bg-red-600 text-white font-heading font-semibold text-xs tracking-wider py-3 rounded-xl shadow-md">
           <i className="fa-solid fa-phone text-xs" />
-          <span>Deploy Similar Squad — +91 72491 08658 / +91 98340 24371</span>
+          <span>Deploy Similar Squad — +91 88060 78677 (Director)</span>
         </a>
       </div>
     </div>
@@ -280,11 +280,11 @@ export default function GalleryPage() {
       <section className="sm:hidden w-full bg-[#0a0a0c] px-4 py-5 border-t border-white/10">
         <p className="text-center text-xs text-slate-400 font-light mb-3">Need dedicated security personnel?</p>
         <div className="grid grid-cols-2 gap-2">
-          <a href="tel:+917249108658" className="flex items-center justify-center gap-2 bg-brand-red text-white font-heading font-semibold text-xs uppercase tracking-wider py-3 rounded-xl shadow-sm">
+          <a href="tel:+918806078677" className="flex items-center justify-center gap-2 bg-brand-red text-white font-heading font-semibold text-xs uppercase tracking-wider py-3 rounded-xl shadow-sm">
             <i className="fa-solid fa-phone text-xs" />
             <span>Call Now</span>
           </a>
-          <a href="https://wa.me/917249108658" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-emerald-600 text-white font-heading font-semibold text-xs uppercase tracking-wider py-3 rounded-xl">
+          <a href="https://wa.me/918806078677" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-emerald-600 text-white font-heading font-semibold text-xs uppercase tracking-wider py-3 rounded-xl">
             <i className="fa-brands fa-whatsapp text-sm" />
             <span>WhatsApp</span>
           </a>
@@ -296,7 +296,7 @@ export default function GalleryPage() {
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left relative z-10">
           <div>
             <h3 className="font-heading font-bold text-xl sm:text-3xl text-white tracking-tight">Require Trained Manpower?</h3>
-            <p className="text-xs sm:text-sm text-slate-400 mt-1 font-light">Contact Director (+91 72491 08658 / +91 98340 24371) for rapid deployment.</p>
+            <p className="text-xs sm:text-sm text-slate-400 mt-1 font-light">Contact Director (+91 88060 78677 / +91 72491 08658 / +91 98340 24371) for rapid deployment.</p>
           </div>
           <Link to="/contact" className="px-6 py-3 rounded-xl bg-brand-red hover:bg-red-600 text-white font-heading font-semibold text-xs uppercase tracking-wider transition-all shadow-md shadow-red-950/40 whitespace-nowrap flex items-center gap-2">
             <i className="fa-solid fa-file-invoice text-xs" />

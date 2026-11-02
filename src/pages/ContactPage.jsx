@@ -128,7 +128,7 @@ export default function ContactPage() {
       region: 'Pune Main Branch',
       title: 'Bhawani Peth Head Office',
       address: '857, Bhawani Peth, Near Bharat Talkies, Pune 411042',
-      contact: '+91 72491 08658 / +91 98340 24371',
+      contact: '+91 88060 78677 / 72491 08658 / 98340 24371',
       jurisdiction: 'Bhawani Peth, Camp, Swargate, Nana Peth, Pune City & Central MH',
     },
     {
@@ -142,7 +142,7 @@ export default function ContactPage() {
       region: 'Mumbai Region',
       title: 'Malad East Branch',
       address: 'Patel Society, Indira Nagar, Pathanwadi, Rani Sati Marg, Malad East, Mumbai 97',
-      contact: '+91 72491 08658 / +91 98340 24371',
+      contact: '+91 88060 78677 / 72491 08658 / 98340 24371',
       jurisdiction: 'Malad, Andheri, BKC, Borivali, Goregaon & Western Suburbs',
     },
   ];
@@ -214,26 +214,30 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              {/* Director */}
-              <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50/70 border border-slate-100 hover:border-red-200 transition-colors">
+              {/* Director (Main & Desks) */}
+              <div className="flex items-center justify-between p-3.5 rounded-xl bg-red-50/40 border border-red-200/80 hover:border-brand-red transition-colors">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-red-50 text-brand-red flex items-center justify-center shrink-0">
-                    <IconPhone className="text-brand-red" />
+                  <div className="w-9 h-9 rounded-lg bg-brand-red text-white flex items-center justify-center shrink-0 shadow-sm">
+                    <IconPhone className="text-white" />
                   </div>
                   <div>
-                    <span className="text-[11px] text-slate-500 block">Director Desk</span>
-                    <div className="flex flex-wrap items-center gap-x-2">
-                      <a href="tel:+917249108658" className="text-xs font-semibold text-slate-900 hover:text-brand-red transition-colors">
+                    <span className="text-[11px] text-slate-500 font-medium block">Director (Main Line)</span>
+                    <a href="tel:+918806078677" className="text-sm font-bold text-slate-950 hover:text-brand-red transition-colors block">
+                      +91 88060 78677
+                    </a>
+                    <div className="flex flex-wrap items-center gap-x-2 mt-0.5 text-[11px] text-slate-600">
+                      <span>Alt:</span>
+                      <a href="tel:+917249108658" className="font-semibold text-slate-800 hover:text-brand-red transition-colors">
                         +91 72491 08658
                       </a>
-                      <span className="text-slate-300 text-xs">/</span>
-                      <a href="tel:+919834024371" className="text-xs font-semibold text-slate-900 hover:text-brand-red transition-colors">
+                      <span className="text-slate-300">/</span>
+                      <a href="tel:+919834024371" className="font-semibold text-slate-800 hover:text-brand-red transition-colors">
                         +91 98340 24371
                       </a>
                     </div>
                   </div>
                 </div>
-                <span className="text-[10px] font-semibold px-2.5 py-0.5 rounded-full bg-red-50 text-brand-red border border-red-100">
+                <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-brand-red text-white border border-brand-red">
                   Director
                 </span>
               </div>
@@ -258,7 +262,7 @@ export default function ContactPage() {
 
               {/* WhatsApp Quick Chat */}
               <a
-                href="https://wa.me/917249108658?text=Hello%20The%20Legend%20Security,%20I%20need%20security%20quotation%20information."
+                href="https://wa.me/918806078677?text=Hello%20The%20Legend%20Security,%20I%20need%20security%20quotation%20information."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-3 rounded-xl bg-slate-50/70 border border-slate-100 hover:border-emerald-200 transition-colors group"
@@ -270,7 +274,7 @@ export default function ContactPage() {
                   <div>
                     <span className="text-[11px] text-slate-500 block">Official WhatsApp Desk</span>
                     <span className="text-xs font-semibold text-slate-900 group-hover:text-emerald-700 transition-colors">
-                      +91 72491 08658 / +91 98340 24371
+                      +91 88060 78677
                     </span>
                   </div>
                 </div>

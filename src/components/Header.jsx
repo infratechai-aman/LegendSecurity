@@ -103,8 +103,16 @@ export default function Header() {
                 Director:
               </span>
               <a
-                href="tel:+917249108658"
+                href="tel:+918806078677"
                 className="font-heading font-bold text-xs tracking-wider text-white hover:text-brand-red transition-colors"
+                title="Director (Main Hotline): +91 88060 78677"
+              >
+                +91 88060 78677
+              </a>
+              <span className="text-slate-600 text-[10px]">/</span>
+              <a
+                href="tel:+917249108658"
+                className="font-heading font-medium text-xs tracking-wider text-slate-300 hover:text-brand-red transition-colors"
                 title="Director: +91 72491 08658"
               >
                 +91 72491 08658
@@ -112,7 +120,7 @@ export default function Header() {
               <span className="text-slate-600 text-[10px]">/</span>
               <a
                 href="tel:+919834024371"
-                className="font-heading font-bold text-xs tracking-wider text-white hover:text-brand-red transition-colors"
+                className="font-heading font-medium text-xs tracking-wider text-slate-300 hover:text-brand-red transition-colors"
                 title="Director: +91 98340 24371"
               >
                 +91 98340 24371
@@ -245,28 +253,40 @@ export default function Header() {
 
               <div className="grid grid-cols-1 gap-2">
                 <a
-                  href="tel:+917249108658"
-                  className="w-full flex items-center justify-between px-3 bg-white/[0.04] border border-white/10 hover:border-brand-red text-slate-200 font-heading font-medium text-xs tracking-wider py-2.5 rounded-xl transition-all"
+                  href="tel:+918806078677"
+                  className="w-full flex items-center justify-between px-3 bg-brand-red/10 border border-brand-red/40 hover:border-brand-red text-white font-heading font-medium text-xs tracking-wider py-2.5 rounded-xl transition-all"
                 >
                   <div className="flex items-center gap-2">
                     <div className="w-5 h-5 rounded-full bg-brand-red flex items-center justify-center">
                       <i className="fa-solid fa-phone text-white text-[9px]" />
                     </div>
+                    <span className="font-bold">+91 88060 78677</span>
+                  </div>
+                  <span className="text-[10px] font-semibold text-white bg-brand-red px-2 py-0.5 rounded-full">Director (Main)</span>
+                </a>
+                <a
+                  href="tel:+917249108658"
+                  className="w-full flex items-center justify-between px-3 bg-white/[0.04] border border-white/10 hover:border-brand-red text-slate-200 font-heading font-medium text-xs tracking-wider py-2.5 rounded-xl transition-all"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-full bg-slate-700 flex items-center justify-center">
+                      <i className="fa-solid fa-phone text-white text-[9px]" />
+                    </div>
                     <span>+91 72491 08658</span>
                   </div>
-                  <span className="text-[10px] font-medium text-brand-red bg-brand-red/10 px-2 py-0.5 rounded-full">Director</span>
+                  <span className="text-[10px] font-medium text-slate-400 bg-white/5 px-2 py-0.5 rounded-full">Director</span>
                 </a>
                 <a
                   href="tel:+919834024371"
                   className="w-full flex items-center justify-between px-3 bg-white/[0.04] border border-white/10 hover:border-brand-red text-slate-200 font-heading font-medium text-xs tracking-wider py-2.5 rounded-xl transition-all"
                 >
                   <div className="flex items-center gap-2">
-                    <div className="w-5 h-5 rounded-full bg-brand-red flex items-center justify-center">
+                    <div className="w-5 h-5 rounded-full bg-slate-700 flex items-center justify-center">
                       <i className="fa-solid fa-phone text-white text-[9px]" />
                     </div>
                     <span>+91 98340 24371</span>
                   </div>
-                  <span className="text-[10px] font-medium text-brand-red bg-brand-red/10 px-2 py-0.5 rounded-full">Director</span>
+                  <span className="text-[10px] font-medium text-slate-400 bg-white/5 px-2 py-0.5 rounded-full">Director</span>
                 </a>
               </div>
             </div>

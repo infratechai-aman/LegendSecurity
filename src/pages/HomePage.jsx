@@ -641,23 +641,31 @@ export default function HomePage() {
             </div>
             <div className="flex flex-wrap items-center gap-2.5 shrink-0">
               <a
-                href="tel:+917249108658"
-                className="px-3.5 py-2 rounded-xl bg-brand-red hover:bg-red-700 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-1.5"
-                title="Director: +91 72491 08658"
+                href="tel:+918806078677"
+                className="px-4 py-2 rounded-xl bg-brand-red hover:bg-red-700 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-md"
+                title="Director (Main Hotline): +91 88060 78677"
               >
                 <i className="fa-solid fa-phone text-xs" />
+                <span>+91 88060 78677</span>
+              </a>
+              <a
+                href="tel:+917249108658"
+                className="px-3.5 py-2 rounded-xl bg-white/[0.05] border border-white/10 hover:border-white/20 text-slate-200 font-heading font-medium text-xs uppercase tracking-wider transition-all flex items-center gap-1.5"
+                title="Director Desk: +91 72491 08658"
+              >
+                <i className="fa-solid fa-phone text-brand-red text-xs" />
                 <span>+91 72491 08658</span>
               </a>
               <a
                 href="tel:+919834024371"
-                className="px-3.5 py-2 rounded-xl bg-red-700 hover:bg-red-600 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-1.5"
-                title="Director: +91 98340 24371"
+                className="px-3.5 py-2 rounded-xl bg-white/[0.05] border border-white/10 hover:border-white/20 text-slate-200 font-heading font-medium text-xs uppercase tracking-wider transition-all flex items-center gap-1.5"
+                title="Director Desk: +91 98340 24371"
               >
-                <i className="fa-solid fa-phone text-xs" />
+                <i className="fa-solid fa-phone text-brand-red text-xs" />
                 <span>+91 98340 24371</span>
               </a>
               <a
-                href="https://wa.me/917249108658?text=Hello%20Legend%20Security,%20I%20need%20event%20bouncers."
+                href="https://wa.me/918806078677?text=Hello%20Legend%20Security,%20I%20need%20event%20bouncers."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-1.5"
@@ -767,21 +775,30 @@ export default function HomePage() {
                   <span>Request Quotation</span>
                   <i className="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <a href="tel:+917249108658" className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-white/5 border border-slate-600 hover:border-brand-red/60 transition-all group">
-                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-xs">
+                <a href="tel:+918806078677" className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-brand-red/15 border border-brand-red/60 hover:border-brand-red hover:bg-brand-red/25 transition-all group">
+                  <div className="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center text-xs shadow-md">
                     <i className="fa-solid fa-phone" />
                   </div>
                   <div className="text-left">
-                    <p className="text-[9px] font-mono text-slate-400 uppercase">Director</p>
+                    <p className="text-[9px] font-mono text-brand-red font-bold uppercase tracking-wider">Director (Main Line)</p>
+                    <p className="font-heading font-black text-xs text-white group-hover:text-brand-red transition-colors">+91 88060 78677</p>
+                  </div>
+                </a>
+                <a href="tel:+917249108658" className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-white/5 border border-slate-600 hover:border-brand-red/60 transition-all group">
+                  <div className="w-8 h-8 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center text-xs">
+                    <i className="fa-solid fa-phone" />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-[9px] font-mono text-slate-400 uppercase">Director Desk</p>
                     <p className="font-heading font-bold text-xs text-white group-hover:text-brand-red transition-colors">+91 72491 08658</p>
                   </div>
                 </a>
                 <a href="tel:+919834024371" className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-white/5 border border-slate-600 hover:border-brand-red/60 transition-all group">
-                  <div className="w-8 h-8 rounded-full bg-red-700 text-white flex items-center justify-center text-xs">
+                  <div className="w-8 h-8 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center text-xs">
                     <i className="fa-solid fa-phone" />
                   </div>
                   <div className="text-left">
-                    <p className="text-[9px] font-mono text-slate-400 uppercase">Director</p>
+                    <p className="text-[9px] font-mono text-slate-400 uppercase">Director Desk</p>
                     <p className="font-heading font-bold text-xs text-white group-hover:text-brand-red transition-colors">+91 98340 24371</p>
                   </div>
                 </a>
@@ -794,7 +811,7 @@ export default function HomePage() {
                     <p className="font-heading font-bold text-xs text-white group-hover:text-brand-red transition-colors">+91 78603 13601</p>
                   </div>
                 </a>
-                <a href="https://wa.me/917249108658" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-emerald-950/50 border border-emerald-800/60 hover:border-emerald-500 transition-all group">
+                <a href="https://wa.me/918806078677" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-emerald-950/50 border border-emerald-800/60 hover:border-emerald-500 transition-all group">
                   <div className="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center">
                     <i className="fa-brands fa-whatsapp text-sm" />
                   </div>

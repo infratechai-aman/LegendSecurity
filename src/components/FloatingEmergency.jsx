@@ -6,10 +6,19 @@ export default function FloatingEmergency() {
 
   const contacts = [
     {
-      href: 'tel:+917249108658',
+      href: 'tel:+918806078677',
       icon: 'fa-phone',
       iconBg: 'bg-brand-red',
-      name: 'Director Desk',
+      name: 'Director (Main Line)',
+      sub: '+91 88060 78677',
+      badge: 'DIRECTOR',
+      hoverClass: 'hover:border-brand-red/60',
+    },
+    {
+      href: 'tel:+917249108658',
+      icon: 'fa-phone',
+      iconBg: 'bg-red-700',
+      name: 'Director Desk 2',
       sub: '+91 72491 08658',
       badge: 'DIRECTOR',
       hoverClass: 'hover:border-brand-red/60',
@@ -17,8 +26,8 @@ export default function FloatingEmergency() {
     {
       href: 'tel:+919834024371',
       icon: 'fa-phone',
-      iconBg: 'bg-red-700',
-      name: 'Director Desk',
+      iconBg: 'bg-red-800',
+      name: 'Director Desk 3',
       sub: '+91 98340 24371',
       badge: 'DIRECTOR',
       hoverClass: 'hover:border-brand-red/60',
@@ -26,7 +35,7 @@ export default function FloatingEmergency() {
     {
       href: 'tel:+917860313601',
       icon: 'fa-headset',
-      iconBg: 'bg-red-800',
+      iconBg: 'bg-slate-800',
       name: 'Operations Hotline',
       sub: '+91 78603 13601',
       badge: '24/7 HELPLINE',
@@ -42,11 +51,11 @@ export default function FloatingEmergency() {
       hoverClass: 'hover:border-slate-500',
     },
     {
-      href: 'https://wa.me/917249108658',
+      href: 'https://wa.me/918806078677',
       icon: 'fa-whatsapp',
       iconBg: 'bg-emerald-600',
       name: 'WhatsApp Dispatch',
-      sub: '+91 72491 08658',
+      sub: '+91 88060 78677',
       badge: 'INSTANT CHAT',
       hoverClass: 'hover:border-emerald-500',
       external: true,
